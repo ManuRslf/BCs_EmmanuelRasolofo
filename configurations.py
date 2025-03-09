@@ -8,7 +8,7 @@ import torchvision.transforms as transforms
 MODEL = 'biggan'
 tf = transforms.Compose(
     [
-        transforms.Resize((32,32)),
+        transforms.Resize((64,64)),
         transforms.ToTensor(),
         transforms.Normalize(
             mean=[0.5, 0.5, 0.5],
@@ -16,9 +16,12 @@ tf = transforms.Compose(
         )
     ]
 )
-NUM_HIDDEN_LAYER_LLMA = 2
-HIDDEN_SIZE = 768
 
-BATCH_SIZE = 32
+
+ADD_TOKENS = 3
+NUM_HIDDEN_LAYER_LLMA = 2
+HIDDEN_SIZE = 32
+
+BATCH_SIZE = 8
 LR = 0.02
-EPOCHS = 5
+EPOCHS = 2

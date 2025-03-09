@@ -5,7 +5,7 @@ from torchvision.datasets import ImageFolder
 
 #Return : dataset of the chosen file directory
 def TinygenImage(model:str=None, tf:transforms.Compose=None):
-    
+     
     '''model : none -> full dataset'''
     MODEL_NAME = ['biggan', 'vqdm', 'sdv5', 'wukong', 'adm', 'glide', 'midjourney']
     

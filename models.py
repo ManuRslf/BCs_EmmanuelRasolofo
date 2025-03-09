@@ -24,13 +24,15 @@ class Custom_Classifier(nn.Module):
         
         self.CLASSIFIER = nn.Linear(llma_config.hidden_size, 2)
         
-        
+        self.proj = nn.Linear(768, configurations.HIDDEN_SIZE)
         
     def forward(self, x):
         
         #tokenize through dinov2 model
         x = self.DINOV2_MODEL(x)['last_hidden_state']
         
+        if configurations.HIDDEN_SIZE != 768:
+            x = self.proj(x)
         #add additional reasoning tokens  (x, y) -> 1,x,y -> batchsize, x, y
         x = torch.cat((x, self.ADD_TOK.unsqueeze(0).repeat(x.size(0), 1, 1)), dim = 1)
         
@@ -61,9 +63,9 @@ def training_testing(model_i:str=None):
                                  shuffle=False)
 
 
-    llama_config = LlamaConfig(num_hidden_layers=2, hidden_size=768)
+    llama_config = LlamaConfig(num_hidden_layers=configurations.NUM_HIDDEN_LAYER_LLMA, hidden_size=configurations.HIDDEN_SIZE)
     
-    model = Custom_Classifier(llama_config, additional_token=10).to(device)
+    model = Custom_Classifier(llama_config, additional_token=configurations.ADD_TOKENS).to(device)
 
     loss_fn = nn.CrossEntropyLoss()
     optim = Adam(model.parameters(), lr=configurations.LR)
