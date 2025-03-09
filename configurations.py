@@ -5,7 +5,7 @@ import torchvision.transforms as transforms
 '''
 
 
-MODEL = 'biggan'
+MODEL = None
 tf = transforms.Compose(
     [
         transforms.Resize((64,64)),
@@ -20,8 +20,8 @@ tf = transforms.Compose(
 
 ADD_TOKENS = 3
 NUM_HIDDEN_LAYER_LLMA = 2
-HIDDEN_SIZE = 32
+HIDDEN_SIZE = 768
 
-BATCH_SIZE = 8
+BATCH_SIZE = 32
 LR = 0.02
 EPOCHS = 2

@@ -33,15 +33,15 @@ def TinygenImage(model:str=None, tf:transforms.Compose=None):
         
         #use merged data
         merged_path = r'DATA\tinygenimage_merged'
-        path_final_train = os.path.join(base_path, merged_path, 'train')
-        path_final_test = os.path.join(base_path, merged_path, 'test')
+        path_final_train = os.path.join(base_path, merged_path, 'train').replace("\\", "/")
+        path_final_test = os.path.join(base_path, merged_path, 'test').replace("\\", "/")
         return ImageFolder(root=path_final_train, transform=tf), ImageFolder(root=path_final_test, transform=tf)
         
     
     else:
         
-        path_final_train = os.path.join(base_path, valid_model[model], 'train')
-        path_final_test = os.path.join(base_path, valid_model[model], 'test')
+        path_final_train = os.path.join(base_path, valid_model[model], 'train').replace("\\", "/")
+        path_final_test = os.path.join(base_path, valid_model[model], 'test').replace("\\", "/")
 
         return ImageFolder(root=path_final_train, transform=tf), ImageFolder(root=path_final_test, transform=tf)
     

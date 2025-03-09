@@ -1,0 +1,4 @@
+Using midjourney DATASET, Classes in dataset: ['ai', 'nature']
+Training...
+  0%|          | 0/125 [00:00<?, ?it/s]slurmstepd: error: Detected 1 oom_kill event in StepId=288255.0. Some of the step tasks have been OOM Killed.
+srun: error: gpu001: task 0: Out Of Memory
