@@ -6,6 +6,8 @@ from torch.utils.data import DataLoader
 from torch.optim import Adam
 from transformers import AutoModel, LlamaForCausalLM, LlamaConfig
 from tqdm import tqdm
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import classification_report
 
 
 class Custom_Classifier(nn.Module):
@@ -88,7 +90,7 @@ def training_testing(model_i:str=None):
         
         for i, data in enumerate(tqdm(dataloader_train), 0):
             x, y = data[0].to(device), data[1].to(device)
-            y = torch.stack([y, 1 - y], dim=1).float()
+
             optim.zero_grad()
             
             output = model(x)
@@ -107,8 +109,8 @@ def training_testing(model_i:str=None):
         
     print("fin..")
 
-    tot = 0
-    TP, TN, FP, FN = 0, 0, 0, 0
+    Abatch_predictions = []
+    Abatch_labels = []
 
     with torch.no_grad():
         for i, data in enumerate(dataloader_test, 0):
@@ -116,25 +118,16 @@ def training_testing(model_i:str=None):
 
             output = model(x)
    
-            flatten_pred = torch.argmax(output, dim=1)
-  
-            tot += y.size(0)
+            _, pred = torch.max(output, 1)
             
-            TP += ((flatten_pred == 1) & (y == 1)).sum().item() 
-            TN += ((flatten_pred == 0) & (y == 0)).sum().item()  
-            FP += ((flatten_pred == 0) & (y == 1)).sum().item()
-            FN += ((flatten_pred == 1) & (y == 0)).sum().item() 
+            Abatch_predictions.extend(pred.cpu().numpy())
+            Abatch_labels.extend(y.cpu().numpy())
+            
+    
 
     # metrique
-    accuracy = 100 * (TP + TN) / (TP + TN + FP + FN)
-    precision = 100 * TP / (TP + FP) if (TP + FP) > 0 else 0
-    recall = 100 * TP / (TP + FN) if (TP + FN) > 0 else 0
-    f1 = 2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
-
-    print(f"Accuracy : {accuracy:.2f}%")
-    print(f"Precision : {precision:.2f}%")
-    print(f"Recall : {recall:.2f}%")
-    print(f"F1 Score : {f1:.2f}%")
+    ACC = accuracy_score(Abatch_labels, Abatch_predictions)
+    print(f"Accuracy : {ACC}\nClassification report:\n{classification_report(Abatch_labels, Abatch_predictions, target_names=['ia', 'nature'])}")
     
     
 if __name__ == '__main__':

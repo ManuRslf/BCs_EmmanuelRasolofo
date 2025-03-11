@@ -5,10 +5,10 @@ import torchvision.transforms as transforms
 '''
 
 
-MODEL = None
+MODEL = 'midjourney'
 tf = transforms.Compose(
     [
-        transforms.Resize((512,512)),
+        transforms.Resize((224,244)),
         transforms.ToTensor(),
         transforms.Normalize(
             mean=[0.5, 0.5, 0.5],
@@ -24,4 +24,4 @@ HIDDEN_SIZE = 768
 
 BATCH_SIZE = 32
 LR = 0.03
-EPOCHS = 15
+EPOCHS = 4
