@@ -88,7 +88,7 @@ def training_testing(model_i:str=None):
         rloss = 0.0
         counter = 0
         
-        for i, data in enumerate(tqdm(dataloader_train), 0):
+        for i, data in enumerate(dataloader_train, 0):
             x, y = data[0].to(device), data[1].to(device)
 
             optim.zero_grad()
@@ -107,7 +107,7 @@ def training_testing(model_i:str=None):
         print(f"Loss epoch {e} -> {(rloss/counter):.2f}")
         rloss = 0.0
         
-    print("fin..")
+    print("end...")
 
     Abatch_predictions = []
     Abatch_labels = []
