@@ -1,7 +1,7 @@
 import os 
 import torchvision.transforms as transforms
 from torchvision.datasets import ImageFolder
-
+import configurations
 
 #Return : dataset of the chosen file directory
 def TinygenImage(model:str=None, tf:transforms.Compose=None):
@@ -45,7 +45,16 @@ def TinygenImage(model:str=None, tf:transforms.Compose=None):
 
         return ImageFolder(root=path_final_train, transform=tf), ImageFolder(root=path_final_test, transform=tf)
     
+def verbose(show:bool=True):
+    if show:
+        print(f"Images are resized {configurations.resizeShape}x{configurations.resizeShape}")
+        print(f"Additional token added : {configurations.ADD_TOKENS}")
+        print(f"Hidden layer LLMA : {configurations.NUM_HIDDEN_LAYER_LLMA} with size {configurations.HIDDEN_SIZE}")
+        print(f"Batch size : {configurations.BATCH_SIZE}, LR : {configurations.LR}, epochs : {configurations.EPOCHS}")
     
+
+
+
 if __name__ == '__main__':
     
     tf = transforms.Compose(

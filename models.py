@@ -56,7 +56,7 @@ def training_testing(model_i:str=None):
     
     print(f"Operation on {device}")
     print(f"Using {model_i} DATASET, Classes in dataset: {dataset_train.classes}")
-    
+    verbose(configurations.show_info)
     
     
     dataloader_train = DataLoader(dataset_train, 

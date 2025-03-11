@@ -4,11 +4,14 @@ import torchvision.transforms as transforms
     all parameters here
 '''
 
-
+show_info = True
 MODEL = 'midjourney'
+
+resizeShape = 224
+
 tf = transforms.Compose(
     [
-        transforms.Resize((224,244)),
+        transforms.Resize((resizeShape,resizeShape)),
         transforms.ToTensor(),
         transforms.Normalize(
             mean=[0.5, 0.5, 0.5],
