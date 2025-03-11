@@ -2,8 +2,8 @@
 #SBATCH --job-name=TrainingDinov2-llma  
 #SBATCH --ntasks=1                       
 #SBATCH --cpus-per-task=4               
-#SBATCH --gres=gpu:1                    
-#SBATCH --time=03:00:00                 
+#SBATCH --gpus=2                    
+#SBATCH --time=10:00:00                 
 #SBATCH --partition=shared-gpu               
 #SBATCH --mem=16000                      
 

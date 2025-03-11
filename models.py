@@ -50,7 +50,13 @@ def training_testing(model_i:str=None):
 
     #chargement des données
     dataset_train, dataset_test = TinygenImage(model_i, tf=configurations.tf)
+    
+    
+    print(f"Operation on {device}")
     print(f"Using {model_i} DATASET, Classes in dataset: {dataset_train.classes}")
+    
+    
+    
     dataloader_train = DataLoader(dataset_train, 
                                   batch_size=configurations.BATCH_SIZE, 
                                   shuffle=True, 
