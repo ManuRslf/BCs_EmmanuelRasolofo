@@ -74,7 +74,7 @@ def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional
 
     # metrique
     ACC = accuracy_score(Abatch_labels, Abatch_predictions)
-    print(f"Accuracy : {ACC}\nClassification report:\n{classification_report(Abatch_labels, Abatch_predictions, target_names=['ia', 'nature'])}")
+    print(f"Accuracy : {ACC}\nClassification report:\n{classification_report(Abatch_labels, Abatch_predictions, target_names=['ia', 'nature'], zero_division=1)}")
     print("-----------------------------------------------------------------------------------------------------------")
     return ACC
 
@@ -114,6 +114,7 @@ def plot_accuracy():
         ACCURACY_TAB.append(ACC)
         
     #plot saving
+
     if not os.path.exists('PLOTS'):
         os.makedirs('PLOTS')
 
@@ -122,7 +123,7 @@ def plot_accuracy():
     file_name = f'PLOTS/accuracyplot_{timestamp}.png'
 
     plt.figure(figsize=(11, 11))
-    plt.plot(configurations.ADD_TOKENS_lab, ACC, label='Accuracy_token')
+    plt.plot(configurations.ADD_TOKENS_lab, ACCURACY_TAB, label='Accuracy_token')
     plt.legend()
     plt.grid()
     plt.savefig(file_name)

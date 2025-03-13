@@ -32,9 +32,9 @@ EPOCHS = 7
 
 ### for lab.py
 save_image = True
-ADD_TOKENS_lab =  [i for i in range(2, 4)]
+ADD_TOKENS_lab = [i for i in range(2, 11)]
 NUM_HIDDEN_LAYER_LLMA_lab = 2
 HIDDEN_SIZE_lab = 768
 BATCH_SIZE_lab = 32
 LR_lab = 0.03
-EPOCHS_lab = 2
+EPOCHS_lab = 20
