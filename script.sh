@@ -5,7 +5,7 @@
 #SBATCH --gpus=2                    
 #SBATCH --time=10:00:00                 
 #SBATCH --partition=shared-gpu               
-#SBATCH --mem=16000                      
+#SBATCH --mem=32000                      
 
 
 module load CUDA/12.1                  
