@@ -18,7 +18,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
 import os
 import time
-
+import wandb
 
 
 #Return : dataset of the chosen file directory
@@ -72,8 +72,21 @@ def verbose(show:bool=True):
     
 
 ### PLOT1 SHOW ACCURACY IMPROVEMENT/IMPRECISE WITH NUMBER OF TOKEN ADDED
-def training(dataloader_train:DataLoader, additional_tokens:int, device):
+def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional_tokens:int, device):
     """return the accuracy with given token"""
+    
+    
+    #using wandb for plots
+    wandb.init(
+        project="Encoder-DecoderProject",
+        name=f"Training on {configurations.MODEL} dataset - Add tokens {additional_tokens}",
+        config={
+            "learning_rate" : configurations.LR_lab,
+            "architecture" : "dinov2plusllma",
+            "dataset" : f"{configurations.MODEL}",
+            "epochs" : configurations.EPOCHS_lab,
+        }
+    )
     
     print(f"Additional tokens : {additional_tokens}")
     
@@ -84,7 +97,7 @@ def training(dataloader_train:DataLoader, additional_tokens:int, device):
     loss_fn = nn.CrossEntropyLoss()
     optim = Adam(model.parameters(), lr=configurations.LR_lab)
 
-    #Training
+    #Training and maybe evaluate the model on the test set for each epochs
     print("Training...")
     
     for e in range(configurations.EPOCHS_lab):
@@ -107,15 +120,21 @@ def training(dataloader_train:DataLoader, additional_tokens:int, device):
             rloss += loss.item()
             counter += 1
             
-        print(f"Loss epoch {e} -> {(rloss/counter):.2f}")
+        loss_epochs = rloss/counter
+        acc_test_set = testing(dataloader_test=dataloader_test, device=device, model=model, verbose=False)
+        
+        wandb.log({"Train Loss" : loss_epochs, "Unknown dataset accuracy" : acc_test_set, "epochs" : e})
+        
+        print(f"Loss epoch {e} -> {(rloss/counter):.5f}")
         rloss = 0.0
         
     print("end...")
+    wandb.finish()
     
     return model
 
 
-def testing(dataloader_test:DataLoader, device, model):
+def testing(dataloader_test:DataLoader, device, model, verbose:bool=True):
     Abatch_predictions = []
     Abatch_labels = []
 
@@ -134,15 +153,16 @@ def testing(dataloader_test:DataLoader, device, model):
 
     # metrique
     ACC = accuracy_score(Abatch_labels, Abatch_predictions)
-    print(f"Accuracy : {ACC}\nClassification report:\n{classification_report(Abatch_labels, Abatch_predictions, target_names=['ia', 'nature'], zero_division=1)}")
-    print("-----------------------------------------------------------------------------------------------------------")
+    if verbose:
+        print(f"Accuracy : {ACC}\nClassification report:\n{classification_report(Abatch_labels, Abatch_predictions, target_names=['ia', 'nature'], zero_division=1)}")
+        print("-----------------------------------------------------------------------------------------------------------")
     return ACC
 
 
 
 
 
-def plot_accuracy():
+def plot_accuracy(save_image:bool=True):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     #chargement des données
@@ -175,23 +195,23 @@ def plot_accuracy():
         ACCURACY_TAB.append(ACC)
         
     #plot saving
+    if save_image:
+        if not os.path.exists('PLOTS'):
+            os.makedirs('PLOTS')
 
-    if not os.path.exists('PLOTS'):
-        os.makedirs('PLOTS')
+        timestamp = time.strftime("%Y%m%d-%H%M%S")  
+        
+        file_name = f'PLOTS/accuracyplot_{timestamp}.png'
 
-    timestamp = time.strftime("%Y%m%d-%H%M%S")  
-    
-    file_name = f'PLOTS/accuracyplot_{timestamp}.png'
-
-    plt.figure(figsize=(11, 11))
-    plt.plot(configurations.ADD_TOKENS_lab, ACCURACY_TAB, label='Accuracy_token')
-    plt.legend()
-    plt.grid()
-    plt.savefig(file_name)
+        plt.figure(figsize=(11, 11))
+        plt.plot(configurations.ADD_TOKENS_lab, ACCURACY_TAB, label='Accuracy_token')
+        plt.legend()
+        plt.grid()
+        plt.savefig(file_name)
     
     return ACCURACY_TAB
 
 
 
 if __name__ == '__main__':
-    plot_accuracy()
+    plot_accuracy(configurations.save_image)
