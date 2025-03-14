@@ -187,8 +187,9 @@ def plot_accuracy(save_image:bool=True):
     ACCURACY_TAB = []
     for token in configurations.ADD_TOKENS_lab:
         model = training(dataloader_train=dataloader_train, 
-                       additional_tokens=token, 
-                       device=device)
+                         dataloader_test=dataloader_test,
+                         additional_tokens=token, 
+                         device=device)
         
         ACC = testing(dataloader_test=dataloader_test, device=device, model=model)
         
