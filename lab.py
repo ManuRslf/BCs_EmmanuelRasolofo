@@ -16,7 +16,7 @@ import time
 ### PLOT1 SHOW ACCURACY IMPROVEMENT/IMPRECISE WITH NUMBER OF TOKEN ADDED
 
 
-def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional_tokens:int, device):
+def training(dataloader_train:DataLoader, additional_tokens:int, device):
     """return the accuracy with given token"""
     
     print(f"Additional tokens : {additional_tokens}")
@@ -55,7 +55,11 @@ def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional
         rloss = 0.0
         
     print("end...")
+    
+    return model
 
+
+def testing(dataloader_test:DataLoader, device, model):
     Abatch_predictions = []
     Abatch_labels = []
 
@@ -106,10 +110,11 @@ def plot_accuracy():
     
     ACCURACY_TAB = []
     for token in configurations.ADD_TOKENS_lab:
-        ACC = training(dataloader_train=dataloader_train, 
-                       dataloader_test=dataloader_test, 
+        model = training(dataloader_train=dataloader_train, 
                        additional_tokens=token, 
                        device=device)
+        
+        ACC = testing(dataloader_test=dataloader_test, device=device, model=model)
         
         ACCURACY_TAB.append(ACC)
         
