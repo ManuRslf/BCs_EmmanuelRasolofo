@@ -7,7 +7,7 @@ import torchvision.transforms as transforms
 
 ### COMMON
 MODEL = 'midjourney'
-resizeShape = 224
+resizeShape = 32
 tf = transforms.Compose(
     [
         transforms.Resize((resizeShape,resizeShape)),
@@ -30,11 +30,11 @@ LR = 0.03
 EPOCHS = 7
 
 
-### for lab.py
+### for utils.py & visu
 save_image = True
 ADD_TOKENS_lab = [i for i in range(2, 11)]
 NUM_HIDDEN_LAYER_LLMA_lab = 2
 HIDDEN_SIZE_lab = 768
 BATCH_SIZE_lab = 128
 LR_lab = 1e-3
-EPOCHS_lab = 20
+EPOCHS_lab = 40

@@ -2,10 +2,10 @@
 #SBATCH --job-name=TrainingDinov2-llma  
 #SBATCH --ntasks=1                       
 #SBATCH --cpus-per-task=4               
-#SBATCH --gpus=2                    
-#SBATCH --time=10:00:00                 
-#SBATCH --partition=shared-gpu               
-#SBATCH --mem=32000                      
+#SBATCH --gpus=1                
+#SBATCH --time=00:15:00                 
+#SBATCH --partition=debug-gpu               
+#SBATCH --mem=8000                      
 
 
 module load CUDA/12.1                  

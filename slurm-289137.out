@@ -1,0 +1,34 @@
+Operation on cuda
+Using biggan DATASET, Classes in dataset: ['ai', 'nature']
+Additional tokens : 2
+Training...
+Loss epoch 0 -> 1.39
+end...
+Accuracy : 0.5
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.50      1.00      0.67       500
+      nature       1.00      0.00      0.00       500
+
+    accuracy                           0.50      1000
+   macro avg       0.75      0.50      0.33      1000
+weighted avg       0.75      0.50      0.33      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 3
+Training...
+Loss epoch 0 -> 1.13
+end...
+Accuracy : 0.501
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.50      1.00      0.67       500
+      nature       1.00      0.00      0.00       500
+
+    accuracy                           0.50      1000
+   macro avg       0.75      0.50      0.34      1000
+weighted avg       0.75      0.50      0.34      1000
+
+-----------------------------------------------------------------------------------------------------------
