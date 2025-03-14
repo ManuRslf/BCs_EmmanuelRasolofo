@@ -1,0 +1,23 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250314_110934-0mutbe73
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Training on midjourney dataset - Add tokens 2
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/0mutbe73
+Operation on cuda
+Using midjourney DATASET, Classes in dataset: ['ai', 'nature']
+Additional tokens : 2
+Training...
+Loss epoch 0 -> 0.96158
+Loss epoch 1 -> 0.23592
+Loss epoch 2 -> 0.10616
+Loss epoch 3 -> 0.04668
+Loss epoch 4 -> 0.04614
+Loss epoch 5 -> 0.01885
+Loss epoch 6 -> 0.02675
+Loss epoch 7 -> 0.03698
+Loss epoch 8 -> 0.04227
+Loss epoch 9 -> 0.04788
+Loss epoch 10 -> 0.01522

@@ -7,7 +7,7 @@ import torchvision.transforms as transforms
 
 ### COMMON
 MODEL = 'midjourney'
-resizeShape = 32
+resizeShape = 224
 tf = transforms.Compose(
     [
         transforms.Resize((resizeShape,resizeShape)),

@@ -1,0 +1,25 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250314_104948-2ukxmbno
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run Training on midjourney dataset - Add tokens 2
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/2ukxmbno
+Operation on cuda
+Using midjourney DATASET, Classes in dataset: ['ai', 'nature']
+Additional tokens : 2
+Training...
+Loss epoch 0 -> 1.24182
+Loss epoch 1 -> 0.69530
+Loss epoch 2 -> 0.67052
+Loss epoch 3 -> 0.60751
+Loss epoch 4 -> 0.61644
+Loss epoch 5 -> 0.56190
+Loss epoch 6 -> 0.51010
+Loss epoch 7 -> 0.48159
+Loss epoch 8 -> 0.45256
+Loss epoch 9 -> 0.44797
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** STEP 289141.0 ON gpu002 CANCELLED AT 2025-03-14T10:57:04 ***
+slurmstepd: error: *** JOB 289141 ON gpu002 CANCELLED AT 2025-03-14T10:57:04 ***

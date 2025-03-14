@@ -88,6 +88,11 @@ def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional
         }
     )
     
+    wandb.define_metric("epoch")
+    wandb.define_metric("Train/*", step_metric="epoch")
+    wandb.define_metric("Test/*", step_metric="epoch")
+    
+    
     print(f"Additional tokens : {additional_tokens}")
     
     llama_config = LlamaConfig(num_hidden_layers=configurations.NUM_HIDDEN_LAYER_LLMA_lab, hidden_size=configurations.HIDDEN_SIZE_lab)
@@ -122,8 +127,12 @@ def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional
             
         loss_epochs = rloss/counter
         acc_test_set = testing(dataloader_test=dataloader_test, device=device, model=model, verbose=False)
-        
-        wandb.log({"Train Loss" : loss_epochs, "Unknown dataset accuracy" : acc_test_set, "epochs" : e})
+
+        wandb.log({
+            "Train/Loss": loss_epochs,
+            "Test/Accuracy": acc_test_set,
+            "epoch": e
+        })
         
         print(f"Loss epoch {e} -> {(rloss/counter):.5f}")
         rloss = 0.0
@@ -137,7 +146,7 @@ def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional
 def testing(dataloader_test:DataLoader, device, model, verbose:bool=True):
     Abatch_predictions = []
     Abatch_labels = []
-
+    model.eval()
     with torch.no_grad():
         for i, data in enumerate(dataloader_test, 0):
             x, y = data[0].to(device), data[1].to(device)    
