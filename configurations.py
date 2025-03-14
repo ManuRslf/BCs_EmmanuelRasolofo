@@ -20,7 +20,7 @@ tf = transforms.Compose(
 )
 
 
-#### for custom_model.py
+#### for custom_model.py 
 show_info = True
 ADD_TOKENS = 5
 NUM_HIDDEN_LAYER_LLMA = 2
@@ -32,6 +32,7 @@ EPOCHS = 7
 
 ### for utils.py & visu
 save_image = True
+wandb_log = True
 ADD_TOKENS_lab = [i for i in range(2, 11)]
 NUM_HIDDEN_LAYER_LLMA_lab = 2
 HIDDEN_SIZE_lab = 768

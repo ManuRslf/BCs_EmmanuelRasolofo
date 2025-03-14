@@ -64,6 +64,7 @@ def TinygenImage(model:str=None, tf:transforms.Compose=None):
         return ImageFolder(root=path_final_train, transform=tf), ImageFolder(root=path_final_test, transform=tf)
     
 def verbose(show:bool=True):
+    """show information during a single training. Used in custom_model.py"""
     if show:
         print(f"Images are resized {configurations.resizeShape}x{configurations.resizeShape}")
         print(f"Additional token added : {configurations.ADD_TOKENS}")
@@ -72,25 +73,26 @@ def verbose(show:bool=True):
     
 
 ### PLOT1 SHOW ACCURACY IMPROVEMENT/IMPRECISE WITH NUMBER OF TOKEN ADDED
-def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional_tokens:int, device):
-    """return the accuracy with given token"""
-    
+def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional_tokens:int, wandb_log:bool, device):
+    """make a training for a given parameters in configurations.py"""
+    """save : into png file or using wandb"""
     
     #using wandb for plots
-    wandb.init(
-        project="Encoder-DecoderProject",
-        name=f"Training on {configurations.MODEL} dataset - Add tokens {additional_tokens}",
-        config={
-            "learning_rate" : configurations.LR_lab,
-            "architecture" : "dinov2plusllma",
-            "dataset" : f"{configurations.MODEL}",
-            "epochs" : configurations.EPOCHS_lab,
-        }
-    )
-    
-    wandb.define_metric("epoch")
-    wandb.define_metric("Train/*", step_metric="epoch")
-    wandb.define_metric("Test/*", step_metric="epoch")
+    if wandb_log:
+        wandb.init(
+            project="Encoder-DecoderProject",
+            name=f"Training on {configurations.MODEL} dataset - Add tokens {additional_tokens}",
+            config={
+                "learning_rate" : configurations.LR_lab,
+                "architecture" : "dinov2plusllma",
+                "dataset" : f"{configurations.MODEL}",
+                "epochs" : configurations.EPOCHS_lab,
+            }
+        )
+        
+        wandb.define_metric("epoch")
+        wandb.define_metric("Train/*", step_metric="epoch")
+        wandb.define_metric("Test/*", step_metric="epoch")
     
     
     print(f"Additional tokens : {additional_tokens}")
@@ -125,14 +127,15 @@ def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional
             rloss += loss.item()
             counter += 1
             
-        loss_epochs = rloss/counter
-        acc_test_set = testing(dataloader_test=dataloader_test, device=device, model=model, verbose=False)
+        if wandb_log:
+            loss_epochs = rloss/counter
+            acc_test_set = testing(dataloader_test=dataloader_test, device=device, model=model, verbose=False)
 
-        wandb.log({
-            "Train/Loss": loss_epochs,
-            "Test/Accuracy": acc_test_set,
-            "epoch": e
-        })
+            wandb.log({
+                "Train/Loss": loss_epochs,
+                "Test/Accuracy": acc_test_set,
+                "epoch": e
+            })
         
         print(f"Loss epoch {e} -> {(rloss/counter):.5f}")
         rloss = 0.0
@@ -144,6 +147,8 @@ def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional
 
 
 def testing(dataloader_test:DataLoader, device, model, verbose:bool=True):
+    """method for testing a model with a testing dataset"""
+    
     Abatch_predictions = []
     Abatch_labels = []
     model.eval()
@@ -171,7 +176,7 @@ def testing(dataloader_test:DataLoader, device, model, verbose:bool=True):
 
 
 
-def plot_accuracy(save_image:bool=True):
+def plot_accuracy(save_image:bool=True, wandb_log:bool=True):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     #chargement des données
@@ -198,6 +203,7 @@ def plot_accuracy(save_image:bool=True):
         model = training(dataloader_train=dataloader_train, 
                          dataloader_test=dataloader_test,
                          additional_tokens=token, 
+                         wandb_log=wandb_log,                ##### true if save to wandbai
                          device=device)
         
         ACC = testing(dataloader_test=dataloader_test, device=device, model=model)
@@ -224,4 +230,4 @@ def plot_accuracy(save_image:bool=True):
 
 
 if __name__ == '__main__':
-    plot_accuracy(configurations.save_image)
+    plot_accuracy(configurations.save_image, configurations.wandb_log)
