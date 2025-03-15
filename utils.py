@@ -22,13 +22,12 @@ import os
 import time
 import wandb
 
+MODEL_NAME = ['biggan', 'vqdm', 'sdv5', 'wukong', 'adm', 'glide', 'midjourney']
 
 #Return : dataset of the chosen file directory
 def TinygenImage(model:str=None, tf:transforms.Compose=None):
      
     '''model : none -> full dataset'''
-    MODEL_NAME = ['biggan', 'vqdm', 'sdv5', 'wukong', 'adm', 'glide', 'midjourney']
-    
     path_to_data = [r'DATA\tinygenimage\imagenet_ai_0419_biggan', 
                     r'DATA\tinygenimage\imagenet_ai_0419_vqdm', 
                     r'DATA\tinygenimage\imagenet_ai_0424_sdv5',
@@ -188,11 +187,11 @@ def testing(dataloader_test:DataLoader, device, model, verbose:bool=True):
 
 
 
-def plot_accuracy(save_image:bool=True, wandb_log:bool=True, decreasing_lr:bool=True):
+def plot_accuracy(model_d:str, save_image:bool=True, wandb_log:bool=True, decreasing_lr:bool=True):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     #chargement des données
-    dataset_train, dataset_test = TinygenImage(configurations.MODEL, tf=configurations.tf)
+    dataset_train, dataset_test = TinygenImage(model_d, tf=configurations.tf)
     
     
     print(f"Operation on {device}")
@@ -245,6 +244,9 @@ def plot_accuracy(save_image:bool=True, wandb_log:bool=True, decreasing_lr:bool=
 
 
 if __name__ == '__main__':
-    plot_accuracy(configurations.save_image, 
-                  configurations.wandb_log,
-                  configurations.decreasing_LR_lab)
+    
+    for model in MODEL_NAME:
+        plot_accuracy(model,
+                      configurations.save_image, 
+                      configurations.wandb_log,
+                      configurations.decreasing_LR_lab)
