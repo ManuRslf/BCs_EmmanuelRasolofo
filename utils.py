@@ -13,6 +13,8 @@ from torch import nn
 from utils import *
 import configurations
 from torch.optim import Adam
+from torch.optim import AdamW
+from torch.optim.lr_scheduler import CosineAnnealingLR
 from transformers import LlamaConfig
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
@@ -73,17 +75,17 @@ def verbose(show:bool=True):
     
 
 ### PLOT1 SHOW ACCURACY IMPROVEMENT/IMPRECISE WITH NUMBER OF TOKEN ADDED
-def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional_tokens:int, wandb_log:bool, device):
-    """make a training for a given parameters in configurations.py"""
+def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional_tokens:int, wandb_log:bool, decreasing_lr:bool, device):
+    """do a training for a given parameters in configurations.py"""
     """save : into png file or using wandb"""
     
     #using wandb for plots
     if wandb_log:
+        timestamp = time.strftime("%Y%m%d-%H%M%S")  
         wandb.init(
             project="Encoder-DecoderProject",
-            name=f"Training on {configurations.MODEL} dataset - Add tokens {additional_tokens}",
+            name=f"DS {configurations.MODEL} dataset - AT {additional_tokens} ({timestamp})",
             config={
-                "learning_rate" : configurations.LR_lab,
                 "architecture" : "dinov2plusllma",
                 "dataset" : f"{configurations.MODEL}",
                 "epochs" : configurations.EPOCHS_lab,
@@ -102,9 +104,14 @@ def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional
     model = custom_model.Custom_Classifier(llama_config, additional_token=additional_tokens).to(device)
 
     loss_fn = nn.CrossEntropyLoss()
-    optim = Adam(model.parameters(), lr=configurations.LR_lab)
+    if decreasing_lr:
+        optim = Adam(model.parameters(), lr=configurations.LR_lab)
+    else:
+        #learning rate decrease  during training
+        optim = AdamW(model.parameters(), lr=configurations.LR_lab)
+        scheduler = CosineAnnealingLR(optim, T_max=configurations.LR_lab * len(dataloader_train))
 
-    #Training and maybe evaluate the model on the test set for each epochs
+    #Training and maybe evaluate the model on the test set for each epochs (expermiment)
     print("Training...")
     
     for e in range(configurations.EPOCHS_lab):
@@ -123,6 +130,10 @@ def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional
             loss.backward()
             
             optim.step()
+            
+            if decreasing_lr: 
+                # decreasing lr
+                scheduler.step()
             
             rloss += loss.item()
             counter += 1
@@ -176,7 +187,7 @@ def testing(dataloader_test:DataLoader, device, model, verbose:bool=True):
 
 
 
-def plot_accuracy(save_image:bool=True, wandb_log:bool=True):
+def plot_accuracy(save_image:bool=True, wandb_log:bool=True, decreasing_lr:bool=True):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     #chargement des données
@@ -204,6 +215,7 @@ def plot_accuracy(save_image:bool=True, wandb_log:bool=True):
                          dataloader_test=dataloader_test,
                          additional_tokens=token, 
                          wandb_log=wandb_log,                ##### true if save to wandbai
+                         decreasing_lr=decreasing_lr,
                          device=device)
         
         ACC = testing(dataloader_test=dataloader_test, device=device, model=model)
@@ -230,4 +242,6 @@ def plot_accuracy(save_image:bool=True, wandb_log:bool=True):
 
 
 if __name__ == '__main__':
-    plot_accuracy(configurations.save_image, configurations.wandb_log)
+    plot_accuracy(configurations.save_image, 
+                  configurations.wandb_log,
+                  configurations.decreasing_LR)

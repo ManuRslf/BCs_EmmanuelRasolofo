@@ -7,32 +7,33 @@ import torchvision.transforms as transforms
 debug = True
 
 
+### COMMON
+MODEL = 'midjourney'
+resizeShape = 244
+tf = transforms.Compose(
+    [
+        transforms.Resize((resizeShape,resizeShape)),
+        transforms.ToTensor(),
+        transforms.Normalize(
+            mean=[0.5, 0.5, 0.5],
+            std=[0.5, 0.5, 0.5]
+        )
+    ]
+)
+
+
+#### for custom_model.py 
+show_info = True
+ADD_TOKENS = 5
+NUM_HIDDEN_LAYER_LLMA = 2
+HIDDEN_SIZE = 768
+BATCH_SIZE = 32
+LR = 0.03
+EPOCHS = 7
+decreasing_LR = True
+
 if debug:
-  ### COMMON
-  MODEL = 'midjourney'
-  resizeShape = 32
-  tf = transforms.Compose(
-      [
-          transforms.Resize((resizeShape,resizeShape)),
-          transforms.ToTensor(),
-          transforms.Normalize(
-              mean=[0.5, 0.5, 0.5],
-              std=[0.5, 0.5, 0.5]
-          )
-      ]
-  )
-  
-  
-  #### for custom_model.py 
-  show_info = True
-  ADD_TOKENS = 5
-  NUM_HIDDEN_LAYER_LLMA = 2
-  HIDDEN_SIZE = 768
-  BATCH_SIZE = 32
-  LR = 0.03
-  EPOCHS = 7
-  
-  
+
   ### for utils.py & visu
   save_image = False
   wandb_log = False
@@ -42,34 +43,9 @@ if debug:
   BATCH_SIZE_lab = 128
   LR_lab = 1e-3
   EPOCHS_lab = 1
+  decreasing_LR_lab = True
 
 else:
-
-  ### COMMON
-  MODEL = 'midjourney'
-  resizeShape = 244
-  tf = transforms.Compose(
-      [
-          transforms.Resize((resizeShape,resizeShape)),
-          transforms.ToTensor(),
-          transforms.Normalize(
-              mean=[0.5, 0.5, 0.5],
-              std=[0.5, 0.5, 0.5]
-          )
-      ]
-  )
-  
-  
-  #### for custom_model.py 
-  show_info = True
-  ADD_TOKENS = 5
-  NUM_HIDDEN_LAYER_LLMA = 2
-  HIDDEN_SIZE = 768
-  BATCH_SIZE = 32
-  LR = 0.03
-  EPOCHS = 7
-  
-  
   ### for utils.py & visu
   save_image = True
   wandb_log = True
@@ -79,3 +55,4 @@ else:
   BATCH_SIZE_lab = 128
   LR_lab = 1e-3
   EPOCHS_lab = 40
+  decreasing_LR_lab = True
