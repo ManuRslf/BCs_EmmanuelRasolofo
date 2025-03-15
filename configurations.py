@@ -4,12 +4,12 @@ import torchvision.transforms as transforms
     all parameters here
 '''
 
-debug = True
+debug = False
 
 
 ### COMMON
-MODEL = 'midjourney'
-resizeShape = 244
+MODEL = None
+resizeShape = 224
 tf = transforms.Compose(
     [
         transforms.Resize((resizeShape,resizeShape)),
@@ -53,6 +53,6 @@ else:
   NUM_HIDDEN_LAYER_LLMA_lab = 2
   HIDDEN_SIZE_lab = 768
   BATCH_SIZE_lab = 128
-  LR_lab = 1e-3
+  LR_lab = 4e-4
   EPOCHS_lab = 40
   decreasing_LR_lab = True

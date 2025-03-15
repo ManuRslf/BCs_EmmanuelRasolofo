@@ -75,16 +75,15 @@ def verbose(show:bool=True):
     
 
 ### PLOT1 SHOW ACCURACY IMPROVEMENT/IMPRECISE WITH NUMBER OF TOKEN ADDED
-def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional_tokens:int, wandb_log:bool, decreasing_lr:bool, device):
+def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional_tokens:int, wandb_log:bool, decreasing_lr:bool, time_stamp_wandb:str, device):
     """do a training for a given parameters in configurations.py"""
     """save : into png file or using wandb"""
     
     #using wandb for plots
     if wandb_log:
-        timestamp = time.strftime("%Y%m%d-%H%M%S")  
         wandb.init(
             project="Encoder-DecoderProject",
-            name=f"DS {configurations.MODEL} dataset - AT {additional_tokens} ({timestamp})",
+            name=f"DS {configurations.MODEL} dataset - AT {additional_tokens} ({time_stamp_wandb})",
             config={
                 "architecture" : "dinov2plusllma",
                 "dataset" : f"{configurations.MODEL}",
@@ -104,12 +103,14 @@ def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional
     model = custom_model.Custom_Classifier(llama_config, additional_token=additional_tokens).to(device)
 
     loss_fn = nn.CrossEntropyLoss()
+    
     if decreasing_lr:
-        optim = Adam(model.parameters(), lr=configurations.LR_lab)
-    else:
         #learning rate decrease  during training
         optim = AdamW(model.parameters(), lr=configurations.LR_lab)
-        scheduler = CosineAnnealingLR(optim, T_max=configurations.LR_lab * len(dataloader_train))
+        scheduler = CosineAnnealingLR(optim, T_max=configurations.EPOCHS_lab * len(dataloader_train))
+
+    else:
+        optim = Adam(model.parameters(), lr=configurations.LR_lab)
 
     #Training and maybe evaluate the model on the test set for each epochs (expermiment)
     print("Training...")
@@ -208,7 +209,8 @@ def plot_accuracy(save_image:bool=True, wandb_log:bool=True, decreasing_lr:bool=
     dataloader_test = DataLoader(dataset_test,
                                  batch_size=configurations.BATCH_SIZE_lab,
                                  shuffle=False)
-    
+    timestamp = time.strftime("%Y%m%d-%H%M%S")  
+
     ACCURACY_TAB = []
     for token in configurations.ADD_TOKENS_lab:
         model = training(dataloader_train=dataloader_train, 
@@ -216,6 +218,7 @@ def plot_accuracy(save_image:bool=True, wandb_log:bool=True, decreasing_lr:bool=
                          additional_tokens=token, 
                          wandb_log=wandb_log,                ##### true if save to wandbai
                          decreasing_lr=decreasing_lr,
+                         time_stamp_wandb=timestamp,
                          device=device)
         
         ACC = testing(dataloader_test=dataloader_test, device=device, model=model)
@@ -244,4 +247,4 @@ def plot_accuracy(save_image:bool=True, wandb_log:bool=True, decreasing_lr:bool=
 if __name__ == '__main__':
     plot_accuracy(configurations.save_image, 
                   configurations.wandb_log,
-                  configurations.decreasing_LR)
+                  configurations.decreasing_LR_lab)
