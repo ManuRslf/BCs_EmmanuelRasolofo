@@ -74,7 +74,7 @@ def verbose(show:bool=True):
     
 
 ### PLOT1 SHOW ACCURACY IMPROVEMENT/IMPRECISE WITH NUMBER OF TOKEN ADDED
-def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional_tokens:int, wandb_log:bool, decreasing_lr:bool, time_stamp_wandb:str, device):
+def training(model_d:str, dataloader_train:DataLoader, dataloader_test:DataLoader, additional_tokens:int, wandb_log:bool, decreasing_lr:bool, time_stamp_wandb:str, device):
     """do a training for a given parameters in configurations.py"""
     """save : into png file or using wandb"""
     
@@ -82,7 +82,7 @@ def training(dataloader_train:DataLoader, dataloader_test:DataLoader, additional
     if wandb_log:
         wandb.init(
             project="Encoder-DecoderProject",
-            name=f"DS {configurations.MODEL} dataset - AT {additional_tokens} ({time_stamp_wandb})",
+            name=f"DS {model_d} dataset - AT {additional_tokens} ({time_stamp_wandb})",
             config={
                 "architecture" : "dinov2plusllma",
                 "dataset" : f"{configurations.MODEL}",
@@ -195,7 +195,7 @@ def plot_accuracy(model_d:str, save_image:bool=True, wandb_log:bool=True, decrea
     
     
     print(f"Operation on {device}")
-    print(f"Using {configurations.MODEL} DATASET, Classes in dataset: {dataset_train.classes}")
+    print(f"Using {model_d} DATASET, Classes in dataset: {dataset_train.classes}")
     
     
     dataloader_train = DataLoader(dataset_train, 
@@ -212,7 +212,8 @@ def plot_accuracy(model_d:str, save_image:bool=True, wandb_log:bool=True, decrea
 
     ACCURACY_TAB = []
     for token in configurations.ADD_TOKENS_lab:
-        model = training(dataloader_train=dataloader_train, 
+        model = training(model_d,
+                         dataloader_train=dataloader_train, 
                          dataloader_test=dataloader_test,
                          additional_tokens=token, 
                          wandb_log=wandb_log,                ##### true if save to wandbai
