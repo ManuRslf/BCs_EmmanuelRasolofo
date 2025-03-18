@@ -1,0 +1,75 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250318_082104-jfslb15w
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run DS midjourney dataset - AT 2 (20250318-082104)
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/jfslb15w
+Operation on cuda
+Using midjourney DATASET, Classes in dataset: ['ai', 'nature']
+Additional tokens : 2
+Training...
+Loss epoch 0 -> 1.01503
+Loss epoch 1 -> 0.32884
+Loss epoch 2 -> 0.11346
+Loss epoch 3 -> 0.02342
+Loss epoch 4 -> 0.01230
+Loss epoch 5 -> 0.00671
+Loss epoch 6 -> 0.00386
+Loss epoch 7 -> 0.00712
+Loss epoch 8 -> 0.02103
+Loss epoch 9 -> 0.02931
+Loss epoch 10 -> 0.00294
+Loss epoch 11 -> 0.00232
+Loss epoch 12 -> 0.00085
+Loss epoch 13 -> 0.00028
+Loss epoch 14 -> 0.00012
+Loss epoch 15 -> 0.00001
+Loss epoch 16 -> 0.00001
+Loss epoch 17 -> 0.00001
+Loss epoch 18 -> 0.00001
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00000
+Loss epoch 28 -> 0.00000
+Loss epoch 29 -> 0.00000
+Loss epoch 30 -> 0.00000
+Loss epoch 31 -> 0.00000
+Loss epoch 32 -> 0.00000
+Loss epoch 33 -> 0.00000
+Loss epoch 34 -> 0.00000
+Loss epoch 35 -> 0.00000
+Loss epoch 36 -> 0.00000
+Loss epoch 37 -> 0.00000
+Loss epoch 38 -> 0.00000
+Loss epoch 39 -> 0.00000
+Loss epoch 40 -> 0.00000
+Loss epoch 41 -> 0.00000
+Loss epoch 42 -> 0.00000
+Loss epoch 43 -> 0.00000
+Loss epoch 44 -> 0.00000
+Loss epoch 45 -> 0.00000
+Loss epoch 46 -> 0.00000
+Loss epoch 47 -> 0.00000
+Loss epoch 48 -> 0.00000
+Loss epoch 49 -> 0.00000
+Loss epoch 50 -> 0.00000
+Loss epoch 51 -> 0.00000
+Loss epoch 52 -> 0.00000
+Loss epoch 53 -> 0.00000
+Loss epoch 54 -> 0.00000
+Loss epoch 55 -> 0.00000
+Loss epoch 56 -> 0.00000
+Loss epoch 57 -> 0.00000
+Loss epoch 58 -> 0.00000
+Loss epoch 59 -> 0.00000
+Loss epoch 60 -> 0.00000
+Loss epoch 61 -> 0.00000
+Loss epoch 62 -> 0.00000

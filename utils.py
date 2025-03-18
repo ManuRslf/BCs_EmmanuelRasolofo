@@ -245,9 +245,19 @@ def plot_accuracy(model_d:str, save_image:bool=True, wandb_log:bool=True, decrea
 
 
 if __name__ == '__main__':
+    plot_accuracy(configurations.MODEL,
+                  configurations.save_image, 
+                  configurations.wandb_log,
+                  configurations.decreasing_LR_lab)
     
+    '''
     for model in MODEL_NAME:
         plot_accuracy(model,
                       configurations.save_image, 
                       configurations.wandb_log,
                       configurations.decreasing_LR_lab)
+    '''
+                      
+                      
+                      
+                      

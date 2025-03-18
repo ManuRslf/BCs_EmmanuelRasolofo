@@ -20,6 +20,7 @@ class Custom_Classifier(nn.Module):
         #instanciate a pretrained dinov2 model
         self.DINOV2_MODEL = AutoModel.from_pretrained(dinov2_name)
         self.DINOV2_MODEL.requires_grad_(False)
+        self.DINOV2_MODEL.eval()
         
         self.LLMA = LlamaForCausalLM(llma_config)
         self.LLMA.lm_head = nn.Identity()
@@ -31,7 +32,10 @@ class Custom_Classifier(nn.Module):
     def forward(self, x):
         
         #tokenize through dinov2 model
-        x = self.DINOV2_MODEL(x)['last_hidden_state']
+        
+        ## quand gradient dinov2 bloqué
+        with torch.no_grad():
+          x = self.DINOV2_MODEL(x)['last_hidden_state']
         
         if configurations.HIDDEN_SIZE != 768:
             x = self.proj(x)
