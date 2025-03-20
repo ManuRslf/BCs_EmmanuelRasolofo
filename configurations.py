@@ -54,5 +54,5 @@ else:
   HIDDEN_SIZE_lab = 768
   BATCH_SIZE_lab = 128
   LR_lab = 4e-4
-  EPOCHS_lab = 100
+  EPOCHS_lab = 40
   decreasing_LR_lab = True
