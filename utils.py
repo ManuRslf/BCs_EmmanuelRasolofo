@@ -77,24 +77,7 @@ def verbose(show:bool=True):
 def training(model_d:str, dataloader_train:DataLoader, dataloader_test:DataLoader, additional_tokens:int, wandb_log:bool, decreasing_lr:bool, time_stamp_wandb:str, device):
     """do a training for a given parameters in configurations.py"""
     """save : into png file or using wandb"""
-    
-    #using wandb for plots
-    if wandb_log:
-        wandb.init(
-            project="Encoder-DecoderProject",
-            name=f"DS {model_d} - AT {additional_tokens} ({time_stamp_wandb})",
-            config={
-                "architecture" : "dinov2plusllma",
-                "dataset" : f"{configurations.MODEL}",
-                "epochs" : configurations.EPOCHS_lab,
-            }
-        )
         
-        wandb.define_metric("epoch")
-        wandb.define_metric("Train/*", step_metric="epoch")
-        wandb.define_metric("Test/*", step_metric="epoch")
-    
-    
     print(f"Additional tokens : {additional_tokens}")
     
     llama_config = LlamaConfig(num_hidden_layers=configurations.NUM_HIDDEN_LAYER_LLMA_lab, hidden_size=configurations.HIDDEN_SIZE_lab)
@@ -152,7 +135,6 @@ def training(model_d:str, dataloader_train:DataLoader, dataloader_test:DataLoade
         rloss = 0.0
         
     print("end...")
-    wandb.finish()
     
     return model
 
@@ -226,7 +208,9 @@ def plot_accuracy(model_d:str, save_image:bool=True, wandb_log:bool=True, decrea
         
         wandb.define_metric("tokens")
         wandb.define_metric("Accuracy/*", step_metric="tokens")
-
+        wandb.define_metric("epoch")
+        wandb.define_metric("Train/*", step_metric="epoch")
+        wandb.define_metric("Test/*", step_metric="epoch")
     
     
     for token in configurations.ADD_TOKENS_lab:

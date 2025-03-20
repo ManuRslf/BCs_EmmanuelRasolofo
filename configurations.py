@@ -50,7 +50,7 @@ else:
   save_image = True
   wandb_log = True
   ADD_TOKENS_lab = [0, 10, 25, 50]
-  NUM_HIDDEN_LAYER_LLMA_lab = 2
+  NUM_HIDDEN_LAYER_LLMA_lab = 1
   HIDDEN_SIZE_lab = 768
   BATCH_SIZE_lab = 128
   LR_lab = 4e-4
