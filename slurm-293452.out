@@ -1,0 +1,5 @@
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/utils.py", line 247
+    model_d = 
+              ^
+SyntaxError: invalid syntax
+srun: error: gpu002: task 0: Exited with exit code 1

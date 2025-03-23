@@ -1,0 +1,1309 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250322_214353-wvsrn50v
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ACC_TOK biggan dataset 20250322-214352
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/wvsrn50v
+Operation on cuda
+Using biggan DATASET, Classes in dataset: ['ai', 'nature']
+Additional tokens : 0
+Training...
+Loss epoch 0 -> 0.15452
+Loss epoch 1 -> 0.01429
+Loss epoch 2 -> 0.00457
+Loss epoch 3 -> 0.00098
+Loss epoch 4 -> 0.00059
+Loss epoch 5 -> 0.00006
+Loss epoch 6 -> 0.00003
+Loss epoch 7 -> 0.00002
+Loss epoch 8 -> 0.00002
+Loss epoch 9 -> 0.00002
+Loss epoch 10 -> 0.00002
+Loss epoch 11 -> 0.00002
+Loss epoch 12 -> 0.00001
+Loss epoch 13 -> 0.00001
+Loss epoch 14 -> 0.00001
+Loss epoch 15 -> 0.00001
+Loss epoch 16 -> 0.00001
+Loss epoch 17 -> 0.00001
+Loss epoch 18 -> 0.00001
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.986
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.99      0.98      0.99       500
+      nature       0.98      0.99      0.99       500
+
+    accuracy                           0.99      1000
+   macro avg       0.99      0.99      0.99      1000
+weighted avg       0.99      0.99      0.99      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 10
+Training...
+Loss epoch 0 -> 0.79679
+Loss epoch 1 -> 0.03134
+Loss epoch 2 -> 0.00744
+Loss epoch 3 -> 0.00143
+Loss epoch 4 -> 0.00020
+Loss epoch 5 -> 0.00004
+Loss epoch 6 -> 0.00003
+Loss epoch 7 -> 0.00002
+Loss epoch 8 -> 0.00002
+Loss epoch 9 -> 0.00002
+Loss epoch 10 -> 0.00002
+Loss epoch 11 -> 0.00001
+Loss epoch 12 -> 0.00001
+Loss epoch 13 -> 0.00001
+Loss epoch 14 -> 0.00001
+Loss epoch 15 -> 0.00001
+Loss epoch 16 -> 0.00001
+Loss epoch 17 -> 0.00001
+Loss epoch 18 -> 0.00001
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.992
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       1.00      0.99      0.99       500
+      nature       0.99      1.00      0.99       500
+
+    accuracy                           0.99      1000
+   macro avg       0.99      0.99      0.99      1000
+weighted avg       0.99      0.99      0.99      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 30
+Training...
+Loss epoch 0 -> 0.96760
+Loss epoch 1 -> 0.04183
+Loss epoch 2 -> 0.00601
+Loss epoch 3 -> 0.00073
+Loss epoch 4 -> 0.00033
+Loss epoch 5 -> 0.00014
+Loss epoch 6 -> 0.00004
+Loss epoch 7 -> 0.00003
+Loss epoch 8 -> 0.00003
+Loss epoch 9 -> 0.00002
+Loss epoch 10 -> 0.00002
+Loss epoch 11 -> 0.00002
+Loss epoch 12 -> 0.00002
+Loss epoch 13 -> 0.00001
+Loss epoch 14 -> 0.00001
+Loss epoch 15 -> 0.00001
+Loss epoch 16 -> 0.00001
+Loss epoch 17 -> 0.00001
+Loss epoch 18 -> 0.00001
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.992
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       1.00      0.99      0.99       500
+      nature       0.99      1.00      0.99       500
+
+    accuracy                           0.99      1000
+   macro avg       0.99      0.99      0.99      1000
+weighted avg       0.99      0.99      0.99      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 50
+Training...
+Loss epoch 0 -> 0.80724
+Loss epoch 1 -> 0.02893
+Loss epoch 2 -> 0.00551
+Loss epoch 3 -> 0.00041
+Loss epoch 4 -> 0.00007
+Loss epoch 5 -> 0.00004
+Loss epoch 6 -> 0.00003
+Loss epoch 7 -> 0.00003
+Loss epoch 8 -> 0.00002
+Loss epoch 9 -> 0.00002
+Loss epoch 10 -> 0.00002
+Loss epoch 11 -> 0.00001
+Loss epoch 12 -> 0.00001
+Loss epoch 13 -> 0.00001
+Loss epoch 14 -> 0.00001
+Loss epoch 15 -> 0.00001
+Loss epoch 16 -> 0.00001
+Loss epoch 17 -> 0.00001
+Loss epoch 18 -> 0.00001
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.99
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       1.00      0.98      0.99       500
+      nature       0.98      1.00      0.99       500
+
+    accuracy                           0.99      1000
+   macro avg       0.99      0.99      0.99      1000
+weighted avg       0.99      0.99      0.99      1000
+
+-----------------------------------------------------------------------------------------------------------
+Operation on cuda
+Using vqdm DATASET, Classes in dataset: ['ai', 'nature']
+Additional tokens : 0
+Training...
+Loss epoch 0 -> 0.24354
+Loss epoch 1 -> 0.03655
+Loss epoch 2 -> 0.00888
+Loss epoch 3 -> 0.00430
+Loss epoch 4 -> 0.00081
+Loss epoch 5 -> 0.00020
+Loss epoch 6 -> 0.00008
+Loss epoch 7 -> 0.00007
+Loss epoch 8 -> 0.00006
+Loss epoch 9 -> 0.00005
+Loss epoch 10 -> 0.00004
+Loss epoch 11 -> 0.00004
+Loss epoch 12 -> 0.00004
+Loss epoch 13 -> 0.00003
+Loss epoch 14 -> 0.00003
+Loss epoch 15 -> 0.00003
+Loss epoch 16 -> 0.00003
+Loss epoch 17 -> 0.00003
+Loss epoch 18 -> 0.00003
+Loss epoch 19 -> 0.00003
+Loss epoch 20 -> 0.00002
+Loss epoch 21 -> 0.00002
+Loss epoch 22 -> 0.00002
+Loss epoch 23 -> 0.00002
+Loss epoch 24 -> 0.00002
+Loss epoch 25 -> 0.00002
+Loss epoch 26 -> 0.00002
+Loss epoch 27 -> 0.00002
+Loss epoch 28 -> 0.00002
+Loss epoch 29 -> 0.00002
+end...
+Accuracy : 0.98
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.98      0.98      0.98       500
+      nature       0.98      0.98      0.98       500
+
+    accuracy                           0.98      1000
+   macro avg       0.98      0.98      0.98      1000
+weighted avg       0.98      0.98      0.98      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 10
+Training...
+Loss epoch 0 -> 0.83550
+Loss epoch 1 -> 0.07756
+Loss epoch 2 -> 0.01492
+Loss epoch 3 -> 0.00331
+Loss epoch 4 -> 0.00085
+Loss epoch 5 -> 0.00077
+Loss epoch 6 -> 0.00121
+Loss epoch 7 -> 0.00012
+Loss epoch 8 -> 0.00004
+Loss epoch 9 -> 0.00003
+Loss epoch 10 -> 0.00002
+Loss epoch 11 -> 0.00002
+Loss epoch 12 -> 0.00002
+Loss epoch 13 -> 0.00002
+Loss epoch 14 -> 0.00002
+Loss epoch 15 -> 0.00001
+Loss epoch 16 -> 0.00001
+Loss epoch 17 -> 0.00001
+Loss epoch 18 -> 0.00001
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.98
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.98      0.98      0.98       500
+      nature       0.98      0.98      0.98       500
+
+    accuracy                           0.98      1000
+   macro avg       0.98      0.98      0.98      1000
+weighted avg       0.98      0.98      0.98      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 30
+Training...
+Loss epoch 0 -> 0.76985
+Loss epoch 1 -> 0.08130
+Loss epoch 2 -> 0.01982
+Loss epoch 3 -> 0.00327
+Loss epoch 4 -> 0.00291
+Loss epoch 5 -> 0.00127
+Loss epoch 6 -> 0.00030
+Loss epoch 7 -> 0.00005
+Loss epoch 8 -> 0.00002
+Loss epoch 9 -> 0.00002
+Loss epoch 10 -> 0.00002
+Loss epoch 11 -> 0.00002
+Loss epoch 12 -> 0.00001
+Loss epoch 13 -> 0.00001
+Loss epoch 14 -> 0.00001
+Loss epoch 15 -> 0.00001
+Loss epoch 16 -> 0.00001
+Loss epoch 17 -> 0.00001
+Loss epoch 18 -> 0.00001
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.988
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.99      0.99      0.99       500
+      nature       0.99      0.99      0.99       500
+
+    accuracy                           0.99      1000
+   macro avg       0.99      0.99      0.99      1000
+weighted avg       0.99      0.99      0.99      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 50
+Training...
+Loss epoch 0 -> 0.66573
+Loss epoch 1 -> 0.07748
+Loss epoch 2 -> 0.01937
+Loss epoch 3 -> 0.00441
+Loss epoch 4 -> 0.00100
+Loss epoch 5 -> 0.00157
+Loss epoch 6 -> 0.00437
+Loss epoch 7 -> 0.00170
+Loss epoch 8 -> 0.00379
+Loss epoch 9 -> 0.00667
+Loss epoch 10 -> 0.00558
+Loss epoch 11 -> 0.00141
+Loss epoch 12 -> 0.00007
+Loss epoch 13 -> 0.00002
+Loss epoch 14 -> 0.00002
+Loss epoch 15 -> 0.00002
+Loss epoch 16 -> 0.00002
+Loss epoch 17 -> 0.00001
+Loss epoch 18 -> 0.00001
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.981
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.97      0.99      0.98       500
+      nature       0.99      0.97      0.98       500
+
+    accuracy                           0.98      1000
+   macro avg       0.98      0.98      0.98      1000
+weighted avg       0.98      0.98      0.98      1000
+
+-----------------------------------------------------------------------------------------------------------
+Operation on cuda
+Using sdv5 DATASET, Classes in dataset: ['ai', 'nature']
+Additional tokens : 0
+Training...
+Loss epoch 0 -> 0.43974
+Loss epoch 1 -> 0.09090
+Loss epoch 2 -> 0.02529
+Loss epoch 3 -> 0.01576
+Loss epoch 4 -> 0.02754
+Loss epoch 5 -> 0.00701
+Loss epoch 6 -> 0.00319
+Loss epoch 7 -> 0.00055
+Loss epoch 8 -> 0.00019
+Loss epoch 9 -> 0.00015
+Loss epoch 10 -> 0.00013
+Loss epoch 11 -> 0.00011
+Loss epoch 12 -> 0.00010
+Loss epoch 13 -> 0.00009
+Loss epoch 14 -> 0.00008
+Loss epoch 15 -> 0.00008
+Loss epoch 16 -> 0.00007
+Loss epoch 17 -> 0.00007
+Loss epoch 18 -> 0.00007
+Loss epoch 19 -> 0.00006
+Loss epoch 20 -> 0.00006
+Loss epoch 21 -> 0.00006
+Loss epoch 22 -> 0.00006
+Loss epoch 23 -> 0.00006
+Loss epoch 24 -> 0.00006
+Loss epoch 25 -> 0.00006
+Loss epoch 26 -> 0.00006
+Loss epoch 27 -> 0.00006
+Loss epoch 28 -> 0.00006
+Loss epoch 29 -> 0.00006
+end...
+Accuracy : 0.881
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.87      0.90      0.88       500
+      nature       0.89      0.87      0.88       500
+
+    accuracy                           0.88      1000
+   macro avg       0.88      0.88      0.88      1000
+weighted avg       0.88      0.88      0.88      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 10
+Training...
+Loss epoch 0 -> 0.91610
+Loss epoch 1 -> 0.24965
+Loss epoch 2 -> 0.08191
+Loss epoch 3 -> 0.01272
+Loss epoch 4 -> 0.00120
+Loss epoch 5 -> 0.02059
+Loss epoch 6 -> 0.01767
+Loss epoch 7 -> 0.00182
+Loss epoch 8 -> 0.00023
+Loss epoch 9 -> 0.00010
+Loss epoch 10 -> 0.00002
+Loss epoch 11 -> 0.00002
+Loss epoch 12 -> 0.00002
+Loss epoch 13 -> 0.00002
+Loss epoch 14 -> 0.00001
+Loss epoch 15 -> 0.00001
+Loss epoch 16 -> 0.00001
+Loss epoch 17 -> 0.00001
+Loss epoch 18 -> 0.00001
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.904
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.90      0.91      0.90       500
+      nature       0.91      0.90      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 30
+Training...
+Loss epoch 0 -> 1.02978
+Loss epoch 1 -> 0.28699
+Loss epoch 2 -> 0.11286
+Loss epoch 3 -> 0.02238
+Loss epoch 4 -> 0.00719
+Loss epoch 5 -> 0.00591
+Loss epoch 6 -> 0.01442
+Loss epoch 7 -> 0.01509
+Loss epoch 8 -> 0.00794
+Loss epoch 9 -> 0.00218
+Loss epoch 10 -> 0.00017
+Loss epoch 11 -> 0.00005
+Loss epoch 12 -> 0.00003
+Loss epoch 13 -> 0.00003
+Loss epoch 14 -> 0.00002
+Loss epoch 15 -> 0.00002
+Loss epoch 16 -> 0.00002
+Loss epoch 17 -> 0.00002
+Loss epoch 18 -> 0.00002
+Loss epoch 19 -> 0.00002
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.907
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.90      0.92      0.91       500
+      nature       0.92      0.89      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 50
+Training...
+Loss epoch 0 -> 0.92048
+Loss epoch 1 -> 0.24827
+Loss epoch 2 -> 0.08200
+Loss epoch 3 -> 0.02205
+Loss epoch 4 -> 0.00798
+Loss epoch 5 -> 0.01413
+Loss epoch 6 -> 0.01737
+Loss epoch 7 -> 0.01194
+Loss epoch 8 -> 0.00439
+Loss epoch 9 -> 0.00101
+Loss epoch 10 -> 0.00135
+Loss epoch 11 -> 0.00326
+Loss epoch 12 -> 0.00077
+Loss epoch 13 -> 0.00004
+Loss epoch 14 -> 0.00003
+Loss epoch 15 -> 0.00002
+Loss epoch 16 -> 0.00002
+Loss epoch 17 -> 0.00002
+Loss epoch 18 -> 0.00002
+Loss epoch 19 -> 0.00002
+Loss epoch 20 -> 0.00002
+Loss epoch 21 -> 0.00002
+Loss epoch 22 -> 0.00002
+Loss epoch 23 -> 0.00002
+Loss epoch 24 -> 0.00002
+Loss epoch 25 -> 0.00002
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.9
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.90      0.90      0.90       500
+      nature       0.90      0.90      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+-----------------------------------------------------------------------------------------------------------
+Operation on cuda
+Using wukong DATASET, Classes in dataset: ['ai', 'nature']
+Additional tokens : 0
+Training...
+Loss epoch 0 -> 0.40487
+Loss epoch 1 -> 0.09280
+Loss epoch 2 -> 0.02650
+Loss epoch 3 -> 0.01301
+Loss epoch 4 -> 0.01169
+Loss epoch 5 -> 0.02238
+Loss epoch 6 -> 0.01044
+Loss epoch 7 -> 0.01774
+Loss epoch 8 -> 0.01474
+Loss epoch 9 -> 0.00539
+Loss epoch 10 -> 0.00056
+Loss epoch 11 -> 0.00020
+Loss epoch 12 -> 0.00013
+Loss epoch 13 -> 0.00012
+Loss epoch 14 -> 0.00010
+Loss epoch 15 -> 0.00009
+Loss epoch 16 -> 0.00008
+Loss epoch 17 -> 0.00008
+Loss epoch 18 -> 0.00007
+Loss epoch 19 -> 0.00007
+Loss epoch 20 -> 0.00007
+Loss epoch 21 -> 0.00007
+Loss epoch 22 -> 0.00007
+Loss epoch 23 -> 0.00006
+Loss epoch 24 -> 0.00006
+Loss epoch 25 -> 0.00006
+Loss epoch 26 -> 0.00006
+Loss epoch 27 -> 0.00006
+Loss epoch 28 -> 0.00006
+Loss epoch 29 -> 0.00006
+end...
+Accuracy : 0.896
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.89      0.90      0.90       500
+      nature       0.90      0.89      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 10
+Training...
+Loss epoch 0 -> 1.24099
+Loss epoch 1 -> 0.32964
+Loss epoch 2 -> 0.13411
+Loss epoch 3 -> 0.03508
+Loss epoch 4 -> 0.00609
+Loss epoch 5 -> 0.00738
+Loss epoch 6 -> 0.00826
+Loss epoch 7 -> 0.00334
+Loss epoch 8 -> 0.00099
+Loss epoch 9 -> 0.00115
+Loss epoch 10 -> 0.00113
+Loss epoch 11 -> 0.00181
+Loss epoch 12 -> 0.00251
+Loss epoch 13 -> 0.00291
+Loss epoch 14 -> 0.00225
+Loss epoch 15 -> 0.00088
+Loss epoch 16 -> 0.00010
+Loss epoch 17 -> 0.00006
+Loss epoch 18 -> 0.00004
+Loss epoch 19 -> 0.00004
+Loss epoch 20 -> 0.00003
+Loss epoch 21 -> 0.00003
+Loss epoch 22 -> 0.00003
+Loss epoch 23 -> 0.00003
+Loss epoch 24 -> 0.00003
+Loss epoch 25 -> 0.00003
+Loss epoch 26 -> 0.00003
+Loss epoch 27 -> 0.00003
+Loss epoch 28 -> 0.00003
+Loss epoch 29 -> 0.00003
+end...
+Accuracy : 0.898
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.90      0.89      0.90       500
+      nature       0.89      0.91      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 30
+Training...
+Loss epoch 0 -> 1.13238
+Loss epoch 1 -> 0.26771
+Loss epoch 2 -> 0.08914
+Loss epoch 3 -> 0.02336
+Loss epoch 4 -> 0.00899
+Loss epoch 5 -> 0.00475
+Loss epoch 6 -> 0.01462
+Loss epoch 7 -> 0.02315
+Loss epoch 8 -> 0.00317
+Loss epoch 9 -> 0.00111
+Loss epoch 10 -> 0.00041
+Loss epoch 11 -> 0.00006
+Loss epoch 12 -> 0.00003
+Loss epoch 13 -> 0.00003
+Loss epoch 14 -> 0.00002
+Loss epoch 15 -> 0.00002
+Loss epoch 16 -> 0.00002
+Loss epoch 17 -> 0.00002
+Loss epoch 18 -> 0.00002
+Loss epoch 19 -> 0.00002
+Loss epoch 20 -> 0.00002
+Loss epoch 21 -> 0.00002
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.901
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.90      0.90      0.90       500
+      nature       0.90      0.90      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 50
+Training...
+Loss epoch 0 -> 1.13516
+Loss epoch 1 -> 0.28989
+Loss epoch 2 -> 0.08944
+Loss epoch 3 -> 0.01834
+Loss epoch 4 -> 0.02221
+Loss epoch 5 -> 0.01465
+Loss epoch 6 -> 0.00425
+Loss epoch 7 -> 0.00240
+Loss epoch 8 -> 0.00164
+Loss epoch 9 -> 0.01126
+Loss epoch 10 -> 0.00782
+Loss epoch 11 -> 0.00169
+Loss epoch 12 -> 0.00087
+Loss epoch 13 -> 0.00006
+Loss epoch 14 -> 0.00005
+Loss epoch 15 -> 0.00003
+Loss epoch 16 -> 0.00003
+Loss epoch 17 -> 0.00003
+Loss epoch 18 -> 0.00002
+Loss epoch 19 -> 0.00002
+Loss epoch 20 -> 0.00002
+Loss epoch 21 -> 0.00002
+Loss epoch 22 -> 0.00002
+Loss epoch 23 -> 0.00002
+Loss epoch 24 -> 0.00002
+Loss epoch 25 -> 0.00002
+Loss epoch 26 -> 0.00002
+Loss epoch 27 -> 0.00002
+Loss epoch 28 -> 0.00002
+Loss epoch 29 -> 0.00002
+end...
+Accuracy : 0.905
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.91      0.90      0.90       500
+      nature       0.90      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.90      1000
+weighted avg       0.91      0.91      0.90      1000
+
+-----------------------------------------------------------------------------------------------------------
+Operation on cuda
+Using adm DATASET, Classes in dataset: ['ai', 'nature']
+Additional tokens : 0
+Training...
+Loss epoch 0 -> 0.16487
+Loss epoch 1 -> 0.01509
+Loss epoch 2 -> 0.00794
+Loss epoch 3 -> 0.00570
+Loss epoch 4 -> 0.00318
+Loss epoch 5 -> 0.00027
+Loss epoch 6 -> 0.00005
+Loss epoch 7 -> 0.00003
+Loss epoch 8 -> 0.00002
+Loss epoch 9 -> 0.00002
+Loss epoch 10 -> 0.00001
+Loss epoch 11 -> 0.00001
+Loss epoch 12 -> 0.00001
+Loss epoch 13 -> 0.00001
+Loss epoch 14 -> 0.00001
+Loss epoch 15 -> 0.00001
+Loss epoch 16 -> 0.00001
+Loss epoch 17 -> 0.00001
+Loss epoch 18 -> 0.00001
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.996
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.99      1.00      1.00       500
+      nature       1.00      0.99      1.00       500
+
+    accuracy                           1.00      1000
+   macro avg       1.00      1.00      1.00      1000
+weighted avg       1.00      1.00      1.00      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 10
+Training...
+Loss epoch 0 -> 0.56667
+Loss epoch 1 -> 0.02860
+Loss epoch 2 -> 0.01324
+Loss epoch 3 -> 0.00346
+Loss epoch 4 -> 0.00173
+Loss epoch 5 -> 0.00015
+Loss epoch 6 -> 0.00002
+Loss epoch 7 -> 0.00001
+Loss epoch 8 -> 0.00001
+Loss epoch 9 -> 0.00001
+Loss epoch 10 -> 0.00001
+Loss epoch 11 -> 0.00001
+Loss epoch 12 -> 0.00001
+Loss epoch 13 -> 0.00000
+Loss epoch 14 -> 0.00000
+Loss epoch 15 -> 0.00000
+Loss epoch 16 -> 0.00000
+Loss epoch 17 -> 0.00000
+Loss epoch 18 -> 0.00000
+Loss epoch 19 -> 0.00000
+Loss epoch 20 -> 0.00000
+Loss epoch 21 -> 0.00000
+Loss epoch 22 -> 0.00000
+Loss epoch 23 -> 0.00000
+Loss epoch 24 -> 0.00000
+Loss epoch 25 -> 0.00000
+Loss epoch 26 -> 0.00000
+Loss epoch 27 -> 0.00000
+Loss epoch 28 -> 0.00000
+Loss epoch 29 -> 0.00000
+end...
+Accuracy : 0.992
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.99      1.00      0.99       500
+      nature       1.00      0.99      0.99       500
+
+    accuracy                           0.99      1000
+   macro avg       0.99      0.99      0.99      1000
+weighted avg       0.99      0.99      0.99      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 30
+Training...
+Loss epoch 0 -> 0.66624
+Loss epoch 1 -> 0.03344
+Loss epoch 2 -> 0.01316
+Loss epoch 3 -> 0.00119
+Loss epoch 4 -> 0.00015
+Loss epoch 5 -> 0.00002
+Loss epoch 6 -> 0.00001
+Loss epoch 7 -> 0.00001
+Loss epoch 8 -> 0.00001
+Loss epoch 9 -> 0.00001
+Loss epoch 10 -> 0.00001
+Loss epoch 11 -> 0.00001
+Loss epoch 12 -> 0.00001
+Loss epoch 13 -> 0.00000
+Loss epoch 14 -> 0.00000
+Loss epoch 15 -> 0.00000
+Loss epoch 16 -> 0.00000
+Loss epoch 17 -> 0.00000
+Loss epoch 18 -> 0.00000
+Loss epoch 19 -> 0.00000
+Loss epoch 20 -> 0.00000
+Loss epoch 21 -> 0.00000
+Loss epoch 22 -> 0.00000
+Loss epoch 23 -> 0.00000
+Loss epoch 24 -> 0.00000
+Loss epoch 25 -> 0.00000
+Loss epoch 26 -> 0.00000
+Loss epoch 27 -> 0.00000
+Loss epoch 28 -> 0.00000
+Loss epoch 29 -> 0.00000
+end...
+Accuracy : 0.993
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.99      1.00      0.99       500
+      nature       1.00      0.99      0.99       500
+
+    accuracy                           0.99      1000
+   macro avg       0.99      0.99      0.99      1000
+weighted avg       0.99      0.99      0.99      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 50
+Training...
+Loss epoch 0 -> 0.71976
+Loss epoch 1 -> 0.03332
+Loss epoch 2 -> 0.01704
+Loss epoch 3 -> 0.00715
+Loss epoch 4 -> 0.00054
+Loss epoch 5 -> 0.00008
+Loss epoch 6 -> 0.00003
+Loss epoch 7 -> 0.00002
+Loss epoch 8 -> 0.00002
+Loss epoch 9 -> 0.00002
+Loss epoch 10 -> 0.00001
+Loss epoch 11 -> 0.00001
+Loss epoch 12 -> 0.00001
+Loss epoch 13 -> 0.00001
+Loss epoch 14 -> 0.00001
+Loss epoch 15 -> 0.00001
+Loss epoch 16 -> 0.00001
+Loss epoch 17 -> 0.00001
+Loss epoch 18 -> 0.00001
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.992
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.99      1.00      0.99       500
+      nature       1.00      0.99      0.99       500
+
+    accuracy                           0.99      1000
+   macro avg       0.99      0.99      0.99      1000
+weighted avg       0.99      0.99      0.99      1000
+
+-----------------------------------------------------------------------------------------------------------
+Operation on cuda
+Using glide DATASET, Classes in dataset: ['ai', 'nature']
+Additional tokens : 0
+Training...
+Loss epoch 0 -> 0.35148
+Loss epoch 1 -> 0.06090
+Loss epoch 2 -> 0.01863
+Loss epoch 3 -> 0.00383
+Loss epoch 4 -> 0.00172
+Loss epoch 5 -> 0.00030
+Loss epoch 6 -> 0.00019
+Loss epoch 7 -> 0.00015
+Loss epoch 8 -> 0.00012
+Loss epoch 9 -> 0.00011
+Loss epoch 10 -> 0.00009
+Loss epoch 11 -> 0.00008
+Loss epoch 12 -> 0.00008
+Loss epoch 13 -> 0.00007
+Loss epoch 14 -> 0.00006
+Loss epoch 15 -> 0.00006
+Loss epoch 16 -> 0.00006
+Loss epoch 17 -> 0.00005
+Loss epoch 18 -> 0.00005
+Loss epoch 19 -> 0.00005
+Loss epoch 20 -> 0.00005
+Loss epoch 21 -> 0.00005
+Loss epoch 22 -> 0.00005
+Loss epoch 23 -> 0.00004
+Loss epoch 24 -> 0.00004
+Loss epoch 25 -> 0.00004
+Loss epoch 26 -> 0.00004
+Loss epoch 27 -> 0.00004
+Loss epoch 28 -> 0.00004
+Loss epoch 29 -> 0.00004
+end...
+Accuracy : 0.943
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.93      0.95      0.94       500
+      nature       0.95      0.93      0.94       500
+
+    accuracy                           0.94      1000
+   macro avg       0.94      0.94      0.94      1000
+weighted avg       0.94      0.94      0.94      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 10
+Training...
+Loss epoch 0 -> 0.99418
+Loss epoch 1 -> 0.16096
+Loss epoch 2 -> 0.03054
+Loss epoch 3 -> 0.01208
+Loss epoch 4 -> 0.00248
+Loss epoch 5 -> 0.00018
+Loss epoch 6 -> 0.00003
+Loss epoch 7 -> 0.00002
+Loss epoch 8 -> 0.00002
+Loss epoch 9 -> 0.00001
+Loss epoch 10 -> 0.00001
+Loss epoch 11 -> 0.00001
+Loss epoch 12 -> 0.00001
+Loss epoch 13 -> 0.00001
+Loss epoch 14 -> 0.00001
+Loss epoch 15 -> 0.00001
+Loss epoch 16 -> 0.00001
+Loss epoch 17 -> 0.00001
+Loss epoch 18 -> 0.00001
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.957
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.95      0.97      0.96       500
+      nature       0.97      0.95      0.96       500
+
+    accuracy                           0.96      1000
+   macro avg       0.96      0.96      0.96      1000
+weighted avg       0.96      0.96      0.96      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 30
+Training...
+Loss epoch 0 -> 1.03914
+Loss epoch 1 -> 0.17098
+Loss epoch 2 -> 0.03801
+Loss epoch 3 -> 0.01095
+Loss epoch 4 -> 0.00468
+Loss epoch 5 -> 0.00226
+Loss epoch 6 -> 0.00579
+Loss epoch 7 -> 0.00199
+Loss epoch 8 -> 0.00017
+Loss epoch 9 -> 0.00003
+Loss epoch 10 -> 0.00002
+Loss epoch 11 -> 0.00002
+Loss epoch 12 -> 0.00002
+Loss epoch 13 -> 0.00001
+Loss epoch 14 -> 0.00001
+Loss epoch 15 -> 0.00001
+Loss epoch 16 -> 0.00001
+Loss epoch 17 -> 0.00001
+Loss epoch 18 -> 0.00001
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.945
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.93      0.96      0.95       500
+      nature       0.96      0.93      0.94       500
+
+    accuracy                           0.94      1000
+   macro avg       0.95      0.95      0.94      1000
+weighted avg       0.95      0.94      0.94      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 50
+Training...
+Loss epoch 0 -> 0.97196
+Loss epoch 1 -> 0.16514
+Loss epoch 2 -> 0.03712
+Loss epoch 3 -> 0.00679
+Loss epoch 4 -> 0.01348
+Loss epoch 5 -> 0.00807
+Loss epoch 6 -> 0.00088
+Loss epoch 7 -> 0.00014
+Loss epoch 8 -> 0.00003
+Loss epoch 9 -> 0.00002
+Loss epoch 10 -> 0.00002
+Loss epoch 11 -> 0.00002
+Loss epoch 12 -> 0.00001
+Loss epoch 13 -> 0.00001
+Loss epoch 14 -> 0.00001
+Loss epoch 15 -> 0.00001
+Loss epoch 16 -> 0.00001
+Loss epoch 17 -> 0.00001
+Loss epoch 18 -> 0.00001
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.95
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.95      0.95      0.95       500
+      nature       0.95      0.95      0.95       500
+
+    accuracy                           0.95      1000
+   macro avg       0.95      0.95      0.95      1000
+weighted avg       0.95      0.95      0.95      1000
+
+-----------------------------------------------------------------------------------------------------------
+Operation on cuda
+Using midjourney DATASET, Classes in dataset: ['ai', 'nature']
+Additional tokens : 0
+Training...
+Loss epoch 0 -> 0.47648
+Loss epoch 1 -> 0.12076
+Loss epoch 2 -> 0.03190
+Loss epoch 3 -> 0.00970
+Loss epoch 4 -> 0.00293
+Loss epoch 5 -> 0.00671
+Loss epoch 6 -> 0.00720
+Loss epoch 7 -> 0.00273
+Loss epoch 8 -> 0.00418
+Loss epoch 9 -> 0.00913
+Loss epoch 10 -> 0.00784
+Loss epoch 11 -> 0.00379
+Loss epoch 12 -> 0.00141
+Loss epoch 13 -> 0.00141
+Loss epoch 14 -> 0.00072
+Loss epoch 15 -> 0.00113
+Loss epoch 16 -> 0.00010
+Loss epoch 17 -> 0.00009
+Loss epoch 18 -> 0.00008
+Loss epoch 19 -> 0.00007
+Loss epoch 20 -> 0.00007
+Loss epoch 21 -> 0.00007
+Loss epoch 22 -> 0.00006
+Loss epoch 23 -> 0.00006
+Loss epoch 24 -> 0.00006
+Loss epoch 25 -> 0.00006
+Loss epoch 26 -> 0.00006
+Loss epoch 27 -> 0.00006
+Loss epoch 28 -> 0.00006
+Loss epoch 29 -> 0.00006
+end...
+Accuracy : 0.887
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.88      0.90      0.89       500
+      nature       0.89      0.88      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 10
+Training...
+Loss epoch 0 -> 1.10298
+Loss epoch 1 -> 0.28191
+Loss epoch 2 -> 0.10285
+Loss epoch 3 -> 0.02287
+Loss epoch 4 -> 0.00744
+Loss epoch 5 -> 0.00612
+Loss epoch 6 -> 0.00447
+Loss epoch 7 -> 0.00725
+Loss epoch 8 -> 0.01166
+Loss epoch 9 -> 0.00456
+Loss epoch 10 -> 0.00089
+Loss epoch 11 -> 0.00013
+Loss epoch 12 -> 0.00003
+Loss epoch 13 -> 0.00002
+Loss epoch 14 -> 0.00002
+Loss epoch 15 -> 0.00002
+Loss epoch 16 -> 0.00002
+Loss epoch 17 -> 0.00002
+Loss epoch 18 -> 0.00001
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.908
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.91      0.90      0.91       500
+      nature       0.90      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 30
+Training...
+Loss epoch 0 -> 1.10378
+Loss epoch 1 -> 0.31276
+Loss epoch 2 -> 0.11752
+Loss epoch 3 -> 0.02593
+Loss epoch 4 -> 0.02654
+Loss epoch 5 -> 0.00735
+Loss epoch 6 -> 0.00150
+Loss epoch 7 -> 0.00023
+Loss epoch 8 -> 0.00008
+Loss epoch 9 -> 0.00006
+Loss epoch 10 -> 0.00005
+Loss epoch 11 -> 0.00004
+Loss epoch 12 -> 0.00003
+Loss epoch 13 -> 0.00003
+Loss epoch 14 -> 0.00003
+Loss epoch 15 -> 0.00002
+Loss epoch 16 -> 0.00002
+Loss epoch 17 -> 0.00002
+Loss epoch 18 -> 0.00002
+Loss epoch 19 -> 0.00002
+Loss epoch 20 -> 0.00002
+Loss epoch 21 -> 0.00002
+Loss epoch 22 -> 0.00002
+Loss epoch 23 -> 0.00002
+Loss epoch 24 -> 0.00002
+Loss epoch 25 -> 0.00002
+Loss epoch 26 -> 0.00002
+Loss epoch 27 -> 0.00002
+Loss epoch 28 -> 0.00002
+Loss epoch 29 -> 0.00002
+end...
+Accuracy : 0.909
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.91      0.91      0.91       500
+      nature       0.91      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 50
+Training...
+Loss epoch 0 -> 1.23156
+Loss epoch 1 -> 0.33946
+Loss epoch 2 -> 0.12130
+Loss epoch 3 -> 0.03797
+Loss epoch 4 -> 0.01245
+Loss epoch 5 -> 0.00653
+Loss epoch 6 -> 0.01359
+Loss epoch 7 -> 0.01456
+Loss epoch 8 -> 0.00282
+Loss epoch 9 -> 0.00044
+Loss epoch 10 -> 0.00020
+Loss epoch 11 -> 0.00047
+Loss epoch 12 -> 0.00028
+Loss epoch 13 -> 0.00005
+Loss epoch 14 -> 0.00002
+Loss epoch 15 -> 0.00002
+Loss epoch 16 -> 0.00002
+Loss epoch 17 -> 0.00002
+Loss epoch 18 -> 0.00002
+Loss epoch 19 -> 0.00001
+Loss epoch 20 -> 0.00001
+Loss epoch 21 -> 0.00001
+Loss epoch 22 -> 0.00001
+Loss epoch 23 -> 0.00001
+Loss epoch 24 -> 0.00001
+Loss epoch 25 -> 0.00001
+Loss epoch 26 -> 0.00001
+Loss epoch 27 -> 0.00001
+Loss epoch 28 -> 0.00001
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:        Accuracy/adm █▁▃▁
+wandb:     Accuracy/biggan ▁██▆
+wandb:      Accuracy/glide ▁█▂▄
+wandb: Accuracy/midjourney ▁▇▇█
+wandb:       Accuracy/sdv5 ▁▇█▆
+wandb:       Accuracy/vqdm ▁▁█▂
+wandb:     Accuracy/wukong ▁▃▅█
+wandb:              tokens ▁▂▅█▁▂▅█▁▂▅█▁▂▅█▁▂▅█▁▂▅█▁▂▅█
+wandb: 
+wandb: Run summary:
+wandb:        Accuracy/adm 0.992
+wandb:     Accuracy/biggan 0.99
+wandb:      Accuracy/glide 0.95
+wandb: Accuracy/midjourney 0.911
+wandb:       Accuracy/sdv5 0.9
+wandb:       Accuracy/vqdm 0.981
+wandb:     Accuracy/wukong 0.905
+wandb:              tokens 50
+wandb: 
+wandb: 🚀 View run ACC_TOK biggan dataset 20250322-214352 at: https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/wvsrn50v
+wandb: ⭐️ View project at: https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250322_214353-wvsrn50v/logs
+Loss epoch 29 -> 0.00001
+end...
+Accuracy : 0.911
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.90      0.92      0.91       500
+      nature       0.92      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+-----------------------------------------------------------------------------------------------------------

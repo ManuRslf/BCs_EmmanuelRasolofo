@@ -49,10 +49,10 @@ else:
   ### for utils.py & visu
   save_image = True
   wandb_log = True
-  ADD_TOKENS_lab = [0, 10, 25, 50]
+  ADD_TOKENS_lab = [0, 10, 30, 50]
   NUM_HIDDEN_LAYER_LLMA_lab = 1
   HIDDEN_SIZE_lab = 768
   BATCH_SIZE_lab = 128
   LR_lab = 4e-4
-  EPOCHS_lab = 40
+  EPOCHS_lab = 30
   decreasing_LR_lab = True

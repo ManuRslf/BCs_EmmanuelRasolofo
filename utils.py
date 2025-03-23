@@ -125,11 +125,11 @@ def training(model_d:str, dataloader_train:DataLoader, dataloader_test:DataLoade
             loss_epochs = rloss/counter
             acc_test_set = testing(dataloader_test=dataloader_test, device=device, model=model, verbose=False)
 
-            wandb.log({
+            '''wandb.log({
                 "Train/Loss": loss_epochs,
                 "Test/Accuracy": acc_test_set,
                 "epoch": e
-            })
+            })'''
         
         print(f"Loss epoch {e} -> {(rloss/counter):.5f}")
         rloss = 0.0
@@ -195,24 +195,7 @@ def plot_accuracy(model_d:str, save_image:bool=True, wandb_log:bool=True, decrea
     ACCURACY_TAB = []
     
     
-    if wandb_log:
-        wandb.init(
-            project="Encoder-DecoderProject",
-            name=f"Acc. evol. {model_d}({timestamp})",
-            config={
-                "architecture" : "dinov2plusllma",
-                "dataset" : f"{configurations.MODEL}",
-                "epochs" : configurations.EPOCHS_lab,
-            }
-        )
-        
-        wandb.define_metric("tokens")
-        wandb.define_metric("Accuracy/*", step_metric="tokens")
-        wandb.define_metric("epoch")
-        wandb.define_metric("Train/*", step_metric="epoch")
-        wandb.define_metric("Test/*", step_metric="epoch")
-    
-    
+
     for token in configurations.ADD_TOKENS_lab:
         model = training(model_d,
                          dataloader_train=dataloader_train, 
@@ -232,7 +215,7 @@ def plot_accuracy(model_d:str, save_image:bool=True, wandb_log:bool=True, decrea
             })
         ACCURACY_TAB.append(ACC)
     
-    wandb.finish()
+
         
     #plot saving
     if save_image:
@@ -254,18 +237,42 @@ def plot_accuracy(model_d:str, save_image:bool=True, wandb_log:bool=True, decrea
 
 
 if __name__ == '__main__':
+    '''
     plot_accuracy(configurations.MODEL,
                   configurations.save_image, 
                   configurations.wandb_log,
                   configurations.decreasing_LR_lab)
     
     '''
+     
+    timestamp = time.strftime("%Y%m%d-%H%M%S")  
+
+    '''
+    wandb.define_metric("epoch")
+    wandb.define_metric("Train/*", step_metric="epoch")
+    wandb.define_metric("Test/*", step_metric="epoch")
+    '''
+    
     for model in MODEL_NAME:
+        wandb.init(
+            project="Encoder-DecoderProject",
+            name=f"ACC_TOK {model} dataset {timestamp}",
+            config={
+                "architecture" : "dinov2plusllma",
+    
+            }
+        )
+        
+        wandb.define_metric("tokens")
+        wandb.define_metric("Accuracy/*", step_metric="tokens")
+        
         plot_accuracy(model,
                       configurations.save_image, 
                       configurations.wandb_log,
                       configurations.decreasing_LR_lab)
-    '''
+                      
+    wandb.finish()
+
                       
                       
                       

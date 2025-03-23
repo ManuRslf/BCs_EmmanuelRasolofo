@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/utils.py", line 250, in <module>
+    name=f"Acc. evol. {model_d}({timestamp})",
+                       ^^^^^^^
+NameError: name 'model_d' is not defined
+srun: error: gpu002: task 0: Exited with exit code 1
