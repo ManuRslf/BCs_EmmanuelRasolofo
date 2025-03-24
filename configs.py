@@ -1,0 +1,46 @@
+import torchvision.transforms as transforms
+
+class Config:
+    '''Tous les hyper-paramètres ici'''
+    
+    DEBUG = True
+    MODEL = "midjourney"
+    RESIZE_SHAPE = 32
+
+    TRANSFORM = transforms.Compose([
+        transforms.Resize((RESIZE_SHAPE, RESIZE_SHAPE)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+    ])
+
+    SHOW_INFO = True
+    ADD_TOKENS = 5
+    NUM_HIDDEN_LAYER_LLMA = 2
+    HIDDEN_SIZE = 768
+    BATCH_SIZE = 32
+    LR = 0.03
+    EPOCHS = 7
+    DECREASING_LR = True
+
+    if DEBUG:
+        SAVE_IMAGE = False
+        WANDB_LOG = False
+        ADD_TOKENS_LAB = [i for i in range(2, 3)]
+        NUM_HIDDEN_LAYER_LLMA_LAB = 1
+        HIDDEN_SIZE_LAB = 384
+        BATCH_SIZE_LAB = 128
+        LR_LAB = 1e-3
+        EPOCHS_LAB = 1
+        DECREASING_LR_LAB = True
+        DINOV2_NAME = 'facebook/dinov2-small'
+    else:
+        SAVE_IMAGE = True
+        WANDB_LOG = True
+        ADD_TOKENS_LAB = [0, 10, 30, 60]
+        NUM_HIDDEN_LAYER_LLMA_LAB = 3
+        HIDDEN_SIZE_LAB = 384
+        BATCH_SIZE_LAB = 128
+        LR_LAB = 4e-4
+        EPOCHS_LAB = 35
+        DECREASING_LR_LAB = True
+        DINOV2_NAME = 'facebook/dinov2-small'
