@@ -64,13 +64,19 @@ def TinygenImage(model:str=None, tf:transforms.Compose=None):
 
         return ImageFolder(root=path_final_train, transform=tf), ImageFolder(root=path_final_test, transform=tf)
     
-def verbose(show:bool=True):
+def verbose(show:bool=True, lab:bool=False):
     """show information during a single training. Used in custom_model.py"""
     if show:
         print(f"Images are resized {configurations.resizeShape}x{configurations.resizeShape}")
         print(f"Additional token added : {configurations.ADD_TOKENS}")
         print(f"Hidden layer LLMA : {configurations.NUM_HIDDEN_LAYER_LLMA} with size {configurations.HIDDEN_SIZE}")
         print(f"Batch size : {configurations.BATCH_SIZE}, LR : {configurations.LR}, epochs : {configurations.EPOCHS}")
+    
+    if lab:
+        print(f"Images are resized {configurations.resizeShape}x{configurations.resizeShape}")
+        print(f"Additional token added : {configurations.ADD_TOKENS_lab}")
+        print(f"Hidden layer LLMA : {configurations.NUM_HIDDEN_LAYER_LLMA_lab} with size {configurations.HIDDEN_SIZE_lab}")
+        print(f"Batch size : {configurations.BATCH_SIZE_lab}, LR : {configurations.LR_lab}, epochs : {configurations.EPOCHS_lab}")
     
 
 ### PLOT1 SHOW ACCURACY IMPROVEMENT/IMPRECISE WITH NUMBER OF TOKEN ADDED
@@ -82,7 +88,7 @@ def training(model_d:str, dataloader_train:DataLoader, dataloader_test:DataLoade
     
     llama_config = LlamaConfig(num_hidden_layers=configurations.NUM_HIDDEN_LAYER_LLMA_lab, hidden_size=configurations.HIDDEN_SIZE_lab)
     
-    model = custom_model.Custom_Classifier(llama_config, additional_token=additional_tokens).to(device)
+    model = custom_model.Custom_Classifier(llama_config, dinov2_name='facebook/dinov2-small', additional_token=additional_tokens).to(device) #using small
 
     loss_fn = nn.CrossEntropyLoss()
     
@@ -252,24 +258,26 @@ if __name__ == '__main__':
     wandb.define_metric("Train/*", step_metric="epoch")
     wandb.define_metric("Test/*", step_metric="epoch")
     '''
+    print(f"Training date: {timestamp}")
+    verbose(show=False, lab=True)
     
-    for model in MODEL_NAME:
-        wandb.init(
-            project="Encoder-DecoderProject",
-            name=f"ACC_TOK {model} dataset {timestamp}",
-            config={
-                "architecture" : "dinov2plusllma",
+
+    wandb.init(
+        project="Encoder-DecoderProject",
+        name=f"ACC_TOK {configurations.MODEL} dataset {timestamp}",
+        config={
+            "architecture" : "dinov2plusllma",
+
+        }
+    )
     
-            }
-        )
-        
-        wandb.define_metric("tokens")
-        wandb.define_metric("Accuracy/*", step_metric="tokens")
-        
-        plot_accuracy(model,
-                      configurations.save_image, 
-                      configurations.wandb_log,
-                      configurations.decreasing_LR_lab)
+    wandb.define_metric("tokens")
+    wandb.define_metric("Accuracy/*", step_metric="tokens")
+    
+    plot_accuracy(configurations.MODEL,
+                  configurations.save_image, 
+                  configurations.wandb_log,
+                  configurations.decreasing_LR_lab)
                       
     wandb.finish()
 

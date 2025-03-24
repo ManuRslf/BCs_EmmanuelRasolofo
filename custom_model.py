@@ -27,7 +27,7 @@ class Custom_Classifier(nn.Module):
         
         self.CLASSIFIER = nn.Linear(llma_config.hidden_size, 2)
         
-        self.proj = nn.Linear(768, configurations.HIDDEN_SIZE)
+        self.proj = nn.Linear(384, configurations.HIDDEN_SIZE)
         
     def forward(self, x):
         
@@ -37,8 +37,7 @@ class Custom_Classifier(nn.Module):
         with torch.no_grad():
           x = self.DINOV2_MODEL(x)['last_hidden_state']
         
-        if configurations.HIDDEN_SIZE != 768:
-            x = self.proj(x)
+
         #add additional reasoning tokens  (x, y) -> 1,x,y -> batchsize, x, y
         x = torch.cat((x, self.ADD_TOK.unsqueeze(0).repeat(x.size(0), 1, 1)), dim = 1)
         
