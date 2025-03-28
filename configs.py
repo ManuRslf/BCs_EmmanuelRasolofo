@@ -3,9 +3,9 @@ import torchvision.transforms as transforms
 class Config:
     '''Tous les hyper-paramètres ici'''
     
-    DEBUG = True
+    DEBUG = False
     MODEL = "midjourney"
-    RESIZE_SHAPE = 32
+    RESIZE_SHAPE = 70
 
     TRANSFORM = transforms.Compose([
         transforms.Resize((RESIZE_SHAPE, RESIZE_SHAPE)),
@@ -36,11 +36,11 @@ class Config:
     else:
         SAVE_IMAGE = True
         WANDB_LOG = True
-        ADD_TOKENS_LAB = [0, 10, 30, 60]
-        NUM_HIDDEN_LAYER_LLMA_LAB = 3
-        HIDDEN_SIZE_LAB = 384
+        ADD_TOKENS_LAB = [0, 10, 50, 80]
+        NUM_HIDDEN_LAYER_LLMA_LAB = 1
+        HIDDEN_SIZE_LAB = 768
         BATCH_SIZE_LAB = 128
         LR_LAB = 4e-4
-        EPOCHS_LAB = 35
+        EPOCHS_LAB = 25
         DECREASING_LR_LAB = True
-        DINOV2_NAME = 'facebook/dinov2-small'
+        DINOV2_NAME = 'facebook/dinov2-base'

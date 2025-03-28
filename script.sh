@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task=4               
 #SBATCH --gpus=1                    
 #SBATCH --time=12:00:00                 
-#SBATCH --partition=shared-gpu               
+#SBATCH --partition=public-gpu               
 #SBATCH --mem=32000                      
 
 
@@ -13,4 +13,4 @@ module load cuDNN
 
 
 
-srun python3 utils.py
+srun python3 util.py

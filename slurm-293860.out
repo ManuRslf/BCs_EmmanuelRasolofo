@@ -1,0 +1,77 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250324_113603-eoaqez9t
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ACC_TOK midjourney dataset 20250324-113603
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/eoaqez9t
+Training date: 20250324-113603
+Images are resized 224x224
+Additional token added : [0, 10, 30, 50]
+Hidden layer LLMA : 3 with size 384
+Batch size : 128, LR : 0.0004, epochs : 25
+Operation on cuda
+Using midjourney DATASET, Classes in dataset: ['ai', 'nature']
+Additional tokens : 0
+Training...
+Loss epoch 0 -> 0.42936
+Loss epoch 1 -> 0.14798
+Loss epoch 2 -> 0.04353
+Loss epoch 3 -> 0.02683
+Loss epoch 4 -> 0.04361
+Loss epoch 5 -> 0.02973
+Loss epoch 6 -> 0.01115
+Loss epoch 7 -> 0.00249
+Loss epoch 8 -> 0.00053
+Loss epoch 9 -> 0.00019
+Loss epoch 10 -> 0.00014
+Loss epoch 11 -> 0.00012
+Loss epoch 12 -> 0.00010
+Loss epoch 13 -> 0.00009
+Loss epoch 14 -> 0.00009
+Loss epoch 15 -> 0.00008
+Loss epoch 16 -> 0.00007
+Loss epoch 17 -> 0.00007
+Loss epoch 18 -> 0.00007
+Loss epoch 19 -> 0.00007
+Loss epoch 20 -> 0.00007
+Loss epoch 21 -> 0.00007
+Loss epoch 22 -> 0.00007
+Loss epoch 23 -> 0.00007
+Loss epoch 24 -> 0.00007
+end...
+Accuracy : 0.895
+Classification report:
+              precision    recall  f1-score   support
+
+          ia       0.88      0.91      0.90       500
+      nature       0.91      0.88      0.89       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.89      1000
+weighted avg       0.90      0.90      0.89      1000
+
+-----------------------------------------------------------------------------------------------------------
+Additional tokens : 10
+Training...
+Traceback (most recent call last):
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/utils.py", line 277, in <module>
+    plot_accuracy(configurations.MODEL,
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/utils.py", line 206, in plot_accuracy
+    model = training(model_d,
+            ^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/utils.py", line 119, in training
+    loss.backward()
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.40 GiB. GPU 0 has a total capacity of 23.80 GiB of which 850.00 MiB is free. Including non-PyTorch memory, this process has 22.96 GiB memory in use. Of the allocated memory 20.87 GiB is allocated by PyTorch, and 1.79 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mACC_TOK midjourney dataset 20250324-113603[0m at: [34mhttps://wandb.ai/manurslf301/Encoder-DecoderProject/runs/eoaqez9t[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250324_113603-eoaqez9t/logs[0m
+srun: error: gpu002: task 0: Exited with exit code 1

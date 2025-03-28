@@ -1,0 +1,191 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250328_093433-qld6tkoe
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ACC_TOK midjourney dataset 20250328-093432
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/qld6tkoe
+Date d'entraînement: 20250328-093432
+Mode: run
+Images redimensionnées en 70x70
+Tokens additionnels (lab): [0, 10, 50, 80]
+LLMA (lab): 1 couches, taille 768
+Batch size (lab): 128, LR (lab): 0.0004, Époques (lab): 25
+Opération sur cuda
+Dataset utilisé 'midjourney' - Classes: ['ai', 'nature']
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.60650
+Epoch 1 - Loss moyenne: 0.15371
+Epoch 2 - Loss moyenne: 0.02762
+Epoch 3 - Loss moyenne: 0.00963
+Epoch 4 - Loss moyenne: 0.00457
+Epoch 5 - Loss moyenne: 0.00251
+Epoch 6 - Loss moyenne: 0.00289
+Epoch 7 - Loss moyenne: 0.00131
+Epoch 8 - Loss moyenne: 0.00032
+Epoch 9 - Loss moyenne: 0.00023
+Epoch 10 - Loss moyenne: 0.00020
+Epoch 11 - Loss moyenne: 0.00018
+Epoch 12 - Loss moyenne: 0.00016
+Epoch 13 - Loss moyenne: 0.00015
+Epoch 14 - Loss moyenne: 0.00014
+Epoch 15 - Loss moyenne: 0.00013
+Epoch 16 - Loss moyenne: 0.00013
+Epoch 17 - Loss moyenne: 0.00012
+Epoch 18 - Loss moyenne: 0.00012
+Epoch 19 - Loss moyenne: 0.00012
+Epoch 20 - Loss moyenne: 0.00012
+Epoch 21 - Loss moyenne: 0.00012
+Epoch 22 - Loss moyenne: 0.00012
+Epoch 23 - Loss moyenne: 0.00012
+Epoch 24 - Loss moyenne: 0.00012
+Entraînement terminé.
+Accuracy : 0.774
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.79      0.75      0.77       500
+      nature       0.76      0.80      0.78       500
+
+    accuracy                           0.77      1000
+   macro avg       0.77      0.77      0.77      1000
+weighted avg       0.77      0.77      0.77      1000
+
+----------------------------------------------------------------------------------------------------
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 1.13751
+Epoch 1 - Loss moyenne: 0.51067
+Epoch 2 - Loss moyenne: 0.36832
+Epoch 3 - Loss moyenne: 0.20150
+Epoch 4 - Loss moyenne: 0.07946
+Epoch 5 - Loss moyenne: 0.02983
+Epoch 6 - Loss moyenne: 0.03538
+Epoch 7 - Loss moyenne: 0.02651
+Epoch 8 - Loss moyenne: 0.00541
+Epoch 9 - Loss moyenne: 0.00372
+Epoch 10 - Loss moyenne: 0.00670
+Epoch 11 - Loss moyenne: 0.00205
+Epoch 12 - Loss moyenne: 0.00071
+Epoch 13 - Loss moyenne: 0.00017
+Epoch 14 - Loss moyenne: 0.00006
+Epoch 15 - Loss moyenne: 0.00005
+Epoch 16 - Loss moyenne: 0.00005
+Epoch 17 - Loss moyenne: 0.00004
+Epoch 18 - Loss moyenne: 0.00004
+Epoch 19 - Loss moyenne: 0.00004
+Epoch 20 - Loss moyenne: 0.00004
+Epoch 21 - Loss moyenne: 0.00004
+Epoch 22 - Loss moyenne: 0.00004
+Epoch 23 - Loss moyenne: 0.00004
+Epoch 24 - Loss moyenne: 0.00004
+Entraînement terminé.
+Accuracy : 0.782
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.79      0.76      0.78       500
+      nature       0.77      0.80      0.79       500
+
+    accuracy                           0.78      1000
+   macro avg       0.78      0.78      0.78      1000
+weighted avg       0.78      0.78      0.78      1000
+
+----------------------------------------------------------------------------------------------------
+Entraînement avec 50 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 1.19949
+Epoch 1 - Loss moyenne: 0.55882
+Epoch 2 - Loss moyenne: 0.40432
+Epoch 3 - Loss moyenne: 0.25727
+Epoch 4 - Loss moyenne: 0.11647
+Epoch 5 - Loss moyenne: 0.05287
+Epoch 6 - Loss moyenne: 0.05457
+Epoch 7 - Loss moyenne: 0.01771
+Epoch 8 - Loss moyenne: 0.01875
+Epoch 9 - Loss moyenne: 0.01422
+Epoch 10 - Loss moyenne: 0.01111
+Epoch 11 - Loss moyenne: 0.00384
+Epoch 12 - Loss moyenne: 0.00088
+Epoch 13 - Loss moyenne: 0.00046
+Epoch 14 - Loss moyenne: 0.00061
+Epoch 15 - Loss moyenne: 0.00247
+Epoch 16 - Loss moyenne: 0.00023
+Epoch 17 - Loss moyenne: 0.00009
+Epoch 18 - Loss moyenne: 0.00008
+Epoch 19 - Loss moyenne: 0.00007
+Epoch 20 - Loss moyenne: 0.00007
+Epoch 21 - Loss moyenne: 0.00006
+Epoch 22 - Loss moyenne: 0.00006
+Epoch 23 - Loss moyenne: 0.00006
+Epoch 24 - Loss moyenne: 0.00006
+Entraînement terminé.
+Accuracy : 0.77
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.77      0.76      0.77       500
+      nature       0.77      0.78      0.77       500
+
+    accuracy                           0.77      1000
+   macro avg       0.77      0.77      0.77      1000
+weighted avg       0.77      0.77      0.77      1000
+
+----------------------------------------------------------------------------------------------------
+Entraînement avec 80 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 1.20883
+Epoch 1 - Loss moyenne: 0.56957
+Epoch 2 - Loss moyenne: 0.43395
+Epoch 3 - Loss moyenne: 0.27819
+Epoch 4 - Loss moyenne: 0.12697
+Epoch 5 - Loss moyenne: 0.07136
+Epoch 6 - Loss moyenne: 0.02772
+Epoch 7 - Loss moyenne: 0.03684
+Epoch 8 - Loss moyenne: 0.02343
+Epoch 9 - Loss moyenne: 0.01231
+Epoch 10 - Loss moyenne: 0.00602
+Epoch 11 - Loss moyenne: 0.00356
+Epoch 12 - Loss moyenne: 0.00171
+Epoch 13 - Loss moyenne: 0.00031
+Epoch 14 - Loss moyenne: 0.00016
+Epoch 15 - Loss moyenne: 0.00007
+Epoch 16 - Loss moyenne: 0.00006
+Epoch 17 - Loss moyenne: 0.00005
+Epoch 18 - Loss moyenne: 0.00004
+Epoch 19 - Loss moyenne: 0.00004
+Epoch 20 - Loss moyenne: 0.00004
+Epoch 21 - Loss moyenne: 0.00004
+Epoch 22 - Loss moyenne: 0.00003
+Epoch 23 - Loss moyenne: 0.00003
+wandb: uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: Accuracy/midjourney ▃▇▁█
+wandb:              tokens ▁▂▅█
+wandb: 
+wandb: Run summary:
+wandb: Accuracy/midjourney 0.784
+wandb:              tokens 80
+wandb: 
+wandb: 🚀 View run ACC_TOK midjourney dataset 20250328-093432 at: https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/qld6tkoe
+wandb: ⭐️ View project at: https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250328_093433-qld6tkoe/logs
+Epoch 24 - Loss moyenne: 0.00003
+Entraînement terminé.
+Accuracy : 0.784
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.79      0.78      0.78       500
+      nature       0.78      0.79      0.79       500
+
+    accuracy                           0.78      1000
+   macro avg       0.78      0.78      0.78      1000
+weighted avg       0.78      0.78      0.78      1000
+
+----------------------------------------------------------------------------------------------------
