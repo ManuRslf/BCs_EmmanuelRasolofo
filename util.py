@@ -171,6 +171,9 @@ def run_experiment(model_name:str, save_image:bool, wandb_log:bool, decreasing_l
     return accuracy_list
 
 if __name__ == '__main__':
+
+
+
     timestamp = time.strftime("%Y%m%d-%H%M%S")
     print(f"Date d'entraînement: {timestamp}")
     print("Mode:", "debug" if Config.DEBUG else "run")
@@ -179,13 +182,24 @@ if __name__ == '__main__':
     if Config.WANDB_LOG:
         wandb.init(
             project="Encoder-DecoderProject",
-            name=f"ACC_TOK {Config.MODEL} dataset {timestamp}",
+            name=f"ACC_TOK ALL dataset {timestamp}",
             config={"architecture": "dinov2plusllma"}
         )
+
+
         wandb.define_metric("tokens")
         wandb.define_metric("Accuracy/*", step_metric="tokens")
+        
     
-    run_experiment(Config.MODEL, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
     
+    for model in MODEL_NAMES:
+
+        run_experiment(model, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+        
     if Config.WANDB_LOG:
         wandb.finish()
+        
+        
+        
+        
+        

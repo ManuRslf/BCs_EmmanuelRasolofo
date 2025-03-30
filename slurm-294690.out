@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/util.py", line 176, in <module>
+    wandb.define_metric("tokens")
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/wandb/sdk/lib/preinit.py", line 36, in preinit_wrapper
+    raise wandb.Error(f"You must call wandb.init() before {name}()")
+wandb.errors.errors.Error: You must call wandb.init() before wandb.define_metric()
+srun: error: gpu002: task 0: Exited with exit code 1
