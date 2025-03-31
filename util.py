@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, classification_report
 from transformers import LlamaConfig
 import wandb
-
+import numpy as np
 from configs import Config
 import CustomClassifier
 
@@ -110,7 +110,9 @@ def train_model(model_name:str,
         if wandb_log:
             # wandb.log({"Train/Loss": avg_loss, "epoch": epoch})
             pass
-        print(f"Epoch {epoch} - Loss moyenne: {avg_loss:.5f}")
+        
+        #decommenter pour voir loss
+        #print(f"Epoch {epoch} - Loss moyenne: {avg_loss:.5f}")
     print("Entraînement terminé.")
     return model
 
@@ -152,12 +154,30 @@ def run_experiment(model_name:str, save_image:bool, wandb_log:bool, decreasing_l
     timestamp = time.strftime("%Y%m%d-%H%M%S")
     
     accuracy_list = []
+    
+    # moyenne sur chaque token
+    means = []
+    iterations = 8
+    
+    
     for tokens in Config.ADD_TOKENS_LAB:
-        model = train_model(model_name, dataloader_train, dataloader_test, tokens, wandb_log, decreasing_lr, device)
-        acc = test_model(dataloader_test, device, model)
-        if wandb_log:
-            wandb.log({f"Accuracy/{model_name}": acc, "tokens": tokens})
-        accuracy_list.append(acc)
+        means = []
+        
+        print("--------------------------------------------------------------------")
+        
+        for it in range(iterations): 
+            model = train_model(model_name, dataloader_train, dataloader_test, tokens, wandb_log, decreasing_lr, device)
+            acc = test_model(dataloader_test, device, model)
+            means.append(acc)
+            
+        
+            print(f"iteration {it}, {model_name}: acc {means[-1]}")
+            
+            if wandb_log:
+                wandb.log({f"Accuracy/{model_name}": acc, "tokens": tokens})
+            accuracy_list.append(acc)
+            
+        print(f"accuracy mean: {np.mean(np.array(means))}")
     
     if save_image:
         if not os.path.exists('PLOTS'):

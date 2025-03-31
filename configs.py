@@ -5,7 +5,7 @@ class Config:
     
     DEBUG = False
     MODEL = "midjourney"
-    RESIZE_SHAPE = 126
+    RESIZE_SHAPE = 84
 
     TRANSFORM = transforms.Compose([
         transforms.Resize((RESIZE_SHAPE, RESIZE_SHAPE)),
@@ -37,10 +37,10 @@ class Config:
         SAVE_IMAGE = False
         WANDB_LOG = True
         ADD_TOKENS_LAB = [0, 10, 30, 50, 75, 100]
-        NUM_HIDDEN_LAYER_LLMA_LAB = 1
-        HIDDEN_SIZE_LAB = 768
+        NUM_HIDDEN_LAYER_LLMA_LAB = 2
+        HIDDEN_SIZE_LAB = 384
         BATCH_SIZE_LAB = 128
         LR_LAB = 4e-4
         EPOCHS_LAB = 30
         DECREASING_LR_LAB = True
-        DINOV2_NAME = 'facebook/dinov2-base'
+        DINOV2_NAME = 'facebook/dinov2-small'
