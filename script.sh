@@ -13,4 +13,4 @@ module load cuDNN
 
 
 
-srun python3 util.py
+srun python3 main.py

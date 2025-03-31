@@ -1242,3 +1242,381 @@ TRAINING...
 Epoch 0 - Loss moyenne: 0.85086
 Epoch 1 - Loss moyenne: 0.09054
 Epoch 2 - Loss moyenne: 0.05571
+Epoch 3 - Loss moyenne: 0.01319
+Epoch 4 - Loss moyenne: 0.00324
+Epoch 5 - Loss moyenne: 0.00060
+Epoch 6 - Loss moyenne: 0.00009
+Epoch 7 - Loss moyenne: 0.00004
+Epoch 8 - Loss moyenne: 0.00003
+Epoch 9 - Loss moyenne: 0.00002
+Epoch 10 - Loss moyenne: 0.00002
+Epoch 11 - Loss moyenne: 0.00002
+Epoch 12 - Loss moyenne: 0.00001
+Epoch 13 - Loss moyenne: 0.00001
+Epoch 14 - Loss moyenne: 0.00001
+Epoch 15 - Loss moyenne: 0.00001
+Epoch 16 - Loss moyenne: 0.00001
+Epoch 17 - Loss moyenne: 0.00001
+Epoch 18 - Loss moyenne: 0.00001
+Epoch 19 - Loss moyenne: 0.00001
+Epoch 20 - Loss moyenne: 0.00001
+Epoch 21 - Loss moyenne: 0.00001
+Epoch 22 - Loss moyenne: 0.00001
+Epoch 23 - Loss moyenne: 0.00001
+Epoch 24 - Loss moyenne: 0.00001
+Epoch 25 - Loss moyenne: 0.00001
+Epoch 26 - Loss moyenne: 0.00001
+Epoch 27 - Loss moyenne: 0.00001
+Epoch 28 - Loss moyenne: 0.00001
+Epoch 29 - Loss moyenne: 0.00001
+Entraînement terminé.
+Accuracy : 0.981
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.98      0.98      0.98       500
+      nature       0.98      0.98      0.98       500
+
+    accuracy                           0.98      1000
+   macro avg       0.98      0.98      0.98      1000
+weighted avg       0.98      0.98      0.98      1000
+
+----------------------------------------------------------------------------------------------------
+Entraînement avec 75 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.94800
+Epoch 1 - Loss moyenne: 0.10209
+Epoch 2 - Loss moyenne: 0.03992
+Epoch 3 - Loss moyenne: 0.01781
+Epoch 4 - Loss moyenne: 0.00915
+Epoch 5 - Loss moyenne: 0.00545
+Epoch 6 - Loss moyenne: 0.00431
+Epoch 7 - Loss moyenne: 0.00450
+Epoch 8 - Loss moyenne: 0.00075
+Epoch 9 - Loss moyenne: 0.00024
+Epoch 10 - Loss moyenne: 0.00031
+Epoch 11 - Loss moyenne: 0.00622
+Epoch 12 - Loss moyenne: 0.00212
+Epoch 13 - Loss moyenne: 0.00062
+Epoch 14 - Loss moyenne: 0.00005
+Epoch 15 - Loss moyenne: 0.00003
+Epoch 16 - Loss moyenne: 0.00002
+Epoch 17 - Loss moyenne: 0.00002
+Epoch 18 - Loss moyenne: 0.00002
+Epoch 19 - Loss moyenne: 0.00002
+Epoch 20 - Loss moyenne: 0.00002
+Epoch 21 - Loss moyenne: 0.00001
+Epoch 22 - Loss moyenne: 0.00001
+Epoch 23 - Loss moyenne: 0.00001
+Epoch 24 - Loss moyenne: 0.00001
+Epoch 25 - Loss moyenne: 0.00001
+Epoch 26 - Loss moyenne: 0.00001
+Epoch 27 - Loss moyenne: 0.00001
+Epoch 28 - Loss moyenne: 0.00001
+Epoch 29 - Loss moyenne: 0.00001
+Entraînement terminé.
+Accuracy : 0.977
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.97      0.98      0.98       500
+      nature       0.98      0.97      0.98       500
+
+    accuracy                           0.98      1000
+   macro avg       0.98      0.98      0.98      1000
+weighted avg       0.98      0.98      0.98      1000
+
+----------------------------------------------------------------------------------------------------
+Entraînement avec 100 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.87454
+Epoch 1 - Loss moyenne: 0.08811
+Epoch 2 - Loss moyenne: 0.03339
+Epoch 3 - Loss moyenne: 0.01873
+Epoch 4 - Loss moyenne: 0.00519
+Epoch 5 - Loss moyenne: 0.00857
+Epoch 6 - Loss moyenne: 0.00674
+Epoch 7 - Loss moyenne: 0.00031
+Epoch 8 - Loss moyenne: 0.00010
+Epoch 9 - Loss moyenne: 0.00005
+Epoch 10 - Loss moyenne: 0.00003
+Epoch 11 - Loss moyenne: 0.00003
+Epoch 12 - Loss moyenne: 0.00002
+Epoch 13 - Loss moyenne: 0.00002
+Epoch 14 - Loss moyenne: 0.00002
+Epoch 15 - Loss moyenne: 0.00002
+Epoch 16 - Loss moyenne: 0.00002
+Epoch 17 - Loss moyenne: 0.00001
+Epoch 18 - Loss moyenne: 0.00001
+Epoch 19 - Loss moyenne: 0.00001
+Epoch 20 - Loss moyenne: 0.00001
+Epoch 21 - Loss moyenne: 0.00001
+Epoch 22 - Loss moyenne: 0.00001
+Epoch 23 - Loss moyenne: 0.00001
+Epoch 24 - Loss moyenne: 0.00001
+Epoch 25 - Loss moyenne: 0.00001
+Epoch 26 - Loss moyenne: 0.00001
+Epoch 27 - Loss moyenne: 0.00001
+Epoch 28 - Loss moyenne: 0.00001
+Epoch 29 - Loss moyenne: 0.00001
+Entraînement terminé.
+Accuracy : 0.977
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.98      0.98      0.98       500
+      nature       0.98      0.98      0.98       500
+
+    accuracy                           0.98      1000
+   macro avg       0.98      0.98      0.98      1000
+weighted avg       0.98      0.98      0.98      1000
+
+----------------------------------------------------------------------------------------------------
+Opération sur cuda
+Dataset utilisé 'glide' - Classes: ['ai', 'nature']
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.50788
+Epoch 1 - Loss moyenne: 0.13298
+Epoch 2 - Loss moyenne: 0.03550
+Epoch 3 - Loss moyenne: 0.00881
+Epoch 4 - Loss moyenne: 0.00627
+Epoch 5 - Loss moyenne: 0.00722
+Epoch 6 - Loss moyenne: 0.00328
+Epoch 7 - Loss moyenne: 0.00574
+Epoch 8 - Loss moyenne: 0.02191
+Epoch 9 - Loss moyenne: 0.02825
+Epoch 10 - Loss moyenne: 0.00930
+Epoch 11 - Loss moyenne: 0.00698
+Epoch 12 - Loss moyenne: 0.00949
+Epoch 13 - Loss moyenne: 0.00312
+Epoch 14 - Loss moyenne: 0.00201
+Epoch 15 - Loss moyenne: 0.00019
+Epoch 16 - Loss moyenne: 0.00014
+Epoch 17 - Loss moyenne: 0.00012
+Epoch 18 - Loss moyenne: 0.00011
+Epoch 19 - Loss moyenne: 0.00010
+Epoch 20 - Loss moyenne: 0.00010
+Epoch 21 - Loss moyenne: 0.00010
+Epoch 22 - Loss moyenne: 0.00009
+Epoch 23 - Loss moyenne: 0.00009
+Epoch 24 - Loss moyenne: 0.00009
+Epoch 25 - Loss moyenne: 0.00009
+Epoch 26 - Loss moyenne: 0.00009
+Epoch 27 - Loss moyenne: 0.00009
+Epoch 28 - Loss moyenne: 0.00009
+Epoch 29 - Loss moyenne: 0.00009
+Entraînement terminé.
+Accuracy : 0.826
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.82      0.84      0.83       500
+      nature       0.84      0.81      0.82       500
+
+    accuracy                           0.83      1000
+   macro avg       0.83      0.83      0.83      1000
+weighted avg       0.83      0.83      0.83      1000
+
+----------------------------------------------------------------------------------------------------
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 1.14954
+Epoch 1 - Loss moyenne: 0.41398
+Epoch 2 - Loss moyenne: 0.21875
+Epoch 3 - Loss moyenne: 0.07658
+Epoch 4 - Loss moyenne: 0.02924
+Epoch 5 - Loss moyenne: 0.02505
+Epoch 6 - Loss moyenne: 0.00435
+Epoch 7 - Loss moyenne: 0.00455
+Epoch 8 - Loss moyenne: 0.01387
+Epoch 9 - Loss moyenne: 0.00866
+Epoch 10 - Loss moyenne: 0.00322
+Epoch 11 - Loss moyenne: 0.00052
+Epoch 12 - Loss moyenne: 0.00006
+Epoch 13 - Loss moyenne: 0.00003
+Epoch 14 - Loss moyenne: 0.00002
+Epoch 15 - Loss moyenne: 0.00002
+Epoch 16 - Loss moyenne: 0.00002
+Epoch 17 - Loss moyenne: 0.00002
+Epoch 18 - Loss moyenne: 0.00002
+Epoch 19 - Loss moyenne: 0.00001
+Epoch 20 - Loss moyenne: 0.00001
+Epoch 21 - Loss moyenne: 0.00001
+Epoch 22 - Loss moyenne: 0.00001
+Epoch 23 - Loss moyenne: 0.00001
+Epoch 24 - Loss moyenne: 0.00001
+Epoch 25 - Loss moyenne: 0.00001
+Epoch 26 - Loss moyenne: 0.00001
+Epoch 27 - Loss moyenne: 0.00001
+Epoch 28 - Loss moyenne: 0.00001
+Epoch 29 - Loss moyenne: 0.00001
+Entraînement terminé.
+Accuracy : 0.843
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.84      0.85      0.84       500
+      nature       0.85      0.83      0.84       500
+
+    accuracy                           0.84      1000
+   macro avg       0.84      0.84      0.84      1000
+weighted avg       0.84      0.84      0.84      1000
+
+----------------------------------------------------------------------------------------------------
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 1.13058
+Epoch 1 - Loss moyenne: 0.40600
+Epoch 2 - Loss moyenne: 0.21574
+Epoch 3 - Loss moyenne: 0.06402
+Epoch 4 - Loss moyenne: 0.03682
+Epoch 5 - Loss moyenne: 0.02120
+Epoch 6 - Loss moyenne: 0.01618
+Epoch 7 - Loss moyenne: 0.01376
+Epoch 8 - Loss moyenne: 0.00600
+Epoch 9 - Loss moyenne: 0.00097
+Epoch 10 - Loss moyenne: 0.00205
+Epoch 11 - Loss moyenne: 0.00352
+Epoch 12 - Loss moyenne: 0.00706
+Epoch 13 - Loss moyenne: 0.00301
+Epoch 14 - Loss moyenne: 0.00294
+Epoch 15 - Loss moyenne: 0.00087
+Epoch 16 - Loss moyenne: 0.00051
+Epoch 17 - Loss moyenne: 0.00018
+Epoch 18 - Loss moyenne: 0.00001
+Epoch 19 - Loss moyenne: 0.00001
+Epoch 20 - Loss moyenne: 0.00001
+Epoch 21 - Loss moyenne: 0.00001
+Epoch 22 - Loss moyenne: 0.00001
+Epoch 23 - Loss moyenne: 0.00001
+Epoch 24 - Loss moyenne: 0.00001
+Epoch 25 - Loss moyenne: 0.00001
+Epoch 26 - Loss moyenne: 0.00001
+Epoch 27 - Loss moyenne: 0.00001
+Epoch 28 - Loss moyenne: 0.00001
+Epoch 29 - Loss moyenne: 0.00001
+Entraînement terminé.
+Accuracy : 0.843
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.83      0.86      0.85       500
+      nature       0.86      0.82      0.84       500
+
+    accuracy                           0.84      1000
+   macro avg       0.84      0.84      0.84      1000
+weighted avg       0.84      0.84      0.84      1000
+
+----------------------------------------------------------------------------------------------------
+Entraînement avec 50 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 1.27892
+Epoch 1 - Loss moyenne: 0.50966
+Epoch 2 - Loss moyenne: 0.31184
+Epoch 3 - Loss moyenne: 0.14252
+Epoch 4 - Loss moyenne: 0.05040
+Epoch 5 - Loss moyenne: 0.05815
+Epoch 6 - Loss moyenne: 0.02909
+Epoch 7 - Loss moyenne: 0.00232
+Epoch 8 - Loss moyenne: 0.00026
+Epoch 9 - Loss moyenne: 0.00008
+Epoch 10 - Loss moyenne: 0.00005
+Epoch 11 - Loss moyenne: 0.00004
+Epoch 12 - Loss moyenne: 0.00004
+Epoch 13 - Loss moyenne: 0.00003
+Epoch 14 - Loss moyenne: 0.00003
+Epoch 15 - Loss moyenne: 0.00003
+Epoch 16 - Loss moyenne: 0.00002
+Epoch 17 - Loss moyenne: 0.00002
+Epoch 18 - Loss moyenne: 0.00002
+Epoch 19 - Loss moyenne: 0.00002
+Epoch 20 - Loss moyenne: 0.00002
+Epoch 21 - Loss moyenne: 0.00002
+Epoch 22 - Loss moyenne: 0.00002
+Epoch 23 - Loss moyenne: 0.00002
+Epoch 24 - Loss moyenne: 0.00002
+Epoch 25 - Loss moyenne: 0.00002
+Epoch 26 - Loss moyenne: 0.00002
+Epoch 27 - Loss moyenne: 0.00002
+Epoch 28 - Loss moyenne: 0.00002
+Epoch 29 - Loss moyenne: 0.00002
+Entraînement terminé.
+Accuracy : 0.842
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.83      0.86      0.84       500
+      nature       0.85      0.83      0.84       500
+
+    accuracy                           0.84      1000
+   macro avg       0.84      0.84      0.84      1000
+weighted avg       0.84      0.84      0.84      1000
+
+----------------------------------------------------------------------------------------------------
+Entraînement avec 75 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 1.17246
+Epoch 1 - Loss moyenne: 0.42595
+Epoch 2 - Loss moyenne: 0.24331
+Epoch 3 - Loss moyenne: 0.09832
+Epoch 4 - Loss moyenne: 0.04541
+Epoch 5 - Loss moyenne: 0.04004
+Epoch 6 - Loss moyenne: 0.01173
+Epoch 7 - Loss moyenne: 0.02589
+Epoch 8 - Loss moyenne: 0.01261
+Epoch 9 - Loss moyenne: 0.00496
+Epoch 10 - Loss moyenne: 0.00273
+Epoch 11 - Loss moyenne: 0.00188
+Epoch 12 - Loss moyenne: 0.00018
+Epoch 13 - Loss moyenne: 0.00002
+Epoch 14 - Loss moyenne: 0.00002
+Epoch 15 - Loss moyenne: 0.00002
+Epoch 16 - Loss moyenne: 0.00001
+Epoch 17 - Loss moyenne: 0.00001
+Epoch 18 - Loss moyenne: 0.00001
+Epoch 19 - Loss moyenne: 0.00001
+Epoch 20 - Loss moyenne: 0.00001
+Epoch 21 - Loss moyenne: 0.00001
+Epoch 22 - Loss moyenne: 0.00001
+Epoch 23 - Loss moyenne: 0.00001
+Epoch 24 - Loss moyenne: 0.00001
+Epoch 25 - Loss moyenne: 0.00001
+Epoch 26 - Loss moyenne: 0.00001
+Epoch 27 - Loss moyenne: 0.00001
+Epoch 28 - Loss moyenne: 0.00001
+Epoch 29 - Loss moyenne: 0.00001
+Entraînement terminé.
+Accuracy : 0.841
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.83      0.86      0.84       500
+      nature       0.85      0.82      0.84       500
+
+    accuracy                           0.84      1000
+   macro avg       0.84      0.84      0.84      1000
+weighted avg       0.84      0.84      0.84      1000
+
+----------------------------------------------------------------------------------------------------
+Entraînement avec 100 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 1.30417
+Epoch 1 - Loss moyenne: 0.50575
+Epoch 2 - Loss moyenne: 0.33778
+Epoch 3 - Loss moyenne: 0.17724
+Epoch 4 - Loss moyenne: 0.06187
+Epoch 5 - Loss moyenne: 0.03185
+Epoch 6 - Loss moyenne: 0.02498
+Epoch 7 - Loss moyenne: 0.00748
+Epoch 8 - Loss moyenne: 0.00086
+Epoch 9 - Loss moyenne: 0.00010
+Epoch 10 - Loss moyenne: 0.00002
+Epoch 11 - Loss moyenne: 0.00002
+Epoch 12 - Loss moyenne: 0.00001
+Epoch 13 - Loss moyenne: 0.00001
+Epoch 14 - Loss moyenne: 0.00001
+Epoch 15 - Loss moyenne: 0.00001
+Epoch 16 - Loss moyenne: 0.00001
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** JOB 294796 ON gpu002 CANCELLED AT 2025-03-31T16:06:14 ***
