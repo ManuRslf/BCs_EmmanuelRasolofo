@@ -43,7 +43,7 @@ def Config_model_run():
     if Config.WANDB_LOG:
         wandb.init(
             project="Encoder-DecoderProject",
-            name=f"AT ALL R{Config.RESIZE_SHAPE} dataset {timestamp}",
+            name=f"AT {Config.MODEL if Config.MODEL is not None else "Merged"} R{Config.RESIZE_SHAPE} dataset {timestamp}",
             config={"architecture": "dinov2plusllma"}
         )
 
