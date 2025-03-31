@@ -5,7 +5,7 @@ class Config:
     
     DEBUG = False
     MODEL = "midjourney"
-    RESIZE_SHAPE = 56
+    RESIZE_SHAPE = 126
 
     TRANSFORM = transforms.Compose([
         transforms.Resize((RESIZE_SHAPE, RESIZE_SHAPE)),

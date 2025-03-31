@@ -182,7 +182,7 @@ if __name__ == '__main__':
     if Config.WANDB_LOG:
         wandb.init(
             project="Encoder-DecoderProject",
-            name=f"ACC_TOK ALL dataset {timestamp}",
+            name=f"AT ALL R{Config.RESIZE_SHAPE} dataset {timestamp}",
             config={"architecture": "dinov2plusllma"}
         )
 
