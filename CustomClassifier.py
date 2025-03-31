@@ -2,7 +2,7 @@ import torch
 from torch import nn
 from transformers import AutoModel, LlamaForCausalLM, LlamaConfig
 from sklearn.metrics import accuracy_score, classification_report
-from util import load_tinygen_image, print_verbose
+from image_util import load_tinygen_image, print_verbose
 from torch.utils.data import DataLoader
 
 from configs import Config
