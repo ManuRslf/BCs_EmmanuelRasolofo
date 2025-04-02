@@ -56,3 +56,7 @@ def Config_model_run():
         
     if Config.WANDB_LOG:
         wandb.finish()
+        
+        
+if __name__ == '__main__':
+    Config_model_run()

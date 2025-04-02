@@ -131,9 +131,9 @@ def run_experiment(model_name:str, save_image:bool, wandb_log:bool, decreasing_l
         
             print(f"iteration {it}, {model_name}: acc {means[-1]}")
             
-            if wandb_log:
-                wandb.log({f"Accuracy/{model_name}": acc, "tokens": tokens})
-            accuracy_list.append(acc)
+        if wandb_log:
+            wandb.log({f"Accuracy/{model_name}": np.mean(np.array(means)), "tokens": tokens})
+        accuracy_list.append(acc)
             
         print(f"accuracy mean: {np.mean(np.array(means))}")
     

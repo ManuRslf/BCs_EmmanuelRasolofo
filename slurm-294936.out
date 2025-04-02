@@ -1,0 +1,828 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250401_204549-a0ft66q1
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT midjourney R224 dataset 20250401-204548
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/a0ft66q1
+Date d'entraînement: 20250401-204548
+Mode: run
+Images redimensionnées en 224x224
+Tokens additionnels (lab): [0, 10, 30, 60, 80]
+LLMA (lab): 2 couches, taille 384
+Batch size (lab): 128, LR (lab): 0.0004, Époques (lab): 30
+Opération sur cuda
+Dataset utilisé 'midjourney' - Classes: ['ai', 'nature']
+--------------------------------------------------------------------
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.899
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.91      0.90       500
+      nature       0.91      0.89      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 0, midjourney: acc 0.899
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.894
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.90      0.89       500
+      nature       0.90      0.89      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 1, midjourney: acc 0.894
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.911
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.92      0.91       500
+      nature       0.92      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 2, midjourney: acc 0.911
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.897
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.90      0.90       500
+      nature       0.90      0.89      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 3, midjourney: acc 0.897
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.891
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.88      0.90      0.89       500
+      nature       0.90      0.88      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 4, midjourney: acc 0.891
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.889
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.89      0.89       500
+      nature       0.89      0.89      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 5, midjourney: acc 0.889
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.892
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.90      0.89       500
+      nature       0.90      0.89      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 6, midjourney: acc 0.892
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.895
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.90      0.90       500
+      nature       0.90      0.89      0.89       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.89      1000
+weighted avg       0.90      0.90      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 7, midjourney: acc 0.895
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.901
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.91      0.90       500
+      nature       0.91      0.89      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 8, midjourney: acc 0.901
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.891
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.90      0.89       500
+      nature       0.89      0.89      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 9, midjourney: acc 0.891
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.891
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.88      0.91      0.89       500
+      nature       0.90      0.87      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 10, midjourney: acc 0.891
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.909
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.92      0.91       500
+      nature       0.92      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 11, midjourney: acc 0.909
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.895
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.89      0.89       500
+      nature       0.89      0.90      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.89      1000
+weighted avg       0.90      0.90      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 12, midjourney: acc 0.895
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.898
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.88      0.92      0.90       500
+      nature       0.91      0.88      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 13, midjourney: acc 0.898
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.894
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.90      0.89       500
+      nature       0.90      0.89      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 14, midjourney: acc 0.894
+accuracy mean: 0.8964666666666667
+--------------------------------------------------------------------
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.91
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.91      0.91       500
+      nature       0.91      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 0, midjourney: acc 0.91
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.909
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.92      0.91       500
+      nature       0.92      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 1, midjourney: acc 0.909
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.911
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.91      0.91       500
+      nature       0.91      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 2, midjourney: acc 0.911
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.908
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.91      0.91       500
+      nature       0.91      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 3, midjourney: acc 0.908
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.9
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.90      0.90       500
+      nature       0.90      0.90      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 4, midjourney: acc 0.9
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.899
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.89      0.90       500
+      nature       0.89      0.91      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 5, midjourney: acc 0.899
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.912
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.92      0.91       500
+      nature       0.92      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 6, midjourney: acc 0.912
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.91
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.92      0.91       500
+      nature       0.92      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 7, midjourney: acc 0.91
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.911
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.93      0.91       500
+      nature       0.93      0.89      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 8, midjourney: acc 0.911
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.905
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.91      0.91       500
+      nature       0.91      0.90      0.90       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.90      1000
+weighted avg       0.91      0.91      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 9, midjourney: acc 0.905
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.904
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.91      0.90       500
+      nature       0.91      0.90      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 10, midjourney: acc 0.904
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.908
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.91      0.91       500
+      nature       0.91      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 11, midjourney: acc 0.908
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.898
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.91      0.90       500
+      nature       0.91      0.88      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 12, midjourney: acc 0.898
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.908
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.91      0.91       500
+      nature       0.91      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 13, midjourney: acc 0.908
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.906
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.89      0.90       500
+      nature       0.89      0.92      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 14, midjourney: acc 0.906
+accuracy mean: 0.9065999999999999
+--------------------------------------------------------------------
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.901
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.91      0.90       500
+      nature       0.91      0.89      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 0, midjourney: acc 0.901
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.905
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.90      0.90       500
+      nature       0.90      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.90      1000
+weighted avg       0.91      0.91      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 1, midjourney: acc 0.905
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.913
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.94      0.92       500
+      nature       0.94      0.88      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 2, midjourney: acc 0.913
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.894
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.88      0.91      0.90       500
+      nature       0.91      0.87      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 3, midjourney: acc 0.894
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.92
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.92      0.92       500
+      nature       0.92      0.92      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 4, midjourney: acc 0.92
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.92
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.92      0.92       500
+      nature       0.92      0.92      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 5, midjourney: acc 0.92
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.917
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.92      0.92       500
+      nature       0.92      0.92      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 6, midjourney: acc 0.917
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.902
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.90      0.90       500
+      nature       0.90      0.91      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 7, midjourney: acc 0.902
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.914
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.92      0.91       500
+      nature       0.92      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 8, midjourney: acc 0.914
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.913
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.92      0.91       500
+      nature       0.92      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 9, midjourney: acc 0.913
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.907
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.91      0.91       500
+      nature       0.91      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 10, midjourney: acc 0.907
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.912
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.91      0.91       500
+      nature       0.91      0.92      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 11, midjourney: acc 0.912
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.913
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.92      0.91       500
+      nature       0.92      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 12, midjourney: acc 0.913
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.911
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.92      0.91       500
+      nature       0.92      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 13, midjourney: acc 0.911
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.919
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.93      0.92       500
+      nature       0.92      0.91      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 14, midjourney: acc 0.919
+accuracy mean: 0.9107333333333334
+--------------------------------------------------------------------
+Entraînement avec 60 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.922
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.92      0.92       500
+      nature       0.92      0.92      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 0, midjourney: acc 0.922
+Entraînement avec 60 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.906
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.91      0.91       500
+      nature       0.91      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 1, midjourney: acc 0.906
+Entraînement avec 60 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.912
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.92      0.91       500
+      nature       0.92      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 2, midjourney: acc 0.912
+Entraînement avec 60 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.912
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.91      0.91       500
+      nature       0.91      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 3, midjourney: acc 0.912
+Entraînement avec 60 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.908
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.89      0.91       500
+      nature       0.90      0.92      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 4, midjourney: acc 0.908
+Entraînement avec 60 tokens additionnels
+TRAINING...
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** JOB 294936 ON gpu002 CANCELLED AT 2025-04-02T08:45:26 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 294936.0 ON gpu002 CANCELLED AT 2025-04-02T08:45:26 DUE TO TIME LIMIT ***

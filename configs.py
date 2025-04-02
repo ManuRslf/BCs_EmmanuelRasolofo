@@ -4,8 +4,8 @@ class Config:
     '''Tous les hyper-paramètres ici'''
     
     DEBUG = False
-    MODEL = "midjourney"
-    RESIZE_SHAPE = 84
+    MODEL = 'midjourney'
+    RESIZE_SHAPE = 224
 
     TRANSFORM = transforms.Compose([
         transforms.Resize((RESIZE_SHAPE, RESIZE_SHAPE)),
@@ -36,10 +36,10 @@ class Config:
     else:
         SAVE_IMAGE = False
         WANDB_LOG = True
-        ADD_TOKENS_LAB = [0, 10, 30, 50, 75, 100]
-        NUM_HIDDEN_LAYER_LLMA_LAB = 2
+        ADD_TOKENS_LAB = [0, 10, 30, 60, 80]
+        NUM_HIDDEN_LAYER_LLMA_LAB = 6
         HIDDEN_SIZE_LAB = 384
-        BATCH_SIZE_LAB = 128
+        BATCH_SIZE_LAB = 16
         LR_LAB = 4e-4
         EPOCHS_LAB = 30
         DECREASING_LR_LAB = True

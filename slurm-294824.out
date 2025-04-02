@@ -1,0 +1,330 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250401_090150-4as0orov
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT Merged R112 dataset 20250401-090150
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/4as0orov
+Date d'entraînement: 20250401-090150
+Mode: run
+Images redimensionnées en 112x112
+Tokens additionnels (lab): [0, 10, 30, 50, 75, 100]
+LLMA (lab): 2 couches, taille 384
+Batch size (lab): 128, LR (lab): 0.0004, Époques (lab): 30
+Opération sur cuda
+Dataset utilisé 'None' - Classes: ['ai', 'nature']
+--------------------------------------------------------------------
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.825
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.83      0.82      0.82      3500
+      nature       0.82      0.83      0.83      3500
+
+    accuracy                           0.82      7000
+   macro avg       0.83      0.82      0.82      7000
+weighted avg       0.83      0.82      0.82      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 0, None: acc 0.825
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8258571428571428
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.83      0.82      0.83      3500
+      nature       0.82      0.83      0.83      3500
+
+    accuracy                           0.83      7000
+   macro avg       0.83      0.83      0.83      7000
+weighted avg       0.83      0.83      0.83      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 1, None: acc 0.8258571428571428
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8214285714285714
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.82      0.82      0.82      3500
+      nature       0.82      0.83      0.82      3500
+
+    accuracy                           0.82      7000
+   macro avg       0.82      0.82      0.82      7000
+weighted avg       0.82      0.82      0.82      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 2, None: acc 0.8214285714285714
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8272857142857143
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.83      0.82      0.83      3500
+      nature       0.82      0.84      0.83      3500
+
+    accuracy                           0.83      7000
+   macro avg       0.83      0.83      0.83      7000
+weighted avg       0.83      0.83      0.83      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 3, None: acc 0.8272857142857143
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8275714285714286
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.83      0.82      0.83      3500
+      nature       0.82      0.84      0.83      3500
+
+    accuracy                           0.83      7000
+   macro avg       0.83      0.83      0.83      7000
+weighted avg       0.83      0.83      0.83      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 4, None: acc 0.8275714285714286
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8232857142857143
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.83      0.82      0.82      3500
+      nature       0.82      0.83      0.82      3500
+
+    accuracy                           0.82      7000
+   macro avg       0.82      0.82      0.82      7000
+weighted avg       0.82      0.82      0.82      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 5, None: acc 0.8232857142857143
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8211428571428572
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.82      0.82      0.82      3500
+      nature       0.82      0.83      0.82      3500
+
+    accuracy                           0.82      7000
+   macro avg       0.82      0.82      0.82      7000
+weighted avg       0.82      0.82      0.82      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 6, None: acc 0.8211428571428572
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8241428571428572
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.83      0.82      0.82      3500
+      nature       0.82      0.83      0.82      3500
+
+    accuracy                           0.82      7000
+   macro avg       0.82      0.82      0.82      7000
+weighted avg       0.82      0.82      0.82      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 7, None: acc 0.8241428571428572
+accuracy mean: 0.8244642857142856
+--------------------------------------------------------------------
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8198571428571428
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.82      0.82      0.82      3500
+      nature       0.82      0.82      0.82      3500
+
+    accuracy                           0.82      7000
+   macro avg       0.82      0.82      0.82      7000
+weighted avg       0.82      0.82      0.82      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 0, None: acc 0.8198571428571428
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.819
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.82      0.81      0.82      3500
+      nature       0.81      0.83      0.82      3500
+
+    accuracy                           0.82      7000
+   macro avg       0.82      0.82      0.82      7000
+weighted avg       0.82      0.82      0.82      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 1, None: acc 0.819
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8164285714285714
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.82      0.81      0.81      3500
+      nature       0.81      0.83      0.82      3500
+
+    accuracy                           0.82      7000
+   macro avg       0.82      0.82      0.82      7000
+weighted avg       0.82      0.82      0.82      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 2, None: acc 0.8164285714285714
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8244285714285714
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.83      0.82      0.82      3500
+      nature       0.82      0.83      0.82      3500
+
+    accuracy                           0.82      7000
+   macro avg       0.82      0.82      0.82      7000
+weighted avg       0.82      0.82      0.82      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 3, None: acc 0.8244285714285714
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8218571428571428
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.83      0.81      0.82      3500
+      nature       0.82      0.83      0.82      3500
+
+    accuracy                           0.82      7000
+   macro avg       0.82      0.82      0.82      7000
+weighted avg       0.82      0.82      0.82      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 4, None: acc 0.8218571428571428
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8188571428571428
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.82      0.82      0.82      3500
+      nature       0.82      0.82      0.82      3500
+
+    accuracy                           0.82      7000
+   macro avg       0.82      0.82      0.82      7000
+weighted avg       0.82      0.82      0.82      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 5, None: acc 0.8188571428571428
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.815
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.82      0.81      0.81      3500
+      nature       0.81      0.82      0.82      3500
+
+    accuracy                           0.81      7000
+   macro avg       0.82      0.81      0.81      7000
+weighted avg       0.82      0.81      0.81      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 6, None: acc 0.815
+Entraînement avec 10 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8241428571428572
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.82      0.82      0.82      3500
+      nature       0.82      0.82      0.82      3500
+
+    accuracy                           0.82      7000
+   macro avg       0.82      0.82      0.82      7000
+weighted avg       0.82      0.82      0.82      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 7, None: acc 0.8241428571428572
+accuracy mean: 0.8199464285714285
+--------------------------------------------------------------------
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8227142857142857
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.81      0.84      0.82      3500
+      nature       0.83      0.81      0.82      3500
+
+    accuracy                           0.82      7000
+   macro avg       0.82      0.82      0.82      7000
+weighted avg       0.82      0.82      0.82      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 0, None: acc 0.8227142857142857
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8238571428571428
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.82      0.83      0.82      3500
+      nature       0.82      0.82      0.82      3500
+
+    accuracy                           0.82      7000
+   macro avg       0.82      0.82      0.82      7000
+weighted avg       0.82      0.82      0.82      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 1, None: acc 0.8238571428571428
+Entraînement avec 30 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.8218571428571428
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.82      0.82      0.82      3500
+      nature       0.82      0.82      0.82      3500
+
+    accuracy                           0.82      7000
+   macro avg       0.82      0.82      0.82      7000
+weighted avg       0.82      0.82      0.82      7000
+
+----------------------------------------------------------------------------------------------------
+iteration 2, None: acc 0.8218571428571428
+Entraînement avec 30 tokens additionnels
+TRAINING...
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** JOB 294824 ON gpu002 CANCELLED AT 2025-04-01T20:42:22 ***
+slurmstepd: error: *** STEP 294824.0 ON gpu002 CANCELLED AT 2025-04-01T20:42:22 ***
