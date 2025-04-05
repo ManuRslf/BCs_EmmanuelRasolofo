@@ -26,21 +26,25 @@ class Config:
         SAVE_IMAGE = False
         WANDB_LOG = False
         ADD_TOKENS_LAB = [i for i in range(2, 3)]
+        ADD_TOKENS_LAB_perf = [0, 1]
         NUM_HIDDEN_LAYER_LLMA_LAB = 1
         HIDDEN_SIZE_LAB = 384
         BATCH_SIZE_LAB = 128
         LR_LAB = 1e-3
         EPOCHS_LAB = 1
+        ITERATION = 1
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-small'
     else:
         SAVE_IMAGE = False
         WANDB_LOG = True
         ADD_TOKENS_LAB = [0, 10, 30, 60, 80]
-        NUM_HIDDEN_LAYER_LLMA_LAB = 6
+        ADD_TOKENS_LAB_perf = [0, 20, 50]
+        NUM_HIDDEN_LAYER_LLMA_LAB = 4
         HIDDEN_SIZE_LAB = 384
         BATCH_SIZE_LAB = 16
         LR_LAB = 4e-4
-        EPOCHS_LAB = 30
+        EPOCHS_LAB = 15
+        ITERATION = 8
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-small'

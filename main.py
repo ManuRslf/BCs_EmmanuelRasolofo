@@ -23,7 +23,8 @@ def one_by_one():
 
         wandb.define_metric("tokens")
         wandb.define_metric("Accuracy/*", step_metric="tokens")
-        
+        wandb.define_metric(f"Accuracy_cross_model{Config.MODEL}/*", step_metric="tokens")
+
 
 
     for model in MODEL_NAMES:
@@ -50,9 +51,10 @@ def Config_model_run():
 
         wandb.define_metric("tokens")
         wandb.define_metric("Accuracy/*", step_metric="tokens")
-        
+        wandb.define_metric(f"Accuracy_cross_model{Config.MODEL}/*", step_metric="tokens")
 
-    run_experiment(Config.MODEL, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+
+    cross_model(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
         
     if Config.WANDB_LOG:
         wandb.finish()

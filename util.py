@@ -15,13 +15,13 @@ import numpy as np
 from configs import Config
 import CustomClassifier
 from image_util import load_tinygen_image, print_verbose
+from typing import List
 
 
 MODEL_NAMES = ['biggan', 'vqdm', 'sdv5', 'wukong', 'adm', 'glide', 'midjourney']
 
 def train_model(model_name:str,
                 dataloader_train:DataLoader,
-                dataloader_test:DataLoader,
                 additional_tokens:int,
                 wandb_log:bool,
                 decreasing_lr:bool,
@@ -115,7 +115,7 @@ def run_experiment(model_name:str, save_image:bool, wandb_log:bool, decreasing_l
     
     # moyenne sur chaque token
     means = []
-    iterations = 8
+    iterations = Config.ITERATION
     
     
     for tokens in Config.ADD_TOKENS_LAB:
@@ -124,7 +124,7 @@ def run_experiment(model_name:str, save_image:bool, wandb_log:bool, decreasing_l
         print("--------------------------------------------------------------------")
         
         for it in range(iterations): 
-            model = train_model(model_name, dataloader_train, dataloader_test, tokens, wandb_log, decreasing_lr, device)
+            model = train_model(model_name, dataloader_train, tokens, wandb_log, decreasing_lr, device)
             acc = test_model(dataloader_test, device, model)
             means.append(acc)
             
@@ -147,6 +147,78 @@ def run_experiment(model_name:str, save_image:bool, wandb_log:bool, decreasing_l
         plt.grid()
         plt.savefig(file_name)
     return accuracy_list
+
+def test_other_dataset(device:torch.device, model:nn.Module, verbose:bool = True):
+    """
+    Test le model par rapport à un dataset
+    """
+    model.eval()
+    predictions = []
+    true_labels = []
+    
+    MODEL_NAMES = ['biggan', 'vqdm', 'sdv5', 'wukong', 'adm', 'glide', 'midjourney']
+    
+    # tous les dataloaders de chaque datasets
+    model_dataloaders = {
+        i : load_tinygen_image(i, tf=Config.TRANSFORM)[1] for i in MODEL_NAMES
+    }
+    accuracy_result = dict.fromkeys(MODEL_NAMES, None)
+    
+    for name, dlt in model_dataloaders.items():
+        predictions = []
+        true_labels = []
+        with torch.no_grad():
+            for inputs, labels in dlt:
+                inputs, labels = inputs.to(device), labels.to(device)
+                outputs = model(inputs)
+                _, preds = torch.max(outputs, 1)
+                predictions.extend(preds.cpu().numpy())
+                true_labels.extend(labels.cpu().numpy())
+                
+        acc = accuracy_score(true_labels, predictions)
+        
+        accuracy_result[name] = acc
+        
+        if verbose:
+            print(f"Accuracy : {acc} avec le dataset --------------------> {name}")
+            print("Rapport de classification :")
+            print(classification_report(true_labels, predictions, target_names=['ia', 'nature'], zero_division=1))
+            print("-" * 100)
+    return acc
+
+def cross_model(model_name:str, wandb_log:bool, decreasing_lr:bool):
+    '''
+    Training: une dataset en particulier, Test: evalu sa performance par rapport au autre modéle
+    '''
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    
+    # dataloaders du model actuel
+    train_dataset, _ = load_tinygen_image(model_name, tf=Config.TRANSFORM)
+    
+    print(f"Opération sur {device}")
+    print(f"Dataset utilisé '{model_name}' - Classes: {train_dataset.classes} -> perf_inter_model")
+    
+    dataloader_train = DataLoader(train_dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=True, num_workers=4, pin_memory=True)
+    timestamp = time.strftime("%Y%m%d-%H%M%S")
+    
+    
+    for tokens in Config.ADD_TOKENS_LAB_perf:      
+          
+        print("--------------------------------------------------------------------")
+        
+        model = train_model(model_name, dataloader_train, tokens, wandb_log, decreasing_lr, device)
+        
+        ACCs = test_other_dataset(device=device, model=model)
+        
+        
+        for name, accuracy in ACCs.items():
+            
+            print(f"Accuracy {model_name} avec le dataset {name} = {accuracy}")
+            
+            if wandb_log:
+                wandb.log({f"Accuracy_cross_model/{name}": accuracy, "tokens": tokens})
+        
+
 
 if __name__ == '__main__':
 
