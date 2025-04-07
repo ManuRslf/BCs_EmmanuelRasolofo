@@ -164,11 +164,14 @@ def test_other_dataset(device:torch.device, model:nn.Module, verbose:bool = True
     }
     accuracy_result = dict.fromkeys(MODEL_NAMES, None)
     
-    for name, dlt in model_dataloaders.items():
+    for name, dataset in model_dataloaders.items():
         predictions = []
         true_labels = []
+        
+        dataloader = DataLoader(dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=False)
+        
         with torch.no_grad():
-            for inputs, labels in dlt:
+            for inputs, labels in dataloader:
                 inputs, labels = inputs.to(device), labels.to(device)
                 outputs = model(inputs)
                 _, preds = torch.max(outputs, 1)
@@ -184,7 +187,7 @@ def test_other_dataset(device:torch.device, model:nn.Module, verbose:bool = True
             print("Rapport de classification :")
             print(classification_report(true_labels, predictions, target_names=['ia', 'nature'], zero_division=1))
             print("-" * 100)
-    return acc
+    return accuracy_result
 
 def cross_model(model_name:str, wandb_log:bool, decreasing_lr:bool):
     '''

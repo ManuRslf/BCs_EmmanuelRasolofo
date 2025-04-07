@@ -44,7 +44,7 @@ class Config:
         HIDDEN_SIZE_LAB = 384
         BATCH_SIZE_LAB = 16
         LR_LAB = 4e-4
-        EPOCHS_LAB = 15
+        EPOCHS_LAB = 25
         ITERATION = 8
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-small'

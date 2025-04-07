@@ -1,0 +1,36 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250405_114748-ozyvivrx
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT midjourney R224 dataset 20250405-114747
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/ozyvivrx
+Date d'entraînement: 20250405-114747
+Mode: run
+Images redimensionnées en 224x224
+Tokens additionnels (lab): [0, 10, 30, 60, 80]
+LLMA (lab): 4 couches, taille 384
+Batch size (lab): 16, LR (lab): 0.0004, Époques (lab): 15
+Opération sur cuda
+Dataset utilisé 'midjourney' - Classes: ['ai', 'nature'] -> perf_inter_model
+--------------------------------------------------------------------
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Traceback (most recent call last):
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/main.py", line 64, in <module>
+    Config_model_run()
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/main.py", line 57, in Config_model_run
+    cross_model(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/util.py", line 211, in cross_model
+    ACCs = test_other_dataset(device=device, model=model)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/util.py", line 172, in test_other_dataset
+    inputs, labels = inputs.to(device), labels.to(device)
+                                        ^^^^^^^^^
+AttributeError: 'int' object has no attribute 'to'
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mAT midjourney R224 dataset 20250405-114747[0m at: [34mhttps://wandb.ai/manurslf301/Encoder-DecoderProject/runs/ozyvivrx[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250405_114748-ozyvivrx/logs[0m
+srun: error: gpu002: task 0: Exited with exit code 1

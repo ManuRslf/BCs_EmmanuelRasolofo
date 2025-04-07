@@ -1,0 +1,327 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250405_123936-dnv24lw7
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT midjourney R224 dataset 20250405-123936
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/dnv24lw7
+Date d'entraînement: 20250405-123936
+Mode: run
+Images redimensionnées en 224x224
+Tokens additionnels (lab): [0, 10, 30, 60, 80]
+LLMA (lab): 4 couches, taille 384
+Batch size (lab): 16, LR (lab): 0.0004, Époques (lab): 25
+Opération sur cuda
+Dataset utilisé 'midjourney' - Classes: ['ai', 'nature'] -> perf_inter_model
+--------------------------------------------------------------------
+Entraînement avec 0 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.465 avec le dataset --------------------> biggan
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.16      0.02      0.03       500
+      nature       0.48      0.91      0.63       500
+
+    accuracy                           0.47      1000
+   macro avg       0.32      0.47      0.33      1000
+weighted avg       0.32      0.47      0.33      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.469 avec le dataset --------------------> vqdm
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.26      0.03      0.06       500
+      nature       0.48      0.90      0.63       500
+
+    accuracy                           0.47      1000
+   macro avg       0.37      0.47      0.35      1000
+weighted avg       0.37      0.47      0.35      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.71 avec le dataset --------------------> sdv5
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.86      0.50      0.63       500
+      nature       0.65      0.92      0.76       500
+
+    accuracy                           0.71      1000
+   macro avg       0.75      0.71      0.70      1000
+weighted avg       0.75      0.71      0.70      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.668 avec le dataset --------------------> wukong
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.80      0.45      0.57       500
+      nature       0.62      0.89      0.73       500
+
+    accuracy                           0.67      1000
+   macro avg       0.71      0.67      0.65      1000
+weighted avg       0.71      0.67      0.65      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.482 avec le dataset --------------------> adm
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.40      0.07      0.12       500
+      nature       0.49      0.89      0.63       500
+
+    accuracy                           0.48      1000
+   macro avg       0.45      0.48      0.38      1000
+weighted avg       0.45      0.48      0.38      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.675 avec le dataset --------------------> glide
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.78      0.48      0.60       500
+      nature       0.63      0.87      0.73       500
+
+    accuracy                           0.68      1000
+   macro avg       0.70      0.68      0.66      1000
+weighted avg       0.70      0.68      0.66      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.9 avec le dataset --------------------> midjourney
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.91      0.90       500
+      nature       0.91      0.89      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy midjourney avec le dataset biggan = 0.465
+Accuracy midjourney avec le dataset vqdm = 0.469
+Accuracy midjourney avec le dataset sdv5 = 0.71
+Accuracy midjourney avec le dataset wukong = 0.668
+Accuracy midjourney avec le dataset adm = 0.482
+Accuracy midjourney avec le dataset glide = 0.675
+Accuracy midjourney avec le dataset midjourney = 0.9
+--------------------------------------------------------------------
+Entraînement avec 20 tokens additionnels
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.458 avec le dataset --------------------> biggan
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.15      0.02      0.03       500
+      nature       0.48      0.90      0.62       500
+
+    accuracy                           0.46      1000
+   macro avg       0.31      0.46      0.33      1000
+weighted avg       0.31      0.46      0.33      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.469 avec le dataset --------------------> vqdm
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.28      0.04      0.07       500
+      nature       0.48      0.90      0.63       500
+
+    accuracy                           0.47      1000
+   macro avg       0.38      0.47      0.35      1000
+weighted avg       0.38      0.47      0.35      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.68 avec le dataset --------------------> sdv5
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.81      0.47      0.59       500
+      nature       0.63      0.89      0.74       500
+
+    accuracy                           0.68      1000
+   macro avg       0.72      0.68      0.66      1000
+weighted avg       0.72      0.68      0.66      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.633 avec le dataset --------------------> wukong
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.77      0.38      0.51       500
+      nature       0.59      0.88      0.71       500
+
+    accuracy                           0.63      1000
+   macro avg       0.68      0.63      0.61      1000
+weighted avg       0.68      0.63      0.61      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.454 avec le dataset --------------------> adm
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.22      0.04      0.06       500
+      nature       0.47      0.87      0.61       500
+
+    accuracy                           0.45      1000
+   macro avg       0.35      0.45      0.34      1000
+weighted avg       0.35      0.45      0.34      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.675 avec le dataset --------------------> glide
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.80      0.47      0.59       500
+      nature       0.62      0.88      0.73       500
+
+    accuracy                           0.68      1000
+   macro avg       0.71      0.68      0.66      1000
+weighted avg       0.71      0.68      0.66      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.9 avec le dataset --------------------> midjourney
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.91      0.90       500
+      nature       0.91      0.89      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy midjourney avec le dataset biggan = 0.458
+Accuracy midjourney avec le dataset vqdm = 0.469
+Accuracy midjourney avec le dataset sdv5 = 0.68
+Accuracy midjourney avec le dataset wukong = 0.633
+Accuracy midjourney avec le dataset adm = 0.454
+Accuracy midjourney avec le dataset glide = 0.675
+Accuracy midjourney avec le dataset midjourney = 0.9
+--------------------------------------------------------------------
+Entraînement avec 50 tokens additionnels
+TRAINING...
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:        Accuracy_cross_model/adm █▁▅
+wandb:     Accuracy_cross_model/biggan █▃▁
+wandb:      Accuracy_cross_model/glide ▁▁█
+wandb: Accuracy_cross_model/midjourney ▁▁█
+wandb:       Accuracy_cross_model/sdv5 █▄▁
+wandb:       Accuracy_cross_model/vqdm ▁▁█
+wandb:     Accuracy_cross_model/wukong █▁▁
+wandb:                          tokens ▁▁▁▁▁▁▁▄▄▄▄▄▄▄███████
+wandb: 
+wandb: Run summary:
+wandb:        Accuracy_cross_model/adm 0.468
+wandb:     Accuracy_cross_model/biggan 0.456
+wandb:      Accuracy_cross_model/glide 0.682
+wandb: Accuracy_cross_model/midjourney 0.916
+wandb:       Accuracy_cross_model/sdv5 0.663
+wandb:       Accuracy_cross_model/vqdm 0.473
+wandb:     Accuracy_cross_model/wukong 0.634
+wandb:                          tokens 50
+wandb: 
+wandb: 🚀 View run AT midjourney R224 dataset 20250405-123936 at: https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/dnv24lw7
+wandb: ⭐️ View project at: https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250405_123936-dnv24lw7/logs
+Entraînement terminé.
+Accuracy : 0.456 avec le dataset --------------------> biggan
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.16      0.02      0.04       500
+      nature       0.48      0.89      0.62       500
+
+    accuracy                           0.46      1000
+   macro avg       0.32      0.46      0.33      1000
+weighted avg       0.32      0.46      0.33      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.473 avec le dataset --------------------> vqdm
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.32      0.05      0.09       500
+      nature       0.49      0.90      0.63       500
+
+    accuracy                           0.47      1000
+   macro avg       0.41      0.47      0.36      1000
+weighted avg       0.41      0.47      0.36      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.663 avec le dataset --------------------> sdv5
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.81      0.43      0.56       500
+      nature       0.61      0.90      0.73       500
+
+    accuracy                           0.66      1000
+   macro avg       0.71      0.66      0.64      1000
+weighted avg       0.71      0.66      0.64      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.634 avec le dataset --------------------> wukong
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.76      0.39      0.52       500
+      nature       0.59      0.88      0.71       500
+
+    accuracy                           0.63      1000
+   macro avg       0.68      0.63      0.61      1000
+weighted avg       0.68      0.63      0.61      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.468 avec le dataset --------------------> adm
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.31      0.05      0.09       500
+      nature       0.48      0.88      0.62       500
+
+    accuracy                           0.47      1000
+   macro avg       0.40      0.47      0.36      1000
+weighted avg       0.40      0.47      0.36      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.682 avec le dataset --------------------> glide
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.81      0.47      0.60       500
+      nature       0.63      0.89      0.74       500
+
+    accuracy                           0.68      1000
+   macro avg       0.72      0.68      0.67      1000
+weighted avg       0.72      0.68      0.67      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy : 0.916 avec le dataset --------------------> midjourney
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.93      0.92       500
+      nature       0.93      0.90      0.91       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+Accuracy midjourney avec le dataset biggan = 0.456
+Accuracy midjourney avec le dataset vqdm = 0.473
+Accuracy midjourney avec le dataset sdv5 = 0.663
+Accuracy midjourney avec le dataset wukong = 0.634
+Accuracy midjourney avec le dataset adm = 0.468
+Accuracy midjourney avec le dataset glide = 0.682
+Accuracy midjourney avec le dataset midjourney = 0.916
