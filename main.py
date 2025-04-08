@@ -28,8 +28,9 @@ def one_by_one():
 
 
     for model in MODEL_NAMES:
-
-        run_experiment(model, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+        wandb.define_metric(f"Accuracy_cross_model{model}/*", step_metric="tokens")
+        #run_experiment(model, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+        cross_model(model, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
         
     if Config.WANDB_LOG:
         wandb.finish()
@@ -61,4 +62,5 @@ def Config_model_run():
         
         
 if __name__ == '__main__':
-    Config_model_run()
+    one_by_one()
+    #Config_model_run()

@@ -219,7 +219,7 @@ def cross_model(model_name:str, wandb_log:bool, decreasing_lr:bool):
             print(f"Accuracy {model_name} avec le dataset {name} = {accuracy}")
             
             if wandb_log:
-                wandb.log({f"Accuracy_cross_model/{name}": accuracy, "tokens": tokens})
+                wandb.log({f"Accuracy_cross_model{model_name}/{name}": accuracy, "tokens": tokens})
         
 
 
