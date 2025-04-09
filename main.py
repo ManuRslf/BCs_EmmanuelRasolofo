@@ -62,5 +62,5 @@ def Config_model_run():
         
         
 if __name__ == '__main__':
-    one_by_one()
-    #Config_model_run()
+    #one_by_one()
+    Config_model_run()
