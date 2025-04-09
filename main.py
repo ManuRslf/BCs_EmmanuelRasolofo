@@ -72,7 +72,6 @@ def train_and_visu():
     llama_config = LlamaConfig(num_hidden_layers=Config.NUM_HIDDEN_LAYER_LLMA, 
                                hidden_size=Config.HIDDEN_SIZE)
     
-    model = CustomClassifier(llama_config, additional_tokens=Config.ADD_TOKENS).to(device)
     
     model.visualize_emb_class(dataloader_test, device)
         

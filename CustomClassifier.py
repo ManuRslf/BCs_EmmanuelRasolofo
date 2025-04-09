@@ -83,8 +83,9 @@ class CustomClassifier(nn.Module):
         outputs = self.llama(inputs_embeds=features)
         logits = outputs['logits'][:, -1] 
             
-        
-        return logits.cpu().numpy()  
+        with torch.no_grad():
+            l=logits.cpu().detach().numpy()  
+        return l  
 
     def visualize_emb_class(self, dataloader, device):
         self.dinov2_model.eval()
