@@ -5,7 +5,7 @@ class Config:
     
     DEBUG = False
     MODEL = None
-    RESIZE_SHAPE = 224
+    RESIZE_SHAPE = 42
 
     TRANSFORM = transforms.Compose([
         transforms.Resize((RESIZE_SHAPE, RESIZE_SHAPE)),
@@ -44,7 +44,7 @@ class Config:
         HIDDEN_SIZE_LAB = 384
         BATCH_SIZE_LAB = 16
         LR_LAB = 4e-4
-        EPOCHS_LAB = 35
+        EPOCHS_LAB = 10
         ITERATION = 8
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-small'

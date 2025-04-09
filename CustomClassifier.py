@@ -4,8 +4,13 @@ from transformers import AutoModel, LlamaForCausalLM, LlamaConfig
 from sklearn.metrics import accuracy_score, classification_report
 from image_util import load_tinygen_image, print_verbose
 from torch.utils.data import DataLoader
-
 from configs import Config
+import matplotlib.pyplot as plt
+from sklearn.manifold import TSNE
+import pandas as pd
+import seaborn as sns
+import numpy as np
+
 
 class CustomClassifier(nn.Module):
     '''
@@ -62,6 +67,54 @@ class CustomClassifier(nn.Module):
         logits = outputs['logits'][:, -1] 
         logits = self.classifier(logits)
         return logits
+    
+    # extraction embedding
+    def ext_embedding(self, x):   
+        #REPRESENTATION
+        with torch.no_grad():
+            features = self.dinov2_model(x)['last_hidden_state']
+        
+
+        batch_size = features.size(0)
+        add_tokens_expanded = self.add_tokens.unsqueeze(0).repeat(batch_size, 1, 1)
+        features = torch.cat((features, add_tokens_expanded), dim=1)
+        
+        #REFLEXION
+        outputs = self.llama(inputs_embeds=features)
+        logits = outputs['logits'][:, -1] 
+            
+        
+        return logits.cpu().numpy()  
+
+    def visualize_emb_class(self, dataloader, device):
+        self.dinov2_model.eval()
+        all_embeddings = []
+        all_labels = []
+
+        for images, labels in dataloader:
+            images = images.to(device)
+            emb = self.ext_embedding(images)  
+            all_embeddings.append(emb)
+            
+            all_labels.extend([label.item() if isinstance(label, torch.Tensor) else label for label in labels])
+
+        # N, hidden_dim
+        embeddings = np.concatenate(all_embeddings, axis=0)
+
+        tsne = TSNE(n_components=2, perplexity=30, random_state=42)
+        reduced = tsne.fit_transform(embeddings)
+
+        #dataframe
+        df = pd.DataFrame(reduced, columns=["x", "y"])
+        df["label"] = all_labels
+
+        plt.figure(figsize=(8,6))
+        sns.scatterplot(data=df, x="x", y="y", hue="label", palette="deep", s=60)
+        plt.title("Embeddings DINOv2 avec t-SNE")
+        plt.xlabel("Dimension 1")
+        plt.ylabel("Dimension 2")
+        plt.grid(True)
+        plt.show()
 
 def training_testing(model_name:str=None):
     '''Fonction d'entraînement et d'évaluation sur le dataset spécifié'''
@@ -122,4 +175,16 @@ def training_testing(model_name:str=None):
     print(classification_report(true_labels, predictions, target_names=['ia', 'nature']))
     
 if __name__ == '__main__':
-    training_testing(Config.MODEL)
+    #training_testing(Config.MODEL)
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    
+    dataset_train, dataset_test = load_tinygen_image('midjourney', tf=Config.TRANSFORM)
+    dataloader_train = DataLoader(dataset_train, batch_size=Config.BATCH_SIZE, shuffle=True, num_workers=4, pin_memory=True)
+    dataloader_test = DataLoader(dataset_test, batch_size=Config.BATCH_SIZE, shuffle=False)
+    
+    llama_config = LlamaConfig(num_hidden_layers=Config.NUM_HIDDEN_LAYER_LLMA, 
+                               hidden_size=Config.HIDDEN_SIZE)
+    
+    model = CustomClassifier(llama_config, additional_tokens=Config.ADD_TOKENS).to(device)
+    
+    model.visualize_emb_class(dataloader_train, device)

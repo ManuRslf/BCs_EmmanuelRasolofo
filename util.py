@@ -96,6 +96,25 @@ def test_model(dataloader_test:DataLoader, device:torch.device, model:nn.Module,
         print("-" * 100)
     return acc
 
+def simple_training(model_name:str, additional_token:int, decreasing_lr:bool, device):
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    train_dataset, test_dataset = load_tinygen_image(model_name, tf=Config.TRANSFORM)
+    
+    print(f"Opération sur {device}")
+    print(f"Dataset utilisé '{model_name}' - Classes: {train_dataset.classes}")
+    
+    dataloader_train = DataLoader(train_dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=True, num_workers=4, pin_memory=True)
+    dataloader_test = DataLoader(test_dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=False)
+    
+    model_trained = train_model(model_name,
+                dataloader_train,
+                additional_token,
+                wandb_log=False,
+                decreasing_lr=decreasing_lr,
+                device=device)
+    
+    return model_trained
+
 def run_experiment(model_name:str, save_image:bool, wandb_log:bool, decreasing_lr:bool):
     '''
     Experimentations
