@@ -61,19 +61,10 @@ def Config_model_run():
         wandb.finish()
 
 def train_and_visu():
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')   
+    _ = simple_training('midjourney', 5, True, device)
+    
 
-    
-    model = simple_training('midjourney', 0, True, device)
-    
-    dataset_train, dataset_test = load_tinygen_image('midjourney', tf=Config.TRANSFORM)
-    dataloader_test = DataLoader(dataset_test, batch_size=Config.BATCH_SIZE, shuffle=False)
-    
-    llama_config = LlamaConfig(num_hidden_layers=Config.NUM_HIDDEN_LAYER_LLMA, 
-                               hidden_size=Config.HIDDEN_SIZE)
-    
-    
-    model.visualize_emb_class(dataloader_test, device)
         
 if __name__ == '__main__':
     #one_by_one()

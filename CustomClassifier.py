@@ -10,8 +10,8 @@ from sklearn.manifold import TSNE
 import pandas as pd
 import seaborn as sns
 import numpy as np
-
-
+import os
+import time
 class CustomClassifier(nn.Module):
     '''
     Modèle personnalisé qui combine :
@@ -87,7 +87,7 @@ class CustomClassifier(nn.Module):
             l=logits.cpu().detach().numpy()  
         return l  
 
-    def visualize_emb_class(self, dataloader, device):
+    def visualize_emb_class(self, dataloader, device, epoch:int):
         self.dinov2_model.eval()
         all_embeddings = []
         all_labels = []
@@ -108,14 +108,22 @@ class CustomClassifier(nn.Module):
         #dataframe
         df = pd.DataFrame(reduced, columns=["x", "y"])
         df["label"] = all_labels
+        
+        # sauvergarde de l'image dans le dossier
+        timestamp = time.strftime("%Y%m%d-%H%M%S")
+        if not os.path.exists('tsne_log'):
+            os.makedirs('tsne_log')
+        file_name = f'tsne_log/tsne_{epoch}_{timestamp}.png'
 
         plt.figure(figsize=(8,6))
         sns.scatterplot(data=df, x="x", y="y", hue="label", palette="deep", s=60)
-        plt.title("Embeddings DINOv2 avec t-SNE")
+        plt.title("Last token LLAMA avec t-SNE")
         plt.xlabel("Dimension 1")
         plt.ylabel("Dimension 2")
         plt.grid(True)
-        plt.show()
+        plt.savefig(file_name)    
+          
+    
 
 def training_testing(model_name:str=None):
     '''Fonction d'entraînement et d'évaluation sur le dataset spécifié'''

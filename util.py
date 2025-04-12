@@ -25,7 +25,8 @@ def train_model(model_name:str,
                 additional_tokens:int,
                 wandb_log:bool,
                 decreasing_lr:bool,
-                device: torch.device):
+                device: torch.device,
+                tsne:bool=False):
     '''
     Fonction d'entrainement pour les paramètres donnés    
     '''
@@ -65,6 +66,11 @@ def train_model(model_name:str,
             total_loss += loss.item()
             count += 1
         avg_loss = total_loss / count
+        
+        # log tsne representation dans les dossiers
+        if tsne and epoch % 5 == 0:
+            model.visualize_emb_class(dataloader_train, device, epoch)
+        
         if wandb_log:
             # wandb.log({"Train/Loss": avg_loss, "epoch": epoch})
             pass
@@ -111,7 +117,8 @@ def simple_training(model_name:str, additional_token:int, decreasing_lr:bool, de
                 additional_token,
                 wandb_log=False,
                 decreasing_lr=decreasing_lr,
-                device=device)
+                device=device,
+                tsne=True)
     
     return model_trained
 
