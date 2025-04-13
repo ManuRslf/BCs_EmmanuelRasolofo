@@ -1,0 +1,8 @@
+Opération sur cuda
+Dataset utilisé 'midjourney' - Classes: ['ai', 'nature']
+Resize shape : 224
+Tokens additionels : 5
+LLaMA hidden size et num layer : 12, 384
+DINOv2 model : facebook/dinov2-small
+Entraînement avec 5 tokens additionnels
+TRAINING...
