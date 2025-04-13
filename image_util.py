@@ -35,7 +35,7 @@ def load_tinygen_image(model:str=None, tf:transforms.Compose=None):
     
     return ImageFolder(root=train_path, transform=tf), ImageFolder(root=test_path, transform=tf)
 
-def print_verbose(show: bool = True, lab: bool = False):
+def print_verbose(show:bool=True, lab:bool=False, *args):
     '''
     Affiche les informations
     '''
@@ -44,8 +44,15 @@ def print_verbose(show: bool = True, lab: bool = False):
         print(f"Tokens additionnels: {Config.ADD_TOKENS}")
         print(f"LLMA: {Config.NUM_HIDDEN_LAYER_LLMA} couches, taille {Config.HIDDEN_SIZE}")
         print(f"Batch size: {Config.BATCH_SIZE}, LR: {Config.LR}, Époques: {Config.EPOCHS}")
+        return
     if lab:
         print(f"Images redimensionnées en {Config.RESIZE_SHAPE}x{Config.RESIZE_SHAPE}")
         print(f"Tokens additionnels (lab): {Config.ADD_TOKENS_LAB}")
         print(f"LLMA (lab): {Config.NUM_HIDDEN_LAYER_LLMA_LAB} couches, taille {Config.HIDDEN_SIZE_LAB}")
         print(f"Batch size (lab): {Config.BATCH_SIZE_LAB}, LR (lab): {Config.LR_LAB}, Époques (lab): {Config.EPOCHS_LAB}")
+        return
+        
+    else:    
+        for ar in args:
+            print(str(ar))
+        

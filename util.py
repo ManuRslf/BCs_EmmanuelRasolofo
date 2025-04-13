@@ -15,7 +15,6 @@ import numpy as np
 from configs import Config
 import CustomClassifier
 from image_util import load_tinygen_image, print_verbose
-from typing import List
 
 
 MODEL_NAMES = ['biggan', 'vqdm', 'sdv5', 'wukong', 'adm', 'glide', 'midjourney']
@@ -26,7 +25,8 @@ def train_model(model_name:str,
                 wandb_log:bool,
                 decreasing_lr:bool,
                 device: torch.device,
-                tsne:bool=False):
+                tsne:bool=False,
+                dataloader_test=None):
     '''
     Fonction d'entrainement pour les paramètres donnés    
     '''
@@ -51,6 +51,11 @@ def train_model(model_name:str,
         scheduler = None
     
     print("TRAINING...")
+    
+    if tsne:
+        # visualisation du dernier token qui est initialisé aleatoirement
+        model.visualize_emb_class(dataloader_test, device, -1)
+
     for epoch in range(Config.EPOCHS_LAB):
         total_loss = 0.0
         count = 0
@@ -69,7 +74,7 @@ def train_model(model_name:str,
         
         # log tsne representation dans les dossiers
         if tsne and epoch % 5 == 0:
-            model.visualize_emb_class(dataloader_train, device, epoch)
+            model.visualize_emb_class(dataloader_test, device, epoch)
         
         if wandb_log:
             # wandb.log({"Train/Loss": avg_loss, "epoch": epoch})
@@ -109,6 +114,11 @@ def simple_training(model_name:str, additional_token:int, decreasing_lr:bool, de
     print(f"Opération sur {device}")
     print(f"Dataset utilisé '{model_name}' - Classes: {train_dataset.classes}")
     
+    print_verbose(False, False, f"Resize shape : {Config.RESIZE_SHAPE}",
+                                f"Tokens additionels : {additional_token}",
+                                f"LLaMA hidden size et num layer : {Config.NUM_HIDDEN_LAYER_LLMA_LAB}, {Config.HIDDEN_SIZE_LAB}",
+                                f"DINOv2 model : {Config.DINOV2_NAME}")
+    
     dataloader_train = DataLoader(train_dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=True, num_workers=4, pin_memory=True)
     dataloader_test = DataLoader(test_dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=False)
     
@@ -118,7 +128,8 @@ def simple_training(model_name:str, additional_token:int, decreasing_lr:bool, de
                 wandb_log=False,
                 decreasing_lr=decreasing_lr,
                 device=device,
-                tsne=True)
+                tsne=True,
+                dataloader_test=dataloader_test)
     
     return model_trained
 
@@ -147,7 +158,7 @@ def run_experiment(model_name:str, save_image:bool, wandb_log:bool, decreasing_l
     for tokens in Config.ADD_TOKENS_LAB:
         means = []
         
-        print("--------------------------------------------------------------------")
+        print("-" * 100)
         
         for it in range(iterations): 
             model = train_model(model_name, dataloader_train, tokens, wandb_log, decreasing_lr, device)
@@ -233,7 +244,7 @@ def cross_model(model_name:str, wandb_log:bool, decreasing_lr:bool):
     
     for tokens in Config.ADD_TOKENS_LAB_perf:      
           
-        print("--------------------------------------------------------------------")
+        print("-" * 100)
         
         model = train_model(model_name, dataloader_train, tokens, wandb_log, decreasing_lr, device)
         
