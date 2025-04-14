@@ -235,19 +235,27 @@ def run_experiment(model_name:str, save_image:bool, wandb_log:bool, decreasing_l
         
         print("-" * 100)
         
-        for it in range(iterations): 
+        if it > 1:
+            for it in range(iterations): 
+                model = train_model(model_name, dataloader_train, tokens, wandb_log, decreasing_lr, device)
+                acc = test_model(dataloader_test, device, model)
+                means.append(acc)
+                
+            
+                print(f"iteration {it}, {model_name}: acc {means[-1]}")
+            if wandb_log:
+                wandb.log({f"Accuracy/{model_name}": np.mean(np.array(means)), "tokens": tokens})
+            print(f"accuracy mean: {np.mean(np.array(means))}")
+
+                
+        else:
             model = train_model(model_name, dataloader_train, tokens, wandb_log, decreasing_lr, device)
             acc = test_model(dataloader_test, device, model)
-            means.append(acc)
             
-        
-            print(f"iteration {it}, {model_name}: acc {means[-1]}")
-            
-        if wandb_log:
-            wandb.log({f"Accuracy/{model_name}": np.mean(np.array(means)), "tokens": tokens})
-        accuracy_list.append(acc)
-            
-        print(f"accuracy mean: {np.mean(np.array(means))}")
+            if wandb_log:
+                wandb.log({f"Accuracy/{model_name}": acc, "tokens": tokens})
+            accuracy_list.append(acc)
+            print(f"accuracy mean: {acc}")        
     
     if save_image:
         if not os.path.exists('PLOTS'):
@@ -355,24 +363,32 @@ def run_experiment_llama(model_name:str, wandb_log:bool, decreasing_lr:bool):
     means = []
     iterations = Config.ITERATION
     
-    for num_hidden_layer in Config.ADD_TOKENS_LAB:
+    for num_hidden_layer in Config.NHL_LAB:
         means = []
         
         print("-" * 100)
         
-        for it in range(iterations): 
+        if it > 1:
+            for it in range(iterations): 
+                model = train_model_llama_params(model_name, dataloader_train, num_hidden_layer, wandb_log, decreasing_lr, device)
+                acc = test_model(dataloader_test, device, model)
+                means.append(acc)
+                
+            
+                print(f"iteration {it}, {model_name}: acc {means[-1]}")
+            if wandb_log:
+                wandb.log({f"Accuracy_lnhl/{model_name}": np.mean(np.array(means)), "llama_nhl": num_hidden_layer})
+            print(f"accuracy mean: {np.mean(np.array(means))}")
+
+                
+        else:
             model = train_model_llama_params(model_name, dataloader_train, num_hidden_layer, wandb_log, decreasing_lr, device)
             acc = test_model(dataloader_test, device, model)
-            means.append(acc)
             
-        
-            print(f"iteration {it}, {model_name}: acc {means[-1]}")
-            
-        if wandb_log:
-            wandb.log({f"Accuracy_lnhl/{model_name}": np.mean(np.array(means)), "llama_nhl": num_hidden_layer})
-        accuracy_list.append(acc)
-            
-        print(f"accuracy mean: {np.mean(np.array(means))}")
+            if wandb_log:
+                wandb.log({f"Accuracy_lnhl/{model_name}": acc, "llama_nhl": num_hidden_layer})
+            accuracy_list.append(acc)
+            print(f"accuracy mean: {acc}")
     
     return accuracy_list
 
