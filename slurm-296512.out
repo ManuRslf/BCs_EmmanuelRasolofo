@@ -1,0 +1,56 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250414_220041-9a1kh0vv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT ALL R224 dataset 20250414-220040
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/9a1kh0vv
+Date d'entraînement: 20250414-220040
+Mode: run
+Images redimensionnées en 224x224
+Tokens additionnels (lab): [0, 10, 60, 100, 150]
+LLMA (lab): 12 couches, taille 384
+Batch size (lab): 16, LR (lab): 0.0004, Époques (lab): 30
+LLAMA num hidden : [1, 6, 12, 15]
+training en variant le nombre de layer de llama
+Opération sur cuda
+Dataset utilisé 'biggan' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 0 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.5
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       1.00      0.00      0.00       500
+      nature       0.50      1.00      0.67       500
+
+    accuracy                           0.50      1000
+   macro avg       0.75      0.50      0.33      1000
+weighted avg       0.75      0.50      0.33      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 0, biggan: acc 0.5
+Entraînement avec 0 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.5
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.50      1.00      0.67       500
+      nature       1.00      0.00      0.00       500
+
+    accuracy                           0.50      1000
+   macro avg       0.75      0.50      0.33      1000
+weighted avg       0.75      0.50      0.33      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 1, biggan: acc 0.5
+Entraînement avec 0 couche de llama
+TRAINING...
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** JOB 296512 ON gpu002 CANCELLED AT 2025-04-14T22:09:29 ***
+slurmstepd: error: *** STEP 296512.0 ON gpu002 CANCELLED AT 2025-04-14T22:09:29 ***
