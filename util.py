@@ -85,6 +85,76 @@ def train_model(model_name:str,
     print("Entraînement terminé.")
     return model
 
+
+
+def train_model_llama_params(model_name:str,
+                dataloader_train:DataLoader,
+                num_hidden_layer:int,
+                wandb_log:bool,
+                decreasing_lr:bool,
+                device: torch.device,
+                tsne:bool=False,
+                dataloader_test=None,
+                ):
+    '''
+    Fonction d'entrainement pour les paramètres donnés    
+    '''
+    print(f"Entraînement avec {num_hidden_layer} couche de llama")
+    
+    llama_config = LlamaConfig(num_hidden_layers=num_hidden_layer, 
+                               hidden_size=Config.HIDDEN_SIZE_LAB)
+    model = CustomClassifier.CustomClassifier(
+        llama_config, 
+        dinov2_name=Config.DINOV2_NAME, 
+        hidden_size=Config.HIDDEN_SIZE_LAB,
+        additional_tokens=Config.add_tokens_lab
+    ).to(device)
+    
+    loss_fn = nn.CrossEntropyLoss()
+    
+    if decreasing_lr:
+        optimizer = AdamW(model.parameters(), lr=Config.LR_LAB)
+        scheduler = CosineAnnealingLR(optimizer, T_max=Config.EPOCHS_LAB * len(dataloader_train))
+    else:
+        optimizer = torch.optim.Adam(model.parameters(), lr=Config.LR_LAB)
+        scheduler = None
+    
+    print("TRAINING...")
+    
+    if tsne:
+        # visualisation du dernier token qui est initialisé aleatoirement
+        model.visualize_emb_class(dataloader_test, device, -1)
+
+    for epoch in range(Config.EPOCHS_LAB):
+        total_loss = 0.0
+        count = 0
+        for inputs, labels in dataloader_train:
+            inputs, labels = inputs.to(device), labels.to(device)
+            optimizer.zero_grad()
+            outputs = model(inputs)
+            loss = loss_fn(outputs, labels)
+            loss.backward()
+            optimizer.step()
+            if scheduler:
+                scheduler.step()
+            total_loss += loss.item()
+            count += 1
+        avg_loss = total_loss / count
+        
+        # log tsne representation dans les dossiers
+        if tsne and epoch % 5 == 0:
+            model.visualize_emb_class(dataloader_test, device, epoch)
+        
+        if wandb_log:
+            # wandb.log({"Train/Loss": avg_loss, "epoch": epoch})
+            pass
+        
+        #decommenter pour voir loss
+        #print(f"Epoch {epoch} - Loss moyenne: {avg_loss:.5f}")
+    print("Entraînement terminé.")
+    return model
+
+
 def test_model(dataloader_test:DataLoader, device:torch.device, model:nn.Module, verbose:bool = True):
     """
     Test le model par rapport à un dataset
@@ -108,6 +178,11 @@ def test_model(dataloader_test:DataLoader, device:torch.device, model:nn.Module,
     return acc
 
 def simple_training(model_name:str, additional_token:int, decreasing_lr:bool, device):
+    
+    '''
+    une methode qui effectue un entrainement simple. Utilisé pour visualisation du dernuer token passé apres llama
+    '''
+    
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     train_dataset, test_dataset = load_tinygen_image(model_name, tf=Config.TRANSFORM)
     
@@ -258,7 +333,48 @@ def cross_model(model_name:str, wandb_log:bool, decreasing_lr:bool):
             if wandb_log:
                 wandb.log({f"Accuracy_cross_model{model_name}/{name}": accuracy, "tokens": tokens})
         
-
+def run_experiment_llama(model_name:str, wandb_log:bool, decreasing_lr:bool):
+    '''
+    Experimentations: entrainement avec hyperparametre univarié sur la variation des parametre de llama 
+    tel que le nombres de couche caché
+    '''
+    
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    train_dataset, test_dataset = load_tinygen_image(model_name, tf=Config.TRANSFORM)
+    
+    print(f"Opération sur {device}")
+    print(f"Dataset utilisé '{model_name}' - Classes: {train_dataset.classes}")
+    
+    dataloader_train = DataLoader(train_dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=True, num_workers=4, pin_memory=True)
+    dataloader_test = DataLoader(test_dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=False)
+    timestamp = time.strftime("%Y%m%d-%H%M%S")
+    
+    accuracy_list = []
+    
+    # moyenne sur chaque token 
+    means = []
+    iterations = Config.ITERATION
+    
+    for num_hidden_layer in Config.ADD_TOKENS_LAB:
+        means = []
+        
+        print("-" * 100)
+        
+        for it in range(iterations): 
+            model = train_model_llama_params(model_name, dataloader_train, num_hidden_layer, wandb_log, decreasing_lr, device)
+            acc = test_model(dataloader_test, device, model)
+            means.append(acc)
+            
+        
+            print(f"iteration {it}, {model_name}: acc {means[-1]}")
+            
+        if wandb_log:
+            wandb.log({f"Accuracy_lnhl/{model_name}": np.mean(np.array(means)), "llama_nhl": num_hidden_layer})
+        accuracy_list.append(acc)
+            
+        print(f"accuracy mean: {np.mean(np.array(means))}")
+    
+    return accuracy_list
 
 if __name__ == '__main__':
 

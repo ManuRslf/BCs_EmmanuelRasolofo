@@ -4,9 +4,11 @@ from configs import Config
 import wandb
 
 MODEL_NAMES = ['biggan', 'vqdm', 'sdv5', 'wukong', 'adm', 'glide', 'midjourney']
+training_type = ['token', 'cross', 'llama']
 
 
-def one_by_one():
+def one_by_one(univariee_training:str):
+
 
     timestamp = time.strftime("%Y%m%d-%H%M%S")
     print(f"Date d'entraînement: {timestamp}")
@@ -25,17 +27,31 @@ def one_by_one():
         wandb.define_metric("Accuracy/*", step_metric="tokens")
         wandb.define_metric(f"Accuracy_cross_model{Config.MODEL}/*", step_metric="tokens")
 
+        # metrique pour num hidden layer de llama
+        wandb.define_metric("llama_nhl")
+        wandb.define_metric("Accuracy_lnhl/*", step_metric="llama_nhl")
+
+
 
 
     for model in MODEL_NAMES:
         wandb.define_metric(f"Accuracy_cross_model{model}/*", step_metric="tokens")
-        #run_experiment(model, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
-        cross_model(model, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
         
+        if univariee_training=='token':
+            print("training en variant le nombre de token")
+            run_experiment(model, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+            
+        if univariee_training=='cross':
+            print("training en test generalisée")
+            cross_model(model, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+            
+        if univariee_training=='llama':
+            print("training en variant le nombre de layer de llama")
+            run_experiment_llama(model, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
     if Config.WANDB_LOG:
         wandb.finish()
 
-def Config_model_run():
+def Config_model_run(univariee_training:str):
 
     timestamp = time.strftime("%Y%m%d-%H%M%S")
     print(f"Date d'entraînement: {timestamp}")
@@ -49,16 +65,28 @@ def Config_model_run():
             config={"architecture": "dinov2plusllma"}
         )
 
-
+        #definintion des metriques pour wandb
         wandb.define_metric("tokens")
         wandb.define_metric("Accuracy/*", step_metric="tokens")
         wandb.define_metric(f"Accuracy_cross_model{Config.MODEL}/*", step_metric="tokens")
+        # metrique pour num hidden layer de llama       
+        wandb.define_metric("llama_nhl")
+        wandb.define_metric("Accuracy_lnhl/*", step_metric="llama_nhl")
 
 
-    cross_model(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+    if univariee_training=='token':
+        run_experiment(Config.MODEL, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
         
+    if univariee_training=='cross':
+        cross_model(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+        
+    if univariee_training=='llama':
+        run_experiment_llama(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
     if Config.WANDB_LOG:
         wandb.finish()
+        
+      
+
 
 def train_and_visu():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')   
@@ -69,4 +97,5 @@ def train_and_visu():
 if __name__ == '__main__':
     #one_by_one()
     #Config_model_run()
-    train_and_visu()
+    #train_and_visu()
+    one_by_one('llama')

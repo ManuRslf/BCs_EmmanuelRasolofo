@@ -38,6 +38,7 @@ class Config:
     else:
         SAVE_IMAGE = False
         WANDB_LOG = True
+        add_tokens_lab = 10
         ADD_TOKENS_LAB = [0, 10, 60, 100, 150]
         ADD_TOKENS_LAB_perf = [0, 10, 30, 50]
         NUM_HIDDEN_LAYER_LLMA_LAB = 12
@@ -48,3 +49,4 @@ class Config:
         ITERATION = 8
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-small'
+        NHL_LAB = [1, 6, 12, 15]

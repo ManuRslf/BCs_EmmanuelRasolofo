@@ -50,6 +50,7 @@ def print_verbose(show:bool=True, lab:bool=False, *args):
         print(f"Tokens additionnels (lab): {Config.ADD_TOKENS_LAB}")
         print(f"LLMA (lab): {Config.NUM_HIDDEN_LAYER_LLMA_LAB} couches, taille {Config.HIDDEN_SIZE_LAB}")
         print(f"Batch size (lab): {Config.BATCH_SIZE_LAB}, LR (lab): {Config.LR_LAB}, Époques (lab): {Config.EPOCHS_LAB}")
+        print(f"LLAMA num hidden : {Config.NHL_LAB}")
         return
         
     else:    
