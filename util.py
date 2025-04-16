@@ -235,7 +235,7 @@ def run_experiment(model_name:str, save_image:bool, wandb_log:bool, decreasing_l
         
         print("-" * 100)
         
-        if it > 1:
+        if iterations > 1:
             for it in range(iterations): 
                 model = train_model(model_name, dataloader_train, tokens, wandb_log, decreasing_lr, device)
                 acc = test_model(dataloader_test, device, model)
@@ -368,7 +368,7 @@ def run_experiment_llama(model_name:str, wandb_log:bool, decreasing_lr:bool):
         
         print("-" * 100)
         
-        if it > 1:
+        if iterations > 1:
             for it in range(iterations): 
                 model = train_model_llama_params(model_name, dataloader_train, num_hidden_layer, wandb_log, decreasing_lr, device)
                 acc = test_model(dataloader_test, device, model)

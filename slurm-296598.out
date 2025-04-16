@@ -1,0 +1,430 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250415_153550-7ksa8x77
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT ALL R224 dataset 20250415-153549
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/7ksa8x77
+Date d'entraînement: 20250415-153549
+Mode: run
+Images redimensionnées en 224x224
+Tokens additionnels (lab): [0, 10, 60, 100, 150]
+LLMA (lab): 12 couches, taille 384
+Batch size (lab): 16, LR (lab): 0.0004, Époques (lab): 30
+LLAMA num hidden : [1, 6, 12, 15]
+training en variant le nombre de layer de llama
+Opération sur cuda
+Dataset utilisé 'biggan' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.979
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.98      0.98      0.98       500
+      nature       0.98      0.98      0.98       500
+
+    accuracy                           0.98      1000
+   macro avg       0.98      0.98      0.98      1000
+weighted avg       0.98      0.98      0.98      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.979
+----------------------------------------------------------------------------------------------------
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.98
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.98      0.98      0.98       500
+      nature       0.98      0.98      0.98       500
+
+    accuracy                           0.98      1000
+   macro avg       0.98      0.98      0.98      1000
+weighted avg       0.98      0.98      0.98      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.98
+----------------------------------------------------------------------------------------------------
+Entraînement avec 12 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.982
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.99      0.97      0.98       500
+      nature       0.97      0.99      0.98       500
+
+    accuracy                           0.98      1000
+   macro avg       0.98      0.98      0.98      1000
+weighted avg       0.98      0.98      0.98      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.982
+----------------------------------------------------------------------------------------------------
+Entraînement avec 15 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.985
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.98      0.99      0.99       500
+      nature       0.99      0.98      0.98       500
+
+    accuracy                           0.98      1000
+   macro avg       0.99      0.98      0.98      1000
+weighted avg       0.99      0.98      0.98      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.985
+training en variant le nombre de layer de llama
+Opération sur cuda
+Dataset utilisé 'vqdm' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.948
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.96      0.94      0.95       500
+      nature       0.94      0.96      0.95       500
+
+    accuracy                           0.95      1000
+   macro avg       0.95      0.95      0.95      1000
+weighted avg       0.95      0.95      0.95      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.948
+----------------------------------------------------------------------------------------------------
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.954
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.95      0.95      0.95       500
+      nature       0.95      0.95      0.95       500
+
+    accuracy                           0.95      1000
+   macro avg       0.95      0.95      0.95      1000
+weighted avg       0.95      0.95      0.95      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.954
+----------------------------------------------------------------------------------------------------
+Entraînement avec 12 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.953
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.95      0.96      0.95       500
+      nature       0.96      0.95      0.95       500
+
+    accuracy                           0.95      1000
+   macro avg       0.95      0.95      0.95      1000
+weighted avg       0.95      0.95      0.95      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.953
+----------------------------------------------------------------------------------------------------
+Entraînement avec 15 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.953
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.96      0.95      0.95       500
+      nature       0.95      0.96      0.95       500
+
+    accuracy                           0.95      1000
+   macro avg       0.95      0.95      0.95      1000
+weighted avg       0.95      0.95      0.95      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.953
+training en variant le nombre de layer de llama
+Opération sur cuda
+Dataset utilisé 'sdv5' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.883
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.87      0.89      0.88       500
+      nature       0.89      0.87      0.88       500
+
+    accuracy                           0.88      1000
+   macro avg       0.88      0.88      0.88      1000
+weighted avg       0.88      0.88      0.88      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.883
+----------------------------------------------------------------------------------------------------
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.882
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.88      0.89      0.88       500
+      nature       0.89      0.87      0.88       500
+
+    accuracy                           0.88      1000
+   macro avg       0.88      0.88      0.88      1000
+weighted avg       0.88      0.88      0.88      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.882
+----------------------------------------------------------------------------------------------------
+Entraînement avec 12 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.878
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.85      0.91      0.88       500
+      nature       0.91      0.84      0.87       500
+
+    accuracy                           0.88      1000
+   macro avg       0.88      0.88      0.88      1000
+weighted avg       0.88      0.88      0.88      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.878
+----------------------------------------------------------------------------------------------------
+Entraînement avec 15 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.869
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.86      0.88      0.87       500
+      nature       0.87      0.86      0.87       500
+
+    accuracy                           0.87      1000
+   macro avg       0.87      0.87      0.87      1000
+weighted avg       0.87      0.87      0.87      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.869
+training en variant le nombre de layer de llama
+Opération sur cuda
+Dataset utilisé 'wukong' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.899
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.89      0.90       500
+      nature       0.89      0.91      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.899
+----------------------------------------------------------------------------------------------------
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.904
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.91      0.90       500
+      nature       0.91      0.90      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.904
+----------------------------------------------------------------------------------------------------
+Entraînement avec 12 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.895
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.90      0.90       500
+      nature       0.90      0.89      0.89       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.89      1000
+weighted avg       0.90      0.90      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.895
+----------------------------------------------------------------------------------------------------
+Entraînement avec 15 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.905
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.90      0.90       500
+      nature       0.90      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.90      1000
+weighted avg       0.91      0.91      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.905
+training en variant le nombre de layer de llama
+Opération sur cuda
+Dataset utilisé 'adm' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.997
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       1.00      1.00      1.00       500
+      nature       1.00      1.00      1.00       500
+
+    accuracy                           1.00      1000
+   macro avg       1.00      1.00      1.00      1000
+weighted avg       1.00      1.00      1.00      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.997
+----------------------------------------------------------------------------------------------------
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.993
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       1.00      0.99      0.99       500
+      nature       0.99      1.00      0.99       500
+
+    accuracy                           0.99      1000
+   macro avg       0.99      0.99      0.99      1000
+weighted avg       0.99      0.99      0.99      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.993
+----------------------------------------------------------------------------------------------------
+Entraînement avec 12 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.994
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.99      1.00      0.99       500
+      nature       1.00      0.99      0.99       500
+
+    accuracy                           0.99      1000
+   macro avg       0.99      0.99      0.99      1000
+weighted avg       0.99      0.99      0.99      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.994
+----------------------------------------------------------------------------------------------------
+Entraînement avec 15 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.993
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.99      0.99      0.99       500
+      nature       0.99      0.99      0.99       500
+
+    accuracy                           0.99      1000
+   macro avg       0.99      0.99      0.99      1000
+weighted avg       0.99      0.99      0.99      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.993
+training en variant le nombre de layer de llama
+Opération sur cuda
+Dataset utilisé 'glide' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.93
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.95      0.93       500
+      nature       0.94      0.91      0.93       500
+
+    accuracy                           0.93      1000
+   macro avg       0.93      0.93      0.93      1000
+weighted avg       0.93      0.93      0.93      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.93
+----------------------------------------------------------------------------------------------------
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.932
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.93      0.93      0.93       500
+      nature       0.93      0.93      0.93       500
+
+    accuracy                           0.93      1000
+   macro avg       0.93      0.93      0.93      1000
+weighted avg       0.93      0.93      0.93      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.932
+----------------------------------------------------------------------------------------------------
+Entraînement avec 12 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.929
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.93      0.93       500
+      nature       0.93      0.92      0.93       500
+
+    accuracy                           0.93      1000
+   macro avg       0.93      0.93      0.93      1000
+weighted avg       0.93      0.93      0.93      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.929
+----------------------------------------------------------------------------------------------------
+Entraînement avec 15 couche de llama
+TRAINING...
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** JOB 296598 ON gpu002 CANCELLED AT 2025-04-16T03:35:06 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 296598.0 ON gpu002 CANCELLED AT 2025-04-16T03:35:06 DUE TO TIME LIMIT ***

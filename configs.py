@@ -46,7 +46,7 @@ class Config:
         BATCH_SIZE_LAB = 16
         LR_LAB = 4e-4
         EPOCHS_LAB = 30
-        ITERATION = 8
+        ITERATION = 1
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-small'
         NHL_LAB = [1, 6, 12, 15]

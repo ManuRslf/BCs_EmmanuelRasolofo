@@ -1,0 +1,32 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250414_221736-qaix2ma4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT ALL R224 dataset 20250414-221736
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/qaix2ma4
+Date d'entraînement: 20250414-221736
+Mode: run
+Images redimensionnées en 224x224
+Tokens additionnels (lab): [0, 10, 60, 100, 150]
+LLMA (lab): 12 couches, taille 384
+Batch size (lab): 16, LR (lab): 0.0004, Époques (lab): 30
+LLAMA num hidden : [1, 6, 12, 15]
+training en variant le nombre de layer de llama
+Opération sur cuda
+Dataset utilisé 'biggan' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/main.py", line 101, in <module>
+    one_by_one('llama')
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/main.py", line 50, in one_by_one
+    run_experiment_llama(model, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/util.py", line 371, in run_experiment_llama
+    if it > 1:
+       ^^
+UnboundLocalError: cannot access local variable 'it' where it is not associated with a value
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mAT ALL R224 dataset 20250414-221736[0m at: [34mhttps://wandb.ai/manurslf301/Encoder-DecoderProject/runs/qaix2ma4[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250414_221736-qaix2ma4/logs[0m
+srun: error: gpu002: task 0: Exited with exit code 1
