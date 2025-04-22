@@ -1,0 +1,109 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250422_134803-3geecggz
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT wukong R224 dataset 20250422-134802
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/3geecggz
+Date d'entraînement: 20250422-134802
+Mode: run
+Images redimensionnées en 224x224
+Tokens additionnels (lab): [0, 10, 60, 100, 150]
+LLMA (lab): 12 couches, taille 384
+Batch size (lab): 16, LR (lab): 0.0004, Époques (lab): 30
+LLAMA num hidden : [1, 6, 15, 20]
+Opération sur cuda
+Dataset utilisé 'wukong' - Classes: ['ai', 'nature']
+Resize shape : 224
+Tokens additionels : 16
+LLaMA hidden size et num layer : 12, 384
+DINOv2 model : facebook/dinov2-small
+Entraînement avec 16 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.51248
+Epoch 1 - Loss moyenne: 0.24615
+Epoch 2 - Loss moyenne: 0.13471
+Epoch 3 - Loss moyenne: 0.06694
+Epoch 4 - Loss moyenne: 0.06791
+Epoch 5 - Loss moyenne: 0.03784
+Epoch 6 - Loss moyenne: 0.04997
+Epoch 7 - Loss moyenne: 0.01594
+Epoch 8 - Loss moyenne: 0.03505
+Epoch 9 - Loss moyenne: 0.03574
+Epoch 10 - Loss moyenne: 0.05058
+Epoch 11 - Loss moyenne: 0.03176
+Epoch 12 - Loss moyenne: 0.03445
+Epoch 13 - Loss moyenne: 0.03614
+Epoch 14 - Loss moyenne: 0.00907
+Epoch 15 - Loss moyenne: 0.03026
+Epoch 16 - Loss moyenne: 0.03574
+Epoch 17 - Loss moyenne: 0.04193
+Epoch 18 - Loss moyenne: 0.01722
+Epoch 19 - Loss moyenne: 0.01508
+Epoch 20 - Loss moyenne: 0.01479
+Epoch 21 - Loss moyenne: 0.01768
+Epoch 22 - Loss moyenne: 0.01029
+Epoch 23 - Loss moyenne: 0.00719
+Epoch 24 - Loss moyenne: 0.01068
+Epoch 25 - Loss moyenne: 0.00301
+Epoch 26 - Loss moyenne: 0.02754
+Epoch 27 - Loss moyenne: 0.03496
+Epoch 28 - Loss moyenne: 0.00903
+Epoch 29 - Loss moyenne: 0.01750
+Entraînement terminé.
+Opération sur cuda
+Dataset utilisé 'wukong' - Classes: ['ai', 'nature']
+Resize shape : 224
+Tokens additionels : 16
+LLaMA hidden size et num layer : 12, 384
+DINOv2 model : facebook/dinov2-small
+Entraînement avec 16 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.52067
+Epoch 1 - Loss moyenne: 0.23630
+Epoch 2 - Loss moyenne: 0.12558
+Epoch 3 - Loss moyenne: 0.05491
+Epoch 4 - Loss moyenne: 0.04561
+Epoch 5 - Loss moyenne: 0.03250
+Epoch 6 - Loss moyenne: 0.01336
+Epoch 7 - Loss moyenne: 0.03109
+Epoch 8 - Loss moyenne: 0.03661
+Epoch 9 - Loss moyenne: 0.02085
+Epoch 10 - Loss moyenne: 0.01639
+Epoch 11 - Loss moyenne: 0.00452
+Epoch 12 - Loss moyenne: 0.01109
+Epoch 13 - Loss moyenne: 0.00073
+Epoch 14 - Loss moyenne: 0.00494
+Epoch 15 - Loss moyenne: 0.00280
+Epoch 16 - Loss moyenne: 0.00224
+Epoch 17 - Loss moyenne: 0.00014
+Epoch 18 - Loss moyenne: 0.00004
+Epoch 19 - Loss moyenne: 0.00003
+Epoch 20 - Loss moyenne: 0.00003
+Epoch 21 - Loss moyenne: 0.00002
+Epoch 22 - Loss moyenne: 0.00002
+Epoch 23 - Loss moyenne: 0.00002
+Epoch 24 - Loss moyenne: 0.00002
+Epoch 25 - Loss moyenne: 0.00002
+Epoch 26 - Loss moyenne: 0.00002
+Epoch 27 - Loss moyenne: 0.00002
+Epoch 28 - Loss moyenne: 0.00002
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: Train/Loss20250422-134808 █▄▃▂▂▁▂▁▁▁▂▁▁▁▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Train/Loss20250422-143112 █▄▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                     epoch ▁▁▁▂▂▂▃▃▃▄▄▅▅▅▅▆▆▇▇▇██▁▁▁▃▃▃▄▄▅▅▅▆▆▇▇▇██
+wandb: 
+wandb: Run summary:
+wandb: Train/Loss20250422-134808 0.0175
+wandb: Train/Loss20250422-143112 2e-05
+wandb:                     epoch 29
+wandb: 
+wandb: 🚀 View run AT wukong R224 dataset 20250422-134802 at: https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/3geecggz
+wandb: ⭐️ View project at: https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250422_134803-3geecggz/logs
+Epoch 29 - Loss moyenne: 0.00002
+Entraînement terminé.
