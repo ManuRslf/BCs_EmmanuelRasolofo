@@ -55,6 +55,7 @@ def train_model(model_name:str,
     if tsne:
         # visualisation du dernier token qui est initialisé aleatoirement
         model.visualize_emb_class(dataloader_test, device, -1)
+    timestamp = time.strftime("%Y%m%d-%H%M%S")
 
     for epoch in range(Config.EPOCHS_LAB):
         total_loss = 0.0
@@ -77,11 +78,12 @@ def train_model(model_name:str,
             model.visualize_emb_class(dataloader_test, device, epoch)
         
         if wandb_log:
-            # wandb.log({"Train/Loss": avg_loss, "epoch": epoch})
-            pass
+            
+            wandb.log({f"Train/Loss{timestamp}": avg_loss, "epoch": epoch})
+            #pass
         
         #decommenter pour voir loss
-        #print(f"Epoch {epoch} - Loss moyenne: {avg_loss:.5f}")
+        print(f"Epoch {epoch} - Loss moyenne: {avg_loss:.5f}")
     print("Entraînement terminé.")
     return model
 
@@ -183,7 +185,6 @@ def simple_training(model_name:str, additional_token:int, decreasing_lr:bool, de
     une methode qui effectue un entrainement simple. Utilisé pour visualisation du dernuer token passé apres llama
     '''
     
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     train_dataset, test_dataset = load_tinygen_image(model_name, tf=Config.TRANSFORM)
     
     print(f"Opération sur {device}")
@@ -200,10 +201,10 @@ def simple_training(model_name:str, additional_token:int, decreasing_lr:bool, de
     model_trained = train_model(model_name,
                 dataloader_train,
                 additional_token,
-                wandb_log=False,
+                wandb_log=Config.WANDB_LOG,
                 decreasing_lr=decreasing_lr,
                 device=device,
-                tsne=True,
+                tsne=Config.TSNE_LOG,
                 dataloader_test=dataloader_test)
     
     return model_trained

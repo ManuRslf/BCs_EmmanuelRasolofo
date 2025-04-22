@@ -1,0 +1,107 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250420_125241-eqnmen5n
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT wukong R224 dataset 20250420-125240
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/eqnmen5n
+Date d'entraînement: 20250420-125240
+Mode: run
+Images redimensionnées en 224x224
+Tokens additionnels (lab): [0, 10, 60, 100, 150]
+LLMA (lab): 12 couches, taille 384
+Batch size (lab): 16, LR (lab): 0.0004, Époques (lab): 30
+LLAMA num hidden : [1, 6, 15, 20]
+Opération sur cuda
+Dataset utilisé 'wukong' - Classes: ['ai', 'nature']
+Resize shape : 224
+Tokens additionels : 16
+LLaMA hidden size et num layer : 12, 384
+DINOv2 model : facebook/dinov2-small
+Entraînement avec 16 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.50064
+Epoch 1 - Loss moyenne: 0.24886
+Epoch 2 - Loss moyenne: 0.13525
+Epoch 3 - Loss moyenne: 0.11480
+Epoch 4 - Loss moyenne: 0.13590
+Epoch 5 - Loss moyenne: 0.09853
+Epoch 6 - Loss moyenne: 0.03172
+Epoch 7 - Loss moyenne: 0.01413
+Epoch 8 - Loss moyenne: 0.06016
+Epoch 9 - Loss moyenne: 0.02637
+Epoch 10 - Loss moyenne: 0.01188
+Epoch 11 - Loss moyenne: 0.02395
+Epoch 12 - Loss moyenne: 0.02236
+Epoch 13 - Loss moyenne: 0.01227
+Epoch 14 - Loss moyenne: 0.04518
+Epoch 15 - Loss moyenne: 0.02477
+Epoch 16 - Loss moyenne: 0.01966
+Epoch 17 - Loss moyenne: 0.01536
+Epoch 18 - Loss moyenne: 0.00179
+Epoch 19 - Loss moyenne: 0.02637
+Epoch 20 - Loss moyenne: 0.01057
+Epoch 21 - Loss moyenne: 0.03283
+Epoch 22 - Loss moyenne: 0.02170
+Epoch 23 - Loss moyenne: 0.00686
+Epoch 24 - Loss moyenne: 0.02896
+Epoch 25 - Loss moyenne: 0.01917
+Epoch 26 - Loss moyenne: 0.01437
+Epoch 27 - Loss moyenne: 0.01785
+Epoch 28 - Loss moyenne: 0.03692
+Epoch 29 - Loss moyenne: 0.02982
+Entraînement terminé.
+Opération sur cuda
+Dataset utilisé 'wukong' - Classes: ['ai', 'nature']
+Resize shape : 224
+Tokens additionels : 16
+LLaMA hidden size et num layer : 12, 384
+DINOv2 model : facebook/dinov2-small
+Entraînement avec 16 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.50410
+Epoch 1 - Loss moyenne: 0.24490
+Epoch 2 - Loss moyenne: 0.14051
+Epoch 3 - Loss moyenne: 0.09552
+Epoch 4 - Loss moyenne: 0.04703
+Epoch 5 - Loss moyenne: 0.01851
+Epoch 6 - Loss moyenne: 0.02230
+Epoch 7 - Loss moyenne: 0.03038
+Epoch 8 - Loss moyenne: 0.01915
+Epoch 9 - Loss moyenne: 0.02466
+Epoch 10 - Loss moyenne: 0.00650
+Epoch 11 - Loss moyenne: 0.00640
+Epoch 12 - Loss moyenne: 0.01069
+Epoch 13 - Loss moyenne: 0.00883
+Epoch 14 - Loss moyenne: 0.01414
+Epoch 15 - Loss moyenne: 0.00301
+Epoch 16 - Loss moyenne: 0.00121
+Epoch 17 - Loss moyenne: 0.00080
+Epoch 18 - Loss moyenne: 0.00008
+Epoch 19 - Loss moyenne: 0.00004
+Epoch 20 - Loss moyenne: 0.00003
+Epoch 21 - Loss moyenne: 0.00003
+Epoch 22 - Loss moyenne: 0.00002
+Epoch 23 - Loss moyenne: 0.00002
+Epoch 24 - Loss moyenne: 0.00002
+Epoch 25 - Loss moyenne: 0.00002
+Epoch 26 - Loss moyenne: 0.00002
+Epoch 27 - Loss moyenne: 0.00002
+Epoch 28 - Loss moyenne: 0.00002
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: Train/Loss █▄▃▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▄▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      epoch ▁▁▁▂▂▃▃▄▄▄▅▅▆▆▆▇▇▇▇██▁▂▂▂▃▃▃▃▄▄▅▅▅▆▆▇▇▇█
+wandb: 
+wandb: Run summary:
+wandb: Train/Loss 2e-05
+wandb:      epoch 29
+wandb: 
+wandb: 🚀 View run AT wukong R224 dataset 20250420-125240 at: https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/eqnmen5n
+wandb: ⭐️ View project at: https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250420_125241-eqnmen5n/logs
+Epoch 29 - Loss moyenne: 0.00002
+Entraînement terminé.

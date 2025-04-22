@@ -1,0 +1,39 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250416_160841-jru8gaw8
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT biggan R224 dataset 20250416-160841
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/jru8gaw8
+Date d'entraînement: 20250416-160841
+Mode: run
+Images redimensionnées en 224x224
+Tokens additionnels (lab): [0, 10, 60, 100, 150]
+LLMA (lab): 12 couches, taille 384
+Batch size (lab): 16, LR (lab): 0.0004, Époques (lab): 30
+LLAMA num hidden : [1, 6, 15, 20]
+Opération sur cuda
+Dataset utilisé 'biggan' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.977
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.98      0.97      0.98       500
+      nature       0.97      0.98      0.98       500
+
+    accuracy                           0.98      1000
+   macro avg       0.98      0.98      0.98      1000
+weighted avg       0.98      0.98      0.98      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 0, biggan: acc 0.977
+Entraînement avec 1 couche de llama
+TRAINING...
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** JOB 296723 ON gpu002 CANCELLED AT 2025-04-16T16:20:31 ***
+slurmstepd: error: *** STEP 296723.0 ON gpu002 CANCELLED AT 2025-04-16T16:20:31 ***
