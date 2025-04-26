@@ -54,7 +54,7 @@ def train_model(model_name:str,
     
     if tsne:
         # visualisation du dernier token qui est initialisé aleatoirement
-        model.visualize_emb_class(dataloader_test, device, -1)
+        model.visualize_emb_class(model_name, dataloader_test, device, -1)
     timestamp = time.strftime("%Y%m%d-%H%M%S")
 
     for epoch in range(Config.EPOCHS_LAB):
@@ -75,7 +75,7 @@ def train_model(model_name:str,
         
         # log tsne representation dans les dossiers
         if tsne and epoch % 5 == 0:
-            model.visualize_emb_class(dataloader_test, device, epoch)
+            model.visualize_emb_class(model_name, dataloader_test, device, epoch)
         
         if wandb_log:
             

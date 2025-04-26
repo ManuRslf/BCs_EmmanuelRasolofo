@@ -1,0 +1,27 @@
+Opération sur cuda
+Dataset utilisé 'midjourney' - Classes: ['ai', 'nature']
+Resize shape : 224
+Tokens additionels : 5
+LLaMA hidden size et num layer : 12, 384
+DINOv2 model : facebook/dinov2-small
+Entraînement avec 5 tokens additionnels
+TRAINING...
+Traceback (most recent call last):
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/main.py", line 115, in <module>
+    train_and_visu()
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/main.py", line 108, in train_and_visu
+    _ = simple_training('midjourney', 5, True, device)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/util.py", line 201, in simple_training
+    model_trained = train_model(model_name,
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/util.py", line 57, in train_model
+    model.visualize_emb_class(model_name, dataloader_test, device, -1)
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/CustomClassifier.py", line 87, in visualize_emb_class
+    emb = self.ext_embedding(images)   # (B, k, D)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/CustomClassifier.py", line 78, in ext_embedding
+    return add_tokens_expanded.cpu().numpy()  # (B, k, D)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+srun: error: gpu002: task 0: Exited with exit code 1

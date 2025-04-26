@@ -4,7 +4,7 @@ class Config:
     '''Tous les hyper-paramètres ici'''
     
     DEBUG = False
-    MODEL = 'wukong'
+    MODEL = 'midjourney'
     RESIZE_SHAPE = 224
 
     TRANSFORM = transforms.Compose([
@@ -25,7 +25,7 @@ class Config:
 
     if DEBUG:
         SAVE_IMAGE = False
-        WANDB_LOG = False
+        WANDB_LOG = True
         ADD_TOKENS_LAB = [i for i in range(2, 3)]
         ADD_TOKENS_LAB_perf = [0, 1]
         NUM_HIDDEN_LAYER_LLMA_LAB = 1
@@ -47,8 +47,8 @@ class Config:
         HIDDEN_SIZE_LAB = 384
         BATCH_SIZE_LAB = 16
         LR_LAB = 4e-4
-        EPOCHS_LAB = 30
-        ITERATION = 15
+        EPOCHS_LAB = 20
+        ITERATION = 16
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-small'
-        NHL_LAB = [1, 6, 15, 20]
+        NHL_LAB = [1, 6, 20, 30]

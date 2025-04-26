@@ -111,5 +111,5 @@ def train_and_visu():
         
 if __name__ == '__main__':
     #one_by_one('llama')    
-    Config_model_run()
+    Config_model_run('llama')
     #train_and_visu()

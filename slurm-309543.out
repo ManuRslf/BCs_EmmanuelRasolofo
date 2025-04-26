@@ -1,0 +1,858 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250425_153126-vn23nrga
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT midjourney R224 dataset 20250425-153126
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/vn23nrga
+Date d'entraînement: 20250425-153126
+Mode: run
+Images redimensionnées en 224x224
+Tokens additionnels (lab): [0, 10, 60, 100, 150]
+LLMA (lab): 12 couches, taille 384
+Batch size (lab): 16, LR (lab): 0.0004, Époques (lab): 20
+LLAMA num hidden : [1, 6, 20, 30]
+Opération sur cuda
+Dataset utilisé 'midjourney' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.904
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.88      0.90       500
+      nature       0.89      0.93      0.91       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 0, midjourney: acc 0.904
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.903
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.90      0.90       500
+      nature       0.90      0.90      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 1, midjourney: acc 0.903
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.92
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.93      0.92       500
+      nature       0.93      0.91      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 2, midjourney: acc 0.92
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.916
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.92      0.92       500
+      nature       0.92      0.91      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 3, midjourney: acc 0.916
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.907
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.91      0.91       500
+      nature       0.91      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 4, midjourney: acc 0.907
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.906
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.88      0.94      0.91       500
+      nature       0.93      0.87      0.90       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 5, midjourney: acc 0.906
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.904
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.93      0.88      0.90       500
+      nature       0.88      0.93      0.91       500
+
+    accuracy                           0.90      1000
+   macro avg       0.91      0.90      0.90      1000
+weighted avg       0.91      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 6, midjourney: acc 0.904
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.914
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.93      0.92       500
+      nature       0.92      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 7, midjourney: acc 0.914
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.923
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.93      0.92       500
+      nature       0.93      0.92      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 8, midjourney: acc 0.923
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.906
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.91      0.91       500
+      nature       0.91      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 9, midjourney: acc 0.906
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.92
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.93      0.91      0.92       500
+      nature       0.91      0.93      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 10, midjourney: acc 0.92
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.915
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.91      0.91       500
+      nature       0.91      0.92      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.91      1000
+weighted avg       0.92      0.92      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 11, midjourney: acc 0.915
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.906
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.91      0.91       500
+      nature       0.91      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 12, midjourney: acc 0.906
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.913
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.92      0.91       500
+      nature       0.92      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 13, midjourney: acc 0.913
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.905
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.90      0.90       500
+      nature       0.90      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.90      1000
+weighted avg       0.91      0.91      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 14, midjourney: acc 0.905
+Entraînement avec 1 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.906
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.90      0.91       500
+      nature       0.90      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 15, midjourney: acc 0.906
+accuracy mean: 0.9105000000000001
+----------------------------------------------------------------------------------------------------
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.923
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.93      0.92      0.92       500
+      nature       0.92      0.93      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 0, midjourney: acc 0.923
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.92
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.93      0.91      0.92       500
+      nature       0.92      0.93      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 1, midjourney: acc 0.92
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.929
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.94      0.93       500
+      nature       0.94      0.92      0.93       500
+
+    accuracy                           0.93      1000
+   macro avg       0.93      0.93      0.93      1000
+weighted avg       0.93      0.93      0.93      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 2, midjourney: acc 0.929
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.918
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.93      0.92       500
+      nature       0.92      0.91      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 3, midjourney: acc 0.918
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.907
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.91      0.91       500
+      nature       0.91      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 4, midjourney: acc 0.907
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.921
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.93      0.92       500
+      nature       0.93      0.91      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 5, midjourney: acc 0.921
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.911
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.91      0.91       500
+      nature       0.91      0.92      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 6, midjourney: acc 0.911
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.913
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.91      0.91       500
+      nature       0.91      0.92      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 7, midjourney: acc 0.913
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.919
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.93      0.92       500
+      nature       0.93      0.91      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 8, midjourney: acc 0.919
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.916
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.92      0.92       500
+      nature       0.92      0.92      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 9, midjourney: acc 0.916
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.918
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.92      0.92       500
+      nature       0.92      0.91      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 10, midjourney: acc 0.918
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.918
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.91      0.92       500
+      nature       0.91      0.92      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 11, midjourney: acc 0.918
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.917
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.93      0.92       500
+      nature       0.92      0.91      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 12, midjourney: acc 0.917
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.914
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.93      0.92       500
+      nature       0.93      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 13, midjourney: acc 0.914
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.929
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.93      0.93      0.93       500
+      nature       0.93      0.93      0.93       500
+
+    accuracy                           0.93      1000
+   macro avg       0.93      0.93      0.93      1000
+weighted avg       0.93      0.93      0.93      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 14, midjourney: acc 0.929
+Entraînement avec 6 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.92
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.94      0.92       500
+      nature       0.94      0.90      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 15, midjourney: acc 0.92
+accuracy mean: 0.9183125
+----------------------------------------------------------------------------------------------------
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.906
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.91      0.91       500
+      nature       0.91      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 0, midjourney: acc 0.906
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.907
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.91      0.91       500
+      nature       0.91      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 1, midjourney: acc 0.907
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.897
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.87      0.89       500
+      nature       0.88      0.92      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 2, midjourney: acc 0.897
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.921
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.93      0.92       500
+      nature       0.93      0.91      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 3, midjourney: acc 0.921
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.926
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.94      0.93       500
+      nature       0.94      0.91      0.92       500
+
+    accuracy                           0.93      1000
+   macro avg       0.93      0.93      0.93      1000
+weighted avg       0.93      0.93      0.93      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 4, midjourney: acc 0.926
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.919
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.91      0.92       500
+      nature       0.91      0.92      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 5, midjourney: acc 0.919
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.916
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.92      0.92       500
+      nature       0.92      0.92      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 6, midjourney: acc 0.916
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.913
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.93      0.91       500
+      nature       0.93      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 7, midjourney: acc 0.913
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.909
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.92      0.91       500
+      nature       0.91      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 8, midjourney: acc 0.909
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.916
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.91      0.92       500
+      nature       0.91      0.92      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 9, midjourney: acc 0.916
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.926
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.93      0.93       500
+      nature       0.93      0.92      0.93       500
+
+    accuracy                           0.93      1000
+   macro avg       0.93      0.93      0.93      1000
+weighted avg       0.93      0.93      0.93      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 10, midjourney: acc 0.926
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.934
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.94      0.93      0.93       500
+      nature       0.93      0.94      0.93       500
+
+    accuracy                           0.93      1000
+   macro avg       0.93      0.93      0.93      1000
+weighted avg       0.93      0.93      0.93      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 11, midjourney: acc 0.934
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.923
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.94      0.92       500
+      nature       0.94      0.90      0.92       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 12, midjourney: acc 0.923
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.926
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.95      0.93       500
+      nature       0.95      0.90      0.92       500
+
+    accuracy                           0.93      1000
+   macro avg       0.93      0.93      0.93      1000
+weighted avg       0.93      0.93      0.93      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 13, midjourney: acc 0.926
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.913
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.92      0.91       500
+      nature       0.92      0.91      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 14, midjourney: acc 0.913
+Entraînement avec 20 couche de llama
+TRAINING...
+Entraînement terminé.
+Accuracy : 0.927
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.93      0.93       500
+      nature       0.93      0.92      0.93       500
+
+    accuracy                           0.93      1000
+   macro avg       0.93      0.93      0.93      1000
+weighted avg       0.93      0.93      0.93      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 15, midjourney: acc 0.927
+accuracy mean: 0.9174375000000001
+----------------------------------------------------------------------------------------------------
+Entraînement avec 30 couche de llama
+TRAINING...
+Traceback (most recent call last):
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/main.py", line 114, in <module>
+    Config_model_run('llama')
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/main.py", line 84, in Config_model_run
+    run_experiment_llama(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/util.py", line 374, in run_experiment_llama
+    model = train_model_llama_params(model_name, dataloader_train, num_hidden_layer, wandb_log, decreasing_lr, device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/util.py", line 136, in train_model_llama_params
+    outputs = model(inputs)
+              ^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/CustomClassifier.py", line 66, in forward
+    outputs = self.llama(inputs_embeds=features)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/transformers/models/llama/modeling_llama.py", line 842, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/transformers/models/llama/modeling_llama.py", line 594, in forward
+    layer_outputs = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/transformers/models/llama/modeling_llama.py", line 352, in forward
+    hidden_states = self.mlp(hidden_states)
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/transformers/models/llama/modeling_llama.py", line 190, in forward
+    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 180.00 MiB. GPU 0 has a total capacity of 23.80 GiB of which 54.00 MiB is free. Including non-PyTorch memory, this process has 23.74 GiB memory in use. Of the allocated memory 23.00 GiB is allocated by PyTorch, and 443.23 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mAT midjourney R224 dataset 20250425-153126[0m at: [34mhttps://wandb.ai/manurslf301/Encoder-DecoderProject/runs/vn23nrga[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250425_153126-vn23nrga/logs[0m
+srun: error: gpu002: task 0: Exited with exit code 1

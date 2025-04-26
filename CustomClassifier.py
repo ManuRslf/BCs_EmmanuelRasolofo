@@ -40,7 +40,7 @@ class CustomClassifier(nn.Module):
         self.dinov2_model = AutoModel.from_pretrained(dinov2_name)
         self.dinov2_model.requires_grad_(False)
         self.dinov2_model.eval()
-        
+        self.num_token_additional = additional_tokens
         # LLaMA sans tête LM
         self.llama = LlamaForCausalLM(llama_config)
         self.llama.lm_head = nn.Identity()
@@ -87,7 +87,7 @@ class CustomClassifier(nn.Module):
             l=logits.cpu().detach().numpy()  
         return l  
 
-    def visualize_emb_class(self, dataloader, device, epoch:int):
+    def visualize_emb_class(self, model_name, dataloader, device, epoch:int):
         self.dinov2_model.eval()
         all_embeddings = []
         all_labels = []
@@ -113,15 +113,16 @@ class CustomClassifier(nn.Module):
         timestamp = time.strftime("%Y%m%d-%H%M%S")
         if not os.path.exists('tsne_log'):
             os.makedirs('tsne_log')
-        file_name = f'tsne_log/tsne_{epoch}_{timestamp}.png'
+        file_name = f'tsne_log/tsne_{epoch}_{timestamp}{model_name}.png'
 
         plt.figure(figsize=(8,6))
         sns.scatterplot(data=df, x="x", y="y", hue="label", palette="deep", s=60)
-        plt.title("Last token LLAMA avec t-SNE")
-        plt.xlabel("Dimension 1")
-        plt.ylabel("Dimension 2")
+        plt.title(f"Token additionel LLAMA avec t-SNE ({model_name})")
+        plt.xlabel("Component 1")
+        plt.ylabel("Component 2")
         plt.grid(True)
-        plt.savefig(file_name)    
+        plt.savefig(file_name)  
+ 
           
     
 
