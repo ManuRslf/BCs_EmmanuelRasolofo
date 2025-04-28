@@ -51,4 +51,4 @@ class Config:
         ITERATION = 16
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-small'
-        NHL_LAB = [1, 6, 20, 30]
+        NHL_LAB = [1, 6, 12, 16]
