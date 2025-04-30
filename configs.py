@@ -6,7 +6,10 @@ class Config:
     DEBUG = False
     MODEL = 'midjourney'
     RESIZE_SHAPE = 224
-
+    Dinov2_token_dim = {
+        'facebook/dinov2-base' : 768,
+        'facebook/dinov2-small' : 384
+    }
     TRANSFORM = transforms.Compose([
         transforms.Resize((RESIZE_SHAPE, RESIZE_SHAPE)),
         transforms.ToTensor(),
@@ -15,13 +18,6 @@ class Config:
     ])
 
     SHOW_INFO = True
-    ADD_TOKENS = 5
-    NUM_HIDDEN_LAYER_LLMA = 2
-    HIDDEN_SIZE = 768
-    BATCH_SIZE = 32
-    LR = 0.03
-    EPOCHS = 7
-    DECREASING_LR = True
 
     if DEBUG:
         SAVE_IMAGE = False
@@ -36,19 +32,28 @@ class Config:
         ITERATION = 1
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-small'
+        if HIDDEN_SIZE_LAB != Dinov2_token_dim[DINOV2_NAME]:
+            Adapter = True
+        else: Adapter = False
+        
     else:
         SAVE_IMAGE = False
         WANDB_LOG = True
-        TSNE_LOG = False
-        add_tokens_lab = 10
+        TSNE_LOG = True
+        add_tokens_lab = 4
         ADD_TOKENS_LAB = [0, 10, 60, 100, 150]
         ADD_TOKENS_LAB_perf = [0, 10, 30, 50]
-        NUM_HIDDEN_LAYER_LLMA_LAB = 12
-        HIDDEN_SIZE_LAB = 384
+        NUM_HIDDEN_LAYER_LLMA_LAB = 6
+        HIDDEN_SIZE_LAB = 4096
         BATCH_SIZE_LAB = 16
         LR_LAB = 4e-4
-        EPOCHS_LAB = 20
-        ITERATION = 16
+        EPOCHS_LAB = 40
+        ITERATION = 1
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-small'
         NHL_LAB = [1, 6, 12, 16]
+        
+        
+        if HIDDEN_SIZE_LAB != Dinov2_token_dim[DINOV2_NAME]:
+            Adapter = True
+        else: Adapter = False

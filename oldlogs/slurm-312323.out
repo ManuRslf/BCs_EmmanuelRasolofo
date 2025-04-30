@@ -1,0 +1,23 @@
+Opération sur cuda
+Dataset utilisé 'midjourney' - Classes: ['ai', 'nature']
+Resize shape : 224
+Tokens additionels : 5
+LLaMA hidden size et num layer : 12, 4096
+DINOv2 model : facebook/dinov2-small
+Entraînement avec 5 tokens additionnels
+TRAINING...
+Traceback (most recent call last):
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/main.py", line 115, in <module>
+    train()
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/main.py", line 108, in train
+    _ = simple_training('midjourney', 5, True, device)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/util.py", line 201, in simple_training
+    model_trained = train_model(model_name,
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/util.py", line 82, in train_model
+    wandb.log({f"Train/Loss{timestamp}": avg_loss, "epoch": epoch})
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/wandb/sdk/lib/preinit.py", line 36, in preinit_wrapper
+    raise wandb.Error(f"You must call wandb.init() before {name}()")
+wandb.errors.errors.Error: You must call wandb.init() before wandb.log()
+srun: error: gpu003: task 0: Exited with exit code 1

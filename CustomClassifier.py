@@ -35,12 +35,17 @@ class CustomClassifier(nn.Module):
         
         #tokens additionels
         self.add_tokens = nn.Parameter(torch.randn(additional_tokens, llama_config.hidden_size))
-        
+        self.hidden_size = hidden_size
         #DinoV2 figé
         self.dinov2_model = AutoModel.from_pretrained(dinov2_name)
         self.dinov2_model.requires_grad_(False)
         self.dinov2_model.eval()
         self.num_token_additional = additional_tokens
+        
+        # si la dimension de LLaMA est differente de celui de Dinov2, on adapte la dimension
+        if Config.Adapter:
+            self.Adapter = nn.Linear(Config.Dinov2_token_dim[Config.DINOV2_NAME], Config.HIDDEN_SIZE_LAB)
+            
         # LLaMA sans tête LM
         self.llama = LlamaForCausalLM(llama_config)
         self.llama.lm_head = nn.Identity()
@@ -57,7 +62,10 @@ class CustomClassifier(nn.Module):
         with torch.no_grad():
             features = self.dinov2_model(x)['last_hidden_state']
         
-
+        # on adapte
+        if Config.Adapter:
+            features = self.Adapter(features)
+            
         batch_size = features.size(0)
         add_tokens_expanded = self.add_tokens.unsqueeze(0).repeat(batch_size, 1, 1)
         features = torch.cat((features, add_tokens_expanded), dim=1)
@@ -73,7 +81,9 @@ class CustomClassifier(nn.Module):
         #REPRESENTATION
         with torch.no_grad():
             features = self.dinov2_model(x)['last_hidden_state']
-        
+
+        if Config.Adapter:
+            features = self.Adapter(features)
 
         batch_size = features.size(0)
         add_tokens_expanded = self.add_tokens.unsqueeze(0).repeat(batch_size, 1, 1)
@@ -126,75 +136,3 @@ class CustomClassifier(nn.Module):
           
     
 
-def training_testing(model_name:str=None):
-    '''Fonction d'entraînement et d'évaluation sur le dataset spécifié'''
-    
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    
-    dataset_train, dataset_test = load_tinygen_image(model_name, tf=Config.TRANSFORM)
-    
-    print(f"Opération sur {device}")
-    print(f"Dataset utilisé '{model_name}' - Classes: {dataset_train.classes}")
-    print_verbose(show=Config.SHOW_INFO)
-    
-    #DataLoaders
-    dataloader_train = DataLoader(dataset_train, batch_size=Config.BATCH_SIZE, shuffle=True, num_workers=4, pin_memory=True)
-    dataloader_test = DataLoader(dataset_test, batch_size=Config.BATCH_SIZE, shuffle=False)
-    
-    #Configuration LLaMA
-    llama_config = LlamaConfig(num_hidden_layers=Config.NUM_HIDDEN_LAYER_LLMA, 
-                               hidden_size=Config.HIDDEN_SIZE)
-    
-    model = CustomClassifier(llama_config, additional_tokens=Config.ADD_TOKENS).to(device)
-    
-    loss_fn = nn.CrossEntropyLoss()
-    optimizer = torch.optim.Adam(model.parameters(), lr=Config.LR)
-    
-    print("TRAINING...")
-    for epoch in range(Config.EPOCHS):
-        total_loss = 0.0
-        count = 0
-        for inputs, labels in dataloader_train:
-            inputs, labels = inputs.to(device), labels.to(device)
-            optimizer.zero_grad()
-            outputs = model(inputs)
-            loss = loss_fn(outputs, labels)
-            loss.backward()
-            optimizer.step()
-            
-            total_loss += loss.item()
-            count += 1
-        print(f"Epoch {epoch} - Loss moyenne: {total_loss/count:.2f}")
-    
-    print("Entraînement terminé.")
-    
-    # Test
-    predictions = []
-    true_labels = []
-    with torch.no_grad():
-        for inputs, labels in dataloader_test:
-            inputs, labels = inputs.to(device), labels.to(device)
-            outputs = model(inputs)
-            _, preds = torch.max(outputs, 1)
-            predictions.extend(preds.cpu().numpy())
-            true_labels.extend(labels.cpu().numpy())
-    
-    acc = accuracy_score(true_labels, predictions)
-    print(f"Accuracy : {acc}")
-    print("Rapport de classification :")
-    print(classification_report(true_labels, predictions, target_names=['ia', 'nature']))
-    
-if __name__ == '__main__':
-    #training_testing(Config.MODEL)
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    
-    dataset_train, dataset_test = load_tinygen_image('midjourney', tf=Config.TRANSFORM)
-    dataloader_train = DataLoader(dataset_train, batch_size=Config.BATCH_SIZE, shuffle=True, num_workers=4, pin_memory=True)
-    dataloader_test = DataLoader(dataset_test, batch_size=Config.BATCH_SIZE, shuffle=False)
-    
-    llama_config = LlamaConfig(num_hidden_layers=Config.NUM_HIDDEN_LAYER_LLMA, 
-                               hidden_size=Config.HIDDEN_SIZE)
-    
-    model = CustomClassifier(llama_config, additional_tokens=Config.ADD_TOKENS).to(device)
-    
-    model.visualize_emb_class(dataloader_train, device)

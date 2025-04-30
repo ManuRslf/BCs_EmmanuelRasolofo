@@ -1,0 +1,78 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250428_140108-yc77g1hc
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT midjourney R224 dataset 20250428-140108
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/yc77g1hc
+Date d'entraînement: 20250428-140108
+Mode: run
+Images redimensionnées en 224x224
+Tokens additionnels (lab): [0, 10, 60, 100, 150]
+LLMA (lab): 6 couches, taille 4096
+Batch size (lab): 16, LR (lab): 0.0004, Époques (lab): 40
+LLAMA num hidden : [1, 6, 12, 16]
+Opération sur cuda
+Dataset utilisé 'midjourney' - Classes: ['ai', 'nature']
+Resize shape : 224
+Tokens additionels : 5
+LLaMA hidden size et num layer : 6, 4096
+DINOv2 model : facebook/dinov2-small
+Entraînement avec 5 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.68445
+Epoch 1 - Loss moyenne: 0.36035
+Epoch 2 - Loss moyenne: 0.29742
+Epoch 3 - Loss moyenne: 0.30034
+Epoch 4 - Loss moyenne: 0.28647
+Epoch 5 - Loss moyenne: 0.25200
+Epoch 6 - Loss moyenne: 0.25248
+Epoch 7 - Loss moyenne: 0.23987
+Epoch 8 - Loss moyenne: 0.22103
+Epoch 9 - Loss moyenne: 0.25174
+Epoch 10 - Loss moyenne: 0.22794
+Epoch 11 - Loss moyenne: 0.23283
+Epoch 12 - Loss moyenne: 0.21125
+Epoch 13 - Loss moyenne: 0.21961
+Epoch 14 - Loss moyenne: 0.21593
+Epoch 15 - Loss moyenne: 0.21339
+Epoch 16 - Loss moyenne: 0.20857
+Epoch 17 - Loss moyenne: 0.20019
+Epoch 18 - Loss moyenne: 0.17749
+Epoch 19 - Loss moyenne: 0.18975
+Epoch 20 - Loss moyenne: 0.16673
+Epoch 21 - Loss moyenne: 0.13953
+Epoch 22 - Loss moyenne: 0.12404
+Epoch 23 - Loss moyenne: 0.12358
+Epoch 24 - Loss moyenne: 0.12872
+Epoch 25 - Loss moyenne: 0.10765
+Epoch 26 - Loss moyenne: 0.10209
+Epoch 27 - Loss moyenne: 0.09637
+Epoch 28 - Loss moyenne: 0.07216
+Epoch 29 - Loss moyenne: 0.05493
+Epoch 30 - Loss moyenne: 0.04061
+Epoch 31 - Loss moyenne: 0.03191
+Epoch 32 - Loss moyenne: 0.02643
+Epoch 33 - Loss moyenne: 0.02666
+Epoch 34 - Loss moyenne: 0.02177
+Epoch 35 - Loss moyenne: 0.01984
+Epoch 36 - Loss moyenne: 0.01637
+Epoch 37 - Loss moyenne: 0.01514
+Epoch 38 - Loss moyenne: 0.01464
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: Train/Loss20250428-140233 █▅▄▄▄▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:                     epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb: 
+wandb: Run summary:
+wandb: Train/Loss20250428-140233 0.01439
+wandb:                     epoch 39
+wandb: 
+wandb: 🚀 View run AT midjourney R224 dataset 20250428-140108 at: https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/yc77g1hc
+wandb: ⭐️ View project at: https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250428_140108-yc77g1hc/logs
+Epoch 39 - Loss moyenne: 0.01439
+Entraînement terminé.
