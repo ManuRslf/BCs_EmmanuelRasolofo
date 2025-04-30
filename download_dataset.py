@@ -1,11 +1,21 @@
 import kagglehub
 import os
 import shutil
+
+def is_empty(path:str):
+    for _, _, fichier in os.walk(path):
+        if fichier:
+            return False
+    return True
+
+
 #download
 print("Telechargement du dataset.")
 
 source = kagglehub.dataset_download("yangsangtai/tiny-genimage")
 
+if is_empty(source):
+    raise ValueError("Le dossier source est vide")
 
 destination = os.path.join(os.getcwd(), r'DATA\tinygenimage')
 
@@ -76,7 +86,7 @@ for filename in os.listdir(destination):
                 else:
                     shutil.copytree(src_file2, dst_test_nature, dirs_exist_ok=True)
             
-            #et on rennome le dossier de val en train
+            #et on rennome le dossier de val en test
             os.rename(os.path.join(model_path, tr_val), os.path.join(model_path, TEST))
             
         if tr_val == TRAIN:
