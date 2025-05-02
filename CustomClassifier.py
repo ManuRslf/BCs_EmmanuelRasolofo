@@ -16,13 +16,14 @@ class CustomClassifier(nn.Module):
     '''
     Modèle personnalisé qui combine :
       -Un extracteur de caractéristique DinoV2 
+      -Une couche linéaire pour adapter la sortie de DinoV2 dans LLaMA
       -Un modèle LLaMA pour decoder
       -Une couche linéaire de classification pour la sortie (classification binaire)
     '''
     def __init__(self, 
                  llama_config:LlamaConfig, 
                  dinov2_name:str='facebook/dinov2-base', 
-                 hidden_size:int=768,
+                 hidden_size:int=Config.HIDDEN_SIZE_LAB,
                  additional_tokens:int=2):
         '''
         arguments:
@@ -44,7 +45,7 @@ class CustomClassifier(nn.Module):
         
         # si la dimension de LLaMA est differente de celui de Dinov2, on adapte la dimension
         if Config.Adapter:
-            self.Adapter = nn.Linear(Config.Dinov2_token_dim[Config.DINOV2_NAME], Config.HIDDEN_SIZE_LAB)
+            self.Adapter = nn.Linear(Config.Dinov2_token_dim[Config.DINOV2_NAME], hidden_size)
             
         # LLaMA sans tête LM
         self.llama = LlamaForCausalLM(llama_config)

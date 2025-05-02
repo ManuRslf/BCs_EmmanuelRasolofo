@@ -31,6 +31,9 @@ def one_by_one(univariee_training:str):
         wandb.define_metric("llama_nhl")
         wandb.define_metric("Accuracy_lnhl/*", step_metric="llama_nhl")
 
+        # metrique pour hiddensize de llama
+        wandb.define_metric("llama_hsl")
+        wandb.define_metric("Accuracy_hsl/*", step_metric="llama_hsl")
 
 
 
@@ -39,7 +42,7 @@ def one_by_one(univariee_training:str):
         
         if univariee_training=='token':
             print("training en variant le nombre de token")
-            run_experiment(model, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+            run_experiment_tokens(model, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
             
         if univariee_training=='cross':
             print("training en test generalisée")
@@ -48,6 +51,11 @@ def one_by_one(univariee_training:str):
         if univariee_training=='llama':
             print("training en variant le nombre de layer de llama")
             run_experiment_llama(model, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+
+        if univariee_training=='llama2':
+            print("training en variant la taille des couches cachées")
+            run_experiment_llama2(model, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+            
     if Config.WANDB_LOG:
         wandb.finish()
 
@@ -72,10 +80,17 @@ def Config_model_run(univariee_training:str=None):
         # metrique pour num hidden layer de llama       
         wandb.define_metric("llama_nhl")
         wandb.define_metric("Accuracy_lnhl/*", step_metric="llama_nhl")
-
+        
+        
+        # metrique pour hiddensize de llama
+        wandb.define_metric("llama_hsl")
+        wandb.define_metric("Accuracy_hsl/*", step_metric="llama_hsl")
+        
+        wandb.define_metric("epoch")
+        wandb.define_metric("Train/*", step_metric="epoch")
 
     if univariee_training=='token':
-        run_experiment(Config.MODEL, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+        run_experiment_tokens(Config.MODEL, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
         
     if univariee_training=='cross':
         cross_model(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
@@ -83,13 +98,13 @@ def Config_model_run(univariee_training:str=None):
     if univariee_training=='llama':
         run_experiment_llama(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
         
+    if univariee_training=='llama2':
+        run_experiment_llama2(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+        
     else:
         """
         entrainement selon l'epoch. Comparasion avec cosineal et normal
         """        
-        wandb.define_metric("epoch")
-        wandb.define_metric("Train/*", step_metric="epoch")
-        
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
         
@@ -135,5 +150,5 @@ def train():
         
 if __name__ == '__main__':
     #one_by_one('llama')    
-    #Config_model_run('llama')
-    train()
+    Config_model_run('llama2')
+    #train()

@@ -1,4 +1,7 @@
 import torchvision.transforms as transforms
+import torch
+from PIL import Image
+import io
 
 class Config:
     '''Tous les hyper-paramètres ici'''
@@ -16,7 +19,7 @@ class Config:
         transforms.Normalize(mean=[0.485, 0.456, 0.406],
                             std=[0.229, 0.224, 0.225])
     ])
-
+    
     SHOW_INFO = True
 
     if DEBUG:
@@ -39,21 +42,68 @@ class Config:
     else:
         SAVE_IMAGE = False
         WANDB_LOG = True
-        TSNE_LOG = True
+        TSNE_LOG = False
         add_tokens_lab = 4
         ADD_TOKENS_LAB = [0, 10, 60, 100, 150]
         ADD_TOKENS_LAB_perf = [0, 10, 30, 50]
         NUM_HIDDEN_LAYER_LLMA_LAB = 6
-        HIDDEN_SIZE_LAB = 4096
+        HIDDEN_SIZE_LAB = 384
         BATCH_SIZE_LAB = 16
         LR_LAB = 4e-4
-        EPOCHS_LAB = 40
+        EPOCHS_LAB = 80
         ITERATION = 1
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-small'
         NHL_LAB = [1, 6, 12, 16]
+        HSL_LAB = [128, 256, 512, 768, 1024, 1536]
         
         
         if HIDDEN_SIZE_LAB != Dinov2_token_dim[DINOV2_NAME]:
             Adapter = True
         else: Adapter = False
+        Adapter=True
+
+
+# methode custom pour la pipeline gaussian nois
+class GaussianNoise:
+    def __init__(self, mean:float=0, std:float=1):
+        self.mean = mean
+        self.std = std
+        
+    # on va rendre l'instance de l'objet en callable
+    def __call__(self, tensor):
+        return tensor + torch.randn_like(tensor) * self.std + self.mean
+    
+    
+# methode custom pour compresser l'image en jpeg
+class JPEGcompression:
+    def __init__(self, quality:int=50):
+        self.quality=quality
+        
+    def __call__(self, img):
+        buf = io.BytesIO()
+        img.save(buf, format='JPEG', quality=self.quality)
+        buf.seek(0)
+        return Image.open(buf)
+
+# Deux methodes get qui va retourner la pipeline correspondant de la transformation voulue
+def gaussianTF(mean:float=0, std:float=1):
+    TRANSFORM_GN = transforms.Compose([
+        transforms.Resize((Config.RESIZE_SHAPE, Config.RESIZE_SHAPE)),
+        transforms.ToTensor(),
+        GaussianNoise(mean=mean, std=std),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                            std=[0.229, 0.224, 0.225])
+    ])
+    return TRANSFORM_GN
+
+
+def jpegTF(quality:int=50):
+    TRANSFORM_COMPRESSED = transforms.Compose([
+        transforms.Resize((Config.RESIZE_SHAPE, Config.RESIZE_SHAPE)),
+        JPEGcompression(quality=quality),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                            std=[0.229, 0.224, 0.225])
+    ])
+    return TRANSFORM_COMPRESSED

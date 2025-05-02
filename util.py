@@ -79,8 +79,8 @@ def train_model(model_name:str,
         
         if wandb_log:
             
-            wandb.log({f"Train/Loss{timestamp}": avg_loss, "epoch": epoch})
-            #pass
+            #wandb.log({f"Train/Loss{timestamp}": avg_loss, "epoch": epoch})
+            pass
         
         #decommenter pour voir loss
         print(f"Epoch {epoch} - Loss moyenne: {avg_loss:.5f}")
@@ -92,6 +92,7 @@ def train_model(model_name:str,
 def train_model_llama_params(model_name:str,
                 dataloader_train:DataLoader,
                 num_hidden_layer:int,
+                hidden_size:int,
                 wandb_log:bool,
                 decreasing_lr:bool,
                 device: torch.device,
@@ -101,14 +102,14 @@ def train_model_llama_params(model_name:str,
     '''
     Fonction d'entrainement pour les paramètres donnés    
     '''
-    print(f"Entraînement avec {num_hidden_layer} couche de llama")
+    print(f"[{model_name}]Entraînement avec {num_hidden_layer} couche de llama et de tailles {hidden_size} pour chaque couches")
     
     llama_config = LlamaConfig(num_hidden_layers=num_hidden_layer, 
-                               hidden_size=Config.HIDDEN_SIZE_LAB)
+                               hidden_size=hidden_size)
     model = CustomClassifier.CustomClassifier(
         llama_config, 
         dinov2_name=Config.DINOV2_NAME, 
-        hidden_size=Config.HIDDEN_SIZE_LAB,
+        hidden_size=hidden_size,
         additional_tokens=Config.add_tokens_lab
     ).to(device)
     
@@ -152,7 +153,7 @@ def train_model_llama_params(model_name:str,
             pass
         
         #decommenter pour voir loss
-        #print(f"Epoch {epoch} - Loss moyenne: {avg_loss:.5f}")
+        print(f"Epoch {epoch} - Loss moyenne: {avg_loss:.5f}")
     print("Entraînement terminé.")
     return model
 
@@ -209,9 +210,9 @@ def simple_training(model_name:str, additional_token:int, decreasing_lr:bool, de
     
     return model_trained
 
-def run_experiment(model_name:str, save_image:bool, wandb_log:bool, decreasing_lr:bool):
+def run_experiment_tokens(model_name:str, save_image:bool, wandb_log:bool, decreasing_lr:bool):
     '''
-    Experimentations
+    Experimentations: variation du nombre de tokens additionels
     '''
     
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -226,7 +227,7 @@ def run_experiment(model_name:str, save_image:bool, wandb_log:bool, decreasing_l
     
     accuracy_list = []
     
-    # moyenne sur chaque token
+    # on fait la moyenne pour k iterations
     means = []
     iterations = Config.ITERATION
     
@@ -348,6 +349,73 @@ def run_experiment_llama(model_name:str, wandb_log:bool, decreasing_lr:bool):
     tel que le nombres de couche caché
     '''
     
+    print("\n\nCECI EST UN ENTRAINEMENT EN VARIANT LE NOMBRE DE COUCHES CACHEES DE LLAMA\n\n")
+    
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    train_dataset, test_dataset = load_tinygen_image(model_name, tf=Config.TRANSFORM)
+    
+    print(f"Opération sur {device}")
+    print(f"Dataset utilisé '{model_name}' - Classes: {train_dataset.classes}")
+    
+    dataloader_train = DataLoader(train_dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=True, num_workers=4, pin_memory=True)
+    dataloader_test = DataLoader(test_dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=False)
+    timestamp = time.strftime("%Y%m%d-%H%M%S")
+    
+    accuracy_list = []
+    
+    # on fait la moyenne pour k iterations
+    means = []
+    iterations = Config.ITERATION
+    
+    for num_hidden_layer in Config.NHL_LAB:
+        means = []
+        
+        print("-" * 100)
+        
+        if iterations > 1:
+            for it in range(iterations): 
+                # on procède à l'entrainement et on recupère le modèle entrainé qu'on fait tester dans les validations sets
+                model = train_model_llama_params(model_name, 
+                                                 dataloader_train, 
+                                                 num_hidden_layer, 
+                                                 Config.HIDDEN_SIZE_LAB, 
+                                                 wandb_log, 
+                                                 decreasing_lr, 
+                                                 device)
+                acc = test_model(dataloader_test, device, model)
+                means.append(acc)
+                
+            
+                print(f"iteration {it}, {model_name}: acc {means[-1]}")
+            if wandb_log:
+                wandb.log({f"Accuracy_lnhl/{model_name}": np.mean(np.array(means)), "llama_nhl": num_hidden_layer})
+            print(f"accuracy mean: {np.mean(np.array(means))}")
+
+                
+        else:
+            model = train_model_llama_params(model_name, 
+                                             dataloader_train, 
+                                             num_hidden_layer, 
+                                             Config.HIDDEN_SIZE_LAB, 
+                                             wandb_log, 
+                                             decreasing_lr, 
+                                             device)
+            acc = test_model(dataloader_test, device, model)
+            
+            if wandb_log:
+                wandb.log({f"Accuracy_lnhl/{model_name}": acc, "llama_nhl": num_hidden_layer})
+            accuracy_list.append(acc)
+            print(f"accuracy mean: {acc}")
+    
+    return accuracy_list
+
+def run_experiment_llama2(model_name:str, wandb_log:bool, decreasing_lr:bool):
+    '''
+    Experimentations2: entrainement avec hyperparametre univarié sur la variation des parametre de llama 
+    tel que la taille des couches cachées
+    '''
+    print("\n\nCECI EST UN ENTRAINEMENT EN VARIANT LA TAILLE DE COUCHES CACHEES DE LLAMA\n\n")
+
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     train_dataset, test_dataset = load_tinygen_image(model_name, tf=Config.TRANSFORM)
     
@@ -364,30 +432,43 @@ def run_experiment_llama(model_name:str, wandb_log:bool, decreasing_lr:bool):
     means = []
     iterations = Config.ITERATION
     
-    for num_hidden_layer in Config.NHL_LAB:
+    for hidden_size in Config.HSL_LAB:
         means = []
         
         print("-" * 100)
         
         if iterations > 1:
             for it in range(iterations): 
-                model = train_model_llama_params(model_name, dataloader_train, num_hidden_layer, wandb_log, decreasing_lr, device)
+                # on procède à l'entrainement et on recupère le modèle entrainé qu'on fait tester dans les validations sets
+                model = train_model_llama_params(model_name, 
+                                                 dataloader_train, 
+                                                 Config.NUM_HIDDEN_LAYER_LLMA_LAB, 
+                                                 hidden_size, 
+                                                 wandb_log, 
+                                                 decreasing_lr, 
+                                                 device)
                 acc = test_model(dataloader_test, device, model)
                 means.append(acc)
                 
             
                 print(f"iteration {it}, {model_name}: acc {means[-1]}")
             if wandb_log:
-                wandb.log({f"Accuracy_lnhl/{model_name}": np.mean(np.array(means)), "llama_nhl": num_hidden_layer})
+                wandb.log({f"Accuracy_hsl/{model_name}": np.mean(np.array(means)), "llama_hsl": hidden_size})
             print(f"accuracy mean: {np.mean(np.array(means))}")
 
                 
         else:
-            model = train_model_llama_params(model_name, dataloader_train, num_hidden_layer, wandb_log, decreasing_lr, device)
+            model = train_model_llama_params(model_name, 
+                                             dataloader_train, 
+                                             Config.NUM_HIDDEN_LAYER_LLMA_LAB, 
+                                             hidden_size, 
+                                             wandb_log, 
+                                             decreasing_lr, 
+                                             device)
             acc = test_model(dataloader_test, device, model)
             
             if wandb_log:
-                wandb.log({f"Accuracy_lnhl/{model_name}": acc, "llama_nhl": num_hidden_layer})
+                wandb.log({f"Accuracy_hsl/{model_name}": acc, "llama_hsl": hidden_size})
             accuracy_list.append(acc)
             print(f"accuracy mean: {acc}")
     
@@ -417,7 +498,7 @@ if __name__ == '__main__':
     
     for model in MODEL_NAMES:
 
-        run_experiment(model, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+        run_experiment_tokens(model, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
         
     if Config.WANDB_LOG:
         wandb.finish()
