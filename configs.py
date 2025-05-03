@@ -7,7 +7,9 @@ class Config:
     '''Tous les hyper-paramètres ici'''
     
     DEBUG = False
-    MODEL = 'midjourney'
+    Adapter_EXTERN = False
+    
+    MODEL = 'wukong'
     RESIZE_SHAPE = 224
     Dinov2_token_dim = {
         'facebook/dinov2-base' : 768,
@@ -23,45 +25,57 @@ class Config:
     SHOW_INFO = True
 
     if DEBUG:
+        RESIZE_SHAPE = 28
         SAVE_IMAGE = False
-        WANDB_LOG = True
+        WANDB_LOG = False
+        TSNE_LOG = False
+        add_tokens_lab = 1
         ADD_TOKENS_LAB = [i for i in range(2, 3)]
         ADD_TOKENS_LAB_perf = [0, 1]
         NUM_HIDDEN_LAYER_LLMA_LAB = 1
         HIDDEN_SIZE_LAB = 384
-        BATCH_SIZE_LAB = 128
+        BATCH_SIZE_LAB = 8
         LR_LAB = 1e-3
         EPOCHS_LAB = 1
         ITERATION = 1
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-small'
-        if HIDDEN_SIZE_LAB != Dinov2_token_dim[DINOV2_NAME]:
+        NHL_LAB = [1, 6]
+        HSL_LAB = [128, 256]
+        EPOCHS_HSL = [1, 2]
+        STD_GAUSSIAN_NOISE = [0.01, 1]
+        QUALITY_JPEG_COMPRESSION = [100, 95]
+        if HIDDEN_SIZE_LAB != Dinov2_token_dim[DINOV2_NAME] and not Adapter_EXTERN:
             Adapter = True
-        else: Adapter = False
+        elif HIDDEN_SIZE_LAB == Dinov2_token_dim[DINOV2_NAME] and not Adapter_EXTERN: Adapter = False
         
     else:
         SAVE_IMAGE = False
         WANDB_LOG = True
         TSNE_LOG = False
-        add_tokens_lab = 4
+        add_tokens_lab = 8
         ADD_TOKENS_LAB = [0, 10, 60, 100, 150]
         ADD_TOKENS_LAB_perf = [0, 10, 30, 50]
         NUM_HIDDEN_LAYER_LLMA_LAB = 6
         HIDDEN_SIZE_LAB = 384
-        BATCH_SIZE_LAB = 16
+        BATCH_SIZE_LAB = 128
         LR_LAB = 4e-4
-        EPOCHS_LAB = 120
+        # epoch plus grand si taille llama different de dinov2
+        EPOCHS_LAB = 35
         ITERATION = 1
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-small'
         NHL_LAB = [1, 6, 12, 16]
         HSL_LAB = [128, 256, 768, 1536]
-        EPOCHS_HSL = [40, 90, 130, 170]
+        EPOCHS_HSL = [60, 120, 180, 250]
+        STD_GAUSSIAN_NOISE = [0.01, 0.05, 0.1, 0.3, 0.5, 1]
+        QUALITY_JPEG_COMPRESSION = [100, 95, 85, 70, 50, 30, 10, 1]
         
-        if HIDDEN_SIZE_LAB != Dinov2_token_dim[DINOV2_NAME]:
+        if HIDDEN_SIZE_LAB != Dinov2_token_dim[DINOV2_NAME] and not Adapter_EXTERN:
             Adapter = True
-        else: Adapter = False
-        Adapter=True
+        elif HIDDEN_SIZE_LAB == Dinov2_token_dim[DINOV2_NAME] and not Adapter_EXTERN: Adapter = False
+        
+
 
 
 # methode custom pour la pipeline gaussian nois

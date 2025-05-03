@@ -50,27 +50,25 @@ def load_tinygen_image(model:str=None, tf:transforms.Compose=None, get:str='all'
         return ImageFolder(root=train_path, transform=tf)
     if get == 'test':
         return ImageFolder(root=test_path, transform=tf)
-def print_verbose(show:bool=True, lab:bool=False, *args):
-    '''
-    Affiche les informations
-    '''
-    if show:
-        print(f"Images redimensionnées en {Config.RESIZE_SHAPE}x{Config.RESIZE_SHAPE}")
-        print(f"Tokens additionnels: {Config.ADD_TOKENS}")
-        print(f"LLMA: {Config.NUM_HIDDEN_LAYER_LLMA} couches, taille {Config.HIDDEN_SIZE}")
-        print(f"Batch size: {Config.BATCH_SIZE}, LR: {Config.LR}, Époques: {Config.EPOCHS}")
-        return
-    if lab:
-        print(f"Images redimensionnées en {Config.RESIZE_SHAPE}x{Config.RESIZE_SHAPE}")
-        print(f"Tokens additionnels (lab): {Config.ADD_TOKENS_LAB}")
-        print(f"LLMA (lab): {Config.NUM_HIDDEN_LAYER_LLMA_LAB} couches, taille {Config.HIDDEN_SIZE_LAB}")
-        print(f"Batch size (lab): {Config.BATCH_SIZE_LAB}, LR (lab): {Config.LR_LAB}, Époques (lab): {Config.EPOCHS_LAB}")
-        print(f"LLAMA num hidden : {Config.NHL_LAB}")
-        return
-        
-    else:    
-        for ar in args:
-            print(str(ar))
+    
+    
+def print_verbose():
+    attrs = {
+        name: value
+        for name, value in Config.__dict__.items()
+        if not name.startswith('_') and not callable(value)
+    }
+    print("."*100)
+    print("Configurations:")
+    for name, value in sorted(attrs.items()):
+        if name == 'TRANSFORM':
+            # Affiche chaque transform composant le pipeline
+            print(f"{name}:")
+            for t in Config.TRANSFORM.transforms:
+                print(f"  - {t}")
+        else:
+            print(f"{name}: {value}")
+    print("-"*100)
 
 if __name__ == '__main__':
 

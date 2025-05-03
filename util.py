@@ -1,3 +1,9 @@
+"""
+CE FICHIER CONTIENT ESSENTIELLEMENT L'INTEGRALITé DES FONCTIONS POUR L'ENTRAINEMENT UNIVARIé
+COMME LA VARIATION DES NOMBRES DE TOKENS AJOUTé, LE NOMBRE DE COUCHE CACHé DE LLAMA,..
+"""
+
+
 import os
 import time
 import torch
@@ -15,7 +21,8 @@ import numpy as np
 from configs import Config
 import CustomClassifier
 from image_util import load_tinygen_image, print_verbose
-
+from configs import gaussianTF
+from configs import jpegTF
 
 MODEL_NAMES = ['biggan', 'vqdm', 'sdv5', 'wukong', 'adm', 'glide', 'midjourney']
 
@@ -191,12 +198,12 @@ def simple_training(model_name:str, additional_token:int, decreasing_lr:bool, de
     
     print(f"Opération sur {device}")
     print(f"Dataset utilisé '{model_name}' - Classes: {train_dataset.classes}")
-    
+    '''
     print_verbose(False, False, f"Resize shape : {Config.RESIZE_SHAPE}",
                                 f"Tokens additionels : {additional_token}",
                                 f"LLaMA hidden size et num layer : {Config.NUM_HIDDEN_LAYER_LLMA_LAB}, {Config.HIDDEN_SIZE_LAB}",
                                 f"DINOv2 model : {Config.DINOV2_NAME}")
-    
+    '''
     dataloader_train = DataLoader(train_dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=True, num_workers=4, pin_memory=True)
     dataloader_test = DataLoader(test_dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=False)
     
@@ -215,7 +222,8 @@ def run_experiment_tokens(model_name:str, save_image:bool, wandb_log:bool, decre
     '''
     Experimentations: variation du nombre de tokens additionels
     '''
-    
+    print("\033[93m \n\nENTRAINEMENT: VARIAtION DU NOMBRE DE TOKENS\n\n \033[0m")
+
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     train_dataset, test_dataset = load_tinygen_image(model_name, tf=Config.TRANSFORM)
     
@@ -316,6 +324,9 @@ def cross_model(model_name:str, wandb_log:bool, decreasing_lr:bool):
     '''
     Training: une dataset en particulier, Test: evalu sa performance par rapport au autre modéle
     '''
+    print("\033[93m \n\nENTRAINEMENT: CROSS GENRATOR IMAGE CLASSIFICATION\n\n \033[0m")
+
+    
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
     # dataloaders du model actuel
@@ -349,7 +360,8 @@ def run_experiment_llama(model_name:str, wandb_log:bool, decreasing_lr:bool):
     Experimentations: entrainement avec hyperparametre univarié sur la variation des parametre de llama 
     tel que le nombres de couche caché
     '''
-    
+    print("\033[93m \n\nENTRAINEMENT: VARIAtION DU NOMBRE DE COUCHES CACHEES DE LLAMA\n\n \033[0m")
+
     print("\n\nCECI EST UN ENTRAINEMENT EN VARIANT LE NOMBRE DE COUCHES CACHEES DE LLAMA\n\n")
     
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -415,7 +427,7 @@ def run_experiment_llama2(model_name:str, wandb_log:bool, decreasing_lr:bool):
     Experimentations2: entrainement avec hyperparametre univarié sur la variation des parametre de llama 
     tel que la taille des couches cachées
     '''
-    print("\n\nCECI EST UN ENTRAINEMENT EN VARIANT LA TAILLE DE COUCHES CACHEES DE LLAMA\n\n")
+    print("\033[93m \n\nENTRAINEMENT: VARIAtION LA TAILLE DE COUCHES CACHEES DE LLAMA\n\n \033[0m")
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     train_dataset, test_dataset = load_tinygen_image(model_name, tf=Config.TRANSFORM)
@@ -476,6 +488,90 @@ def run_experiment_llama2(model_name:str, wandb_log:bool, decreasing_lr:bool):
     
     return accuracy_list
 
+
+def run_experiment_gaussian(model_name:str, wandb_log:bool, decreasing_lr:bool):
+    '''
+    Experimentations: ajout de bruits dans les données tests
+    Essentiel: faire un plot du loss et de l'accuracy sur une même graphe wandb
+    '''
+    print("\033[93m \n\nENTRAINEMENT: AJOUT DE BRUIT GAUSSIEN\n\n \033[0m")
+
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    train_dataset = load_tinygen_image(model_name, tf=Config.TRANSFORM, get='train')
+    
+
+    print(f"Opération sur {device}")
+    print(f"Dataset utilisé '{model_name}' - Classes: {train_dataset.classes}")
+    
+    dataloader_train = DataLoader(train_dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=True, num_workers=4, pin_memory=True)
+    timestamp = time.strftime("%Y%m%d-%H%M%S")
+
+    accuracy_list = []
+    
+
+    print("-" * 100)
+    
+    model = train_model(model_name, dataloader_train, Config.add_tokens_lab, wandb_log, decreasing_lr, device)
+    print("Test...")
+    for std in Config.STD_GAUSSIAN_NOISE:
+        print(f"STD -> {std}")
+        
+        TF = gaussianTF(mean=0, std=std)
+        
+        test_dataset = load_tinygen_image(model_name, tf=TF, get='test')
+        dataloader_test = DataLoader(test_dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=False)
+
+        acc = test_model(dataloader_test, device, model)        
+        if wandb_log:
+            wandb.log({f"Accuracy_gaussian/{model_name}{timestamp}": acc, "std_gaussian_noise": std})
+        accuracy_list.append(acc)
+        
+        print(f"accuracy : {acc}")  
+              
+    return accuracy_list
+
+def run_experiment_quality(model_name:str, wandb_log:bool, decreasing_lr:bool):
+    '''
+    Experimentations: effet sur l'accuracy par rapport à la dégradation de l'image dans les test
+    Essentiel: faire un plot du loss et de l'accuracy sur une même graphe wandb
+    '''
+    print("\033[93m \n\nENTRAINEMENT: DEGRADATION DE LA QUALITé\n\n \033[0m")
+
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    train_dataset = load_tinygen_image(model_name, tf=Config.TRANSFORM, get='train')
+    
+
+    print(f"Opération sur {device}")
+    print(f"Dataset utilisé '{model_name}' - Classes: {train_dataset.classes}")
+    
+    dataloader_train = DataLoader(train_dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=True, num_workers=4, pin_memory=True)
+    timestamp = time.strftime("%Y%m%d-%H%M%S")
+
+    accuracy_list = []
+    
+
+    print("-" * 100)
+    
+    model = train_model(model_name, dataloader_train, Config.add_tokens_lab, wandb_log, decreasing_lr, device)
+    print("Test...")
+    for quality in Config.QUALITY_JPEG_COMPRESSION:
+        print(f"Quality -> {quality}")
+        
+        TF = jpegTF(quality=quality)
+        
+        test_dataset = load_tinygen_image(model_name, tf=TF, get='test')
+        dataloader_test = DataLoader(test_dataset, batch_size=Config.BATCH_SIZE_LAB, shuffle=False)
+
+        acc = test_model(dataloader_test, device, model)        
+        if wandb_log:
+            wandb.log({f"Accuracy_jpegcomp/{model_name}{timestamp}": acc, "quality": quality})
+        accuracy_list.append(acc)
+        
+        print(f"accuracy : {acc}")  
+              
+    return accuracy_list
+
+
 if __name__ == '__main__':
 
 
@@ -483,7 +579,7 @@ if __name__ == '__main__':
     timestamp = time.strftime("%Y%m%d-%H%M%S")
     print(f"Date d'entraînement: {timestamp}")
     print("Mode:", "debug" if Config.DEBUG else "run")
-    print_verbose(show=False, lab=True)
+    print_verbose()
     
     if Config.WANDB_LOG:
         wandb.init(

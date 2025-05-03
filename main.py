@@ -13,7 +13,6 @@ def one_by_one(univariee_training:str):
     timestamp = time.strftime("%Y%m%d-%H%M%S")
     print(f"Date d'entraînement: {timestamp}")
     print("Mode:", "debug" if Config.DEBUG else "run")
-    print_verbose(show=False, lab=True)
 
     if Config.WANDB_LOG:
         wandb.init(
@@ -35,27 +34,46 @@ def one_by_one(univariee_training:str):
         wandb.define_metric("llama_hsl")
         wandb.define_metric("Accuracy_hsl/*", step_metric="llama_hsl")
 
-
+        # metrique pour gaussian noise
+        wandb.define_metric("std_gaussian_noise")
+        wandb.define_metric("Accuracy_gaussian/*", step_metric="std_gaussian_noise")
+        
+        
+        # metrique pour jpeg compression
+        wandb.define_metric("quality")
+        wandb.define_metric("Accuracy_jpegcomp/*", step_metric="quality")
 
     for model in MODEL_NAMES:
         wandb.define_metric(f"Accuracy_cross_model{model}/*", step_metric="tokens")
         
         if univariee_training=='token':
-            print("training en variant le nombre de token")
+            print_verbose()
             run_experiment_tokens(model, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
             
         if univariee_training=='cross':
-            print("training en test generalisée")
+            print_verbose()
             cross_model(model, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
             
         if univariee_training=='llama':
-            print("training en variant le nombre de layer de llama")
+            print_verbose()
             run_experiment_llama(model, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
 
         if univariee_training=='llama2':
-            print("training en variant la taille des couches cachées")
+            
+            Config.Adapter_EXTERN = True
+            Config.Adapter =True
+            
+            print_verbose()
             run_experiment_llama2(model, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
             
+        if univariee_training=='gaussiannoise':
+            print_verbose()
+            run_experiment_gaussian(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+
+        if univariee_training=='jpeg':
+            print_verbose()
+            run_experiment_quality(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+
     if Config.WANDB_LOG:
         wandb.finish()
 
@@ -64,7 +82,6 @@ def Config_model_run(univariee_training:str=None):
     timestamp = time.strftime("%Y%m%d-%H%M%S")
     print(f"Date d'entraînement: {timestamp}")
     print("Mode:", "debug" if Config.DEBUG else "run")
-    print_verbose(show=False, lab=True)
 
     if Config.WANDB_LOG:
         wandb.init(
@@ -86,22 +103,47 @@ def Config_model_run(univariee_training:str=None):
         wandb.define_metric("llama_hsl")
         wandb.define_metric("Accuracy_hsl/*", step_metric="llama_hsl")
         
+        # metrique pour gaussian noise
+        wandb.define_metric("std_gaussian_noise")
+        wandb.define_metric("Accuracy_gaussian/*", step_metric="std_gaussian_noise")
+        
+        
+        # metrique pour jpeg compression
+        wandb.define_metric("quality")
+        wandb.define_metric("Accuracy_jpegcomp/*", step_metric="quality")
+        
         wandb.define_metric("epoch")
         wandb.define_metric("Train/*", step_metric="epoch")
+        
+        
 
     if univariee_training=='token':
+        print_verbose()
         run_experiment_tokens(Config.MODEL, Config.SAVE_IMAGE, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
         
     if univariee_training=='cross':
+        print_verbose()
         cross_model(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
         
     if univariee_training=='llama':
+        print_verbose()
         run_experiment_llama(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
         
     if univariee_training=='llama2':
+        print_verbose()
+        Config.Adapter_EXTERN = True
+        Config.Adapter =True
         run_experiment_llama2(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
-        
-    else:
+    
+    if univariee_training=='gaussiannoise':
+        print_verbose()
+        run_experiment_gaussian(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+
+    if univariee_training=='jpeg':
+        print_verbose()
+        run_experiment_quality(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+         
+    elif univariee_training is None:
         """
         entrainement selon l'epoch. Comparasion avec cosineal et normal
         """        
@@ -116,14 +158,35 @@ def Config_model_run(univariee_training:str=None):
         wandb.finish()
         
 
+def IFDEBUG():
+    print("\033[92m \n\n\nTest fonction..\n\n \033[0m")
+    '''
+    Config_model_run('token')
+    print("\033[92mToken OK..\033[0m")
+
+    Config_model_run('cross')
+    print("\033[92mCross OK..\033[0m")
+
+    Config_model_run('llama')
+    print("\033[92mLLAMA OK..\033[0m")
+
+    Config_model_run('llama2')
+    print("\033[92mLLAMA2 OK..\033[0m")
+
+    Config_model_run('gaussiannoise')
+    print("\033[92mGAUSSIAN OK..\033[0m")
+    '''
+    Config_model_run('jpeg')
+    print("\033[92mJPEG OK..\033[0m")
+
+    print('\n OK.')
 
 
 def train():
-    
     timestamp = time.strftime("%Y%m%d-%H%M%S")
     print(f"Date d'entraînement: {timestamp}")
     print("Mode:", "debug" if Config.DEBUG else "run")
-    print_verbose(show=False, lab=True)
+    print_verbose()
 
     if Config.WANDB_LOG:
         wandb.init(
@@ -148,7 +211,13 @@ def train():
     
 
         
-if __name__ == '__main__':
+if __name__ == '__main__' and not Config.DEBUG:
     #one_by_one('llama')    
-    Config_model_run('llama2')
+    Config_model_run('gaussiannoise')
+    Config_model_run('jpeg')
+
     #train()
+    
+    
+if __name__ == '__main__' and Config.DEBUG:
+    IFDEBUG()

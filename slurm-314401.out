@@ -1,0 +1,165 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250503_142627-dh2bvsop
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT midjourney R224 dataset 20250503-142627
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/dh2bvsop
+Date d'entraînement: 20250503-142627
+Mode: run
+....................................................................................................
+Configurations:
+ADD_TOKENS_LAB: [0, 10, 60, 100, 150]
+ADD_TOKENS_LAB_perf: [0, 10, 30, 50]
+Adapter: False
+Adapter_EXTERN: False
+BATCH_SIZE_LAB: 16
+DEBUG: False
+DECREASING_LR_LAB: True
+DINOV2_NAME: facebook/dinov2-small
+Dinov2_token_dim: {'facebook/dinov2-base': 768, 'facebook/dinov2-small': 384}
+EPOCHS_HSL: [60, 120, 180, 250]
+EPOCHS_LAB: 35
+HIDDEN_SIZE_LAB: 384
+HSL_LAB: [128, 256, 768, 1536]
+ITERATION: 1
+LR_LAB: 0.0004
+MODEL: midjourney
+NHL_LAB: [1, 6, 12, 16]
+NUM_HIDDEN_LAYER_LLMA_LAB: 8
+QUALITY_JPEG_COMPRESSION: [100, 95, 85, 70, 50, 30, 10, 1]
+RESIZE_SHAPE: 224
+SAVE_IMAGE: False
+SHOW_INFO: True
+STD_GAUSSIAN_NOISE: [0.01, 0.05, 0.1, 0.3, 0.5, 1]
+TSNE_LOG: False
+WANDB_LOG: True
+add_tokens_lab: 25
+----------------------------------------------------------------------------------------------------
+[93m 
+
+ENTRAINEMENT: AJOUT DE BRUIT GAUSSIEN
+
+ [0m
+Opération sur cuda
+Dataset utilisé 'midjourney' - Classes: ['ai', 'nature']
+STD -> 0.01
+----------------------------------------------------------------------------------------------------
+Entraînement avec 25 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.48439
+Epoch 1 - Loss moyenne: 0.20769
+Epoch 2 - Loss moyenne: 0.10233
+Epoch 3 - Loss moyenne: 0.05265
+Epoch 4 - Loss moyenne: 0.04849
+Epoch 5 - Loss moyenne: 0.03620
+Epoch 6 - Loss moyenne: 0.01778
+Epoch 7 - Loss moyenne: 0.02069
+Epoch 8 - Loss moyenne: 0.02396
+Epoch 9 - Loss moyenne: 0.01703
+Epoch 10 - Loss moyenne: 0.01609
+Epoch 11 - Loss moyenne: 0.01401
+Epoch 12 - Loss moyenne: 0.01968
+Epoch 13 - Loss moyenne: 0.01012
+Epoch 14 - Loss moyenne: 0.00827
+Epoch 15 - Loss moyenne: 0.00023
+Epoch 16 - Loss moyenne: 0.00002
+Epoch 17 - Loss moyenne: 0.00001
+Epoch 18 - Loss moyenne: 0.00001
+Epoch 19 - Loss moyenne: 0.00001
+Epoch 20 - Loss moyenne: 0.00001
+Epoch 21 - Loss moyenne: 0.00000
+Epoch 22 - Loss moyenne: 0.00000
+Epoch 23 - Loss moyenne: 0.00000
+Epoch 24 - Loss moyenne: 0.00000
+Epoch 25 - Loss moyenne: 0.00000
+Epoch 26 - Loss moyenne: 0.00000
+Epoch 27 - Loss moyenne: 0.00000
+Epoch 28 - Loss moyenne: 0.00000
+Epoch 29 - Loss moyenne: 0.00000
+Epoch 30 - Loss moyenne: 0.00000
+Epoch 31 - Loss moyenne: 0.00000
+Epoch 32 - Loss moyenne: 0.00000
+Epoch 33 - Loss moyenne: 0.00000
+Epoch 34 - Loss moyenne: 0.00000
+Entraînement terminé.
+Accuracy : 0.862
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.94      0.77      0.85       500
+      nature       0.81      0.95      0.87       500
+
+    accuracy                           0.86      1000
+   macro avg       0.87      0.86      0.86      1000
+weighted avg       0.87      0.86      0.86      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.862
+STD -> 0.05
+----------------------------------------------------------------------------------------------------
+Entraînement avec 25 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.48574
+Epoch 1 - Loss moyenne: 0.22107
+Epoch 2 - Loss moyenne: 0.09430
+Epoch 3 - Loss moyenne: 0.06008
+Epoch 4 - Loss moyenne: 0.04353
+Epoch 5 - Loss moyenne: 0.03321
+Epoch 6 - Loss moyenne: 0.03068
+Epoch 7 - Loss moyenne: 0.02257
+Epoch 8 - Loss moyenne: 0.02053
+Epoch 9 - Loss moyenne: 0.01157
+Epoch 10 - Loss moyenne: 0.02301
+Epoch 11 - Loss moyenne: 0.00986
+Epoch 12 - Loss moyenne: 0.01040
+Epoch 13 - Loss moyenne: 0.01260
+Epoch 14 - Loss moyenne: 0.00049
+Epoch 15 - Loss moyenne: 0.00009
+Epoch 16 - Loss moyenne: 0.00006
+Epoch 17 - Loss moyenne: 0.00004
+Epoch 18 - Loss moyenne: 0.00003
+Epoch 19 - Loss moyenne: 0.00003
+Epoch 20 - Loss moyenne: 0.00002
+Epoch 21 - Loss moyenne: 0.00002
+Epoch 22 - Loss moyenne: 0.00002
+Epoch 23 - Loss moyenne: 0.00002
+Epoch 24 - Loss moyenne: 0.00001
+Epoch 25 - Loss moyenne: 0.00001
+Epoch 26 - Loss moyenne: 0.00001
+Epoch 27 - Loss moyenne: 0.00001
+Epoch 28 - Loss moyenne: 0.00001
+Epoch 29 - Loss moyenne: 0.00001
+Epoch 30 - Loss moyenne: 0.00001
+Epoch 31 - Loss moyenne: 0.00001
+Epoch 32 - Loss moyenne: 0.00001
+Epoch 33 - Loss moyenne: 0.00001
+Epoch 34 - Loss moyenne: 0.00001
+Entraînement terminé.
+Accuracy : 0.698
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.97      0.41      0.58       500
+      nature       0.63      0.99      0.77       500
+
+    accuracy                           0.70      1000
+   macro avg       0.80      0.70      0.67      1000
+weighted avg       0.80      0.70      0.67      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.698
+STD -> 0.1
+----------------------------------------------------------------------------------------------------
+Entraînement avec 25 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.47489
+Epoch 1 - Loss moyenne: 0.19141
+Epoch 2 - Loss moyenne: 0.08598
+Epoch 3 - Loss moyenne: 0.04896
+Epoch 4 - Loss moyenne: 0.03689
+Epoch 5 - Loss moyenne: 0.02984
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** STEP 314401.0 ON gpu003 CANCELLED AT 2025-05-03T15:39:45 ***
+slurmstepd: error: *** JOB 314401 ON gpu003 CANCELLED AT 2025-05-03T15:39:45 ***
