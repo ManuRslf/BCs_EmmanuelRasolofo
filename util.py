@@ -98,6 +98,7 @@ def train_model_llama_params(model_name:str,
                 device: torch.device,
                 tsne:bool=False,
                 dataloader_test=None,
+                EPOCHS:int=Config.EPOCHS_LAB
                 ):
     '''
     Fonction d'entrainement pour les paramètres donnés    
@@ -128,7 +129,7 @@ def train_model_llama_params(model_name:str,
         # visualisation du dernier token qui est initialisé aleatoirement
         model.visualize_emb_class(dataloader_test, device, -1)
 
-    for epoch in range(Config.EPOCHS_LAB):
+    for epoch in range(EPOCHS):
         total_loss = 0.0
         count = 0
         for inputs, labels in dataloader_train:
@@ -432,7 +433,7 @@ def run_experiment_llama2(model_name:str, wandb_log:bool, decreasing_lr:bool):
     means = []
     iterations = Config.ITERATION
     
-    for hidden_size in Config.HSL_LAB:
+    for hidden_size, e in zip(Config.HSL_LAB, Config.EPOCHS_HSL):
         means = []
         
         print("-" * 100)
@@ -446,7 +447,8 @@ def run_experiment_llama2(model_name:str, wandb_log:bool, decreasing_lr:bool):
                                                  hidden_size, 
                                                  wandb_log, 
                                                  decreasing_lr, 
-                                                 device)
+                                                 device,
+                                                 EPOCHS=e)
                 acc = test_model(dataloader_test, device, model)
                 means.append(acc)
                 

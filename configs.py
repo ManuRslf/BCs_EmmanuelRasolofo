@@ -50,13 +50,13 @@ class Config:
         HIDDEN_SIZE_LAB = 384
         BATCH_SIZE_LAB = 16
         LR_LAB = 4e-4
-        EPOCHS_LAB = 80
+        EPOCHS_LAB = 120
         ITERATION = 1
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-small'
         NHL_LAB = [1, 6, 12, 16]
-        HSL_LAB = [128, 256, 512, 768, 1024, 1536]
-        
+        HSL_LAB = [128, 256, 768, 1536]
+        EPOCHS_HSL = [40, 90, 130, 170]
         
         if HIDDEN_SIZE_LAB != Dinov2_token_dim[DINOV2_NAME]:
             Adapter = True

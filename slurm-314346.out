@@ -1,0 +1,36 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250502_153016-zx40oorc
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT midjourney R224 dataset 20250502-153016
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/zx40oorc
+Date d'entraînement: 20250502-153016
+Mode: run
+Images redimensionnées en 224x224
+Tokens additionnels (lab): [0, 10, 60, 100, 150]
+LLMA (lab): 6 couches, taille 384
+Batch size (lab): 16, LR (lab): 0.0004, Époques (lab): 120
+LLAMA num hidden : [1, 6, 12, 16]
+
+
+CECI EST UN ENTRAINEMENT EN VARIANT LA TAILLE DE COUCHES CACHEES DE LLAMA
+
+
+Opération sur cuda
+Dataset utilisé 'midjourney' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+[midjourney]Entraînement avec 6 couche de llama et de tailles 128 pour chaque couches
+TRAINING...
+Epoch 0 - Loss moyenne: 0.43229
+Epoch 1 - Loss moyenne: 0.22205
+Epoch 2 - Loss moyenne: 0.14452
+Epoch 3 - Loss moyenne: 0.09411
+Epoch 4 - Loss moyenne: 0.07209
+Epoch 5 - Loss moyenne: 0.06548
+Epoch 6 - Loss moyenne: 0.05050
+Epoch 7 - Loss moyenne: 0.04337
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** JOB 314346 ON gpu003 CANCELLED AT 2025-05-02T15:34:18 ***
+slurmstepd: error: *** STEP 314346.0 ON gpu003 CANCELLED AT 2025-05-02T15:34:18 ***
