@@ -1,0 +1,394 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250503_165705-uzfmhjyi
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT wukong R224 dataset 20250503-165705
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/uzfmhjyi
+Date d'entraînement: 20250503-165705
+Mode: run
+....................................................................................................
+Configurations:
+ADD_TOKENS_LAB: [0, 10, 60, 100, 150]
+ADD_TOKENS_LAB_perf: [0, 10, 30, 50]
+Adapter: False
+Adapter_EXTERN: False
+BATCH_SIZE_LAB: 128
+DEBUG: False
+DECREASING_LR_LAB: True
+DINOV2_NAME: facebook/dinov2-small
+Dinov2_token_dim: {'facebook/dinov2-base': 768, 'facebook/dinov2-small': 384}
+EPOCHS_HSL: [60, 120, 180, 250]
+EPOCHS_LAB: 35
+HIDDEN_SIZE_LAB: 384
+HSL_LAB: [128, 256, 768, 1536]
+ITERATION: 1
+LR_LAB: 0.0004
+MODEL: wukong
+NHL_LAB: [1, 6, 12, 16]
+NUM_HIDDEN_LAYER_LLMA_LAB: 6
+QUALITY_JPEG_COMPRESSION: [100, 95, 85, 70, 50, 30, 10, 1]
+RESIZE_SHAPE: 224
+SAVE_IMAGE: False
+SHOW_INFO: True
+STD_GAUSSIAN_NOISE: [0.01, 0.05, 0.1, 0.3, 0.5, 1]
+TSNE_LOG: False
+WANDB_LOG: True
+add_tokens_lab: 8
+----------------------------------------------------------------------------------------------------
+[93m 
+
+ENTRAINEMENT: AJOUT DE BRUIT GAUSSIEN
+
+ [0m
+Opération sur cuda
+Dataset utilisé 'wukong' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 8 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 1.02430
+Epoch 1 - Loss moyenne: 0.40983
+Epoch 2 - Loss moyenne: 0.23268
+Epoch 3 - Loss moyenne: 0.09642
+Epoch 4 - Loss moyenne: 0.03399
+Epoch 5 - Loss moyenne: 0.01647
+Epoch 6 - Loss moyenne: 0.00999
+Epoch 7 - Loss moyenne: 0.00461
+Epoch 8 - Loss moyenne: 0.02047
+Epoch 9 - Loss moyenne: 0.00669
+Epoch 10 - Loss moyenne: 0.00231
+Epoch 11 - Loss moyenne: 0.00048
+Epoch 12 - Loss moyenne: 0.00009
+Epoch 13 - Loss moyenne: 0.00006
+Epoch 14 - Loss moyenne: 0.00005
+Epoch 15 - Loss moyenne: 0.00004
+Epoch 16 - Loss moyenne: 0.00003
+Epoch 17 - Loss moyenne: 0.00003
+Epoch 18 - Loss moyenne: 0.00003
+Epoch 19 - Loss moyenne: 0.00003
+Epoch 20 - Loss moyenne: 0.00002
+Epoch 21 - Loss moyenne: 0.00002
+Epoch 22 - Loss moyenne: 0.00002
+Epoch 23 - Loss moyenne: 0.00002
+Epoch 24 - Loss moyenne: 0.00002
+Epoch 25 - Loss moyenne: 0.00002
+Epoch 26 - Loss moyenne: 0.00002
+Epoch 27 - Loss moyenne: 0.00002
+Epoch 28 - Loss moyenne: 0.00002
+Epoch 29 - Loss moyenne: 0.00002
+Epoch 30 - Loss moyenne: 0.00002
+Epoch 31 - Loss moyenne: 0.00002
+Epoch 32 - Loss moyenne: 0.00002
+Epoch 33 - Loss moyenne: 0.00002
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: Accuracy_gaussian/wukong20250503-165706 █▇▇▃▂▁
+wandb:                      std_gaussian_noise ▁▁▂▃▄█
+wandb: 
+wandb: Run summary:
+wandb: Accuracy_gaussian/wukong20250503-165706 0.489
+wandb:                      std_gaussian_noise 1
+wandb: 
+wandb: 🚀 View run AT wukong R224 dataset 20250503-165705 at: https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/uzfmhjyi
+wandb: ⭐️ View project at: https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_165705-uzfmhjyi/logs
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250503_172148-cd1h3c5j
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT wukong R224 dataset 20250503-172148
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/cd1h3c5j
+Epoch 34 - Loss moyenne: 0.00002
+Entraînement terminé.
+Test...
+STD -> 0.01
+Accuracy : 0.898
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.92      0.87      0.90       500
+      nature       0.88      0.92      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.898
+STD -> 0.05
+Accuracy : 0.864
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.95      0.77      0.85       500
+      nature       0.81      0.96      0.88       500
+
+    accuracy                           0.86      1000
+   macro avg       0.88      0.86      0.86      1000
+weighted avg       0.88      0.86      0.86      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.864
+STD -> 0.1
+Accuracy : 0.815
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.94      0.67      0.78       500
+      nature       0.74      0.96      0.84       500
+
+    accuracy                           0.81      1000
+   macro avg       0.84      0.81      0.81      1000
+weighted avg       0.84      0.81      0.81      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.815
+STD -> 0.3
+Accuracy : 0.596
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.96      0.20      0.33       500
+      nature       0.55      0.99      0.71       500
+
+    accuracy                           0.60      1000
+   macro avg       0.76      0.60      0.52      1000
+weighted avg       0.76      0.60      0.52      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.596
+STD -> 0.5
+Accuracy : 0.54
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.79      0.11      0.19       500
+      nature       0.52      0.97      0.68       500
+
+    accuracy                           0.54      1000
+   macro avg       0.66      0.54      0.43      1000
+weighted avg       0.66      0.54      0.43      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.54
+STD -> 1
+Accuracy : 0.489
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.49      0.76      0.60       500
+      nature       0.48      0.22      0.30       500
+
+    accuracy                           0.49      1000
+   macro avg       0.48      0.49      0.45      1000
+weighted avg       0.48      0.49      0.45      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.489
+Date d'entraînement: 20250503-172148
+Mode: run
+....................................................................................................
+Configurations:
+ADD_TOKENS_LAB: [0, 10, 60, 100, 150]
+ADD_TOKENS_LAB_perf: [0, 10, 30, 50]
+Adapter: False
+Adapter_EXTERN: False
+BATCH_SIZE_LAB: 128
+DEBUG: False
+DECREASING_LR_LAB: True
+DINOV2_NAME: facebook/dinov2-small
+Dinov2_token_dim: {'facebook/dinov2-base': 768, 'facebook/dinov2-small': 384}
+EPOCHS_HSL: [60, 120, 180, 250]
+EPOCHS_LAB: 35
+HIDDEN_SIZE_LAB: 384
+HSL_LAB: [128, 256, 768, 1536]
+ITERATION: 1
+LR_LAB: 0.0004
+MODEL: wukong
+NHL_LAB: [1, 6, 12, 16]
+NUM_HIDDEN_LAYER_LLMA_LAB: 6
+QUALITY_JPEG_COMPRESSION: [100, 95, 85, 70, 50, 30, 10, 1]
+RESIZE_SHAPE: 224
+SAVE_IMAGE: False
+SHOW_INFO: True
+STD_GAUSSIAN_NOISE: [0.01, 0.05, 0.1, 0.3, 0.5, 1]
+TSNE_LOG: False
+WANDB_LOG: True
+add_tokens_lab: 8
+----------------------------------------------------------------------------------------------------
+[93m 
+
+ENTRAINEMENT: DEGRADATION DE LA QUALITé
+
+ [0m
+Opération sur cuda
+Dataset utilisé 'wukong' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 8 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.88761
+Epoch 1 - Loss moyenne: 0.32605
+Epoch 2 - Loss moyenne: 0.15874
+Epoch 3 - Loss moyenne: 0.07607
+Epoch 4 - Loss moyenne: 0.04454
+Epoch 5 - Loss moyenne: 0.02657
+Epoch 6 - Loss moyenne: 0.01974
+Epoch 7 - Loss moyenne: 0.00843
+Epoch 8 - Loss moyenne: 0.01191
+Epoch 9 - Loss moyenne: 0.00924
+Epoch 10 - Loss moyenne: 0.01331
+Epoch 11 - Loss moyenne: 0.00062
+Epoch 12 - Loss moyenne: 0.00019
+Epoch 13 - Loss moyenne: 0.00009
+Epoch 14 - Loss moyenne: 0.00007
+Epoch 15 - Loss moyenne: 0.00006
+Epoch 16 - Loss moyenne: 0.00005
+Epoch 17 - Loss moyenne: 0.00004
+Epoch 18 - Loss moyenne: 0.00004
+Epoch 19 - Loss moyenne: 0.00004
+Epoch 20 - Loss moyenne: 0.00003
+Epoch 21 - Loss moyenne: 0.00003
+Epoch 22 - Loss moyenne: 0.00003
+Epoch 23 - Loss moyenne: 0.00003
+Epoch 24 - Loss moyenne: 0.00003
+Epoch 25 - Loss moyenne: 0.00003
+Epoch 26 - Loss moyenne: 0.00003
+Epoch 27 - Loss moyenne: 0.00003
+Epoch 28 - Loss moyenne: 0.00003
+Epoch 29 - Loss moyenne: 0.00003
+Epoch 30 - Loss moyenne: 0.00003
+Epoch 31 - Loss moyenne: 0.00003
+Epoch 32 - Loss moyenne: 0.00003
+Epoch 33 - Loss moyenne: 0.00002
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: Accuracy_jpegcomp/wukong20250503-172149 ████▇▇▆▁
+wandb:                                 quality ██▇▆▄▃▂▁
+wandb: 
+wandb: Run summary:
+wandb: Accuracy_jpegcomp/wukong20250503-172149 0.779
+wandb:                                 quality 1
+wandb: 
+wandb: 🚀 View run AT wukong R224 dataset 20250503-172148 at: https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/cd1h3c5j
+wandb: ⭐️ View project at: https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_172148-cd1h3c5j/logs
+Epoch 34 - Loss moyenne: 0.00003
+Entraînement terminé.
+Test...
+Quality -> 100
+Accuracy : 0.894
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.88      0.91      0.90       500
+      nature       0.91      0.88      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.894
+Quality -> 95
+Accuracy : 0.896
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.88      0.91      0.90       500
+      nature       0.91      0.88      0.89       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.896
+Quality -> 85
+Accuracy : 0.892
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.88      0.90      0.89       500
+      nature       0.90      0.88      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.892
+Quality -> 70
+Accuracy : 0.89
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.90      0.89       500
+      nature       0.89      0.88      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.89
+Quality -> 50
+Accuracy : 0.883
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.88      0.88       500
+      nature       0.88      0.89      0.88       500
+
+    accuracy                           0.88      1000
+   macro avg       0.88      0.88      0.88      1000
+weighted avg       0.88      0.88      0.88      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.883
+Quality -> 30
+Accuracy : 0.887
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.87      0.88       500
+      nature       0.87      0.91      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.887
+Quality -> 10
+Accuracy : 0.857
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.82      0.85       500
+      nature       0.83      0.89      0.86       500
+
+    accuracy                           0.86      1000
+   macro avg       0.86      0.86      0.86      1000
+weighted avg       0.86      0.86      0.86      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.857
+Quality -> 1
+Accuracy : 0.779
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.81      0.73      0.77       500
+      nature       0.75      0.83      0.79       500
+
+    accuracy                           0.78      1000
+   macro avg       0.78      0.78      0.78      1000
+weighted avg       0.78      0.78      0.78      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.779
