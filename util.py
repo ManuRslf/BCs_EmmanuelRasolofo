@@ -90,7 +90,7 @@ def train_model(model_name:str,
             pass
         
         #decommenter pour voir loss
-        print(f"Epoch {epoch} - Loss moyenne: {avg_loss:.5f}")
+        print(f"Epoch {epoch} - Loss moyenne: {avg_loss}")
     print("Entraînement terminé.")
     return model
 
@@ -161,7 +161,7 @@ def train_model_llama_params(model_name:str,
             pass
         
         #decommenter pour voir loss
-        print(f"Epoch {epoch} - Loss moyenne: {avg_loss:.5f}")
+        print(f"Epoch {epoch} - Loss moyenne: {avg_loss}")
     print("Entraînement terminé.")
     return model
 

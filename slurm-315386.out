@@ -1,0 +1,269 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250507_184803-thyrqv1c
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT wukong R224 dataset 20250507-184802
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/thyrqv1c
+Date d'entraînement: 20250507-184802
+Mode: run
+....................................................................................................
+Configurations:
+ADD_TOKENS_LAB: [0, 10, 60, 100, 150]
+ADD_TOKENS_LAB_perf: [0, 10, 30, 50]
+Adapter: False
+Adapter_EXTERN: False
+BATCH_SIZE_LAB: 32
+DEBUG: False
+DECREASING_LR_LAB: True
+DINOV2_NAME: facebook/dinov2-base
+Dinov2_token_dim: {'facebook/dinov2-base': 768, 'facebook/dinov2-small': 384}
+EPOCHS_HSL: [100, 200, 300, 500]
+EPOCHS_LAB: 35
+HIDDEN_SIZE_LAB: 768
+HSL_LAB: [1024, 1536, 2048, 2560]
+ITERATION: 1
+LR_LAB: 0.0004
+MODEL: wukong
+NHL_LAB: [1, 6, 12, 16]
+NUM_HIDDEN_LAYER_LLMA_LAB: 6
+QUALITY_JPEG_COMPRESSION: [100, 95, 85, 70, 50, 30, 10, 1]
+RESIZE_SHAPE: 224
+SAVE_IMAGE: False
+SHOW_INFO: True
+STD_GAUSSIAN_NOISE: [0.01, 0.05, 0.1, 0.3, 0.5, 1]
+TSNE_LOG: False
+WANDB_LOG: True
+add_tokens_lab: 8
+----------------------------------------------------------------------------------------------------
+[93m 
+
+ENTRAINEMENT: VARIAtION LA TAILLE DE COUCHES CACHEES DE LLAMA
+
+ [0m
+Opération sur cuda
+Dataset utilisé 'wukong' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+[wukong]Entraînement avec 6 couche de llama et de tailles 1024 pour chaque couches
+TRAINING...
+Epoch 0 - Loss moyenne: 0.5673372887969017
+Epoch 1 - Loss moyenne: 0.21608085012435913
+Epoch 2 - Loss moyenne: 0.16538714244961739
+Epoch 3 - Loss moyenne: 0.14170334219187497
+Epoch 4 - Loss moyenne: 0.14534335910528898
+Epoch 5 - Loss moyenne: 0.09566934697329998
+Epoch 6 - Loss moyenne: 0.07771244913106784
+Epoch 7 - Loss moyenne: 0.06837176235765219
+Epoch 8 - Loss moyenne: 0.09003691436909139
+Epoch 9 - Loss moyenne: 0.05826072110142559
+Epoch 10 - Loss moyenne: 0.04133294270606711
+Epoch 11 - Loss moyenne: 0.04275594572396949
+Epoch 12 - Loss moyenne: 0.037413998168660326
+Epoch 13 - Loss moyenne: 0.02408074516581837
+Epoch 14 - Loss moyenne: 0.02893995052506216
+Epoch 15 - Loss moyenne: 0.02512533974600956
+Epoch 16 - Loss moyenne: 0.017957499859621747
+Epoch 17 - Loss moyenne: 0.008821391876321286
+Epoch 18 - Loss moyenne: 0.010584605962561909
+Epoch 19 - Loss moyenne: 0.009457848505815492
+Epoch 20 - Loss moyenne: 0.00805894466675818
+Epoch 21 - Loss moyenne: 0.00563761043298291
+Epoch 22 - Loss moyenne: 0.0004269114974304102
+Epoch 23 - Loss moyenne: 0.00012796846751007252
+Epoch 24 - Loss moyenne: 9.239370402065106e-05
+Epoch 25 - Loss moyenne: 7.497042162867728e-05
+Epoch 26 - Loss moyenne: 6.444391967670527e-05
+Epoch 27 - Loss moyenne: 5.7382712577236814e-05
+Epoch 28 - Loss moyenne: 5.2416324717341924e-05
+Epoch 29 - Loss moyenne: 4.887476340809371e-05
+Epoch 30 - Loss moyenne: 4.636596854834352e-05
+Epoch 31 - Loss moyenne: 4.498575406614691e-05
+Epoch 32 - Loss moyenne: 4.4201468481333e-05
+Epoch 33 - Loss moyenne: 4.381541496695718e-05
+Epoch 34 - Loss moyenne: 4.370342013862682e-05
+Entraînement terminé.
+Accuracy : 0.888
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.89      0.89       500
+      nature       0.89      0.89      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.888
+----------------------------------------------------------------------------------------------------
+[wukong]Entraînement avec 6 couche de llama et de tailles 1536 pour chaque couches
+TRAINING...
+Epoch 0 - Loss moyenne: 0.7817300547361374
+Epoch 1 - Loss moyenne: 0.301633206397295
+Epoch 2 - Loss moyenne: 0.2349947970211506
+Epoch 3 - Loss moyenne: 0.18590924224257468
+Epoch 4 - Loss moyenne: 0.17288608389347793
+Epoch 5 - Loss moyenne: 0.16853872045874596
+Epoch 6 - Loss moyenne: 0.23161106538772583
+Epoch 7 - Loss moyenne: 0.18235875375568866
+Epoch 8 - Loss moyenne: 0.1899871301203966
+Epoch 9 - Loss moyenne: 0.1457293307185173
+Epoch 10 - Loss moyenne: 0.1516463702917099
+Epoch 11 - Loss moyenne: 0.12150341492891312
+Epoch 12 - Loss moyenne: 0.18380584328621627
+Epoch 13 - Loss moyenne: 0.14780030120909213
+Epoch 14 - Loss moyenne: 0.09738879507035017
+Epoch 15 - Loss moyenne: 0.10303531931340694
+Epoch 16 - Loss moyenne: 0.09847272884100676
+Epoch 17 - Loss moyenne: 0.06715835361368955
+Epoch 18 - Loss moyenne: 0.05825638529192656
+Epoch 19 - Loss moyenne: 0.038012347577139734
+Epoch 20 - Loss moyenne: 0.02978038047160953
+Epoch 21 - Loss moyenne: 0.027954239712329583
+Epoch 22 - Loss moyenne: 0.02032967326370999
+Epoch 23 - Loss moyenne: 0.015195238790940493
+Epoch 24 - Loss moyenne: 0.014480712953023613
+Epoch 25 - Loss moyenne: 0.00914132664911449
+Epoch 26 - Loss moyenne: 0.007959025687305256
+Epoch 27 - Loss moyenne: 0.007114268139237538
+Epoch 28 - Loss moyenne: 0.006623893370619044
+Epoch 29 - Loss moyenne: 0.006546265935525298
+Epoch 30 - Loss moyenne: 0.006410909567028284
+Epoch 31 - Loss moyenne: 0.00633484799717553
+Epoch 32 - Loss moyenne: 0.0062899810522794725
+Epoch 33 - Loss moyenne: 0.0062565275544766335
+Epoch 34 - Loss moyenne: 0.006244010254507885
+Entraînement terminé.
+Accuracy : 0.895
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.89      0.89       500
+      nature       0.89      0.90      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.89      1000
+weighted avg       0.90      0.90      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.895
+----------------------------------------------------------------------------------------------------
+[wukong]Entraînement avec 6 couche de llama et de tailles 2048 pour chaque couches
+TRAINING...
+Epoch 0 - Loss moyenne: 0.6444987992048263
+Epoch 1 - Loss moyenne: 0.26007343384623527
+Epoch 2 - Loss moyenne: 0.24058906424045562
+Epoch 3 - Loss moyenne: 0.25426880004256963
+Epoch 4 - Loss moyenne: 0.19689432963728903
+Epoch 5 - Loss moyenne: 0.18552345764636993
+Epoch 6 - Loss moyenne: 0.16250327169150114
+Epoch 7 - Loss moyenne: 0.15018509497493507
+Epoch 8 - Loss moyenne: 0.13615753960609436
+Epoch 9 - Loss moyenne: 0.16055480191111565
+Epoch 10 - Loss moyenne: 0.13599356476217508
+Epoch 11 - Loss moyenne: 0.10705362229794264
+Epoch 12 - Loss moyenne: 0.13457602609694003
+Epoch 13 - Loss moyenne: 0.11383665758371353
+Epoch 14 - Loss moyenne: 0.0774610224403441
+Epoch 15 - Loss moyenne: 0.06084363153297454
+Epoch 16 - Loss moyenne: 0.05139474625233561
+Epoch 17 - Loss moyenne: 0.05265060627087951
+Epoch 18 - Loss moyenne: 0.04493254396179691
+Epoch 19 - Loss moyenne: 0.04008270689286292
+Epoch 20 - Loss moyenne: 0.04033049744879827
+Epoch 21 - Loss moyenne: 0.017288073321571572
+Epoch 22 - Loss moyenne: 0.015795122984563932
+Epoch 23 - Loss moyenne: 0.011425148355890997
+Epoch 24 - Loss moyenne: 0.0020781654632883147
+Epoch 25 - Loss moyenne: 0.0006884140778274741
+Epoch 26 - Loss moyenne: 0.00029562345689919313
+Epoch 27 - Loss moyenne: 0.00018895173806959063
+Epoch 28 - Loss moyenne: 0.00014963282384269406
+Epoch 29 - Loss moyenne: 0.00012727761778660353
+Epoch 30 - Loss moyenne: 0.00011650242510222597
+Epoch 31 - Loss moyenne: 0.00010950150564895011
+Epoch 32 - Loss moyenne: 0.00010564112776773982
+Epoch 33 - Loss moyenne: 0.00010366036857885774
+Epoch 34 - Loss moyenne: 0.0001030828534203465
+Entraînement terminé.
+Accuracy : 0.894
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.89      0.89       500
+      nature       0.89      0.89      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.894
+----------------------------------------------------------------------------------------------------
+[wukong]Entraînement avec 6 couche de llama et de tailles 2560 pour chaque couches
+TRAINING...
+Epoch 0 - Loss moyenne: 0.7791741189956665
+Epoch 1 - Loss moyenne: 0.30115104269981385
+Epoch 2 - Loss moyenne: 0.25492947977781294
+Epoch 3 - Loss moyenne: 0.21573143008351325
+Epoch 4 - Loss moyenne: 0.18002152255177498
+Epoch 5 - Loss moyenne: 0.18234270998835564
+Epoch 6 - Loss moyenne: 0.14882044923305512
+Epoch 7 - Loss moyenne: 0.15718657157570123
+Epoch 8 - Loss moyenne: 0.14808591164648532
+Epoch 9 - Loss moyenne: 0.12857354813814162
+Epoch 10 - Loss moyenne: 0.1356912659108639
+Epoch 11 - Loss moyenne: 0.12274817437678576
+Epoch 12 - Loss moyenne: 0.12759018867462874
+Epoch 13 - Loss moyenne: 0.1413540298640728
+Epoch 14 - Loss moyenne: 0.10747323312610388
+Epoch 15 - Loss moyenne: 0.06697197201941163
+Epoch 16 - Loss moyenne: 0.07051970740780235
+Epoch 17 - Loss moyenne: 0.052984624640084806
+Epoch 18 - Loss moyenne: 0.0411900745164603
+Epoch 19 - Loss moyenne: 0.05254336890392006
+Epoch 20 - Loss moyenne: 0.030785713337012566
+Epoch 21 - Loss moyenne: 0.023526614472735675
+Epoch 22 - Loss moyenne: 0.019651293503527994
+Epoch 23 - Loss moyenne: 0.04869447577255778
+Epoch 24 - Loss moyenne: 0.028773182309116237
+Epoch 25 - Loss moyenne: 0.0151246967271436
+Epoch 26 - Loss moyenne: 0.014259529541130177
+Epoch 27 - Loss moyenne: 0.013521114636270795
+Epoch 28 - Loss moyenne: 0.006275570005935151
+Epoch 29 - Loss moyenne: 0.004388819012150634
+Epoch 30 - Loss moyenne: 0.003325462508626515
+Epoch 31 - Loss moyenne: 0.0018789714497106616
+Epoch 32 - Loss moyenne: 0.0019971255486452718
+Epoch 33 - Loss moyenne: 0.001042225352692185
+wandb: uploading output.log; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: Accuracy_hsl/wukong ▁▅▅█
+wandb:           llama_hsl ▁▃▆█
+wandb: 
+wandb: Run summary:
+wandb: Accuracy_hsl/wukong 0.899
+wandb:           llama_hsl 2560
+wandb: 
+wandb: 🚀 View run AT wukong R224 dataset 20250507-184802 at: https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/thyrqv1c
+wandb: ⭐️ View project at: https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250507_184803-thyrqv1c/logs
+Epoch 34 - Loss moyenne: 0.0009779772629553917
+Entraînement terminé.
+Accuracy : 0.899
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.91      0.90       500
+      nature       0.91      0.89      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy mean: 0.899

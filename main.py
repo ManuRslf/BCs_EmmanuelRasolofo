@@ -215,6 +215,10 @@ if __name__ == '__main__' and not Config.DEBUG:
     #one_by_one('llama')    
     Config_model_run('gaussiannoise')
     Config_model_run('jpeg')
+    Config.MODEL = 'wukong'
+    Config_model_run('gaussiannoise')
+    Config_model_run('jpeg')
+    #Config_model_run('llama2')
 
     #train()
     
