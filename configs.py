@@ -62,8 +62,8 @@ class Config:
         LR_LAB = 4e-4
         # epoch plus grand si taille llama different de dinov2
         EPOCHS_LAB = 40
-        ITERATION = 4
-        DECREASING_LR_LAB = True
+        ITERATION =2
+        DECREASING_LR_LAB = False
         DINOV2_NAME = 'facebook/dinov2-base'
         NHL_LAB = [1, 6, 12, 16]
         HSL_LAB = [1024, 1536, 2048, 2560]

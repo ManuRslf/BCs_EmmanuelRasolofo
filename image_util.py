@@ -81,7 +81,7 @@ if __name__ == '__main__':
     # charger les trois datasets avec leur pipelines respectifs
     ds_orig = load_tinygen_image(model=None, tf=resize_only, get='train')
     ds_gn   = load_tinygen_image(model=None, tf=gaussianTF(0, 0.2), get='train')
-    ds_comp = load_tinygen_image(model=None, tf=jpegTF(50), get='train')
+    ds_comp = load_tinygen_image(model=None, tf=jpegTF(70), get='train')
 
     
     orig_img, _   = ds_orig[0]    
