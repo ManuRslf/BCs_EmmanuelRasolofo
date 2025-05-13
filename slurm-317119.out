@@ -1,0 +1,968 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250512_123258-pyodbse8
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT biggan R224 dataset 20250512-123258
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/pyodbse8
+ENTRAINEMENT EN ENTRAINANT SUR DES DONNEéS DEGRADéES
+Date d'entraînement: 20250512-123258
+Mode: run
+....................................................................................................
+Configurations:
+ADD_TOKENS_LAB: [0, 10, 60, 100, 150]
+ADD_TOKENS_LAB_perf: [0, 10, 30, 50]
+Adapter: False
+Adapter_EXTERN: False
+BATCH_SIZE_LAB: 32
+DEBUG: False
+DECREASING_LR_LAB: False
+DINOV2_NAME: facebook/dinov2-base
+Dinov2_token_dim: {'facebook/dinov2-base': 768, 'facebook/dinov2-small': 384}
+EPOCHS_HSL: [100, 200, 300, 500]
+EPOCHS_LAB: 80
+HIDDEN_SIZE_LAB: 768
+HSL_LAB: [1024, 1536, 2048, 2560]
+ITERATION: 2
+LR_LAB: 0.0004
+MODEL: biggan
+NHL_LAB: [1, 6, 12, 16]
+NUM_HIDDEN_LAYER_LLMA_LAB: 1
+QUALITY_JPEG_COMPRESSION: [100, 95, 85, 70, 50, 30, 10, 1]
+RESIZE_SHAPE: 224
+SAVE_IMAGE: False
+SHOW_INFO: True
+STD_GAUSSIAN_NOISE: [0.01, 0.05, 0.1, 0.3, 0.5, 1]
+TSNE_LOG: False
+WANDB_LOG: True
+add_tokens_lab: 4
+----------------------------------------------------------------------------------------------------
+[93m 
+
+ENTRAINEMENT: AJOUT DE BRUIT GAUSSIEN
+
+ [0m
+Opération sur cuda
+Dataset utilisé 'biggan' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 4 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.5880223130583763
+Epoch 1 - Loss moyenne: 0.23677872379124165
+Epoch 2 - Loss moyenne: 0.17038424104452132
+Epoch 3 - Loss moyenne: 0.12980262318998576
+Epoch 4 - Loss moyenne: 0.13455968587473036
+Epoch 5 - Loss moyenne: 0.10692118434049189
+Epoch 6 - Loss moyenne: 0.11695236349105835
+Epoch 7 - Loss moyenne: 0.09457922740280628
+Epoch 8 - Loss moyenne: 0.07469026252813638
+Epoch 9 - Loss moyenne: 0.08042436066269874
+Epoch 10 - Loss moyenne: 0.07696916724182665
+Epoch 11 - Loss moyenne: 0.07168386111501604
+Epoch 12 - Loss moyenne: 0.07579019659385085
+Epoch 13 - Loss moyenne: 0.06470109801273793
+Epoch 14 - Loss moyenne: 0.06572648349404335
+Epoch 15 - Loss moyenne: 0.06761688851378858
+Epoch 16 - Loss moyenne: 0.057761618345975874
+Epoch 17 - Loss moyenne: 0.057345077538921034
+Epoch 18 - Loss moyenne: 0.05984221648517996
+Epoch 19 - Loss moyenne: 0.048476245787460355
+Epoch 20 - Loss moyenne: 0.048385580302448945
+Epoch 21 - Loss moyenne: 0.04891211781417951
+Epoch 22 - Loss moyenne: 0.04737918627192266
+Epoch 23 - Loss moyenne: 0.04811052937433124
+Epoch 24 - Loss moyenne: 0.04140163135016337
+Epoch 25 - Loss moyenne: 0.047414263005834074
+Epoch 26 - Loss moyenne: 0.04640877252141945
+Epoch 27 - Loss moyenne: 0.05006100217369385
+Epoch 28 - Loss moyenne: 0.044282885790802536
+Epoch 29 - Loss moyenne: 0.053418082638643685
+Epoch 30 - Loss moyenne: 0.04449973281193525
+Epoch 31 - Loss moyenne: 0.032555563699104825
+Epoch 32 - Loss moyenne: 0.048853867541416546
+Epoch 33 - Loss moyenne: 0.03790185714908875
+Epoch 34 - Loss moyenne: 0.04146436220570467
+Epoch 35 - Loss moyenne: 0.043497038738336415
+Epoch 36 - Loss moyenne: 0.03309831705247052
+Epoch 37 - Loss moyenne: 0.035181119646411387
+Epoch 38 - Loss moyenne: 0.04920765020267572
+Epoch 39 - Loss moyenne: 0.05252654499467462
+Epoch 40 - Loss moyenne: 0.03645902122784173
+Epoch 41 - Loss moyenne: 0.032571845288737675
+Epoch 42 - Loss moyenne: 0.041714447682257745
+Epoch 43 - Loss moyenne: 0.05520961443660781
+Epoch 44 - Loss moyenne: 0.04545199918653816
+Epoch 45 - Loss moyenne: 0.04264667871943675
+Epoch 46 - Loss moyenne: 0.04622620726190507
+Epoch 47 - Loss moyenne: 0.036037566706188955
+Epoch 48 - Loss moyenne: 0.034564685514662415
+Epoch 49 - Loss moyenne: 0.035501098642969735
+Epoch 50 - Loss moyenne: 0.03490408773277886
+Epoch 51 - Loss moyenne: 0.03652036681654863
+Epoch 52 - Loss moyenne: 0.0270238166853087
+Epoch 53 - Loss moyenne: 0.035869490834884346
+Epoch 54 - Loss moyenne: 0.03148968853848055
+Epoch 55 - Loss moyenne: 0.030599458003242035
+Epoch 56 - Loss moyenne: 0.032414980004366954
+Epoch 57 - Loss moyenne: 0.026350520881824196
+Epoch 58 - Loss moyenne: 0.025721865976433035
+Epoch 59 - Loss moyenne: 0.03586942313122563
+Epoch 60 - Loss moyenne: 0.027819949531927703
+Epoch 61 - Loss moyenne: 0.031892912901821543
+Epoch 62 - Loss moyenne: 0.030741005227086133
+Epoch 63 - Loss moyenne: 0.028384501387132333
+Epoch 64 - Loss moyenne: 0.028534230557095724
+Epoch 65 - Loss moyenne: 0.03974753373302519
+Epoch 66 - Loss moyenne: 0.03988181923833326
+Epoch 67 - Loss moyenne: 0.027133432785980405
+Epoch 68 - Loss moyenne: 0.032296428138855846
+Epoch 69 - Loss moyenne: 0.03133031020686031
+Epoch 70 - Loss moyenne: 0.027116747415158897
+Epoch 71 - Loss moyenne: 0.026060567185486435
+Epoch 72 - Loss moyenne: 0.02053632485329581
+Epoch 73 - Loss moyenne: 0.024394803666393274
+Epoch 74 - Loss moyenne: 0.02868814612342976
+Epoch 75 - Loss moyenne: 0.024870080125896494
+Epoch 76 - Loss moyenne: 0.03029683492681943
+Epoch 77 - Loss moyenne: 0.028115337418857963
+Epoch 78 - Loss moyenne: 0.023268611881765537
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: Accuracy_gaussian/biggan20250512-123259 ▁▄█▇▂▁
+wandb:                      std_gaussian_noise ▁▁▂▃▄█
+wandb: 
+wandb: Run summary:
+wandb: Accuracy_gaussian/biggan20250512-123259 0.5
+wandb:                      std_gaussian_noise 1
+wandb: 
+wandb: 🚀 View run AT biggan R224 dataset 20250512-123258 at: https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/pyodbse8
+wandb: ⭐️ View project at: https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250512_123258-pyodbse8/logs
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250512_130651-wabcftom
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT biggan R224 dataset 20250512-130651
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/wabcftom
+Epoch 79 - Loss moyenne: 0.02358619020896731
+Entraînement terminé.
+Test...
+STD -> 0.01
+Accuracy : 0.504
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       1.00      0.01      0.02       500
+      nature       0.50      1.00      0.67       500
+
+    accuracy                           0.50      1000
+   macro avg       0.75      0.50      0.34      1000
+weighted avg       0.75      0.50      0.34      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.504
+STD -> 0.05
+Accuracy : 0.579
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       1.00      0.16      0.27       500
+      nature       0.54      1.00      0.70       500
+
+    accuracy                           0.58      1000
+   macro avg       0.77      0.58      0.49      1000
+weighted avg       0.77      0.58      0.49      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.579
+STD -> 0.1
+Accuracy : 0.708
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.99      0.42      0.59       500
+      nature       0.63      1.00      0.77       500
+
+    accuracy                           0.71      1000
+   macro avg       0.81      0.71      0.68      1000
+weighted avg       0.81      0.71      0.68      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.708
+STD -> 0.3
+Accuracy : 0.682
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.62      0.94      0.75       500
+      nature       0.87      0.43      0.57       500
+
+    accuracy                           0.68      1000
+   macro avg       0.75      0.68      0.66      1000
+weighted avg       0.75      0.68      0.66      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.682
+STD -> 0.5
+Accuracy : 0.526
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.68      0.10      0.17       500
+      nature       0.51      0.95      0.67       500
+
+    accuracy                           0.53      1000
+   macro avg       0.59      0.53      0.42      1000
+weighted avg       0.59      0.53      0.42      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.526
+STD -> 1
+Accuracy : 0.5
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       1.00      0.00      0.00       500
+      nature       0.50      1.00      0.67       500
+
+    accuracy                           0.50      1000
+   macro avg       0.75      0.50      0.33      1000
+weighted avg       0.75      0.50      0.33      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.5
+Date d'entraînement: 20250512-130651
+Mode: run
+....................................................................................................
+Configurations:
+ADD_TOKENS_LAB: [0, 10, 60, 100, 150]
+ADD_TOKENS_LAB_perf: [0, 10, 30, 50]
+Adapter: False
+Adapter_EXTERN: False
+BATCH_SIZE_LAB: 32
+DEBUG: False
+DECREASING_LR_LAB: False
+DINOV2_NAME: facebook/dinov2-base
+Dinov2_token_dim: {'facebook/dinov2-base': 768, 'facebook/dinov2-small': 384}
+EPOCHS_HSL: [100, 200, 300, 500]
+EPOCHS_LAB: 80
+HIDDEN_SIZE_LAB: 768
+HSL_LAB: [1024, 1536, 2048, 2560]
+ITERATION: 2
+LR_LAB: 0.0004
+MODEL: biggan
+NHL_LAB: [1, 6, 12, 16]
+NUM_HIDDEN_LAYER_LLMA_LAB: 1
+QUALITY_JPEG_COMPRESSION: [100, 95, 85, 70, 50, 30, 10, 1]
+RESIZE_SHAPE: 224
+SAVE_IMAGE: False
+SHOW_INFO: True
+STD_GAUSSIAN_NOISE: [0.01, 0.05, 0.1, 0.3, 0.5, 1]
+TSNE_LOG: False
+WANDB_LOG: True
+add_tokens_lab: 4
+----------------------------------------------------------------------------------------------------
+[93m 
+
+ENTRAINEMENT: DEGRADATION DE LA QUALITé
+
+ [0m
+Opération sur cuda
+Dataset utilisé 'biggan' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 4 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.3028724529594183
+Epoch 1 - Loss moyenne: 0.02909655281994492
+Epoch 2 - Loss moyenne: 0.0142059694223517
+Epoch 3 - Loss moyenne: 0.013937711289640902
+Epoch 4 - Loss moyenne: 0.006069048199031386
+Epoch 5 - Loss moyenne: 0.01083138741599396
+Epoch 6 - Loss moyenne: 0.005022010030050296
+Epoch 7 - Loss moyenne: 0.01580976591525359
+Epoch 8 - Loss moyenne: 0.017465405207212827
+Epoch 9 - Loss moyenne: 0.021108173667220398
+Epoch 10 - Loss moyenne: 0.009610696493240539
+Epoch 11 - Loss moyenne: 5.880537035227462e-05
+Epoch 12 - Loss moyenne: 1.4431999486987479e-05
+Epoch 13 - Loss moyenne: 1.0130698497960111e-05
+Epoch 14 - Loss moyenne: 7.83735958430043e-06
+Epoch 15 - Loss moyenne: 6.356248481097282e-06
+Epoch 16 - Loss moyenne: 5.301551993397879e-06
+Epoch 17 - Loss moyenne: 4.506100187427364e-06
+Epoch 18 - Loss moyenne: 3.889018890731677e-06
+Epoch 19 - Loss moyenne: 3.392105700186221e-06
+Epoch 20 - Loss moyenne: 2.9789253248964085e-06
+Epoch 21 - Loss moyenne: 2.6329707557124495e-06
+Epoch 22 - Loss moyenne: 2.3443204449904443e-06
+Epoch 23 - Loss moyenne: 2.098671242947603e-06
+Epoch 24 - Loss moyenne: 1.8869635800911055e-06
+Epoch 25 - Loss moyenne: 1.70642758394024e-06
+Epoch 26 - Loss moyenne: 1.5453506091489545e-06
+Epoch 27 - Loss moyenne: 1.4057904777473596e-06
+Epoch 28 - Loss moyenne: 1.2825606640944897e-06
+Epoch 29 - Loss moyenne: 1.1734568229258002e-06
+Epoch 30 - Loss moyenne: 1.0747235464805272e-06
+Epoch 31 - Loss moyenne: 9.894008187529835e-07
+Epoch 32 - Loss moyenne: 9.150154360213492e-07
+Epoch 33 - Loss moyenne: 8.432822519353067e-07
+Epoch 34 - Loss moyenne: 7.699394680003024e-07
+Epoch 35 - Loss moyenne: 7.039577094474226e-07
+Epoch 36 - Loss moyenne: 6.495689940493321e-07
+Epoch 37 - Loss moyenne: 6.035546211933252e-07
+Epoch 38 - Loss moyenne: 5.58613061343749e-07
+Epoch 39 - Loss moyenne: 5.106018026026504e-07
+Epoch 40 - Loss moyenne: 4.6867015248608367e-07
+Epoch 41 - Loss moyenne: 4.339208500141467e-07
+Epoch 42 - Loss moyenne: 4.063240515961297e-07
+Epoch 43 - Loss moyenne: 3.813796438407735e-07
+Epoch 44 - Loss moyenne: 3.606075331390457e-07
+Epoch 45 - Loss moyenne: 3.412361153323218e-07
+Epoch 46 - Loss moyenne: 3.203149582304832e-07
+Epoch 47 - Loss moyenne: 2.9119815224021297e-07
+Epoch 48 - Loss moyenne: 2.6443572153311835e-07
+Epoch 49 - Loss moyenne: 2.456602982192635e-07
+Epoch 50 - Loss moyenne: 2.3031214027469105e-07
+Epoch 51 - Loss moyenne: 2.179740092742577e-07
+Epoch 52 - Loss moyenne: 2.0793065226598628e-07
+Epoch 53 - Loss moyenne: 1.9848333892014126e-07
+Epoch 54 - Loss moyenne: 1.9091356460876342e-07
+Epoch 55 - Loss moyenne: 1.8364181505603482e-07
+Epoch 56 - Loss moyenne: 1.775919557758243e-07
+Epoch 57 - Loss moyenne: 1.7204873444143233e-07
+Epoch 58 - Loss moyenne: 1.6698234855994087e-07
+Epoch 59 - Loss moyenne: 1.6099209040021378e-07
+Epoch 60 - Loss moyenne: 1.4746184399427876e-07
+Epoch 61 - Loss moyenne: 1.3607736406129335e-07
+Epoch 62 - Loss moyenne: 1.2597438143302497e-07
+Epoch 63 - Loss moyenne: 1.0627505176330487e-07
+Epoch 64 - Loss moyenne: 8.851287236666395e-08
+Epoch 65 - Loss moyenne: 7.554886587968212e-08
+Epoch 66 - Loss moyenne: 6.571410266076327e-08
+Epoch 67 - Loss moyenne: 5.736945505674385e-08
+Epoch 68 - Loss moyenne: 5.039571369280793e-08
+Epoch 69 - Loss moyenne: 4.437564673764882e-08
+Epoch 70 - Loss moyenne: 3.9607276296038664e-08
+Epoch 71 - Loss moyenne: 3.567337127563519e-08
+Epoch 72 - Loss moyenne: 3.254412872699674e-08
+Epoch 73 - Loss moyenne: 2.9385083331945338e-08
+Epoch 74 - Loss moyenne: 2.7269119520667572e-08
+Epoch 75 - Loss moyenne: 2.512335278126443e-08
+Epoch 76 - Loss moyenne: 2.3216004910509013e-08
+Epoch 77 - Loss moyenne: 2.151727298027595e-08
+Epoch 78 - Loss moyenne: 2.050399451647422e-08
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: Accuracy_jpegcomp/biggan20250512-130652 ██████▇▁
+wandb:                                 quality ██▇▆▄▃▂▁
+wandb: 
+wandb: Run summary:
+wandb: Accuracy_jpegcomp/biggan20250512-130652 0.521
+wandb:                                 quality 1
+wandb: 
+wandb: 🚀 View run AT biggan R224 dataset 20250512-130651 at: https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/wabcftom
+wandb: ⭐️ View project at: https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250512_130651-wabcftom/logs
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250512_134112-hyws63o0
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT wukong R224 dataset 20250512-134112
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/hyws63o0
+Epoch 79 - Loss moyenne: 2.017616920824139e-08
+Entraînement terminé.
+Test...
+Quality -> 100
+Accuracy : 0.989
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.99      0.99      0.99       500
+      nature       0.99      0.99      0.99       500
+
+    accuracy                           0.99      1000
+   macro avg       0.99      0.99      0.99      1000
+weighted avg       0.99      0.99      0.99      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.989
+Quality -> 95
+Accuracy : 0.988
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.99      0.98      0.99       500
+      nature       0.98      0.99      0.99       500
+
+    accuracy                           0.99      1000
+   macro avg       0.99      0.99      0.99      1000
+weighted avg       0.99      0.99      0.99      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.988
+Quality -> 85
+Accuracy : 0.988
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.99      0.99      0.99       500
+      nature       0.99      0.99      0.99       500
+
+    accuracy                           0.99      1000
+   macro avg       0.99      0.99      0.99      1000
+weighted avg       0.99      0.99      0.99      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.988
+Quality -> 70
+Accuracy : 0.986
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.99      0.98      0.99       500
+      nature       0.98      0.99      0.99       500
+
+    accuracy                           0.99      1000
+   macro avg       0.99      0.99      0.99      1000
+weighted avg       0.99      0.99      0.99      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.986
+Quality -> 50
+Accuracy : 0.982
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.98      0.98      0.98       500
+      nature       0.98      0.98      0.98       500
+
+    accuracy                           0.98      1000
+   macro avg       0.98      0.98      0.98      1000
+weighted avg       0.98      0.98      0.98      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.982
+Quality -> 30
+Accuracy : 0.98
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.98      0.98      0.98       500
+      nature       0.98      0.98      0.98       500
+
+    accuracy                           0.98      1000
+   macro avg       0.98      0.98      0.98      1000
+weighted avg       0.98      0.98      0.98      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.98
+Quality -> 10
+Accuracy : 0.916
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.87      0.97      0.92       500
+      nature       0.97      0.86      0.91       500
+
+    accuracy                           0.92      1000
+   macro avg       0.92      0.92      0.92      1000
+weighted avg       0.92      0.92      0.92      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.916
+Quality -> 1
+Accuracy : 0.521
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.51      1.00      0.68       500
+      nature       0.96      0.04      0.08       500
+
+    accuracy                           0.52      1000
+   macro avg       0.73      0.52      0.38      1000
+weighted avg       0.73      0.52      0.38      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.521
+Date d'entraînement: 20250512-134112
+Mode: run
+....................................................................................................
+Configurations:
+ADD_TOKENS_LAB: [0, 10, 60, 100, 150]
+ADD_TOKENS_LAB_perf: [0, 10, 30, 50]
+Adapter: False
+Adapter_EXTERN: False
+BATCH_SIZE_LAB: 32
+DEBUG: False
+DECREASING_LR_LAB: False
+DINOV2_NAME: facebook/dinov2-base
+Dinov2_token_dim: {'facebook/dinov2-base': 768, 'facebook/dinov2-small': 384}
+EPOCHS_HSL: [100, 200, 300, 500]
+EPOCHS_LAB: 80
+HIDDEN_SIZE_LAB: 768
+HSL_LAB: [1024, 1536, 2048, 2560]
+ITERATION: 2
+LR_LAB: 0.0004
+MODEL: wukong
+NHL_LAB: [1, 6, 12, 16]
+NUM_HIDDEN_LAYER_LLMA_LAB: 1
+QUALITY_JPEG_COMPRESSION: [100, 95, 85, 70, 50, 30, 10, 1]
+RESIZE_SHAPE: 224
+SAVE_IMAGE: False
+SHOW_INFO: True
+STD_GAUSSIAN_NOISE: [0.01, 0.05, 0.1, 0.3, 0.5, 1]
+TSNE_LOG: False
+WANDB_LOG: True
+add_tokens_lab: 4
+----------------------------------------------------------------------------------------------------
+[93m 
+
+ENTRAINEMENT: AJOUT DE BRUIT GAUSSIEN
+
+ [0m
+Opération sur cuda
+Dataset utilisé 'wukong' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 4 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.5876086379289627
+Epoch 1 - Loss moyenne: 0.2420603115260601
+Epoch 2 - Loss moyenne: 0.1636626249551773
+Epoch 3 - Loss moyenne: 0.12040521688386797
+Epoch 4 - Loss moyenne: 0.08758919480443
+Epoch 5 - Loss moyenne: 0.09762656312668697
+Epoch 6 - Loss moyenne: 0.09633508580364288
+Epoch 7 - Loss moyenne: 0.07598486278951168
+Epoch 8 - Loss moyenne: 0.05110435467935167
+Epoch 9 - Loss moyenne: 0.05413104821927846
+Epoch 10 - Loss moyenne: 0.06418691006861627
+Epoch 11 - Loss moyenne: 0.04685738109936938
+Epoch 12 - Loss moyenne: 0.05733366796607152
+Epoch 13 - Loss moyenne: 0.04272800470516085
+Epoch 14 - Loss moyenne: 0.04908696431200951
+Epoch 15 - Loss moyenne: 0.04462947396235541
+Epoch 16 - Loss moyenne: 0.03879740650410531
+Epoch 17 - Loss moyenne: 0.04941811617661733
+Epoch 18 - Loss moyenne: 0.037597905443049966
+Epoch 19 - Loss moyenne: 0.04341853159433231
+Epoch 20 - Loss moyenne: 0.04114827607013285
+Epoch 21 - Loss moyenne: 0.04852063019841444
+Epoch 22 - Loss moyenne: 0.03600152778089978
+Epoch 23 - Loss moyenne: 0.03969217738998122
+Epoch 24 - Loss moyenne: 0.02833604914043099
+Epoch 25 - Loss moyenne: 0.03611061543604592
+Epoch 26 - Loss moyenne: 0.03670119552710094
+Epoch 27 - Loss moyenne: 0.023403457837470342
+Epoch 28 - Loss moyenne: 0.030149864015082132
+Epoch 29 - Loss moyenne: 0.048205322700436225
+Epoch 30 - Loss moyenne: 0.037591356008779254
+Epoch 31 - Loss moyenne: 0.022357038632268088
+Epoch 32 - Loss moyenne: 0.028890334061114117
+Epoch 33 - Loss moyenne: 0.02989164603641257
+Epoch 34 - Loss moyenne: 0.02682559733069502
+Epoch 35 - Loss moyenne: 0.02408234057063237
+Epoch 36 - Loss moyenne: 0.02009971522597334
+Epoch 37 - Loss moyenne: 0.033635836061497684
+Epoch 38 - Loss moyenne: 0.038725758653366936
+Epoch 39 - Loss moyenne: 0.03060677084431518
+Epoch 40 - Loss moyenne: 0.02998791145987343
+Epoch 41 - Loss moyenne: 0.02971316310437396
+Epoch 42 - Loss moyenne: 0.0303689795746468
+Epoch 43 - Loss moyenne: 0.025034644750412553
+Epoch 44 - Loss moyenne: 0.025267505835974587
+Epoch 45 - Loss moyenne: 0.019825312787899747
+Epoch 46 - Loss moyenne: 0.02611003408774559
+Epoch 47 - Loss moyenne: 0.021161569669871823
+Epoch 48 - Loss moyenne: 0.025606317755999045
+Epoch 49 - Loss moyenne: 0.025247113850840833
+Epoch 50 - Loss moyenne: 0.014178086643427377
+Epoch 51 - Loss moyenne: 0.018782039759098552
+Epoch 52 - Loss moyenne: 0.025803742983262056
+Epoch 53 - Loss moyenne: 0.02200800615409389
+Epoch 54 - Loss moyenne: 0.0304545056540519
+Epoch 55 - Loss moyenne: 0.019695607979025226
+Epoch 56 - Loss moyenne: 0.019438524510478603
+Epoch 57 - Loss moyenne: 0.017247379998159885
+Epoch 58 - Loss moyenne: 0.019808434741498786
+Epoch 59 - Loss moyenne: 0.02959480959584471
+Epoch 60 - Loss moyenne: 0.01892934901121771
+Epoch 61 - Loss moyenne: 0.015137010684120468
+Epoch 62 - Loss moyenne: 0.023193143620417685
+Epoch 63 - Loss moyenne: 0.01696031469090667
+Epoch 64 - Loss moyenne: 0.021722257838089717
+Epoch 65 - Loss moyenne: 0.02348752680281177
+Epoch 66 - Loss moyenne: 0.017932829224329906
+Epoch 67 - Loss moyenne: 0.022518866186786907
+Epoch 68 - Loss moyenne: 0.023445742444266216
+Epoch 69 - Loss moyenne: 0.014946153421595228
+Epoch 70 - Loss moyenne: 0.02746439703076612
+Epoch 71 - Loss moyenne: 0.028006551361002493
+Epoch 72 - Loss moyenne: 0.021506289566576017
+Epoch 73 - Loss moyenne: 0.021732979275024263
+Epoch 74 - Loss moyenne: 0.018986766422109214
+Epoch 75 - Loss moyenne: 0.01822256206307793
+Epoch 76 - Loss moyenne: 0.017562167419615436
+Epoch 77 - Loss moyenne: 0.023501466579298722
+Epoch 78 - Loss moyenne: 0.02020509581576334
+wandb: uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: Accuracy_gaussian/wukong20250512-134113 ▃▅█▆▃▁
+wandb:                      std_gaussian_noise ▁▁▂▃▄█
+wandb: 
+wandb: Run summary:
+wandb: Accuracy_gaussian/wukong20250512-134113 0.5
+wandb:                      std_gaussian_noise 1
+wandb: 
+wandb: 🚀 View run AT wukong R224 dataset 20250512-134112 at: https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/hyws63o0
+wandb: ⭐️ View project at: https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250512_134112-hyws63o0/logs
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250512_141541-andvbvan
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT wukong R224 dataset 20250512-141541
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/andvbvan
+Epoch 79 - Loss moyenne: 0.01532938205434766
+Entraînement terminé.
+Test...
+STD -> 0.01
+Accuracy : 0.594
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.55      1.00      0.71       500
+      nature       0.99      0.19      0.32       500
+
+    accuracy                           0.59      1000
+   macro avg       0.77      0.59      0.51      1000
+weighted avg       0.77      0.59      0.51      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.594
+STD -> 0.05
+Accuracy : 0.652
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.59      0.99      0.74       500
+      nature       0.97      0.31      0.47       500
+
+    accuracy                           0.65      1000
+   macro avg       0.78      0.65      0.61      1000
+weighted avg       0.78      0.65      0.61      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.652
+STD -> 0.1
+Accuracy : 0.765
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.69      0.98      0.81       500
+      nature       0.96      0.55      0.70       500
+
+    accuracy                           0.77      1000
+   macro avg       0.82      0.77      0.75      1000
+weighted avg       0.82      0.77      0.75      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.765
+STD -> 0.3
+Accuracy : 0.679
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.95      0.38      0.54       500
+      nature       0.61      0.98      0.75       500
+
+    accuracy                           0.68      1000
+   macro avg       0.78      0.68      0.65      1000
+weighted avg       0.78      0.68      0.65      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.679
+STD -> 0.5
+Accuracy : 0.574
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.59      0.47      0.52       500
+      nature       0.56      0.68      0.61       500
+
+    accuracy                           0.57      1000
+   macro avg       0.58      0.57      0.57      1000
+weighted avg       0.58      0.57      0.57      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.574
+STD -> 1
+Accuracy : 0.5
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.50      1.00      0.67       500
+      nature       1.00      0.00      0.00       500
+
+    accuracy                           0.50      1000
+   macro avg       0.75      0.50      0.33      1000
+weighted avg       0.75      0.50      0.33      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.5
+Date d'entraînement: 20250512-141541
+Mode: run
+....................................................................................................
+Configurations:
+ADD_TOKENS_LAB: [0, 10, 60, 100, 150]
+ADD_TOKENS_LAB_perf: [0, 10, 30, 50]
+Adapter: False
+Adapter_EXTERN: False
+BATCH_SIZE_LAB: 32
+DEBUG: False
+DECREASING_LR_LAB: False
+DINOV2_NAME: facebook/dinov2-base
+Dinov2_token_dim: {'facebook/dinov2-base': 768, 'facebook/dinov2-small': 384}
+EPOCHS_HSL: [100, 200, 300, 500]
+EPOCHS_LAB: 80
+HIDDEN_SIZE_LAB: 768
+HSL_LAB: [1024, 1536, 2048, 2560]
+ITERATION: 2
+LR_LAB: 0.0004
+MODEL: wukong
+NHL_LAB: [1, 6, 12, 16]
+NUM_HIDDEN_LAYER_LLMA_LAB: 1
+QUALITY_JPEG_COMPRESSION: [100, 95, 85, 70, 50, 30, 10, 1]
+RESIZE_SHAPE: 224
+SAVE_IMAGE: False
+SHOW_INFO: True
+STD_GAUSSIAN_NOISE: [0.01, 0.05, 0.1, 0.3, 0.5, 1]
+TSNE_LOG: False
+WANDB_LOG: True
+add_tokens_lab: 4
+----------------------------------------------------------------------------------------------------
+[93m 
+
+ENTRAINEMENT: DEGRADATION DE LA QUALITé
+
+ [0m
+Opération sur cuda
+Dataset utilisé 'wukong' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 4 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.569433010995388
+Epoch 1 - Loss moyenne: 0.1834443340152502
+Epoch 2 - Loss moyenne: 0.06224136182153597
+Epoch 3 - Loss moyenne: 0.047946373908314854
+Epoch 4 - Loss moyenne: 0.04438923443481326
+Epoch 5 - Loss moyenne: 0.018604899108526297
+Epoch 6 - Loss moyenne: 0.023191213845158928
+Epoch 7 - Loss moyenne: 0.032555222224560566
+Epoch 8 - Loss moyenne: 0.017877406281477305
+Epoch 9 - Loss moyenne: 0.018508282945465908
+Epoch 10 - Loss moyenne: 0.011585166360833682
+Epoch 11 - Loss moyenne: 0.018877568061172495
+Epoch 12 - Loss moyenne: 0.014017885608715005
+Epoch 13 - Loss moyenne: 0.033034068339737134
+Epoch 14 - Loss moyenne: 0.025040866978364648
+Epoch 15 - Loss moyenne: 0.013840791043927311
+Epoch 16 - Loss moyenne: 0.016927097108273302
+Epoch 17 - Loss moyenne: 0.021315806962273202
+Epoch 18 - Loss moyenne: 0.03230748421722092
+Epoch 19 - Loss moyenne: 0.019537062063929626
+Epoch 20 - Loss moyenne: 0.026935237770405365
+Epoch 21 - Loss moyenne: 0.013276011333888164
+Epoch 22 - Loss moyenne: 0.008498253210304028
+Epoch 23 - Loss moyenne: 0.008377099016770443
+Epoch 24 - Loss moyenne: 0.01096026278309364
+Epoch 25 - Loss moyenne: 0.014430967306398089
+Epoch 26 - Loss moyenne: 0.019018024481803876
+Epoch 27 - Loss moyenne: 0.011315584370022407
+Epoch 28 - Loss moyenne: 0.00825230123347137
+Epoch 29 - Loss moyenne: 0.017370609413890632
+Epoch 30 - Loss moyenne: 0.02729908662516391
+Epoch 31 - Loss moyenne: 0.0259792802130105
+Epoch 32 - Loss moyenne: 0.006018853691733966
+Epoch 33 - Loss moyenne: 0.010682415340095758
+Epoch 34 - Loss moyenne: 0.006183333990818937
+Epoch 35 - Loss moyenne: 0.015347436881042086
+Epoch 36 - Loss moyenne: 0.013662780511833261
+Epoch 37 - Loss moyenne: 0.007974363654597255
+Epoch 38 - Loss moyenne: 0.011583525100315455
+Epoch 39 - Loss moyenne: 0.004949183919467032
+Epoch 40 - Loss moyenne: 0.01518748538964428
+Epoch 41 - Loss moyenne: 0.013833941667631734
+Epoch 42 - Loss moyenne: 0.009455297758278903
+Epoch 43 - Loss moyenne: 0.019259871154965368
+Epoch 44 - Loss moyenne: 0.0034426246810799056
+Epoch 45 - Loss moyenne: 0.007734959522276767
+Epoch 46 - Loss moyenne: 0.0135455470916786
+Epoch 47 - Loss moyenne: 0.022604733078856954
+Epoch 48 - Loss moyenne: 0.01473364563711948
+Epoch 49 - Loss moyenne: 0.005954360076219018
+Epoch 50 - Loss moyenne: 0.001982742034109833
+Epoch 51 - Loss moyenne: 0.009330635529811844
+Epoch 52 - Loss moyenne: 0.02380299074854702
+Epoch 53 - Loss moyenne: 0.01797514792569564
+Epoch 54 - Loss moyenne: 0.01285752886539558
+Epoch 55 - Loss moyenne: 0.013412048579368275
+Epoch 56 - Loss moyenne: 0.005111594459885964
+Epoch 57 - Loss moyenne: 0.0005034169894643128
+Epoch 58 - Loss moyenne: 3.167326592665631e-05
+Epoch 59 - Loss moyenne: 1.8274572950758738e-05
+Epoch 60 - Loss moyenne: 1.304256036382867e-05
+Epoch 61 - Loss moyenne: 9.99081834925164e-06
+Epoch 62 - Loss moyenne: 7.977096182003151e-06
+Epoch 63 - Loss moyenne: 6.534413838380715e-06
+Epoch 64 - Loss moyenne: 5.453819709146046e-06
+Epoch 65 - Loss moyenne: 4.5947869293740954e-06
+Epoch 66 - Loss moyenne: 3.899312005160027e-06
+Epoch 67 - Loss moyenne: 3.3054471086870762e-06
+Epoch 68 - Loss moyenne: 2.786642828141339e-06
+Epoch 69 - Loss moyenne: 2.33318925529602e-06
+Epoch 70 - Loss moyenne: 1.9351322412148875e-06
+Epoch 71 - Loss moyenne: 1.5884795179772482e-06
+Epoch 72 - Loss moyenne: 1.30932652791671e-06
+Epoch 73 - Loss moyenne: 1.0984481505147414e-06
+Epoch 74 - Loss moyenne: 9.395735041834996e-07
+Epoch 75 - Loss moyenne: 8.287694117825595e-07
+Epoch 76 - Loss moyenne: 7.420751785502943e-07
+Epoch 77 - Loss moyenne: 6.644406209943554e-07
+Epoch 78 - Loss moyenne: 6.132405669632135e-07
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: Accuracy_jpegcomp/wukong20250512-141542 █████▇▆▁
+wandb:                                 quality ██▇▆▄▃▂▁
+wandb: 
+wandb: Run summary:
+wandb: Accuracy_jpegcomp/wukong20250512-141542 0.687
+wandb:                                 quality 1
+wandb: 
+wandb: 🚀 View run AT wukong R224 dataset 20250512-141541 at: https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/andvbvan
+wandb: ⭐️ View project at: https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250512_141541-andvbvan/logs
+Epoch 79 - Loss moyenne: 5.732461581828829e-07
+Entraînement terminé.
+Test...
+Quality -> 100
+Accuracy : 0.878
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.88      0.88      0.88       500
+      nature       0.88      0.88      0.88       500
+
+    accuracy                           0.88      1000
+   macro avg       0.88      0.88      0.88      1000
+weighted avg       0.88      0.88      0.88      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.878
+Quality -> 95
+Accuracy : 0.886
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.88      0.89      0.89       500
+      nature       0.89      0.88      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.886
+Quality -> 85
+Accuracy : 0.88
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.87      0.90      0.88       500
+      nature       0.90      0.86      0.88       500
+
+    accuracy                           0.88      1000
+   macro avg       0.88      0.88      0.88      1000
+weighted avg       0.88      0.88      0.88      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.88
+Quality -> 70
+Accuracy : 0.882
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.88      0.89      0.88       500
+      nature       0.89      0.87      0.88       500
+
+    accuracy                           0.88      1000
+   macro avg       0.88      0.88      0.88      1000
+weighted avg       0.88      0.88      0.88      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.882
+Quality -> 50
+Accuracy : 0.881
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.88      0.88      0.88       500
+      nature       0.88      0.88      0.88       500
+
+    accuracy                           0.88      1000
+   macro avg       0.88      0.88      0.88      1000
+weighted avg       0.88      0.88      0.88      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.881
+Quality -> 30
+Accuracy : 0.865
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.87      0.85      0.86       500
+      nature       0.86      0.88      0.87       500
+
+    accuracy                           0.86      1000
+   macro avg       0.87      0.86      0.86      1000
+weighted avg       0.87      0.86      0.86      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.865
+Quality -> 10
+Accuracy : 0.838
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.87      0.79      0.83       500
+      nature       0.81      0.89      0.85       500
+
+    accuracy                           0.84      1000
+   macro avg       0.84      0.84      0.84      1000
+weighted avg       0.84      0.84      0.84      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.838
+Quality -> 1
+Accuracy : 0.687
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.63      0.88      0.74       500
+      nature       0.81      0.49      0.61       500
+
+    accuracy                           0.69      1000
+   macro avg       0.72      0.69      0.67      1000
+weighted avg       0.72      0.69      0.67      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.687

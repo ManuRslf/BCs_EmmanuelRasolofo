@@ -1769,3 +1769,43 @@ Epoch 416 - Loss moyenne: 0.0
 Epoch 417 - Loss moyenne: 0.0
 Epoch 418 - Loss moyenne: 0.0
 Epoch 419 - Loss moyenne: 0.0
+Epoch 420 - Loss moyenne: 0.0
+Epoch 421 - Loss moyenne: 0.0
+Epoch 422 - Loss moyenne: 0.0
+Epoch 423 - Loss moyenne: 0.0
+Epoch 424 - Loss moyenne: 0.0
+Epoch 425 - Loss moyenne: 0.0
+Epoch 426 - Loss moyenne: 0.0
+Epoch 427 - Loss moyenne: 0.0
+Epoch 428 - Loss moyenne: 0.0
+Epoch 429 - Loss moyenne: 0.0
+Epoch 430 - Loss moyenne: 0.0
+Epoch 431 - Loss moyenne: 0.0
+Epoch 432 - Loss moyenne: 0.0
+Epoch 433 - Loss moyenne: 0.0
+Epoch 434 - Loss moyenne: 0.0
+Epoch 435 - Loss moyenne: 0.0
+Epoch 436 - Loss moyenne: 0.0
+Epoch 437 - Loss moyenne: 0.0
+Epoch 438 - Loss moyenne: 0.0
+Epoch 439 - Loss moyenne: 0.0
+Epoch 440 - Loss moyenne: 0.0
+Epoch 441 - Loss moyenne: 0.0
+Epoch 442 - Loss moyenne: 0.0
+Epoch 443 - Loss moyenne: 0.0
+Epoch 444 - Loss moyenne: 0.0
+Epoch 445 - Loss moyenne: 0.0
+Epoch 446 - Loss moyenne: 0.0
+Epoch 447 - Loss moyenne: 0.0
+Epoch 448 - Loss moyenne: 0.0
+Epoch 449 - Loss moyenne: 0.0
+Epoch 450 - Loss moyenne: 0.0
+Epoch 451 - Loss moyenne: 0.0
+Epoch 452 - Loss moyenne: 0.0
+Epoch 453 - Loss moyenne: 0.0
+Epoch 454 - Loss moyenne: 0.0
+Epoch 455 - Loss moyenne: 0.0
+Epoch 456 - Loss moyenne: 0.0
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** JOB 317002 ON gpu003 CANCELLED AT 2025-05-12T11:41:53 ***
+slurmstepd: error: *** STEP 317002.0 ON gpu003 CANCELLED AT 2025-05-12T11:41:53 ***

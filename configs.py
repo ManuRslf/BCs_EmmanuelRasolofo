@@ -53,17 +53,17 @@ class Config:
         SAVE_IMAGE = False
         WANDB_LOG = True
         TSNE_LOG = False
-        add_tokens_lab = 4
+        add_tokens_lab = 6
         ADD_TOKENS_LAB = [0, 10, 60, 100, 150]
         ADD_TOKENS_LAB_perf = [0, 10, 30, 50]
-        NUM_HIDDEN_LAYER_LLMA_LAB = 1
+        NUM_HIDDEN_LAYER_LLMA_LAB = 6
         HIDDEN_SIZE_LAB = 768
-        BATCH_SIZE_LAB = 32
+        BATCH_SIZE_LAB = 16
         LR_LAB = 4e-4
         # epoch plus grand si taille llama different de dinov2
-        EPOCHS_LAB = 40
+        EPOCHS_LAB = 80
         ITERATION =2
-        DECREASING_LR_LAB = False
+        DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-base'
         NHL_LAB = [1, 6, 12, 16]
         HSL_LAB = [1024, 1536, 2048, 2560]

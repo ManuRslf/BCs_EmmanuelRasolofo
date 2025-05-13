@@ -1,0 +1,251 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250512_120831-upbazuwv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT biggan R224 dataset 20250512-120830
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/upbazuwv
+ENTRAINEMENT EN ENTRAINANT SUR DES DONNEéS DEGRADéES
+Date d'entraînement: 20250512-120830
+Mode: run
+....................................................................................................
+Configurations:
+ADD_TOKENS_LAB: [0, 10, 60, 100, 150]
+ADD_TOKENS_LAB_perf: [0, 10, 30, 50]
+Adapter: False
+Adapter_EXTERN: False
+BATCH_SIZE_LAB: 32
+DEBUG: False
+DECREASING_LR_LAB: False
+DINOV2_NAME: facebook/dinov2-base
+Dinov2_token_dim: {'facebook/dinov2-base': 768, 'facebook/dinov2-small': 384}
+EPOCHS_HSL: [100, 200, 300, 500]
+EPOCHS_LAB: 40
+HIDDEN_SIZE_LAB: 768
+HSL_LAB: [1024, 1536, 2048, 2560]
+ITERATION: 2
+LR_LAB: 0.0004
+MODEL: biggan
+NHL_LAB: [1, 6, 12, 16]
+NUM_HIDDEN_LAYER_LLMA_LAB: 1
+QUALITY_JPEG_COMPRESSION: [100, 95, 85, 70, 50, 30, 10, 1]
+RESIZE_SHAPE: 224
+SAVE_IMAGE: False
+SHOW_INFO: True
+STD_GAUSSIAN_NOISE: [0.01, 0.05, 0.1, 0.3, 0.5, 1]
+TSNE_LOG: False
+WANDB_LOG: True
+add_tokens_lab: 4
+----------------------------------------------------------------------------------------------------
+[93m 
+
+ENTRAINEMENT: AJOUT DE BRUIT GAUSSIEN
+
+ [0m
+Opération sur cuda
+Dataset utilisé 'biggan' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 4 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.37269754998385907
+Epoch 1 - Loss moyenne: 0.08939320805389434
+Epoch 2 - Loss moyenne: 0.05222334018303081
+Epoch 3 - Loss moyenne: 0.04873963011696469
+Epoch 4 - Loss moyenne: 0.04444587749784114
+Epoch 5 - Loss moyenne: 0.03110275192791596
+Epoch 6 - Loss moyenne: 0.03564323260045785
+Epoch 7 - Loss moyenne: 0.027256831729624537
+Epoch 8 - Loss moyenne: 0.02188856211793609
+Epoch 9 - Loss moyenne: 0.029725980172108393
+Epoch 10 - Loss moyenne: 0.025000506169104483
+Epoch 11 - Loss moyenne: 0.02635942533079651
+Epoch 12 - Loss moyenne: 0.02303505705622956
+Epoch 13 - Loss moyenne: 0.02533186051819939
+Epoch 14 - Loss moyenne: 0.015482824899459955
+Epoch 15 - Loss moyenne: 0.019441809038136852
+Epoch 16 - Loss moyenne: 0.014699649550362666
+Epoch 17 - Loss moyenne: 0.02121533506661581
+Epoch 18 - Loss moyenne: 0.017908780546735215
+Epoch 19 - Loss moyenne: 0.03175762697181199
+Epoch 20 - Loss moyenne: 0.020800384311238304
+Epoch 21 - Loss moyenne: 0.017059921630483588
+Epoch 22 - Loss moyenne: 0.02142704212482204
+Epoch 23 - Loss moyenne: 0.015071111618948635
+Epoch 24 - Loss moyenne: 0.01539983803848736
+Epoch 25 - Loss moyenne: 0.01856730564471218
+Epoch 26 - Loss moyenne: 0.020075455317622982
+Epoch 27 - Loss moyenne: 0.02081384984619217
+Epoch 28 - Loss moyenne: 0.008373967795589124
+Epoch 29 - Loss moyenne: 0.02402355683625501
+Epoch 30 - Loss moyenne: 0.013516103255358758
+Epoch 31 - Loss moyenne: 0.017184787817473988
+Epoch 32 - Loss moyenne: 0.012914540634461446
+Epoch 33 - Loss moyenne: 0.008416964406496846
+Epoch 34 - Loss moyenne: 0.01639777079113992
+Epoch 35 - Loss moyenne: 0.01174732166848844
+Epoch 36 - Loss moyenne: 0.01645669014946907
+Epoch 37 - Loss moyenne: 0.02411851508761174
+Epoch 38 - Loss moyenne: 0.01287929494407581
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb: Accuracy_gaussian/biggan20250512-120832 ▆██▁▁▁
+wandb:                      std_gaussian_noise ▁▁▂▃▄█
+wandb: 
+wandb: Run summary:
+wandb: Accuracy_gaussian/biggan20250512-120832 0.5
+wandb:                      std_gaussian_noise 1
+wandb: 
+wandb: 🚀 View run AT biggan R224 dataset 20250512-120830 at: https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/upbazuwv
+wandb: ⭐️ View project at: https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250512_120831-upbazuwv/logs
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250512_122601-oxlfig3u
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT biggan R224 dataset 20250512-122601
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/oxlfig3u
+Epoch 39 - Loss moyenne: 0.010828760213113128
+Entraînement terminé.
+Test...
+STD -> 0.01
+Accuracy : 0.824
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       1.00      0.65      0.79       500
+      nature       0.74      1.00      0.85       500
+
+    accuracy                           0.82      1000
+   macro avg       0.87      0.82      0.82      1000
+weighted avg       0.87      0.82      0.82      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.824
+STD -> 0.05
+Accuracy : 0.952
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.99      0.91      0.95       500
+      nature       0.92      0.99      0.95       500
+
+    accuracy                           0.95      1000
+   macro avg       0.95      0.95      0.95      1000
+weighted avg       0.95      0.95      0.95      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.952
+STD -> 0.1
+Accuracy : 0.964
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.95      0.98      0.96       500
+      nature       0.98      0.95      0.96       500
+
+    accuracy                           0.96      1000
+   macro avg       0.96      0.96      0.96      1000
+weighted avg       0.96      0.96      0.96      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.964
+STD -> 0.3
+Accuracy : 0.508
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.50      1.00      0.67       500
+      nature       0.90      0.02      0.04       500
+
+    accuracy                           0.51      1000
+   macro avg       0.70      0.51      0.35      1000
+weighted avg       0.70      0.51      0.35      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.508
+STD -> 0.5
+Accuracy : 0.5
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.50      1.00      0.67       500
+      nature       1.00      0.00      0.00       500
+
+    accuracy                           0.50      1000
+   macro avg       0.75      0.50      0.33      1000
+weighted avg       0.75      0.50      0.33      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.5
+STD -> 1
+Accuracy : 0.5
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       1.00      0.00      0.00       500
+      nature       0.50      1.00      0.67       500
+
+    accuracy                           0.50      1000
+   macro avg       0.75      0.50      0.33      1000
+weighted avg       0.75      0.50      0.33      1000
+
+----------------------------------------------------------------------------------------------------
+accuracy : 0.5
+Date d'entraînement: 20250512-122601
+Mode: run
+....................................................................................................
+Configurations:
+ADD_TOKENS_LAB: [0, 10, 60, 100, 150]
+ADD_TOKENS_LAB_perf: [0, 10, 30, 50]
+Adapter: False
+Adapter_EXTERN: False
+BATCH_SIZE_LAB: 32
+DEBUG: False
+DECREASING_LR_LAB: False
+DINOV2_NAME: facebook/dinov2-base
+Dinov2_token_dim: {'facebook/dinov2-base': 768, 'facebook/dinov2-small': 384}
+EPOCHS_HSL: [100, 200, 300, 500]
+EPOCHS_LAB: 40
+HIDDEN_SIZE_LAB: 768
+HSL_LAB: [1024, 1536, 2048, 2560]
+ITERATION: 2
+LR_LAB: 0.0004
+MODEL: biggan
+NHL_LAB: [1, 6, 12, 16]
+NUM_HIDDEN_LAYER_LLMA_LAB: 1
+QUALITY_JPEG_COMPRESSION: [100, 95, 85, 70, 50, 30, 10, 1]
+RESIZE_SHAPE: 224
+SAVE_IMAGE: False
+SHOW_INFO: True
+STD_GAUSSIAN_NOISE: [0.01, 0.05, 0.1, 0.3, 0.5, 1]
+TSNE_LOG: False
+WANDB_LOG: True
+add_tokens_lab: 4
+----------------------------------------------------------------------------------------------------
+[93m 
+
+ENTRAINEMENT: DEGRADATION DE LA QUALITé
+
+ [0m
+Opération sur cuda
+Dataset utilisé 'biggan' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 4 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.31063796120882037
+Epoch 1 - Loss moyenne: 0.03114156559424009
+Epoch 2 - Loss moyenne: 0.01493696867057588
+Epoch 3 - Loss moyenne: 0.007224161133912275
+Epoch 4 - Loss moyenne: 0.017273663557862164
+Epoch 5 - Loss moyenne: 0.01347217935801018
+Epoch 6 - Loss moyenne: 0.006885577033634036
+Epoch 7 - Loss moyenne: 0.01923601860605413
+Epoch 8 - Loss moyenne: 0.006347930070747679
+Epoch 9 - Loss moyenne: 0.007014365369662301
+Epoch 10 - Loss moyenne: 0.005592798849509563
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** JOB 317118 ON gpu003 CANCELLED AT 2025-05-12T12:30:39 ***
+slurmstepd: error: *** STEP 317118.0 ON gpu003 CANCELLED AT 2025-05-12T12:30:39 ***

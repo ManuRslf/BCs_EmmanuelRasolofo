@@ -1,6 +1,7 @@
 import time
 from util import *
 from configs import Config
+from configs import gaussianTF, jpegTF
 import wandb
 
 MODEL_NAMES = ['biggan', 'vqdm', 'sdv5', 'wukong', 'adm', 'glide', 'midjourney']
@@ -212,13 +213,18 @@ def train():
 
         
 if __name__ == '__main__' and not Config.DEBUG:
-    #one_by_one('llama')    
-    #Config_model_run('gaussiannoise')
-    #Config_model_run('jpeg')
-    #Config.MODEL = 'wukong'
-    #Config_model_run('gaussiannoise')
-    #Config_model_run('jpeg')
-    Config_model_run('llama2')
+    #one_by_one('llama') 
+    print("ENTRAINEMENT EN ENTRAINANT SUR DES DONNEéS DEGRADéES")
+    Config.TRANSFORM = gaussianTF(mean=0, std=0.3)  
+    Config_model_run('gaussiannoise')
+    Config.TRANSFORM = jpegTF(quality=30)  
+    Config_model_run('jpeg')
+    Config.MODEL = 'wukong'
+    Config.TRANSFORM = gaussianTF(mean=0, std=0.3)  
+    Config_model_run('gaussiannoise')
+    Config.TRANSFORM = jpegTF(quality=30)  
+    Config_model_run('jpeg')
+    #Config_model_run('llama2')
 
     #train()
     

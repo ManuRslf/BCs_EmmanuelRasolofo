@@ -1,0 +1,58 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250512_190211-ml4m8mf2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT biggan R224 dataset 20250512-190211
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/ml4m8mf2
+ENTRAINEMENT EN ENTRAINANT SUR DES DONNEéS DEGRADéES
+Date d'entraînement: 20250512-190211
+Mode: run
+....................................................................................................
+Configurations:
+ADD_TOKENS_LAB: [0, 10, 60, 100, 150]
+ADD_TOKENS_LAB_perf: [0, 10, 30, 50]
+Adapter: False
+Adapter_EXTERN: False
+BATCH_SIZE_LAB: 16
+DEBUG: False
+DECREASING_LR_LAB: False
+DINOV2_NAME: facebook/dinov2-base
+Dinov2_token_dim: {'facebook/dinov2-base': 768, 'facebook/dinov2-small': 384}
+EPOCHS_HSL: [100, 200, 300, 500]
+EPOCHS_LAB: 80
+HIDDEN_SIZE_LAB: 768
+HSL_LAB: [1024, 1536, 2048, 2560]
+ITERATION: 2
+LR_LAB: 0.0004
+MODEL: biggan
+NHL_LAB: [1, 6, 12, 16]
+NUM_HIDDEN_LAYER_LLMA_LAB: 8
+QUALITY_JPEG_COMPRESSION: [100, 95, 85, 70, 50, 30, 10, 1]
+RESIZE_SHAPE: 224
+SAVE_IMAGE: False
+SHOW_INFO: True
+STD_GAUSSIAN_NOISE: [0.01, 0.05, 0.1, 0.3, 0.5, 1]
+TSNE_LOG: False
+WANDB_LOG: True
+add_tokens_lab: 8
+----------------------------------------------------------------------------------------------------
+[93m 
+
+ENTRAINEMENT: AJOUT DE BRUIT GAUSSIEN
+
+ [0m
+Opération sur cuda
+Dataset utilisé 'biggan' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+Entraînement avec 8 tokens additionnels
+TRAINING...
+Epoch 0 - Loss moyenne: 0.5843871048092842
+Epoch 1 - Loss moyenne: 0.46110791236162185
+Epoch 2 - Loss moyenne: 0.38908632098138335
+Epoch 3 - Loss moyenne: 0.3573454467356205
+Epoch 4 - Loss moyenne: 0.34439750692248344
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** JOB 317140 ON gpu003 CANCELLED AT 2025-05-12T19:12:27 ***
+slurmstepd: error: *** STEP 317140.0 ON gpu003 CANCELLED AT 2025-05-12T19:12:27 ***
