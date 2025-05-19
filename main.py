@@ -215,7 +215,7 @@ def train():
 if __name__ == '__main__' and not Config.DEBUG:
     #one_by_one('llama') 
     print("ENTRAINEMENT EN ENTRAINANT SUR DES DONNEéS DEGRADéES")
-    Config.TRANSFORM = gaussianTF(mean=0, std=0.3)  
+    '''Config.TRANSFORM = gaussianTF(mean=0, std=0.3)  
     Config_model_run('gaussiannoise')
     Config.TRANSFORM = jpegTF(quality=30)  
     Config_model_run('jpeg')
@@ -223,8 +223,15 @@ if __name__ == '__main__' and not Config.DEBUG:
     Config.TRANSFORM = gaussianTF(mean=0, std=0.3)  
     Config_model_run('gaussiannoise')
     Config.TRANSFORM = jpegTF(quality=30)  
+    Config_model_run('jpeg')'''
+    
+    from copy import deepcopy
+    T = deepcopy(Config.TRANSFORM)
+    Config.TRANSFORM = jpegTF(quality=15)  
     Config_model_run('jpeg')
-    #Config_model_run('llama2')
+    Config.TRANSFORM = T
+    Config.DECREASING_LR_LAB=False
+    Config_model_run('llama2')
 
     #train()
     

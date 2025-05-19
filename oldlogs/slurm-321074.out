@@ -1,0 +1,783 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250516_200333-f61k75zg
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT midjourney R224 dataset 20250516-200333
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/f61k75zg
+ENTRAINEMENT EN ENTRAINANT SUR DES DONNEéS DEGRADéES
+Date d'entraînement: 20250516-200333
+Mode: run
+....................................................................................................
+Configurations:
+ADD_TOKENS_LAB: [0, 10, 60, 100, 150]
+ADD_TOKENS_LAB_perf: [0, 10, 30, 50]
+Adapter: False
+Adapter_EXTERN: False
+BATCH_SIZE_LAB: 16
+DEBUG: False
+DECREASING_LR_LAB: False
+DINOV2_NAME: facebook/dinov2-base
+Dinov2_token_dim: {'facebook/dinov2-base': 768, 'facebook/dinov2-small': 384}
+EPOCHS_HSL: [100, 200, 300]
+EPOCHS_LAB: 160
+HIDDEN_SIZE_LAB: 768
+HSL_LAB: [384, 768, 1536]
+ITERATION: 2
+LR_LAB: 0.0004
+MODEL: midjourney
+NHL_LAB: [1, 6, 12, 16]
+NUM_HIDDEN_LAYER_LLMA_LAB: 20
+QUALITY_JPEG_COMPRESSION: [100, 95, 85, 70, 50, 30, 10, 1]
+RESIZE_SHAPE: 224
+SAVE_IMAGE: False
+SHOW_INFO: True
+STD_GAUSSIAN_NOISE: [0.01, 0.05, 0.1, 0.3, 0.5, 1]
+TSNE_LOG: False
+WANDB_LOG: True
+add_tokens_lab: 6
+----------------------------------------------------------------------------------------------------
+[93m 
+
+ENTRAINEMENT: VARIAtION LA TAILLE DE COUCHES CACHEES DE LLAMA
+
+ [0m
+Opération sur cuda
+Dataset utilisé 'midjourney' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+[midjourney]Entraînement avec 20 couche de llama et de tailles 384 pour chaque couches
+TRAINING...
+Epoch 0 - Loss moyenne: 0.5578929997682571
+Epoch 1 - Loss moyenne: 0.31250407798588276
+Epoch 2 - Loss moyenne: 0.22000593304634095
+Epoch 3 - Loss moyenne: 0.17474905773997307
+Epoch 4 - Loss moyenne: 0.12971913706697524
+Epoch 5 - Loss moyenne: 0.10449414184875787
+Epoch 6 - Loss moyenne: 0.08268463535653427
+Epoch 7 - Loss moyenne: 0.08186416091863066
+Epoch 8 - Loss moyenne: 0.06154932998004369
+Epoch 9 - Loss moyenne: 0.05237331990548409
+Epoch 10 - Loss moyenne: 0.04926996959652752
+Epoch 11 - Loss moyenne: 0.035355758590856566
+Epoch 12 - Loss moyenne: 0.033920841010694855
+Epoch 13 - Loss moyenne: 0.051135198033065536
+Epoch 14 - Loss moyenne: 0.04023022512567695
+Epoch 15 - Loss moyenne: 0.017921970029361547
+Epoch 16 - Loss moyenne: 0.03573066120907606
+Epoch 17 - Loss moyenne: 0.030479037991492076
+Epoch 18 - Loss moyenne: 0.03317652070283657
+Epoch 19 - Loss moyenne: 0.0290147876010451
+Epoch 20 - Loss moyenne: 0.03332852104370249
+Epoch 21 - Loss moyenne: 0.04425452436407795
+Epoch 22 - Loss moyenne: 0.013286857003928162
+Epoch 23 - Loss moyenne: 0.020691807522351155
+Epoch 24 - Loss moyenne: 0.03856163833959727
+Epoch 25 - Loss moyenne: 0.03463545700121904
+Epoch 26 - Loss moyenne: 0.03544778713109554
+Epoch 27 - Loss moyenne: 0.02118387526087463
+Epoch 28 - Loss moyenne: 0.009942578912086901
+Epoch 29 - Loss moyenne: 0.02229609498375794
+Epoch 30 - Loss moyenne: 0.01701472743251361
+Epoch 31 - Loss moyenne: 0.014341723328121588
+Epoch 32 - Loss moyenne: 0.03470010037510656
+Epoch 33 - Loss moyenne: 0.022610203252756037
+Epoch 34 - Loss moyenne: 0.029921853439940607
+Epoch 35 - Loss moyenne: 0.02036079240933759
+Epoch 36 - Loss moyenne: 0.01233403896697564
+Epoch 37 - Loss moyenne: 0.006008153946731909
+Epoch 38 - Loss moyenne: 0.02822395156165294
+Epoch 39 - Loss moyenne: 0.024452400408918037
+Epoch 40 - Loss moyenne: 0.022054178918304388
+Epoch 41 - Loss moyenne: 0.012630071341976872
+Epoch 42 - Loss moyenne: 0.014678557092294795
+Epoch 43 - Loss moyenne: 0.019637658607694904
+Epoch 44 - Loss moyenne: 0.01895729349160683
+Epoch 45 - Loss moyenne: 0.017742581376260204
+Epoch 46 - Loss moyenne: 0.02548738343414152
+Epoch 47 - Loss moyenne: 0.013726279256625276
+Epoch 48 - Loss moyenne: 0.018804315213812515
+Epoch 49 - Loss moyenne: 0.020385461777303136
+Epoch 50 - Loss moyenne: 0.012700946604221827
+Epoch 51 - Loss moyenne: 0.0016277522973541635
+Epoch 52 - Loss moyenne: 0.020175917439369185
+Epoch 53 - Loss moyenne: 0.023601093512610534
+Epoch 54 - Loss moyenne: 0.014695355350078898
+Epoch 55 - Loss moyenne: 0.013269794127780187
+Epoch 56 - Loss moyenne: 0.031210021941722517
+Epoch 57 - Loss moyenne: 0.03566510794089845
+Epoch 58 - Loss moyenne: 0.01154627031525888
+Epoch 59 - Loss moyenne: 0.008137480398452681
+Epoch 60 - Loss moyenne: 0.02809981768358557
+Epoch 61 - Loss moyenne: 0.04946022419119254
+Epoch 62 - Loss moyenne: 0.028191817392769734
+Epoch 63 - Loss moyenne: 0.003349120728824346
+Epoch 64 - Loss moyenne: 0.0004548781238172523
+Epoch 65 - Loss moyenne: 3.10072746019614e-05
+Epoch 66 - Loss moyenne: 9.817159557542254e-06
+Epoch 67 - Loss moyenne: 3.6700821262911633e-06
+Epoch 68 - Loss moyenne: 1.8802386923653102e-06
+Epoch 69 - Loss moyenne: 1.1960967021877878e-06
+Epoch 70 - Loss moyenne: 8.647913695085663e-07
+Epoch 71 - Loss moyenne: 6.755510322591363e-07
+Epoch 72 - Loss moyenne: 5.60575589020118e-07
+Epoch 73 - Loss moyenne: 4.806468680840226e-07
+Epoch 74 - Loss moyenne: 4.193444757447651e-07
+Epoch 75 - Loss moyenne: 3.694561202678415e-07
+Epoch 76 - Loss moyenne: 3.28210603640855e-07
+Epoch 77 - Loss moyenne: 2.9378943355595764e-07
+Epoch 78 - Loss moyenne: 2.644642901259431e-07
+Epoch 79 - Loss moyenne: 2.401756825065604e-07
+Epoch 80 - Loss moyenne: 2.193442464886175e-07
+Epoch 81 - Loss moyenne: 2.0340020134312907e-07
+Epoch 82 - Loss moyenne: 1.9156880688342426e-07
+Epoch 83 - Loss moyenne: 1.8191292485880695e-07
+Epoch 84 - Loss moyenne: 1.7374718225937613e-07
+Epoch 85 - Loss moyenne: 1.6719072294790748e-07
+Epoch 86 - Loss moyenne: 1.6137933391746627e-07
+Epoch 87 - Loss moyenne: 1.5628318723770462e-07
+Epoch 88 - Loss moyenne: 1.5178306765051274e-07
+Epoch 89 - Loss moyenne: 1.4817701128322368e-07
+Epoch 90 - Loss moyenne: 1.4477956898417687e-07
+Epoch 91 - Loss moyenne: 1.417397512284424e-07
+Epoch 92 - Loss moyenne: 1.384317078247932e-07
+Epoch 93 - Loss moyenne: 1.3455741998313898e-07
+Epoch 94 - Loss moyenne: 1.2797111577356191e-07
+Epoch 95 - Loss moyenne: 1.1682505780186147e-07
+Epoch 96 - Loss moyenne: 1.0347362342599808e-07
+Epoch 97 - Loss moyenne: 8.99135740581869e-08
+Epoch 98 - Loss moyenne: 7.751581346226999e-08
+Epoch 99 - Loss moyenne: 6.499884195676487e-08
+Entraînement terminé.
+Accuracy : 0.902
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.91      0.89      0.90       500
+      nature       0.89      0.91      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 0, midjourney: acc 0.902
+[midjourney]Entraînement avec 20 couche de llama et de tailles 384 pour chaque couches
+TRAINING...
+Epoch 0 - Loss moyenne: 0.5128928459882737
+Epoch 1 - Loss moyenne: 0.2614078247696161
+Epoch 2 - Loss moyenne: 0.1932412032550201
+Epoch 3 - Loss moyenne: 0.13512727770209312
+Epoch 4 - Loss moyenne: 0.11070995462220162
+Epoch 5 - Loss moyenne: 0.084311889316421
+Epoch 6 - Loss moyenne: 0.06477690574573353
+Epoch 7 - Loss moyenne: 0.06642685965495185
+Epoch 8 - Loss moyenne: 0.05426639525592327
+Epoch 9 - Loss moyenne: 0.060768987406103404
+Epoch 10 - Loss moyenne: 0.05745211566402577
+Epoch 11 - Loss moyenne: 0.04658888538845349
+Epoch 12 - Loss moyenne: 0.02600649270910071
+Epoch 13 - Loss moyenne: 0.045685115313157436
+Epoch 14 - Loss moyenne: 0.055908098893938586
+Epoch 15 - Loss moyenne: 0.034648918070481156
+Epoch 16 - Loss moyenne: 0.0317297497142572
+Epoch 17 - Loss moyenne: 0.03967022908618674
+Epoch 18 - Loss moyenne: 0.03899775680090534
+Epoch 19 - Loss moyenne: 0.025620962894900002
+Epoch 20 - Loss moyenne: 0.03139284112787573
+Epoch 21 - Loss moyenne: 0.034855134499201086
+Epoch 22 - Loss moyenne: 0.038960435427783525
+Epoch 23 - Loss moyenne: 0.023991504187695682
+Epoch 24 - Loss moyenne: 0.024730237303854666
+Epoch 25 - Loss moyenne: 0.02577920647105202
+Epoch 26 - Loss moyenne: 0.0328518581915414
+Epoch 27 - Loss moyenne: 0.024917890246302705
+Epoch 28 - Loss moyenne: 0.03326415187865496
+Epoch 29 - Loss moyenne: 0.027759708864381536
+Epoch 30 - Loss moyenne: 0.02973282048999681
+Epoch 31 - Loss moyenne: 0.027852862455358264
+Epoch 32 - Loss moyenne: 0.019867508548079057
+Epoch 33 - Loss moyenne: 0.024234663591807475
+Epoch 34 - Loss moyenne: 0.02142891760331986
+Epoch 35 - Loss moyenne: 0.024977346709871198
+Epoch 36 - Loss moyenne: 0.0151841504831973
+Epoch 37 - Loss moyenne: 0.024288388749657316
+Epoch 38 - Loss moyenne: 0.026791710908990355
+Epoch 39 - Loss moyenne: 0.018514452617411734
+Epoch 40 - Loss moyenne: 0.02469096019614517
+Epoch 41 - Loss moyenne: 0.016480606207594974
+Epoch 42 - Loss moyenne: 0.02158166741984314
+Epoch 43 - Loss moyenne: 0.016064786604845723
+Epoch 44 - Loss moyenne: 0.01737045342383499
+Epoch 45 - Loss moyenne: 0.022459394744233578
+Epoch 46 - Loss moyenne: 0.01540671831065265
+Epoch 47 - Loss moyenne: 0.02123390621349972
+Epoch 48 - Loss moyenne: 0.01815358408223983
+Epoch 49 - Loss moyenne: 0.02429611293637572
+Epoch 50 - Loss moyenne: 0.025807066325069173
+Epoch 51 - Loss moyenne: 0.008000850417076436
+Epoch 52 - Loss moyenne: 0.03372417481686716
+Epoch 53 - Loss moyenne: 0.02481880439571978
+Epoch 54 - Loss moyenne: 0.027368716466386105
+Epoch 55 - Loss moyenne: 0.01757331464755407
+Epoch 56 - Loss moyenne: 0.010778326609033684
+Epoch 57 - Loss moyenne: 0.025300571487750858
+Epoch 58 - Loss moyenne: 0.024355412653530948
+Epoch 59 - Loss moyenne: 0.022866435915086185
+Epoch 60 - Loss moyenne: 0.009364870705199792
+Epoch 61 - Loss moyenne: 0.010943846183989081
+Epoch 62 - Loss moyenne: 0.018458337858523008
+Epoch 63 - Loss moyenne: 0.008748369050677865
+Epoch 64 - Loss moyenne: 0.008072873623415943
+Epoch 65 - Loss moyenne: 0.016004963121620676
+Epoch 66 - Loss moyenne: 0.023218832741258667
+Epoch 67 - Loss moyenne: 0.008422043247344845
+Epoch 68 - Loss moyenne: 0.016178297961931095
+Epoch 69 - Loss moyenne: 0.011873670220134955
+Epoch 70 - Loss moyenne: 0.016010524288325542
+Epoch 71 - Loss moyenne: 0.010115482369183155
+Epoch 72 - Loss moyenne: 0.010000054741864006
+Epoch 73 - Loss moyenne: 0.007514288003894762
+Epoch 74 - Loss moyenne: 0.009595004201943085
+Epoch 75 - Loss moyenne: 0.016074834185414145
+Epoch 76 - Loss moyenne: 0.01721541839060956
+Epoch 77 - Loss moyenne: 0.017434091633953357
+Epoch 78 - Loss moyenne: 0.007012939575804921
+Epoch 79 - Loss moyenne: 0.0024502144559955925
+Epoch 80 - Loss moyenne: 0.0018945101982171765
+Epoch 81 - Loss moyenne: 0.0013000019136943592
+Epoch 82 - Loss moyenne: 2.64531278899085e-05
+Epoch 83 - Loss moyenne: 1.5977422259311426e-05
+Epoch 84 - Loss moyenne: 1.1258989437919808e-05
+Epoch 85 - Loss moyenne: 9.1489757915042e-06
+Epoch 86 - Loss moyenne: 7.614835957610921e-06
+Epoch 87 - Loss moyenne: 6.330576384243613e-06
+Epoch 88 - Loss moyenne: 5.316151532497315e-06
+Epoch 89 - Loss moyenne: 4.472389362490503e-06
+Epoch 90 - Loss moyenne: 3.7838308071513895e-06
+Epoch 91 - Loss moyenne: 3.1671625615672384e-06
+Epoch 92 - Loss moyenne: 2.7102471440230145e-06
+Epoch 93 - Loss moyenne: 2.3280515056285365e-06
+Epoch 94 - Loss moyenne: 2.0096592065783626e-06
+Epoch 95 - Loss moyenne: 1.7480658971180674e-06
+Epoch 96 - Loss moyenne: 1.5297725590244228e-06
+Epoch 97 - Loss moyenne: 1.345804779930404e-06
+Epoch 98 - Loss moyenne: 1.177049299258215e-06
+Epoch 99 - Loss moyenne: 1.044751707013347e-06
+Entraînement terminé.
+Accuracy : 0.889
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.89      0.89      0.89       500
+      nature       0.89      0.89      0.89       500
+
+    accuracy                           0.89      1000
+   macro avg       0.89      0.89      0.89      1000
+weighted avg       0.89      0.89      0.89      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 1, midjourney: acc 0.889
+accuracy mean: 0.8955
+----------------------------------------------------------------------------------------------------
+[midjourney]Entraînement avec 20 couche de llama et de tailles 768 pour chaque couches
+TRAINING...
+Epoch 0 - Loss moyenne: 0.6428981543183326
+Epoch 1 - Loss moyenne: 0.32994358584284783
+Epoch 2 - Loss moyenne: 0.25741313898563384
+Epoch 3 - Loss moyenne: 0.20116225267201662
+Epoch 4 - Loss moyenne: 0.16854007734172047
+Epoch 5 - Loss moyenne: 0.13764463376277125
+Epoch 6 - Loss moyenne: 0.11920551617350429
+Epoch 7 - Loss moyenne: 0.1409707862419309
+Epoch 8 - Loss moyenne: 0.12582428696984424
+Epoch 9 - Loss moyenne: 0.09944255124079064
+Epoch 10 - Loss moyenne: 0.10281209747307002
+Epoch 11 - Loss moyenne: 0.12158708884334192
+Epoch 12 - Loss moyenne: 0.09829113428061828
+Epoch 13 - Loss moyenne: 0.11964299045596272
+Epoch 14 - Loss moyenne: 0.08604085647850297
+Epoch 15 - Loss moyenne: 0.07463798687187954
+Epoch 16 - Loss moyenne: 0.06140160426613875
+Epoch 17 - Loss moyenne: 0.053608866439550186
+Epoch 18 - Loss moyenne: 0.06533906574908178
+Epoch 19 - Loss moyenne: 0.06224945724289864
+Epoch 20 - Loss moyenne: 0.055857690101256595
+Epoch 21 - Loss moyenne: 0.06273077211494092
+Epoch 22 - Loss moyenne: 0.0485388945886225
+Epoch 23 - Loss moyenne: 0.04529651595739415
+Epoch 24 - Loss moyenne: 0.060085417896159926
+Epoch 25 - Loss moyenne: 0.04581597056565806
+Epoch 26 - Loss moyenne: 0.05706628330732928
+Epoch 27 - Loss moyenne: 0.04906414289074019
+Epoch 28 - Loss moyenne: 0.06541142065241001
+Epoch 29 - Loss moyenne: 0.034105480554688254
+Epoch 30 - Loss moyenne: 0.06203593658201862
+Epoch 31 - Loss moyenne: 0.06578357082256116
+Epoch 32 - Loss moyenne: 0.05757501479372149
+Epoch 33 - Loss moyenne: 0.03122427194082411
+Epoch 34 - Loss moyenne: 0.03409248222486349
+Epoch 35 - Loss moyenne: 0.03695279779564589
+Epoch 36 - Loss moyenne: 0.049023062490770826
+Epoch 37 - Loss moyenne: 0.0371160298747709
+Epoch 38 - Loss moyenne: 0.06378281598212197
+Epoch 39 - Loss moyenne: 0.04995645570571651
+Epoch 40 - Loss moyenne: 0.031269390059438594
+Epoch 41 - Loss moyenne: 0.031359441461696405
+Epoch 42 - Loss moyenne: 0.024140685470534662
+Epoch 43 - Loss moyenne: 0.012299637962220004
+Epoch 44 - Loss moyenne: 0.02918424172291452
+Epoch 45 - Loss moyenne: 0.03185645296232542
+Epoch 46 - Loss moyenne: 0.09241097048521624
+Epoch 47 - Loss moyenne: 0.030426746685319812
+Epoch 48 - Loss moyenne: 0.02102837976114097
+Epoch 49 - Loss moyenne: 0.025402078292667284
+Epoch 50 - Loss moyenne: 0.08603875196647277
+Epoch 51 - Loss moyenne: 0.08661835951637477
+Epoch 52 - Loss moyenne: 0.06493720939190825
+Epoch 53 - Loss moyenne: 0.03240797887617373
+Epoch 54 - Loss moyenne: 0.022649406972021096
+Epoch 55 - Loss moyenne: 0.03362211962003494
+Epoch 56 - Loss moyenne: 0.02804344287357526
+Epoch 57 - Loss moyenne: 0.03640379346162081
+Epoch 58 - Loss moyenne: 0.01990600934968461
+Epoch 59 - Loss moyenne: 0.016967876624592464
+Epoch 60 - Loss moyenne: 0.009421917260950976
+Epoch 61 - Loss moyenne: 0.015189638708856364
+Epoch 62 - Loss moyenne: 0.03511876618961833
+Epoch 63 - Loss moyenne: 0.03460882396146189
+Epoch 64 - Loss moyenne: 0.04054667054727906
+Epoch 65 - Loss moyenne: 0.026854440324386816
+Epoch 66 - Loss moyenne: 0.01892038705282903
+Epoch 67 - Loss moyenne: 0.011261465644407508
+Epoch 68 - Loss moyenne: 0.016449300405231043
+Epoch 69 - Loss moyenne: 0.026721313509005994
+Epoch 70 - Loss moyenne: 0.02242955223933677
+Epoch 71 - Loss moyenne: 0.0127593855357336
+Epoch 72 - Loss moyenne: 0.021029555671455456
+Epoch 73 - Loss moyenne: 0.04010958717057292
+Epoch 74 - Loss moyenne: 0.023701010685894287
+Epoch 75 - Loss moyenne: 0.025128799281534157
+Epoch 76 - Loss moyenne: 0.021405566377274227
+Epoch 77 - Loss moyenne: 0.024895852666944846
+Epoch 78 - Loss moyenne: 0.011535343450148502
+Epoch 79 - Loss moyenne: 0.03275185754785525
+Epoch 80 - Loss moyenne: 0.008691398991230016
+Epoch 81 - Loss moyenne: 0.012883879104531388
+Epoch 82 - Loss moyenne: 0.030499701081967943
+Epoch 83 - Loss moyenne: 0.021710729383616127
+Epoch 84 - Loss moyenne: 0.011116643071221005
+Epoch 85 - Loss moyenne: 0.023439567203839034
+Epoch 86 - Loss moyenne: 0.02416732958711873
+Epoch 87 - Loss moyenne: 0.015914248924840647
+Epoch 88 - Loss moyenne: 0.027503773562491916
+Epoch 89 - Loss moyenne: 0.010948106523384921
+Epoch 90 - Loss moyenne: 0.029661063526638828
+Epoch 91 - Loss moyenne: 0.011624833063140614
+Epoch 92 - Loss moyenne: 0.0075048929089625745
+Epoch 93 - Loss moyenne: 0.019035878959251476
+Epoch 94 - Loss moyenne: 0.022778129745933257
+Epoch 95 - Loss moyenne: 0.07952593876724132
+Epoch 96 - Loss moyenne: 0.03271504726415151
+Epoch 97 - Loss moyenne: 0.01829547820748121
+Epoch 98 - Loss moyenne: 0.020163979617558652
+Epoch 99 - Loss moyenne: 0.019504006718081654
+Epoch 100 - Loss moyenne: 0.007918650902924127
+Epoch 101 - Loss moyenne: 0.0037411970650664443
+Epoch 102 - Loss moyenne: 0.0019045989452924914
+Epoch 103 - Loss moyenne: 0.00129675193087769
+Epoch 104 - Loss moyenne: 0.0007505701754398615
+Epoch 105 - Loss moyenne: 0.00010438957303767893
+Epoch 106 - Loss moyenne: 2.485748498884277e-05
+Epoch 107 - Loss moyenne: 1.386260528670391e-05
+Epoch 108 - Loss moyenne: 8.578349842537136e-06
+Epoch 109 - Loss moyenne: 6.202012472954266e-06
+Epoch 110 - Loss moyenne: 4.719033142350781e-06
+Epoch 111 - Loss moyenne: 3.7438786513348533e-06
+Epoch 112 - Loss moyenne: 3.013976865531731e-06
+Epoch 113 - Loss moyenne: 2.429913001492423e-06
+Epoch 114 - Loss moyenne: 2.020490399559094e-06
+Epoch 115 - Loss moyenne: 1.6864031802583668e-06
+Epoch 116 - Loss moyenne: 1.4151550496421805e-06
+Epoch 117 - Loss moyenne: 1.1936334846041062e-06
+Epoch 118 - Loss moyenne: 1.0129319293525895e-06
+Epoch 119 - Loss moyenne: 8.585924292390245e-07
+Epoch 120 - Loss moyenne: 7.38933330751479e-07
+Epoch 121 - Loss moyenne: 6.409541758358727e-07
+Epoch 122 - Loss moyenne: 5.545144951213387e-07
+Epoch 123 - Loss moyenne: 4.824861833583327e-07
+Epoch 124 - Loss moyenne: 4.15810542513384e-07
+Epoch 125 - Loss moyenne: 3.6330291618469344e-07
+Epoch 126 - Loss moyenne: 3.203799282207598e-07
+Epoch 127 - Loss moyenne: 2.77932950229598e-07
+Epoch 128 - Loss moyenne: 2.432288039315722e-07
+Epoch 129 - Loss moyenne: 2.1236534735535883e-07
+Epoch 130 - Loss moyenne: 1.866241137200575e-07
+Epoch 131 - Loss moyenne: 1.6481499472931206e-07
+Epoch 132 - Loss moyenne: 1.4422684813730768e-07
+Epoch 133 - Loss moyenne: 1.2640885656800548e-07
+Epoch 134 - Loss moyenne: 1.1320889661448063e-07
+Epoch 135 - Loss moyenne: 1.0102181599691562e-07
+Epoch 136 - Loss moyenne: 8.93707090234841e-08
+Epoch 137 - Loss moyenne: 7.959685153480223e-08
+Epoch 138 - Loss moyenne: 7.038905879497292e-08
+Epoch 139 - Loss moyenne: 6.213466157944936e-08
+Epoch 140 - Loss moyenne: 5.507213580280279e-08
+Epoch 141 - Loss moyenne: 4.902279758667305e-08
+Epoch 142 - Loss moyenne: 4.3450159578739546e-08
+Epoch 143 - Loss moyenne: 3.871192263105172e-08
+Epoch 144 - Loss moyenne: 3.4301443459838765e-08
+Epoch 145 - Loss moyenne: 3.012936467072791e-08
+Epoch 146 - Loss moyenne: 2.652343519038425e-08
+Epoch 147 - Loss moyenne: 2.3483729728823732e-08
+Epoch 148 - Loss moyenne: 2.041419729437166e-08
+Epoch 149 - Loss moyenne: 1.8179109806837345e-08
+Epoch 150 - Loss moyenne: 1.5467188795525998e-08
+Epoch 151 - Loss moyenne: 1.3768498364541415e-08
+Epoch 152 - Loss moyenne: 1.203999749854745e-08
+Epoch 153 - Loss moyenne: 1.0758525952780929e-08
+Epoch 154 - Loss moyenne: 9.29823504058902e-09
+Epoch 155 - Loss moyenne: 8.135962737298995e-09
+Epoch 156 - Loss moyenne: 7.182301661856627e-09
+Epoch 157 - Loss moyenne: 6.4074522541091025e-09
+Epoch 158 - Loss moyenne: 5.662404264583643e-09
+Epoch 159 - Loss moyenne: 4.976959052882535e-09
+Epoch 160 - Loss moyenne: 4.4703254893363466e-09
+Epoch 161 - Loss moyenne: 3.874283393656697e-09
+Epoch 162 - Loss moyenne: 3.4272522135836424e-09
+Epoch 163 - Loss moyenne: 2.9802208114659832e-09
+Epoch 164 - Loss moyenne: 2.6523975513725872e-09
+Epoch 165 - Loss moyenne: 2.35437637563507e-09
+Epoch 166 - Loss moyenne: 2.1457613712527745e-09
+Epoch 167 - Loss moyenne: 1.7881348846060518e-09
+Epoch 168 - Loss moyenne: 1.579519430805476e-09
+Epoch 169 - Loss moyenne: 1.4305086146748636e-09
+Epoch 170 - Loss moyenne: 1.2814976866337701e-09
+Epoch 171 - Loss moyenne: 1.1026842123840196e-09
+Epoch 172 - Loss moyenne: 9.834753207371706e-10
+Epoch 173 - Loss moyenne: 8.940686377911788e-10
+Epoch 174 - Loss moyenne: 7.748595773904299e-10
+Epoch 175 - Loss moyenne: 7.152551031452958e-10
+Epoch 176 - Loss moyenne: 6.258482514454045e-10
+Epoch 177 - Loss moyenne: 5.364413997455131e-10
+Epoch 178 - Loss moyenne: 4.768368402352508e-10
+Epoch 179 - Loss moyenne: 3.8742993346829735e-10
+Epoch 180 - Loss moyenne: 3.2782537395803503e-10
+Epoch 181 - Loss moyenne: 2.6822075938071066e-10
+Epoch 182 - Loss moyenne: 2.3841846541472476e-10
+Epoch 183 - Loss moyenne: 2.086161714487389e-10
+Epoch 184 - Loss moyenne: 1.78813877482753e-10
+Epoch 185 - Loss moyenne: 1.78813877482753e-10
+Epoch 186 - Loss moyenne: 1.490115693059124e-10
+Epoch 187 - Loss moyenne: 1.1920926112907182e-10
+Epoch 188 - Loss moyenne: 1.1920926112907182e-10
+Epoch 189 - Loss moyenne: 8.940695295223122e-11
+Epoch 190 - Loss moyenne: 8.940695295223122e-11
+Epoch 191 - Loss moyenne: 8.940695295223122e-11
+Epoch 192 - Loss moyenne: 8.940695295223122e-11
+Epoch 193 - Loss moyenne: 5.960463766996327e-11
+Epoch 194 - Loss moyenne: 5.960463766996327e-11
+Epoch 195 - Loss moyenne: 5.960463766996327e-11
+Epoch 196 - Loss moyenne: 5.960463766996327e-11
+Epoch 197 - Loss moyenne: 2.9802320611338473e-11
+Epoch 198 - Loss moyenne: 2.9802320611338473e-11
+Epoch 199 - Loss moyenne: 2.9802320611338473e-11
+Entraînement terminé.
+Accuracy : 0.902
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.91      0.90       500
+      nature       0.91      0.90      0.90       500
+
+    accuracy                           0.90      1000
+   macro avg       0.90      0.90      0.90      1000
+weighted avg       0.90      0.90      0.90      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 0, midjourney: acc 0.902
+[midjourney]Entraînement avec 20 couche de llama et de tailles 768 pour chaque couches
+TRAINING...
+Epoch 0 - Loss moyenne: 0.6455096024274826
+Epoch 1 - Loss moyenne: 0.3045958846062422
+Epoch 2 - Loss moyenne: 0.2128673374801874
+Epoch 3 - Loss moyenne: 0.1857808299176395
+Epoch 4 - Loss moyenne: 0.1763103014715016
+Epoch 5 - Loss moyenne: 0.13219465401768685
+Epoch 6 - Loss moyenne: 0.1218651807946153
+Epoch 7 - Loss moyenne: 0.10419642849056981
+Epoch 8 - Loss moyenne: 0.09389916185336188
+Epoch 9 - Loss moyenne: 0.07409662632836261
+Epoch 10 - Loss moyenne: 0.08536959207383915
+Epoch 11 - Loss moyenne: 0.07847180298465536
+Epoch 12 - Loss moyenne: 0.07661628081696108
+Epoch 13 - Loss moyenne: 0.09547188621317036
+Epoch 14 - Loss moyenne: 0.08765280246594921
+Epoch 15 - Loss moyenne: 0.07235886320797727
+Epoch 16 - Loss moyenne: 0.0484211831393186
+Epoch 17 - Loss moyenne: 0.04927840954475687
+Epoch 18 - Loss moyenne: 0.05590821745721041
+Epoch 19 - Loss moyenne: 0.055085573569638654
+Epoch 20 - Loss moyenne: 0.03625661330507137
+Epoch 21 - Loss moyenne: 0.04171117928531385
+Epoch 22 - Loss moyenne: 0.06591954716618056
+Epoch 23 - Loss moyenne: 0.05294928633456584
+Epoch 24 - Loss moyenne: 0.05319580716220662
+Epoch 25 - Loss moyenne: 0.05747831380285788
+Epoch 26 - Loss moyenne: 0.04717323400784517
+Epoch 27 - Loss moyenne: 0.04317818119139702
+Epoch 28 - Loss moyenne: 0.05707368178431352
+Epoch 29 - Loss moyenne: 0.04915676997916307
+Epoch 30 - Loss moyenne: 0.04357460902337334
+Epoch 31 - Loss moyenne: 0.052144888630951756
+Epoch 32 - Loss moyenne: 0.037471837512683126
+Epoch 33 - Loss moyenne: 0.02783867375209229
+Epoch 34 - Loss moyenne: 0.07174866132656461
+Epoch 35 - Loss moyenne: 0.06440497104963287
+Epoch 36 - Loss moyenne: 0.0723312131331768
+Epoch 37 - Loss moyenne: 0.048343158757081256
+Epoch 38 - Loss moyenne: 0.03823279531748267
+Epoch 39 - Loss moyenne: 0.027303613267140463
+Epoch 40 - Loss moyenne: 0.03175760339800036
+Epoch 41 - Loss moyenne: 0.04080675222823629
+Epoch 42 - Loss moyenne: 0.025038032808777644
+Epoch 43 - Loss moyenne: 0.04086621463217307
+Epoch 44 - Loss moyenne: 0.03163527090052776
+Epoch 45 - Loss moyenne: 0.02304851992300246
+Epoch 46 - Loss moyenne: 0.050225214545644124
+Epoch 47 - Loss moyenne: 0.016679640808331897
+Epoch 48 - Loss moyenne: 0.02291789700190566
+Epoch 49 - Loss moyenne: 0.02400259845830442
+Epoch 50 - Loss moyenne: 0.023812368978949963
+Epoch 51 - Loss moyenne: 0.03022080163474311
+Epoch 52 - Loss moyenne: 0.01829788539651781
+Epoch 53 - Loss moyenne: 0.0254073476029007
+Epoch 54 - Loss moyenne: 0.04218901746795745
+Epoch 55 - Loss moyenne: 0.0333808791761985
+Epoch 56 - Loss moyenne: 0.028848879117751493
+Epoch 57 - Loss moyenne: 0.04704428232970531
+Epoch 58 - Loss moyenne: 0.03706320366698492
+Epoch 59 - Loss moyenne: 0.03497384882735787
+Epoch 60 - Loss moyenne: 0.03263736820878694
+Epoch 61 - Loss moyenne: 0.019071593594624573
+Epoch 62 - Loss moyenne: 0.003321375064384483
+Epoch 63 - Loss moyenne: 0.01201132367843229
+Epoch 64 - Loss moyenne: 0.030330455196861294
+Epoch 65 - Loss moyenne: 0.029191070973261957
+Epoch 66 - Loss moyenne: 0.046926219519373265
+Epoch 67 - Loss moyenne: 0.031539280090932154
+Epoch 68 - Loss moyenne: 0.027823927546356573
+Epoch 69 - Loss moyenne: 0.045324147834588074
+Epoch 70 - Loss moyenne: 0.019980032018735074
+Epoch 71 - Loss moyenne: 0.01002705737695942
+Epoch 72 - Loss moyenne: 0.020860023949055177
+Epoch 73 - Loss moyenne: 0.032597291627695084
+Epoch 74 - Loss moyenne: 0.022446051574821466
+Epoch 75 - Loss moyenne: 0.01590060036461364
+Epoch 76 - Loss moyenne: 0.02763903118888993
+Epoch 77 - Loss moyenne: 0.07281329247372924
+Epoch 78 - Loss moyenne: 0.03723974363991874
+Epoch 79 - Loss moyenne: 0.03299556412640959
+Epoch 80 - Loss moyenne: 0.022116922776462163
+Epoch 81 - Loss moyenne: 0.011189268893038389
+Epoch 82 - Loss moyenne: 0.011817355836181377
+Epoch 83 - Loss moyenne: 0.01041854015431818
+Epoch 84 - Loss moyenne: 0.02033308922791548
+Epoch 85 - Loss moyenne: 0.01617720930836185
+Epoch 86 - Loss moyenne: 0.011804555833412451
+Epoch 87 - Loss moyenne: 0.020819033547521938
+Epoch 88 - Loss moyenne: 0.004614751455333135
+Epoch 89 - Loss moyenne: 0.019434638120051206
+Epoch 90 - Loss moyenne: 0.024353977396530353
+Epoch 91 - Loss moyenne: 0.02098282899404876
+Epoch 92 - Loss moyenne: 0.015220775860419963
+Epoch 93 - Loss moyenne: 0.011740973573610973
+Epoch 94 - Loss moyenne: 0.007947893054317319
+Epoch 95 - Loss moyenne: 0.015835285772274346
+Epoch 96 - Loss moyenne: 0.026978133171985972
+Epoch 97 - Loss moyenne: 0.030478416367812317
+Epoch 98 - Loss moyenne: 0.014851725306576554
+Epoch 99 - Loss moyenne: 0.01437361652974505
+Epoch 100 - Loss moyenne: 0.014651327653198678
+Epoch 101 - Loss moyenne: 0.018048264374749125
+Epoch 102 - Loss moyenne: 0.010043910045425946
+Epoch 103 - Loss moyenne: 0.0031227847008703973
+Epoch 104 - Loss moyenne: 0.00015120008011842856
+Epoch 105 - Loss moyenne: 2.6441180527797314e-05
+Epoch 106 - Loss moyenne: 1.5128772589463325e-05
+Epoch 107 - Loss moyenne: 9.643402817033575e-06
+Epoch 108 - Loss moyenne: 6.150830160819964e-06
+Epoch 109 - Loss moyenne: 3.885894305298621e-06
+Epoch 110 - Loss moyenne: 2.4099489585758248e-06
+Epoch 111 - Loss moyenne: 1.5535728641058455e-06
+Epoch 112 - Loss moyenne: 1.049135824832348e-06
+Epoch 113 - Loss moyenne: 7.454450941377644e-07
+Epoch 114 - Loss moyenne: 5.565104309983582e-07
+Epoch 115 - Loss moyenne: 4.246121463253871e-07
+Epoch 116 - Loss moyenne: 3.327055822950342e-07
+Epoch 117 - Loss moyenne: 2.6761948161357905e-07
+Epoch 118 - Loss moyenne: 2.19520132786144e-07
+Epoch 119 - Loss moyenne: 1.8200011538738182e-07
+Epoch 120 - Loss moyenne: 1.5291385702376203e-07
+Epoch 121 - Loss moyenne: 1.2901286480726525e-07
+Epoch 122 - Loss moyenne: 1.1101257488377314e-07
+Epoch 123 - Loss moyenne: 9.614147759329227e-08
+Epoch 124 - Loss moyenne: 8.416113430520511e-08
+Epoch 125 - Loss moyenne: 7.176354827365117e-08
+Epoch 126 - Loss moyenne: 6.279314511203892e-08
+Epoch 127 - Loss moyenne: 5.531283795789932e-08
+Epoch 128 - Loss moyenne: 4.896501153694999e-08
+Epoch 129 - Loss moyenne: 4.363043315258608e-08
+Epoch 130 - Loss moyenne: 3.9368737128953056e-08
+Epoch 131 - Loss moyenne: 3.519643987459631e-08
+Epoch 132 - Loss moyenne: 3.1769193016728534e-08
+Epoch 133 - Loss moyenne: 2.8550558543116722e-08
+Epoch 134 - Loss moyenne: 2.5898166116533616e-08
+Epoch 135 - Loss moyenne: 2.3633200051165205e-08
+Epoch 136 - Loss moyenne: 2.157684593129261e-08
+Epoch 137 - Loss moyenne: 1.963970209395427e-08
+Epoch 138 - Loss moyenne: 1.7970777854259268e-08
+Epoch 139 - Loss moyenne: 1.6301852051370247e-08
+Epoch 140 - Loss moyenne: 1.4871344012234999e-08
+Epoch 141 - Loss moyenne: 1.3679253520137991e-08
+Epoch 142 - Loss moyenne: 1.2516965144371284e-08
+Epoch 143 - Loss moyenne: 1.1324874147788932e-08
+Epoch 144 - Loss moyenne: 1.0371201330627855e-08
+Epoch 145 - Loss moyenne: 9.447330375778052e-09
+Epoch 146 - Loss moyenne: 8.732075745143674e-09
+Epoch 147 - Loss moyenne: 7.778402306257703e-09
+Epoch 148 - Loss moyenne: 7.182356529966683e-09
+Epoch 149 - Loss moyenne: 6.645915245684364e-09
+Epoch 150 - Loss moyenne: 6.198880909025206e-09
+Epoch 151 - Loss moyenne: 5.632637359198611e-09
+Epoch 152 - Loss moyenne: 5.1558005189633605e-09
+Epoch 153 - Loss moyenne: 4.7087659087452496e-09
+Epoch 154 - Loss moyenne: 4.20212664664632e-09
+Epoch 155 - Loss moyenne: 3.9935104609867266e-09
+Epoch 156 - Loss moyenne: 3.665684996434493e-09
+Epoch 157 - Loss moyenne: 3.337859574514823e-09
+Epoch 158 - Loss moyenne: 3.039836407481289e-09
+Epoch 159 - Loss moyenne: 2.741813281303962e-09
+Epoch 160 - Loss moyenne: 2.324580830048717e-09
+Epoch 161 - Loss moyenne: 2.115964615967414e-09
+Epoch 162 - Loss moyenne: 1.9073483841225423e-09
+Epoch 163 - Loss moyenne: 1.6987321771466667e-09
+Epoch 164 - Loss moyenne: 1.5199182694658475e-09
+Epoch 165 - Loss moyenne: 1.3411043742195261e-09
+Epoch 166 - Loss moyenne: 1.2814997418786333e-09
+Epoch 167 - Loss moyenne: 1.1324881334928705e-09
+Epoch 168 - Loss moyenne: 8.940695952475152e-10
+Epoch 169 - Loss moyenne: 8.34464957577552e-10
+Epoch 170 - Loss moyenne: 7.748603128021614e-10
+Epoch 171 - Loss moyenne: 6.854533598499301e-10
+Epoch 172 - Loss moyenne: 6.2584872040361e-10
+Epoch 173 - Loss moyenne: 5.066394415109699e-10
+Epoch 174 - Loss moyenne: 4.768371191232745e-10
+Epoch 175 - Loss moyenne: 4.1723248500602495e-10
+Epoch 176 - Loss moyenne: 2.980232061133847e-10
+Epoch 177 - Loss moyenne: 3.2782552317200955e-10
+Epoch 178 - Loss moyenne: 2.384185648907078e-10
+Epoch 179 - Loss moyenne: 1.7881392366803083e-10
+Epoch 180 - Loss moyenne: 1.7881392366803083e-10
+Epoch 181 - Loss moyenne: 1.4901160305669236e-10
+Epoch 182 - Loss moyenne: 1.4901160305669236e-10
+Epoch 183 - Loss moyenne: 1.4901160305669236e-10
+Epoch 184 - Loss moyenne: 1.192092824453539e-10
+Epoch 185 - Loss moyenne: 1.192092824453539e-10
+Epoch 186 - Loss moyenne: 8.940696183401541e-11
+Epoch 187 - Loss moyenne: 5.960464122267695e-11
+Epoch 188 - Loss moyenne: 2.9802320611338473e-11
+Epoch 189 - Loss moyenne: 0.0
+Epoch 190 - Loss moyenne: 0.0
+Epoch 191 - Loss moyenne: 0.0
+Epoch 192 - Loss moyenne: 0.0
+Epoch 193 - Loss moyenne: 0.0
+Epoch 194 - Loss moyenne: 0.0
+Epoch 195 - Loss moyenne: 0.0
+Epoch 196 - Loss moyenne: 0.0
+Epoch 197 - Loss moyenne: 0.0
+Epoch 198 - Loss moyenne: 0.0
+Epoch 199 - Loss moyenne: 0.0
+Entraînement terminé.
+Accuracy : 0.908
+Rapport de classification :
+              precision    recall  f1-score   support
+
+          ia       0.90      0.92      0.91       500
+      nature       0.92      0.90      0.91       500
+
+    accuracy                           0.91      1000
+   macro avg       0.91      0.91      0.91      1000
+weighted avg       0.91      0.91      0.91      1000
+
+----------------------------------------------------------------------------------------------------
+iteration 1, midjourney: acc 0.908
+accuracy mean: 0.905
+----------------------------------------------------------------------------------------------------
+[midjourney]Entraînement avec 20 couche de llama et de tailles 1536 pour chaque couches
+TRAINING...
+Epoch 0 - Loss moyenne: 0.7927910185456276
+Epoch 1 - Loss moyenne: 0.3644625068306923
+Epoch 2 - Loss moyenne: 0.28123150107264516
+Epoch 3 - Loss moyenne: 0.2465946957245469
+Epoch 4 - Loss moyenne: 0.2102065803706646
+Epoch 5 - Loss moyenne: 0.18737717194110154
+Epoch 6 - Loss moyenne: 0.18244772992283106
+Epoch 7 - Loss moyenne: 0.1698755703959614
+Epoch 8 - Loss moyenne: 0.1685633615590632
+Epoch 9 - Loss moyenne: 0.15709920815285294
+Epoch 10 - Loss moyenne: 0.2174035560376942
+Epoch 11 - Loss moyenne: 0.2358685149550438
+Epoch 12 - Loss moyenne: 0.20846068774163723
+Epoch 13 - Loss moyenne: 0.2723575808852911
+Epoch 14 - Loss moyenne: 0.24147432525455953
+Epoch 15 - Loss moyenne: 0.17132413330487906
+Epoch 16 - Loss moyenne: 0.16102974884398283
+Epoch 17 - Loss moyenne: 0.2636289385929704
+Epoch 18 - Loss moyenne: 0.17166690560802816
+Epoch 19 - Loss moyenne: 0.15098255459032953
+Epoch 20 - Loss moyenne: 0.16126161986403167
+Epoch 21 - Loss moyenne: 0.16724962984398006
+Epoch 22 - Loss moyenne: 0.19699972089752554
+Epoch 23 - Loss moyenne: 0.201557529874146
+Epoch 24 - Loss moyenne: 0.1746646355316043
+Epoch 25 - Loss moyenne: 0.1487298502717167
+Epoch 26 - Loss moyenne: 0.13415641814749688
+Epoch 27 - Loss moyenne: 0.13161201628483832
+Epoch 28 - Loss moyenne: 0.11657305722869933
+Epoch 29 - Loss moyenne: 0.11298917178576812
+Epoch 30 - Loss moyenne: 0.17736098028812558
+Epoch 31 - Loss moyenne: 0.21376500821113587
+Epoch 32 - Loss moyenne: 0.1699830999467522
+Epoch 33 - Loss moyenne: 0.1157038201740943
+Epoch 34 - Loss moyenne: 0.10115052009839565
+Epoch 35 - Loss moyenne: 0.08916873440425843
+Epoch 36 - Loss moyenne: 0.08971983379800803
+Epoch 37 - Loss moyenne: 0.09031180694606156
+Epoch 38 - Loss moyenne: 0.0823715054381173
+Epoch 39 - Loss moyenne: 0.08714267392631155
+Epoch 40 - Loss moyenne: 0.09419471417739987
+Epoch 41 - Loss moyenne: 0.12038028589740861
+Epoch 42 - Loss moyenne: 0.10277476454200223
+Epoch 43 - Loss moyenne: 0.07291417702310718
+Epoch 44 - Loss moyenne: 0.06657159025105648
+Epoch 45 - Loss moyenne: 0.06781146545591764
+Epoch 46 - Loss moyenne: 0.1131085491926642
+Epoch 47 - Loss moyenne: 0.12638700479967518
+Epoch 48 - Loss moyenne: 0.0920179748039227
+Epoch 49 - Loss moyenne: 0.08063390825130046
+Epoch 50 - Loss moyenne: 0.08936486871331
+Epoch 51 - Loss moyenne: 0.07857371605397202
+Epoch 52 - Loss moyenne: 0.08584327958780341
+Epoch 53 - Loss moyenne: 0.09170197433582507
+Epoch 54 - Loss moyenne: 0.07135227373393718
+Epoch 55 - Loss moyenne: 0.05772146013166639
+Epoch 56 - Loss moyenne: 0.053915451081877105
+Epoch 57 - Loss moyenne: 0.05738100557861617
+Epoch 58 - Loss moyenne: 0.06632077638796181
+Epoch 59 - Loss moyenne: 0.06813456732942723
+Epoch 60 - Loss moyenne: 0.07327771585341543
+Epoch 61 - Loss moyenne: 0.07798226155294105
+srun: Job step aborted: Waiting up to 92 seconds for job step to finish.
+slurmstepd: error: *** STEP 321074.0 ON gpu003 CANCELLED AT 2025-05-18T15:20:40 ***
+slurmstepd: error: *** JOB 321074 ON gpu003 CANCELLED AT 2025-05-18T15:20:40 ***

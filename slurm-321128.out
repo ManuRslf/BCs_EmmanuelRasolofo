@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/main.py", line 2, in <module>
+    from util import *
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/util.py", line 9, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+srun: error: gpu003: task 0: Exited with exit code 1

@@ -9,7 +9,7 @@ class Config:
     DEBUG = False
     Adapter_EXTERN = False
     
-    MODEL = 'biggan'
+    MODEL = 'midjourney'
     RESIZE_SHAPE = 224
     Dinov2_token_dim = {
         'facebook/dinov2-base' : 768,
@@ -53,21 +53,21 @@ class Config:
         SAVE_IMAGE = False
         WANDB_LOG = True
         TSNE_LOG = False
-        add_tokens_lab = 6
+        add_tokens_lab = 30
         ADD_TOKENS_LAB = [0, 10, 60, 100, 150]
         ADD_TOKENS_LAB_perf = [0, 10, 30, 50]
-        NUM_HIDDEN_LAYER_LLMA_LAB = 6
+        NUM_HIDDEN_LAYER_LLMA_LAB = 2
         HIDDEN_SIZE_LAB = 768
         BATCH_SIZE_LAB = 16
         LR_LAB = 4e-4
         # epoch plus grand si taille llama different de dinov2
-        EPOCHS_LAB = 80
+        EPOCHS_LAB = 120
         ITERATION =2
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-base'
         NHL_LAB = [1, 6, 12, 16]
-        HSL_LAB = [1024, 1536, 2048, 2560]
-        EPOCHS_HSL = [100, 200, 300, 500]
+        HSL_LAB = [384, 768, 1536]
+        EPOCHS_HSL = [100, 200, 300]
         STD_GAUSSIAN_NOISE = [0.01, 0.05, 0.1, 0.3, 0.5, 1]
         QUALITY_JPEG_COMPRESSION = [100, 95, 85, 70, 50, 30, 10, 1]
         

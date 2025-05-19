@@ -1,0 +1,117 @@
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Currently logged in as: manurslf (manurslf301) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.8
+wandb: Run data is saved locally in /home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/wandb/run-20250516_195444-4l8qa55t
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run AT midjourney R224 dataset 20250516-195444
+wandb: ⭐️ View project at https://wandb.ai/manurslf301/Encoder-DecoderProject
+wandb: 🚀 View run at https://wandb.ai/manurslf301/Encoder-DecoderProject/runs/4l8qa55t
+ENTRAINEMENT EN ENTRAINANT SUR DES DONNEéS DEGRADéES
+Date d'entraînement: 20250516-195444
+Mode: run
+....................................................................................................
+Configurations:
+ADD_TOKENS_LAB: [0, 10, 60, 100, 150]
+ADD_TOKENS_LAB_perf: [0, 10, 30, 50]
+Adapter: False
+Adapter_EXTERN: False
+BATCH_SIZE_LAB: 16
+DEBUG: False
+DECREASING_LR_LAB: False
+DINOV2_NAME: facebook/dinov2-base
+Dinov2_token_dim: {'facebook/dinov2-base': 768, 'facebook/dinov2-small': 384}
+EPOCHS_HSL: [100, 150, 200, 250]
+EPOCHS_LAB: 160
+HIDDEN_SIZE_LAB: 768
+HSL_LAB: [96, 192, 384, 768]
+ITERATION: 2
+LR_LAB: 0.0004
+MODEL: midjourney
+NHL_LAB: [1, 6, 12, 16]
+NUM_HIDDEN_LAYER_LLMA_LAB: 20
+QUALITY_JPEG_COMPRESSION: [100, 95, 85, 70, 50, 30, 10, 1]
+RESIZE_SHAPE: 224
+SAVE_IMAGE: False
+SHOW_INFO: True
+STD_GAUSSIAN_NOISE: [0.01, 0.05, 0.1, 0.3, 0.5, 1]
+TSNE_LOG: False
+WANDB_LOG: True
+add_tokens_lab: 6
+----------------------------------------------------------------------------------------------------
+[93m 
+
+ENTRAINEMENT: VARIAtION LA TAILLE DE COUCHES CACHEES DE LLAMA
+
+ [0m
+Opération sur cuda
+Dataset utilisé 'midjourney' - Classes: ['ai', 'nature']
+----------------------------------------------------------------------------------------------------
+[midjourney]Entraînement avec 20 couche de llama et de tailles 96 pour chaque couches
+TRAINING...
+Traceback (most recent call last):
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/main.py", line 227, in <module>
+    Config_model_run('llama2')
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/main.py", line 137, in Config_model_run
+    run_experiment_llama2(Config.MODEL, Config.WANDB_LOG, Config.DECREASING_LR_LAB)
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/util.py", line 456, in run_experiment_llama2
+    model = train_model_llama_params(model_name,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/util.py", line 145, in train_model_llama_params
+    outputs = model(inputs)
+              ^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/BCs_emmanuelrasolofo/BCs_EmmanuelRasolofo/CustomClassifier.py", line 75, in forward
+    outputs = self.llama(inputs_embeds=features)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/transformers/models/llama/modeling_llama.py", line 842, in forward
+    outputs = self.model(
+              ^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/transformers/models/llama/modeling_llama.py", line 594, in forward
+    layer_outputs = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/transformers/models/llama/modeling_llama.py", line 336, in forward
+    hidden_states, self_attn_weights = self.self_attn(
+                                       ^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/transformers/models/llama/modeling_llama.py", line 275, in forward
+    query_states, key_states = apply_rotary_pos_emb(query_states, key_states, cos, sin)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/r/rasolof2/miniconda3/envs/project/lib/python3.12/site-packages/transformers/models/llama/modeling_llama.py", line 173, in apply_rotary_pos_emb
+    q_embed = (q * cos) + (rotate_half(q) * sin)
+               ~~^~~~~
+RuntimeError: The size of tensor a (3) must match the size of tensor b (4) at non-singleton dimension 3
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mAT midjourney R224 dataset 20250516-195444[0m at: [34mhttps://wandb.ai/manurslf301/Encoder-DecoderProject/runs/4l8qa55t[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250516_195444-4l8qa55t/logs[0m
+srun: error: gpu003: task 0: Exited with exit code 1
