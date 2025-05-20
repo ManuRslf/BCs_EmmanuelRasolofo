@@ -56,13 +56,13 @@ class Config:
         add_tokens_lab = 30
         ADD_TOKENS_LAB = [0, 10, 60, 100, 150]
         ADD_TOKENS_LAB_perf = [0, 10, 30, 50]
-        NUM_HIDDEN_LAYER_LLMA_LAB = 2
+        NUM_HIDDEN_LAYER_LLMA_LAB = 20
         HIDDEN_SIZE_LAB = 768
         BATCH_SIZE_LAB = 16
         LR_LAB = 4e-4
         # epoch plus grand si taille llama different de dinov2
-        EPOCHS_LAB = 120
-        ITERATION =2
+        EPOCHS_LAB = 60
+        ITERATION =1
         DECREASING_LR_LAB = True
         DINOV2_NAME = 'facebook/dinov2-base'
         NHL_LAB = [1, 6, 12, 16]

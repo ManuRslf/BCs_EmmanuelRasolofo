@@ -492,7 +492,6 @@ def run_experiment_llama2(model_name:str, wandb_log:bool, decreasing_lr:bool):
 def run_experiment_gaussian(model_name:str, wandb_log:bool, decreasing_lr:bool):
     '''
     Experimentations: ajout de bruits dans les données tests
-    Essentiel: faire un plot du loss et de l'accuracy sur une même graphe wandb
     '''
     print("\033[93m \n\nENTRAINEMENT: AJOUT DE BRUIT GAUSSIEN\n\n \033[0m")
 
@@ -533,7 +532,6 @@ def run_experiment_gaussian(model_name:str, wandb_log:bool, decreasing_lr:bool):
 def run_experiment_quality(model_name:str, wandb_log:bool, decreasing_lr:bool):
     '''
     Experimentations: effet sur l'accuracy par rapport à la dégradation de l'image dans les test
-    Essentiel: faire un plot du loss et de l'accuracy sur une même graphe wandb
     '''
     print("\033[93m \n\nENTRAINEMENT: DEGRADATION DE LA QUALITé\n\n \033[0m")
 
